@@ -2,6 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://bq86r4yll8po" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_fullglove_low.tscn" id="1_cvnsp"]
 [ext_resource type="PackedScene" uid="uid://xqimcf20s2jp" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_fullglove_low.tscn" id="2_6t5aa"]
+[ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="2_fkybt"]
+[ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="4_3smsa"]
+[ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="4_x3wgy"]
+[ext_resource type="Script" uid="uid://ck4yn3hxuobj7" path="res://addons/godot-xr-tools/player/player_body.gd" id="5_3smsa"]
 
 [node name="Player" type="XROrigin3D" unique_id=1392519515]
 
@@ -12,7 +16,20 @@ tracker = &"left_hand"
 
 [node name="LeftHand" parent="LeftHand" unique_id=2121682326 instance=ExtResource("1_cvnsp")]
 
+[node name="MovementDirect" parent="LeftHand" unique_id=1338689258 instance=ExtResource("2_fkybt")]
+strafe = true
+
 [node name="RightHand" type="XRController3D" parent="." unique_id=1122526834]
 tracker = &"right_hand"
 
 [node name="RightHand" parent="RightHand" unique_id=346681595 instance=ExtResource("2_6t5aa")]
+
+[node name="MovementTurn" parent="RightHand" unique_id=12426951 instance=ExtResource("4_3smsa")]
+
+[node name="PlayerBody" type="CharacterBody3D" parent="." unique_id=1132407986 groups=["player_body"] instance=ExtResource("4_x3wgy")]
+process_priority = -100
+process_physics_priority = -100
+collision_layer = 524288
+collision_mask = 1023
+script = ExtResource("5_3smsa")
+player_height_max = 2.0
