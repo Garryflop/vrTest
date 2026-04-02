@@ -2,6 +2,13 @@
 
 [ext_resource type="PackedScene" uid="uid://bq86r4yll8po" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_fullglove_low.tscn" id="1_cvnsp"]
 [ext_resource type="PackedScene" uid="uid://xqimcf20s2jp" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_fullglove_low.tscn" id="2_6t5aa"]
+<<<<<<< Updated upstream
+=======
+[ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="2_fkybt"]
+[ext_resource type="PackedScene" uid="uid://b4ysuy43poobf" path="res://addons/godot-xr-tools/functions/function_pickup.tscn" id="3_x3wgy"]
+[ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="4_3smsa"]
+[ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="4_x3wgy"]
+>>>>>>> Stashed changes
 
 [node name="Player" type="XROrigin3D" unique_id=1392519515]
 
@@ -12,7 +19,25 @@ tracker = &"left_hand"
 
 [node name="LeftHand" parent="LeftHand" unique_id=2121682326 instance=ExtResource("1_cvnsp")]
 
+<<<<<<< Updated upstream
+=======
+[node name="MovementDirect" parent="LeftHand" unique_id=1338689258 instance=ExtResource("2_fkybt")]
+strafe = true
+
+[node name="FunctionPickup" parent="LeftHand" unique_id=1601297371 instance=ExtResource("3_x3wgy")]
+
+>>>>>>> Stashed changes
 [node name="RightHand" type="XRController3D" parent="." unique_id=1122526834]
 tracker = &"right_hand"
 
 [node name="RightHand" parent="RightHand" unique_id=346681595 instance=ExtResource("2_6t5aa")]
+<<<<<<< Updated upstream
+=======
+
+[node name="MovementTurn" parent="RightHand" unique_id=12426951 instance=ExtResource("4_3smsa")]
+
+[node name="FunctionPickup" parent="RightHand" unique_id=1723722817 instance=ExtResource("3_x3wgy")]
+
+[node name="PlayerBody" parent="." unique_id=1132407986 instance=ExtResource("4_x3wgy")]
+player_height_max = 2.0
+>>>>>>> Stashed changes

@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://clc5dre31iskm" path="res://addons/godot-xr-tools/xr/start_xr.tscn" id="1_jjgbg"]
 [ext_resource type="PackedScene" uid="uid://dt8t2ejvy7q6u" path="res://Scenes/player.tscn" id="2_bo1nx"]
+[ext_resource type="PackedScene" uid="uid://72yjls4nn314" path="res://Scenes/cube.tscn" id="3_8gbba"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8gbba"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -16,6 +17,20 @@ sky = SubResource("Sky_jjvhh")
 tonemap_mode = 2
 glow_enabled = true
 
+<<<<<<< Updated upstream
+=======
+[sub_resource type="BoxMesh" id="BoxMesh_bo1nx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8gbba"]
+size = Vector3(5.8146973, 0.07952881, 8.746094)
+
+[sub_resource type="BoxMesh" id="BoxMesh_8gbba"]
+size = Vector3(1, 1, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jjvhh"]
+size = Vector3(1, 1, 0.5)
+
+>>>>>>> Stashed changes
 [node name="Main" type="Node3D" unique_id=1757495686]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1964999603]
@@ -24,3 +39,40 @@ environment = SubResource("Environment_kry3j")
 [node name="StartXR" parent="." unique_id=1216234343 instance=ExtResource("1_jjgbg")]
 
 [node name="Player" parent="." unique_id=1392519515 instance=ExtResource("2_bo1nx")]
+<<<<<<< Updated upstream
+=======
+
+[node name="Floor" type="StaticBody3D" parent="." unique_id=838604432]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor" unique_id=2052699973]
+transform = Transform3D(5.7658877, 0, 0, 0, 0.0761318, 0, 0, 0, 8.711261, 0, 0.011476457, 0)
+mesh = SubResource("BoxMesh_bo1nx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor" unique_id=211807293]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.014801025, 0)
+shape = SubResource("BoxShape3D_8gbba")
+
+[node name="Table" type="StaticBody3D" parent="." unique_id=1224495887]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9260296, -1.8707803)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Table" unique_id=963897939]
+mesh = SubResource("BoxMesh_8gbba")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Table" unique_id=2015947538]
+shape = SubResource("BoxShape3D_jjvhh")
+
+[node name="Table2" type="StaticBody3D" parent="." unique_id=2118250160]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4510466, 1.8412869, -1.8707803)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Table2" unique_id=602884008]
+mesh = SubResource("BoxMesh_8gbba")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Table2" unique_id=1848016957]
+shape = SubResource("BoxShape3D_jjvhh")
+
+[node name="PickableObject" parent="." unique_id=1305525191 instance=ExtResource("3_8gbba")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.08688676, 1.4760296, -1.83336)
+
+[node name="PickableObject2" parent="." unique_id=230629007 instance=ExtResource("3_8gbba")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.32384825, 1.5320818, -1.9624623)
+>>>>>>> Stashed changes
