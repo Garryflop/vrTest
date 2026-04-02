@@ -17,8 +17,6 @@ sky = SubResource("Sky_jjvhh")
 tonemap_mode = 2
 glow_enabled = true
 
-<<<<<<< Updated upstream
-=======
 [sub_resource type="BoxMesh" id="BoxMesh_bo1nx"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8gbba"]
@@ -30,7 +28,6 @@ size = Vector3(1, 1, 0.5)
 [sub_resource type="BoxShape3D" id="BoxShape3D_jjvhh"]
 size = Vector3(1, 1, 0.5)
 
->>>>>>> Stashed changes
 [node name="Main" type="Node3D" unique_id=1757495686]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1964999603]
@@ -39,8 +36,6 @@ environment = SubResource("Environment_kry3j")
 [node name="StartXR" parent="." unique_id=1216234343 instance=ExtResource("1_jjgbg")]
 
 [node name="Player" parent="." unique_id=1392519515 instance=ExtResource("2_bo1nx")]
-<<<<<<< Updated upstream
-=======
 
 [node name="Floor" type="StaticBody3D" parent="." unique_id=838604432]
 
@@ -75,4 +70,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.08688676, 1.4760296, -1.83
 
 [node name="PickableObject2" parent="." unique_id=230629007 instance=ExtResource("3_8gbba")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.32384825, 1.5320818, -1.9624623)
->>>>>>> Stashed changes
