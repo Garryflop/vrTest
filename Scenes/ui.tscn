@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://cfmbhxhd1vcr1"]
 
+[ext_resource type="Script" uid="uid://chp2gbhtuqrdk" path="res://Scripts/ui.gd" id="1_jxero"]
+
 [node name="Ui" type="CanvasLayer" unique_id=830349117]
+script = ExtResource("1_jxero")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1457226406]
 anchors_preset = 15
@@ -24,14 +27,24 @@ size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 32
 text = "Example Text"
 
-[node name="Button" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1644525152]
+[node name="PlaySoundButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1644525152]
 custom_minimum_size = Vector2(150, 100)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-text = "Button"
+text = "Play Sound"
+
+[node name="ToggleMusicButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1385005429]
+custom_minimum_size = Vector2(150, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Toggle Music"
 
 [node name="HSlider" type="HSlider" parent="MarginContainer/VBoxContainer" unique_id=86747764]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 4
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/PlaySoundButton" to="." method="_on_play_sound_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ToggleMusicButton" to="." method="_on_toggle_music_button_pressed"]

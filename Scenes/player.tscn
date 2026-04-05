@@ -38,6 +38,7 @@ strafe = true
 
 [node name="FunctionPointer" parent="LeftHand" unique_id=2063322424 instance=ExtResource("4_8erm5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02, 0.05, -0.1)
+show_laser = 2
 laser_length = 1
 
 [node name="RightHand" type="XRController3D" parent="." unique_id=1122526834]
@@ -51,13 +52,15 @@ tracker = &"right_hand"
 
 [node name="FunctionPointer" parent="RightHand" unique_id=534504831 instance=ExtResource("4_8erm5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.02, 0.05, -0.1)
+show_laser = 2
 laser_length = 1
 
 [node name="PlayerBody" parent="." unique_id=1132407986 instance=ExtResource("4_x3wgy")]
 player_height_max = 2.0
 
 [node name="PlayerUI" parent="." unique_id=979694789 node_paths=PackedStringArray("follow_marker") instance=ExtResource("8_f1ek2")]
-transform = Transform3D(0.9999998, -8e-45, -8e-45, 8e-45, 0.9999998, -8e-45, 8e-45, 8e-45, 0.9999998, 0, 1.73342e-32, -0.9999998)
+transform = Transform3D(0.9999998, -8e-45, -8e-45, 8e-45, 0.9999998, -8e-45, 8e-45, 8e-45, 0.9999998, 0, 4e-45, -0.9999998)
+visible = false
 script = ExtResource("9_f1ek2")
 follow_speed = 1.0
 follow_marker = NodePath("../XRCamera3D/Marker3D")
