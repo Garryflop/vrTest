@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cqccah38v0g7h"]
+
+[ext_resource type="PackedScene" uid="uid://vx7xx6qpqgdf" path="res://Scenes/cube_snap_zone.tscn" id="1_ii6py"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_d0fd8"]
+size = Vector3(0.1, 0.5, 0.5)
+
+[node name="CubeHolder" type="Node3D" unique_id=911262871]
+
+[node name="Board" type="MeshInstance3D" parent="." unique_id=2088169798]
+mesh = SubResource("BoxMesh_d0fd8")
+
+[node name="CubeSnapZone" parent="." unique_id=1399727635 instance=ExtResource("1_ii6py")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0, 0)
