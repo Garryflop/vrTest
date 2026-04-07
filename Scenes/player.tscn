@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cqhw276realc" path="res://addons/godot-xr-tools/functions/function_pointer.tscn" id="4_8erm5"]
 [ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="4_x3wgy"]
 [ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="8_f1ek2"]
+[ext_resource type="PackedScene" uid="uid://fiul51tsyoop" path="res://addons/godot-xr-tools/functions/function_teleport.tscn" id="8_gymyn"]
 [ext_resource type="PackedScene" uid="uid://cfmbhxhd1vcr1" path="res://Scenes/ui.tscn" id="9_tx1dd"]
 
 [node name="Player" type="XROrigin3D" unique_id=1392519515]
@@ -43,6 +44,11 @@ grab_distance = 0.15
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02, 0.05, -0.1)
 show_laser = 2
 laser_length = 1
+
+[node name="FunctionTeleport" parent="LeftHand" unique_id=1363324819 instance=ExtResource("8_gymyn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.1)
+enabled = false
+strength = 15.0
 
 [node name="RightHand" type="XRController3D" parent="." unique_id=1122526834]
 tracker = &"right_hand"

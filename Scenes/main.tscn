@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://cei1abt3pmfrl" path="res://Scripts/audio_3d.gd" id="5_6bp64"]
 [ext_resource type="PackedScene" uid="uid://cfmbhxhd1vcr1" path="res://Scenes/ui.tscn" id="5_21xkr"]
 [ext_resource type="AudioStream" uid="uid://itjwycfgck57" path="res://Assets/Audio/Music/musicRadio.mp3" id="6_21xkr"]
+[ext_resource type="PackedScene" uid="uid://caginelbe4l2k" path="res://Scenes/bottle.tscn" id="9_d1ilt"]
 [ext_resource type="Script" uid="uid://bwgou5oq6tho5" path="res://Scripts/music.gd" id="9_ynf5e"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8gbba"]
@@ -36,6 +37,12 @@ size = Vector3(2, 1, 0.5)
 size = Vector3(2, 1, 0.5)
 
 [node name="Main" type="Node3D" unique_id=1757495686]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2039419897]
+transform = Transform3D(-0.937282, -0.05813091, 0.34369054, 0, 0.985996, 0.16676874, -0.34857196, 0.15630935, -0.9241563, 0, 0, 0)
+light_color = Color(0.9810553, 0.44045773, 0.5549519, 1)
+light_energy = 5.1
+shadow_enabled = true
 
 [node name="Player" parent="." unique_id=1392519515 instance=ExtResource("2_bo1nx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4469965, 0)
@@ -94,6 +101,8 @@ scene = ExtResource("5_21xkr")
 viewport_size = Vector2(576, 324)
 transparent = 1
 scene_properties_keys = PackedStringArray("ui.gd")
+
+[node name="Bottle" parent="." unique_id=1536841397 instance=ExtResource("9_d1ilt")]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2101423261]
 stream = ExtResource("6_21xkr")
