@@ -12,10 +12,12 @@
 [ext_resource type="PackedScene" uid="uid://fiul51tsyoop" path="res://addons/godot-xr-tools/functions/function_teleport.tscn" id="8_gymyn"]
 [ext_resource type="PackedScene" uid="uid://cfmbhxhd1vcr1" path="res://Scenes/ui.tscn" id="9_tx1dd"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gymyn"]
+no_depth_test = true
+
 [node name="Player" type="XROrigin3D" unique_id=1392519515]
 
 [node name="FollowCameraMarker" type="Marker3D" parent="." unique_id=947661486 node_paths=PackedStringArray("ui")]
-visible = false
 script = ExtResource("1_gymyn")
 rotation_speed = 3.0
 ui = NodePath("Viewport2Din3D")
@@ -25,6 +27,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4e-45, -8.745794e-29, -1.999
 screen_size = Vector2(1, 0.5)
 scene = ExtResource("9_tx1dd")
 viewport_size = Vector2(500, 300)
+material = SubResource("StandardMaterial3D_gymyn")
 transparent = 1
 scene_properties_keys = PackedStringArray("ui.gd")
 
