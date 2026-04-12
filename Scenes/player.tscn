@@ -15,6 +15,7 @@
 [node name="Player" type="XROrigin3D" unique_id=1392519515]
 
 [node name="FollowCameraMarker" type="Marker3D" parent="." unique_id=947661486 node_paths=PackedStringArray("ui")]
+visible = false
 script = ExtResource("1_gymyn")
 rotation_speed = 3.0
 ui = NodePath("Viewport2Din3D")
@@ -47,6 +48,7 @@ laser_length = 1
 
 [node name="FunctionTeleport" parent="LeftHand" unique_id=1363324819 instance=ExtResource("8_gymyn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.1)
+visible = false
 enabled = false
 strength = 15.0
 

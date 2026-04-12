@@ -11,6 +11,7 @@ radius = 0.15
 [node name="CubeSnapZone" unique_id=1399727635 instance=ExtResource("1_idbb3")]
 script = ExtResource("2_1cmtp")
 grab_distance = 0.15
+snap_require = "Cube"
 
 [node name="CollisionShape3D" parent="." index="0"]
 shape = SubResource("SphereShape3D_1cmtp")

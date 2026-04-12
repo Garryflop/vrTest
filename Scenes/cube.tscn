@@ -29,15 +29,17 @@ script = ExtResource("4_v0l68")
 closed_pose = ExtResource("6_3lyxs")
 metadata/_custom_type_script = "uid://dvobm6vcfnqe8"
 
+[sub_resource type="BoxMesh" id="BoxMesh_v0l68"]
+size = Vector3(0.105, 0.105, 0.105)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e3x3w"]
 cull_mode = 1
 shading_mode = 0
 albedo_color = Color(1, 1, 0, 1)
-grow = true
 grow_amount = 0.001
 
 [node name="Cube" unique_id=1305525191 groups=["Cube"] instance=ExtResource("1_m6c8s")]
-ranged_grab_method = 2
+ranged_grab_method = 0
 second_hand_grab = 2
 
 [node name="CollisionShape3D" parent="." index="0"]
@@ -48,12 +50,10 @@ mesh = SubResource("BoxMesh_g8u7g")
 
 [node name="GrabPointHandLeft" parent="." index="2" unique_id=1962675741 instance=ExtResource("2_7kge3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.034125023, 0.06396758, -0.08941265)
-visible = true
 hand_pose = SubResource("Resource_3lyxs")
 
 [node name="GrabPointHandRight" parent="." index="3" unique_id=1895843061 instance=ExtResource("5_v0l68")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.044472806, 0.059841573, -0.08620081)
-visible = true
 hand_pose = SubResource("Resource_rj88v")
 
 [node name="GrabPointSnap" parent="." index="4" unique_id=1949671217 instance=ExtResource("2_g8u7g")]
@@ -62,6 +62,6 @@ hand_pose = SubResource("Resource_rj88v")
 script = ExtResource("3_6t0yj")
 metadata/_custom_type_script = "uid://0b7wkxi4vymb"
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="XRToolsHighlightVisible" index="0" unique_id=1014114625 groups=["Cube"]]
-mesh = SubResource("BoxMesh_g8u7g")
+[node name="MeshInstance3D" type="MeshInstance3D" parent="XRToolsHighlightVisible" index="0" unique_id=1014114625]
+mesh = SubResource("BoxMesh_v0l68")
 surface_material_override/0 = SubResource("StandardMaterial3D_e3x3w")

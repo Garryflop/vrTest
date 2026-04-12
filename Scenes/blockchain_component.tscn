@@ -1,0 +1,144 @@
+[gd_scene format=3 uid="uid://dyu5lgiudgm3p"]
+
+[ext_resource type="Script" uid="uid://cve1s6xy3rb82" path="res://Scripts/blockchain_component.gd" id="1_1b67i"]
+[ext_resource type="Script" uid="uid://bfrlpbsqg5lqr" path="res://addons/godot-xr-tools/objects/pickable.gd" id="1_r3q6i"]
+[ext_resource type="PackedScene" uid="uid://c25yxb0vt53vc" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" id="2_1b67i"]
+[ext_resource type="Animation" uid="uid://nq3xh1olqipq" path="res://addons/godot-xr-tools/hands/animations/left/Grip Shaft.res" id="3_kbg8v"]
+[ext_resource type="Script" uid="uid://dvobm6vcfnqe8" path="res://addons/godot-xr-tools/hands/poses/hand_pose_settings.gd" id="4_s1uvy"]
+[ext_resource type="PackedScene" uid="uid://ctw7nbntd5pcj" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn" id="5_pokvt"]
+[ext_resource type="Animation" uid="uid://c8dghcftg1thx" path="res://addons/godot-xr-tools/hands/animations/right/Grip Shaft.res" id="6_b6ssp"]
+[ext_resource type="PackedScene" uid="uid://dh8grd7s3n8kg" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_snap.tscn" id="7_8drbu"]
+[ext_resource type="Script" uid="uid://0b7wkxi4vymb" path="res://addons/godot-xr-tools/objects/highlight/highlight_visible.gd" id="8_bp0qb"]
+[ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="9_jbfmq"]
+[ext_resource type="Script" uid="uid://d2c7m6tqcgyqp" path="res://Scripts/tether_line.gd" id="11_kbg8v"]
+[ext_resource type="PackedScene" uid="uid://bact5mcnrbrnn" path="res://Scenes/connect_object_snap_zone.tscn" id="12_s1uvy"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dt3qw"]
+size = Vector3(0.1, 0.1, 0.1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m6c8s"]
+albedo_color = Color(0, 1, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_g8u7g"]
+material = SubResource("StandardMaterial3D_m6c8s")
+size = Vector3(0.1, 0.1, 0.1)
+
+[sub_resource type="Resource" id="Resource_3lyxs"]
+script = ExtResource("4_s1uvy")
+closed_pose = ExtResource("3_kbg8v")
+metadata/_custom_type_script = "uid://dvobm6vcfnqe8"
+
+[sub_resource type="Resource" id="Resource_rj88v"]
+script = ExtResource("4_s1uvy")
+closed_pose = ExtResource("6_b6ssp")
+metadata/_custom_type_script = "uid://dvobm6vcfnqe8"
+
+[sub_resource type="BoxMesh" id="BoxMesh_v0l68"]
+size = Vector3(0.105, 0.105, 0.105)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e3x3w"]
+cull_mode = 1
+shading_mode = 0
+albedo_color = Color(1, 1, 0, 1)
+grow_amount = 0.001
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s1uvy"]
+shading_mode = 0
+albedo_color = Color(1, 0, 1, 1)
+grow_amount = 0.2
+
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_s1uvy"]
+resource_local_to_scene = true
+
+[sub_resource type="SphereMesh" id="SphereMesh_r3q6i"]
+radius = 0.02
+height = 0.04
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r3q6i"]
+size = Vector3(0.04, 0.06, 0.06)
+
+[sub_resource type="SphereMesh" id="SphereMesh_1b67i"]
+radius = 0.022
+height = 0.044
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kbg8v"]
+cull_mode = 1
+shading_mode = 0
+albedo_color = Color(1, 1, 0, 1)
+
+[node name="BlockchainComponent" type="Node3D" unique_id=621460339]
+script = ExtResource("1_1b67i")
+
+[node name="Cube" type="RigidBody3D" parent="." unique_id=1305525191 groups=["Cube"]]
+unique_name_in_owner = true
+collision_layer = 4
+collision_mask = 196615
+freeze_mode = 1
+script = ExtResource("1_r3q6i")
+ranged_grab_method = 0
+second_hand_grab = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cube" unique_id=1800387024]
+shape = SubResource("BoxShape3D_dt3qw")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Cube" unique_id=2056203020]
+mesh = SubResource("BoxMesh_g8u7g")
+
+[node name="GrabPointHandLeft" parent="Cube" unique_id=1962675741 instance=ExtResource("2_1b67i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.034125023, 0.06396758, -0.08941265)
+hand_pose = SubResource("Resource_3lyxs")
+
+[node name="GrabPointHandRight" parent="Cube" unique_id=1895843061 instance=ExtResource("5_pokvt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.044472806, 0.059841573, -0.08620081)
+hand_pose = SubResource("Resource_rj88v")
+
+[node name="GrabPointSnap" parent="Cube" unique_id=1949671217 instance=ExtResource("7_8drbu")]
+
+[node name="XRToolsHighlightVisible" type="Node3D" parent="Cube" unique_id=2104275648]
+script = ExtResource("8_bp0qb")
+metadata/_custom_type_script = "uid://0b7wkxi4vymb"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Cube/XRToolsHighlightVisible" unique_id=1014114625]
+mesh = SubResource("BoxMesh_v0l68")
+surface_material_override/0 = SubResource("StandardMaterial3D_e3x3w")
+
+[node name="ConnectObjectAnchor" type="Marker3D" parent="Cube" unique_id=1975572735]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.055, 0, 0)
+
+[node name="ConnectObjectSnapZoneAnchor" type="Marker3D" parent="Cube" unique_id=115377980]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.055, 0, 0)
+
+[node name="TetherLine" type="MeshInstance3D" parent="Cube" unique_id=30564948]
+material_override = SubResource("StandardMaterial3D_s1uvy")
+mesh = SubResource("ImmediateMesh_s1uvy")
+script = ExtResource("11_kbg8v")
+
+[node name="ConnectObject" parent="." unique_id=1683503210 groups=["ConnectObject"] instance=ExtResource("9_jbfmq")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.055, 0, 0)
+freeze = true
+ranged_grab_method = 0
+
+[node name="Circle" type="MeshInstance3D" parent="ConnectObject" unique_id=1307213938]
+mesh = SubResource("SphereMesh_r3q6i")
+
+[node name="CircleCollision" type="CollisionShape3D" parent="ConnectObject" unique_id=734958464]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.015, 0, 0)
+shape = SubResource("BoxShape3D_r3q6i")
+
+[node name="XRToolsHighlightVisible" type="Node3D" parent="ConnectObject" unique_id=1830316802]
+script = ExtResource("8_bp0qb")
+metadata/_custom_type_script = "uid://0b7wkxi4vymb"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ConnectObject/XRToolsHighlightVisible" unique_id=1929269811]
+mesh = SubResource("SphereMesh_1b67i")
+surface_material_override/0 = SubResource("StandardMaterial3D_kbg8v")
+
+[node name="ConnectObject_snap_zone" parent="." unique_id=250323856 instance=ExtResource("12_s1uvy")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.055, 0, 0)
+
+[connection signal="has_dropped" from="ConnectObject_snap_zone" to="." method="_on_connect_object_snap_zone_has_dropped"]
+[connection signal="has_picked_up" from="ConnectObject_snap_zone" to="." method="_on_connect_object_snap_zone_has_picked_up"]
