@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="4_x3wgy"]
 [ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="8_f1ek2"]
 [ext_resource type="PackedScene" uid="uid://fiul51tsyoop" path="res://addons/godot-xr-tools/functions/function_teleport.tscn" id="8_gymyn"]
-[ext_resource type="PackedScene" uid="uid://cfmbhxhd1vcr1" path="res://Scenes/ui.tscn" id="9_tx1dd"]
+[ext_resource type="PackedScene" uid="uid://cfmbhxhd1vcr1" path="res://Scenes/UI/ui.tscn" id="9_tx1dd"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gymyn"]
 no_depth_test = true
@@ -24,6 +24,7 @@ ui = NodePath("Viewport2Din3D")
 
 [node name="Viewport2Din3D" parent="FollowCameraMarker" unique_id=2025315052 instance=ExtResource("8_f1ek2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4e-45, -8.745794e-29, -1.9999995)
+visible = false
 screen_size = Vector2(1, 0.5)
 scene = ExtResource("9_tx1dd")
 viewport_size = Vector2(500, 300)
