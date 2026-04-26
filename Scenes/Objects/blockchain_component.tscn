@@ -9,7 +9,7 @@
 [ext_resource type="Animation" uid="uid://c8dghcftg1thx" path="res://addons/godot-xr-tools/hands/animations/right/Grip Shaft.res" id="6_b6ssp"]
 [ext_resource type="PackedScene" uid="uid://dh8grd7s3n8kg" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_snap.tscn" id="7_8drbu"]
 [ext_resource type="Script" uid="uid://0b7wkxi4vymb" path="res://addons/godot-xr-tools/objects/highlight/highlight_visible.gd" id="8_bp0qb"]
-[ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="9_jbfmq"]
+[ext_resource type="PackedScene" uid="uid://fgp3v54bdycq" path="res://Scenes/Objects/connect_object.tscn" id="11_cqx54"]
 [ext_resource type="Script" uid="uid://d2c7m6tqcgyqp" path="res://Scripts/tether_line.gd" id="11_kbg8v"]
 [ext_resource type="PackedScene" uid="uid://bact5mcnrbrnn" path="res://Scenes/connect_object_snap_zone.tscn" id="12_s1uvy"]
 [ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="13_b6ssp"]
@@ -52,29 +52,15 @@ grow_amount = 0.2
 [sub_resource type="ImmediateMesh" id="ImmediateMesh_s1uvy"]
 resource_local_to_scene = true
 
-[sub_resource type="SphereMesh" id="SphereMesh_r3q6i"]
-radius = 0.02
-height = 0.04
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_r3q6i"]
-size = Vector3(0.04, 0.06, 0.06)
-
-[sub_resource type="SphereMesh" id="SphereMesh_1b67i"]
-radius = 0.022
-height = 0.044
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kbg8v"]
-cull_mode = 1
-shading_mode = 0
-albedo_color = Color(1, 1, 0, 1)
-
 [node name="BlockchainComponent" type="Node3D" unique_id=621460339]
 script = ExtResource("1_1b67i")
+input_scene = ExtResource("11_cqx54")
+output_scene = ExtResource("12_s1uvy")
 
 [node name="Cube" type="RigidBody3D" parent="." unique_id=1305525191 groups=["Cube"]]
 unique_name_in_owner = true
-collision_layer = 4
-collision_mask = 196615
+collision_layer = 6
+collision_mask = 131075
 freeze_mode = 1
 script = ExtResource("1_r3q6i")
 ranged_grab_method = 0
@@ -113,34 +99,10 @@ unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.055, 0, 0)
 
 [node name="TetherLine" type="MeshInstance3D" parent="Cube" unique_id=30564948]
+visible = false
 material_override = SubResource("StandardMaterial3D_s1uvy")
 mesh = SubResource("ImmediateMesh_s1uvy")
 script = ExtResource("11_kbg8v")
-
-[node name="ConnectObject" parent="." unique_id=1683503210 groups=["ConnectObject"] instance=ExtResource("9_jbfmq")]
-unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.055, 0, 0)
-freeze = true
-ranged_grab_method = 0
-
-[node name="Circle" type="MeshInstance3D" parent="ConnectObject" unique_id=1307213938]
-mesh = SubResource("SphereMesh_r3q6i")
-
-[node name="CircleCollision" type="CollisionShape3D" parent="ConnectObject" unique_id=734958464]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.015, 0, 0)
-shape = SubResource("BoxShape3D_r3q6i")
-
-[node name="XRToolsHighlightVisible" type="Node3D" parent="ConnectObject" unique_id=1830316802]
-script = ExtResource("8_bp0qb")
-metadata/_custom_type_script = "uid://0b7wkxi4vymb"
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="ConnectObject/XRToolsHighlightVisible" unique_id=1929269811]
-mesh = SubResource("SphereMesh_1b67i")
-surface_material_override/0 = SubResource("StandardMaterial3D_kbg8v")
-
-[node name="ConnectObject_snap_zone" parent="." unique_id=250323856 instance=ExtResource("12_s1uvy")]
-unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.055, 0, 0)
 
 [node name="Viewport2Din3D" parent="." unique_id=1137872735 instance=ExtResource("13_b6ssp")]
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 0.13474536, 0)
@@ -155,6 +117,3 @@ pixel_size = 0.002
 modulate = Color(1, 1, 1, 0.23529412)
 outline_modulate = Color(0, 0, 0, 0)
 text = "h:0000"
-
-[connection signal="has_dropped" from="ConnectObject_snap_zone" to="." method="_on_connect_object_snap_zone_has_dropped"]
-[connection signal="has_picked_up" from="ConnectObject_snap_zone" to="." method="_on_connect_object_snap_zone_has_picked_up"]

@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cg4pscuk6rjw2"]
+
+[ext_resource type="Script" uid="uid://civgstctduc14" path="res://Scripts/tether_line_cylinder.gd" id="1_g5tvc"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_iuxf2"]
+
+[node name="TetherLine_cylinder" type="MeshInstance3D" unique_id=1938631551]
+transform = Transform3D(-4.3711387e-10, 0.0754693, -4.3711387e-10, 0, -3.2988678e-09, -0.01, -0.01, -3.2988678e-09, 1.9106855e-17, 0, 0, 0)
+mesh = SubResource("CylinderMesh_iuxf2")
+script = ExtResource("1_g5tvc")

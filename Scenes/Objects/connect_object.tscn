@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://fgp3v54bdycq"]
+
+[ext_resource type="Script" uid="uid://cr736tjgu4bc1" path="res://Scripts/connect_object.gd" id="1_hb0cv"]
+[ext_resource type="Script" uid="uid://0b7wkxi4vymb" path="res://addons/godot-xr-tools/objects/highlight/highlight_visible.gd" id="2_ied71"]
+[ext_resource type="PackedScene" uid="uid://cg4pscuk6rjw2" path="res://Scenes/tether_line_cylinder.tscn" id="3_ied71"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_r3q6i"]
+radius = 0.02
+height = 0.04
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r3q6i"]
+size = Vector3(0.04, 0.06, 0.06)
+
+[sub_resource type="SphereMesh" id="SphereMesh_1b67i"]
+radius = 0.022
+height = 0.044
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kbg8v"]
+cull_mode = 1
+shading_mode = 0
+albedo_color = Color(1, 1, 0, 1)
+
+[node name="ConnectObject" type="RigidBody3D" unique_id=1684456226 groups=["ConnectObject"]]
+collision_layer = 4
+collision_mask = 196615
+freeze = true
+freeze_mode = 1
+script = ExtResource("1_hb0cv")
+
+[node name="Circle" type="MeshInstance3D" parent="." unique_id=112292242]
+mesh = SubResource("SphereMesh_r3q6i")
+
+[node name="CircleCollision" type="CollisionShape3D" parent="." unique_id=1148164994]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.015, 0, 0)
+shape = SubResource("BoxShape3D_r3q6i")
+
+[node name="XRToolsHighlightVisible" type="Node3D" parent="." unique_id=160452063]
+script = ExtResource("2_ied71")
+metadata/_custom_type_script = "uid://0b7wkxi4vymb"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="XRToolsHighlightVisible" unique_id=167446910]
+mesh = SubResource("SphereMesh_1b67i")
+surface_material_override/0 = SubResource("StandardMaterial3D_kbg8v")
+
+[node name="TetherLine_cylinder" parent="." unique_id=1938631551 instance=ExtResource("3_ied71")]
