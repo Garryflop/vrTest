@@ -39,19 +39,20 @@ func setup_connectors(count: int, is_input: bool):
 	# If count is 1, offset is 0. If count > 1, spread them.
 	for i in range(count):
 		var instance = input_scene.instantiate() if is_input else output_scene.instantiate()
-		add_child(instance)
+		
 		if is_input:
 			instance.add_collision_exception_with(cube)
 			instance.add_to_group(unique_id)
 		else:
 			instance.snap_exclude = unique_id
 		# Position Logic
-		var x_pos = 0.055 if is_input else -0.055
-		var z_pos = 0.0
+		var x_pos = connect_object_anchor.position.x if is_input else connect_object_snap_zone_anchor.position.x
+		var z_pos = 0
 		
 		if count > 1:
 			z_pos = -0.05 + (float(i) / (count - 1)) * z_range
-		instance.transform.origin = Vector3(x_pos, 0, z_pos)
+		instance.position = Vector3(x_pos, 0, z_pos)
+		add_child(instance)
 
 
 #func _on_connect_object_snap_zone_has_picked_up(what: Variant) -> void:

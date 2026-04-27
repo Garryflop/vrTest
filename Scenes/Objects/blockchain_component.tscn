@@ -54,6 +54,8 @@ resource_local_to_scene = true
 
 [node name="BlockchainComponent" type="Node3D" unique_id=621460339]
 script = ExtResource("1_1b67i")
+input_number = 2
+output_number = 2
 input_scene = ExtResource("11_cqx54")
 output_scene = ExtResource("12_s1uvy")
 

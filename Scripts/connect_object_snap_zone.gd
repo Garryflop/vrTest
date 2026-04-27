@@ -1,11 +1,15 @@
 @tool
 extends XRToolsSnapZone
 
-var home_position: Vector3
-var cube: XRToolsPickable
+var blockchain_component: Node3D
+var z_offset: float
 
 func _ready():
-	cube = get_parent()
-	
-	home_position = position
+	blockchain_component = get_parent()
+	z_offset = position.z
 	super()
+
+func _physics_process(delta: float) -> void:
+	if blockchain_component:
+		global_transform = blockchain_component.connect_object_snap_zone_anchor.global_transform
+		global_transform.origin += global_transform.basis.z * z_offset
