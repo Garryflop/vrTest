@@ -15,12 +15,12 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_dt3qw"]
 size = Vector3(0.1, 0.1, 0.1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m6c8s"]
-albedo_color = Color(0, 1, 1, 1)
-
 [sub_resource type="BoxMesh" id="BoxMesh_g8u7g"]
-material = SubResource("StandardMaterial3D_m6c8s")
 size = Vector3(0.1, 0.1, 0.1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m6c8s"]
+resource_local_to_scene = true
+albedo_color = Color(0, 1, 1, 1)
 
 [sub_resource type="Resource" id="Resource_3lyxs"]
 script = ExtResource("4_s1uvy")
@@ -61,6 +61,7 @@ shape = SubResource("BoxShape3D_dt3qw")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Cube" unique_id=2056203020]
 unique_name_in_owner = true
 mesh = SubResource("BoxMesh_g8u7g")
+surface_material_override/0 = SubResource("StandardMaterial3D_m6c8s")
 
 [node name="GrabPointHandLeft" parent="Cube" unique_id=1962675741 instance=ExtResource("2_1b67i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.034125023, 0.06396758, -0.08941265)

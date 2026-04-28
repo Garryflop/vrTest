@@ -27,6 +27,7 @@ freeze = true
 freeze_mode = 1
 script = ExtResource("1_hb0cv")
 tether_scene = ExtResource("3_ied71")
+ranged_grab_method = 0
 
 [node name="Circle" type="MeshInstance3D" parent="." unique_id=112292242]
 mesh = SubResource("SphereMesh_r3q6i")
