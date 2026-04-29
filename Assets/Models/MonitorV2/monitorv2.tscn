@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cfuew6gse2tmg"]
+
+[ext_resource type="PackedScene" uid="uid://be4l8d7v2q7pw" path="res://Assets/Models/MonitorV2/MonitorV2.glb" id="1_f2e14"]
+[ext_resource type="Texture2D" uid="uid://dcpxx6lgn548e" path="res://Assets/Models/MonitorV2/MonitorV2_SCI_FI_Tablel_BaseColor.1001-SCI_FI_Table_Alpha.png" id="2_0p863"]
+[ext_resource type="Texture2D" uid="uid://csws07u4nhjno" path="res://Assets/Models/MonitorV2/MonitorV2_SCI_FI_Table_Emission.png" id="3_fx113"]
+[ext_resource type="Texture2D" uid="uid://cq34a1ha6hmr7" path="res://Assets/Models/MonitorV2/MonitorV2_SCI_FI_Table_Normal.png" id="4_53lpq"]
+[ext_resource type="Texture2D" uid="uid://dg25yxt5oaqgq" path="res://Assets/Models/MonitorV2/MonitorV2_SCI_FI_Table_Metallic.1001-SCI_FI_Table_Roughness.png" id="5_4ivwy"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uous1"]
+albedo_texture = ExtResource("2_0p863")
+roughness_texture = ExtResource("5_4ivwy")
+emission_enabled = true
+emission_texture = ExtResource("3_fx113")
+normal_enabled = true
+normal_texture = ExtResource("4_53lpq")
+
+[node name="MonitorV2" unique_id=591291413 instance=ExtResource("1_f2e14")]
+
+[node name="MonitorSmaller" parent="." index="0" unique_id=765346356]
+cast_shadow = 0
+surface_material_override/0 = SubResource("StandardMaterial3D_uous1")

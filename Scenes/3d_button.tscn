@@ -3,21 +3,25 @@
 [ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="1_4bgi6"]
 [ext_resource type="Script" uid="uid://dllohyfetr7cc" path="res://Scripts/3d_button.gd" id="2_8n0cq"]
 [ext_resource type="PackedScene" uid="uid://c1eic0tv6ugbi" path="res://Scenes/UI/button.tscn" id="3_8n0cq"]
+[ext_resource type="PackedScene" uid="uid://cfuew6gse2tmg" path="res://Assets/Models/MonitorV2/monitorv2.tscn" id="4_62cct"]
 
-[sub_resource type="QuadMesh" id="QuadMesh_8n0cq"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_62cct"]
+transparency = 1
+shading_mode = 0
+
+[sub_resource type="QuadMesh" id="QuadMesh_62cct"]
 resource_local_to_scene = true
 size = Vector2(0.3, 0.2)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_62cct"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_0mc7d"]
 viewport_path = NodePath("Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0mc7d"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bmhu4"]
 transparency = 1
-cull_mode = 2
-albedo_texture = SubResource("ViewportTexture_62cct")
-texture_filter = 1
+shading_mode = 0
+albedo_texture = SubResource("ViewportTexture_0mc7d")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_bmhu4"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_tvlke"]
 resource_local_to_scene = true
 size = Vector3(0.3, 0.2, 0.02)
 
@@ -26,19 +30,25 @@ script = ExtResource("2_8n0cq")
 screen_size = Vector2(0.3, 0.2)
 scene = ExtResource("3_8n0cq")
 viewport_size = Vector2(1152, 648)
+material = SubResource("StandardMaterial3D_62cct")
 transparent = 1
+unshaded = true
 scene_properties_keys = PackedStringArray()
 
 [node name="Viewport" parent="." index="0"]
 size = Vector2i(1152, 648)
 
-[node name="Screen" parent="." index="1"]
-mesh = SubResource("QuadMesh_8n0cq")
-surface_material_override/0 = SubResource("StandardMaterial3D_0mc7d")
+[node name="MonitorV3" parent="." index="1" unique_id=591291413 instance=ExtResource("4_62cct")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, -0.1, -0.009)
 
-[node name="StaticBody3D" parent="." index="2"]
+[node name="Screen" parent="." index="2"]
+cast_shadow = 0
+mesh = SubResource("QuadMesh_62cct")
+surface_material_override/0 = SubResource("StandardMaterial3D_bmhu4")
+
+[node name="StaticBody3D" parent="." index="3"]
 screen_size = Vector2(0.3, 0.2)
 viewport_size = Vector2(1152, 648)
 
 [node name="CollisionShape3D" parent="StaticBody3D" index="0"]
-shape = SubResource("BoxShape3D_bmhu4")
+shape = SubResource("BoxShape3D_tvlke")

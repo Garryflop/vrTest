@@ -20,3 +20,4 @@ grow_vertical = 2
 layout_mode = 2
 theme_override_font_sizes/font_size = 128
 text = "Button"
+flat = true

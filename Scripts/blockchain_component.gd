@@ -112,7 +112,3 @@ func _on_toggle_state() -> void:
 		current_state = state.wrong
 	elif current_state == state.wrong:
 		current_state = state.right
-
-
-func _on_d_button_button_pressed() -> void:
-	_on_toggle_state()
