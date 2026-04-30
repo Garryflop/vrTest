@@ -1,4 +1,4 @@
-extends MeshInstance3D
+extends Node3D
 
 var thickness: int = 1
 var cube: XRToolsPickable

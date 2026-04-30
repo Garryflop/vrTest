@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dubog6hp2o8ym"]
 
 [ext_resource type="PackedScene" uid="uid://dt8t2ejvy7q6u" path="res://Scenes/player.tscn" id="1_tlcug"]
-[ext_resource type="PackedScene" uid="uid://c1mtky8dwfeun" path="res://Assets/Models/Table.glb" id="2_4dpyx"]
+[ext_resource type="PackedScene" uid="uid://c1mtky8dwfeun" path="res://Assets/Models/Table/Table.glb" id="2_4dpyx"]
 [ext_resource type="PackedScene" uid="uid://clc5dre31iskm" path="res://addons/godot-xr-tools/xr/start_xr.tscn" id="2_cyadu"]
 [ext_resource type="PackedScene" uid="uid://dyu5lgiudgm3p" path="res://Scenes/Objects/blockchain_component.tscn" id="3_iixi8"]
 [ext_resource type="PackedScene" uid="uid://bkg7muyrb7lxq" path="res://Scenes/3d_button.tscn" id="5_cyadu"]
@@ -16,9 +16,10 @@ sky_material = SubResource("ProceduralSkyMaterial_tlcug")
 background_mode = 1
 sky = SubResource("Sky_4dpyx")
 glow_enabled = true
+glow_bloom = 0.2
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3mqfk"]
-size = Vector3(2.1424713, 0.5534973, 1.244873)
+size = Vector3(2.142, 0.48, 1.245)
 
 [sub_resource type="BoxMesh" id="BoxMesh_cyadu"]
 size = Vector3(0.2, 3, 8)
@@ -40,13 +41,18 @@ size = Vector3(8, 0.2, 8)
 
 [node name="Level1" type="Node3D" unique_id=251571411]
 
-[node name="Player" parent="." unique_id=1392519515 instance=ExtResource("1_tlcug")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3, 0)
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1005831693]
 environment = SubResource("Environment_3mqfk")
 
 [node name="StartXR" parent="." unique_id=385451135 instance=ExtResource("2_cyadu")]
+
+[node name="Player" parent="." unique_id=1392519515 instance=ExtResource("1_tlcug")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4161216, 0)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Player" unique_id=534400441]
+light_color = Color(0.4849202, 0.4849202, 0.4849202, 1)
+light_energy = 0.5
+omni_range = 0.75
 
 [node name="Table" type="StaticBody3D" parent="." unique_id=275310675]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9099709, 0, -1.75)
@@ -187,7 +193,8 @@ spot_attenuation = 1.5
 spot_angle = 30.0
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="." unique_id=926392312]
-transform = Transform3D(1, 0, 0, 0, 0.49999997, 0.86602545, 0, -0.86602545, 0.49999997, 1.9095087, 2.75, 0.08564825)
+transform = Transform3D(1, 0, 0, 0, 0.49999997, 0.86602545, 0, -0.86602545, 0.49999997, 1.8593972, 2.75, -0.11794458)
+light_energy = 1.5
 shadow_enabled = true
 spot_attenuation = 1.5
 spot_angle = 30.0
@@ -203,6 +210,35 @@ transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 1.0842332, 0.099999905,
 
 [node name="Server5" parent="." unique_id=2076272146 instance=ExtResource("6_xgxfi")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 1.7230128, 0.099999905, -3.0986755)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1600361334]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7715855, 1.3582108, -1.0401108)
+light_color = Color(0.735357, 1, 1, 1)
+light_energy = 1.5
+omni_range = 2.099193
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="." unique_id=1215000891]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8227574, 1.3582108, -0.8949192)
+light_energy = 1.5
+omni_range = 2.099193
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="." unique_id=2148920]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0757748, 0.8113568, -2.8342938)
+omni_range = 0.7273517
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="." unique_id=642979340]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7180221, 0.8113568, -2.8342938)
+omni_range = 0.7273517
+
+[node name="OmniLight3D5" type="OmniLight3D" parent="." unique_id=1433838122]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5058639, 0.8113568, -2.9314513)
+light_color = Color(0.735357, 1, 1, 1)
+omni_range = 0.7273517
+
+[node name="OmniLight3D6" type="OmniLight3D" parent="." unique_id=1212486682]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9794884, 0.8113568, -2.8911185)
+light_color = Color(0.735357, 1, 1, 1)
+omni_range = 0.7273517
 
 [connection signal="button_pressed" from="Buttons/CentralDisableButton" to="CentralizedComponents/CentralComponent" method="_on_toggle_state"]
 [connection signal="button_pressed" from="Buttons/BlockchainDisableButton" to="DecentralizedComponents/BlockchainComponent" method="_on_toggle_state"]
