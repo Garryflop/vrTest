@@ -11,10 +11,9 @@ albedo_texture = ExtResource("2_de0sk")
 roughness_texture = ExtResource("5_cktok")
 emission_enabled = true
 emission_texture = ExtResource("3_hifnj")
-normal_enabled = true
 normal_texture = ExtResource("4_r0qxn")
 
 [node name="Server2" unique_id=2068698454 instance=ExtResource("1_af81e")]
 
-[node name="Server" parent="." index="0" unique_id=446414566]
+[node name="Server" parent="." index="0" unique_id=1576539565]
 surface_material_override/0 = SubResource("StandardMaterial3D_hrwy3")

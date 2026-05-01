@@ -11,11 +11,10 @@ albedo_texture = ExtResource("2_0p863")
 roughness_texture = ExtResource("5_4ivwy")
 emission_enabled = true
 emission_texture = ExtResource("3_fx113")
-normal_enabled = true
 normal_texture = ExtResource("4_53lpq")
 
-[node name="MonitorV2" unique_id=591291413 instance=ExtResource("1_f2e14")]
+[node name="MonitorV2" unique_id=1989634308 instance=ExtResource("1_f2e14")]
 
-[node name="MonitorSmaller" parent="." index="0" unique_id=765346356]
+[node name="MonitorSmaller" parent="." index="0" unique_id=1067048755]
 cast_shadow = 0
 surface_material_override/0 = SubResource("StandardMaterial3D_uous1")

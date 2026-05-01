@@ -63,6 +63,7 @@ shadow_mesh = SubResource("ArrayMesh_bs3xr")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tn170"]
 albedo_texture = ExtResource("2_3fl71")
+albedo_texture_force_srgb = true
 metallic = 1.0
 metallic_texture = ExtResource("6_3u1x7")
 roughness_texture = ExtResource("7_510u6")

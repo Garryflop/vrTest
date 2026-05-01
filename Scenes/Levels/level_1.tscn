@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://dubog6hp2o8ym"]
 
 [ext_resource type="PackedScene" uid="uid://dt8t2ejvy7q6u" path="res://Scenes/player.tscn" id="1_tlcug"]
-[ext_resource type="PackedScene" uid="uid://c1mtky8dwfeun" path="res://Assets/Models/Table/Table.glb" id="2_4dpyx"]
 [ext_resource type="PackedScene" uid="uid://clc5dre31iskm" path="res://addons/godot-xr-tools/xr/start_xr.tscn" id="2_cyadu"]
 [ext_resource type="PackedScene" uid="uid://dyu5lgiudgm3p" path="res://Scenes/Objects/blockchain_component.tscn" id="3_iixi8"]
+[ext_resource type="PackedScene" uid="uid://yitqf7haerdy" path="res://Assets/Models/Table/table.tscn" id="3_xgxfi"]
 [ext_resource type="PackedScene" uid="uid://bkg7muyrb7lxq" path="res://Scenes/3d_button.tscn" id="5_cyadu"]
 [ext_resource type="PackedScene" uid="uid://ds6a7ejdfondw" path="res://Assets/Models/Server/Server.tscn" id="6_xgxfi"]
 
@@ -57,7 +57,7 @@ omni_range = 0.75
 [node name="Table" type="StaticBody3D" parent="." unique_id=275310675]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9099709, 0, -1.75)
 
-[node name="Table" parent="Table" unique_id=1729546097 instance=ExtResource("2_4dpyx")]
+[node name="Table" parent="Table" unique_id=1316255771 instance=ExtResource("3_xgxfi")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Table" unique_id=1971503654]
@@ -85,7 +85,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.081265986, 0.60968995, -1.
 [node name="Table2" type="StaticBody3D" parent="." unique_id=1965521795]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.807048, 0, -1.75)
 
-[node name="Table" parent="Table2" unique_id=1366698117 instance=ExtResource("2_4dpyx")]
+[node name="Table" parent="Table2" unique_id=138543922 instance=ExtResource("3_xgxfi")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Table2" unique_id=1104887830]
@@ -120,13 +120,13 @@ input_number = 0
 [node name="CentralDisableButton" parent="Buttons" unique_id=467292279 instance=ExtResource("5_cyadu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8034588, 1.4002885, -0.9897827)
 
-[node name="BlockchainDisableButton" parent="Buttons" unique_id=855817652 instance=ExtResource("5_cyadu")]
+[node name="BlockchainDisableButton" parent="Buttons" unique_id=417565845 instance=ExtResource("5_cyadu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3404584, 1.4004376, -0.81123954)
 
-[node name="BlockchainDisableButton2" parent="Buttons" unique_id=1074787909 instance=ExtResource("5_cyadu")]
+[node name="BlockchainDisableButton2" parent="Buttons" unique_id=2062031866 instance=ExtResource("5_cyadu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8273438, 1.3989844, -0.7976499)
 
-[node name="BlockchainDisableButton3" parent="Buttons" unique_id=37987583 instance=ExtResource("5_cyadu")]
+[node name="BlockchainDisableButton3" parent="Buttons" unique_id=2119973751 instance=ExtResource("5_cyadu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.314491, 1.4028615, -0.7840603)
 
 [node name="Box" type="Node3D" parent="." unique_id=2014998134]
@@ -202,13 +202,13 @@ spot_angle = 30.0
 [node name="Server2" parent="." unique_id=2068698454 instance=ExtResource("6_xgxfi")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -2.9329445, 0.099999905, -3.166251)
 
-[node name="Server3" parent="." unique_id=1083157454 instance=ExtResource("6_xgxfi")]
+[node name="Server3" parent="." unique_id=1492629546 instance=ExtResource("6_xgxfi")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -1.5113038, 0.099999905, -3.2027857)
 
-[node name="Server4" parent="." unique_id=2061172463 instance=ExtResource("6_xgxfi")]
+[node name="Server4" parent="." unique_id=1690570667 instance=ExtResource("6_xgxfi")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 1.0842332, 0.099999905, -3.1152253)
 
-[node name="Server5" parent="." unique_id=2076272146 instance=ExtResource("6_xgxfi")]
+[node name="Server5" parent="." unique_id=90538746 instance=ExtResource("6_xgxfi")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 1.7230128, 0.099999905, -3.0986755)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1600361334]
