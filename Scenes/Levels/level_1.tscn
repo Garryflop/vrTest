@@ -52,7 +52,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4161216, 0)
 [node name="OmniLight3D" type="OmniLight3D" parent="Player" unique_id=534400441]
 light_color = Color(0.4849202, 0.4849202, 0.4849202, 1)
 light_energy = 0.5
-omni_range = 0.75
+omni_range = 1.5
 
 [node name="Table" type="StaticBody3D" parent="." unique_id=275310675]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9099709, 0, -1.75)
@@ -95,24 +95,24 @@ shape = SubResource("BoxShape3D_3mqfk")
 [node name="CentralizedComponents" type="Node3D" parent="." unique_id=1900799817]
 
 [node name="CentralComponent" parent="CentralizedComponents" unique_id=1556335945 instance=ExtResource("3_iixi8")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1.8193995, 0.60968995, -1.7556348)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1.8193995, 0.60968995, -1.7275605)
 input_number = 4
 output_number = 0
 
 [node name="BlockchainComponent" parent="CentralizedComponents" unique_id=1188579004 instance=ExtResource("3_iixi8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4835775, 0.6096902, -2.0438323)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1892512, 0.6096902, -1.7098901)
 input_number = 0
 
 [node name="BlockchainComponent2" parent="CentralizedComponents" unique_id=2018264266 instance=ExtResource("3_iixi8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5279262, 0.60969007, -1.3377798)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5630107, 0.60969007, -1.7219948)
 input_number = 0
 
 [node name="BlockchainComponent3" parent="CentralizedComponents" unique_id=815411431 instance=ExtResource("3_iixi8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3301847, 0.60969007, -1.328791)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4614275, 0.60969007, -1.7263558)
 input_number = 0
 
 [node name="BlockchainComponent4" parent="CentralizedComponents" unique_id=1423803013 instance=ExtResource("3_iixi8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2588284, 0.60968995, -2.0126805)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1001427, 0.60968995, -1.723523)
 input_number = 0
 
 [node name="Buttons" type="Node3D" parent="." unique_id=89963063]

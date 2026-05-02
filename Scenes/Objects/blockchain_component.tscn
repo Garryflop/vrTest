@@ -151,6 +151,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.055, 0, 0)
 
 [node name="Label3D" type="Label3D" parent="Cube" unique_id=1317204945]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.13200676, 0)
+visible = false
 pixel_size = 0.002
 modulate = Color(1, 1, 1, 0.23529412)
 outline_modulate = Color(0, 0, 0, 0)
