@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d3oavygcdaa2t"
-path.s3tc="res://.godot/imported/Monitor_SCI_FI_Tablel_BaseColor.1001-SCI_FI_Table_Alpha.png-f0f49c6740d4d4321f0e1af254cc8628.s3tc.ctex"
+uid="uid://cd4v34gm1ki7w"
+path.s3tc="res://.godot/imported/Cube_Cube1_BaseColor.png-f767b2db880ddf65f176990c8e77c62c.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "32f22e57cc5dfcfd58317b491c00b711"
+"md5": "810d87134849e7bdafcf64d516c8e870"
 }
 
 [deps]
 
-source_file="res://Assets/Models/Monitor/Monitor_SCI_FI_Tablel_BaseColor.1001-SCI_FI_Table_Alpha.png"
-dest_files=["res://.godot/imported/Monitor_SCI_FI_Tablel_BaseColor.1001-SCI_FI_Table_Alpha.png-f0f49c6740d4d4321f0e1af254cc8628.s3tc.ctex"]
+source_file="res://Assets/Models/Cube/Cube_Cube1_BaseColor.png"
+dest_files=["res://.godot/imported/Cube_Cube1_BaseColor.png-f767b2db880ddf65f176990c8e77c62c.s3tc.ctex"]
 
 [params]
 

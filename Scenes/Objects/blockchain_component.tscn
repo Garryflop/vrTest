@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://dc5b5t7epxsy4" path="res://Assets/Models/Cube/Cube1_Metallic.1001.png" id="9_d23ne"]
 [ext_resource type="Texture2D" uid="uid://c85wk7q4ol4yg" path="res://Assets/Models/Cube/Cube1_Roughness.1001.png" id="10_o7ihm"]
 [ext_resource type="PackedScene" uid="uid://fgp3v54bdycq" path="res://Scenes/Objects/connect_object.tscn" id="11_cqx54"]
+[ext_resource type="PackedScene" uid="uid://bcclikhgsbccj" path="res://Assets/Models/Cube/Cube.glb" id="11_ea7p6"]
 [ext_resource type="PackedScene" uid="uid://bact5mcnrbrnn" path="res://Scenes/Objects/connect_object_snap_zone.tscn" id="12_s1uvy"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dt3qw"]
@@ -122,6 +123,10 @@ unique_name_in_owner = true
 transform = Transform3D(8, 0, 0, 0, -3.496911e-07, 8, 0, -8, -3.496911e-07, 0, 0, 0)
 mesh = SubResource("ArrayMesh_hsfeh")
 surface_material_override/0 = SubResource("StandardMaterial3D_mrc8b")
+
+[node name="Cube" parent="Cube" unique_id=292945663 instance=ExtResource("11_ea7p6")]
+transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
+visible = false
 
 [node name="GrabPointHandLeft" parent="Cube" unique_id=1962675741 instance=ExtResource("2_1b67i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.034125023, 0.06396758, -0.08941265)

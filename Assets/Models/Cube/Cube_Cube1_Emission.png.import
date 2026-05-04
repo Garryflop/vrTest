@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7fout47ljjqa"
-path.s3tc="res://.godot/imported/Ruined_Pipes_Pipes_BaseColor.1001-Pipes_Alpha.png-f7ce15307ab0b594aa99ed07d5dc5d6f.s3tc.ctex"
+uid="uid://1urvftku2pt"
+path.s3tc="res://.godot/imported/Cube_Cube1_Emission.png-9088d4bccfee56718567179b77df9d99.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "005643ff08b4124b704b0649abc6695d"
+"md5": "cb18a5d28e77522dfec6a6255bc3847e"
 }
 
 [deps]
 
-source_file="res://Assets/Models/Pipes/Ruined_Pipes_Pipes_BaseColor.1001-Pipes_Alpha.png"
-dest_files=["res://.godot/imported/Ruined_Pipes_Pipes_BaseColor.1001-Pipes_Alpha.png-f7ce15307ab0b594aa99ed07d5dc5d6f.s3tc.ctex"]
+source_file="res://Assets/Models/Cube/Cube_Cube1_Emission.png"
+dest_files=["res://.godot/imported/Cube_Cube1_Emission.png-9088d4bccfee56718567179b77df9d99.s3tc.ctex"]
 
 [params]
 

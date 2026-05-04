@@ -1,48 +1,11 @@
 [gd_scene format=3 uid="uid://cg4pscuk6rjw2"]
 
 [ext_resource type="Script" uid="uid://civgstctduc14" path="res://Scripts/tether_line_cylinder.gd" id="1_g5tvc"]
-[ext_resource type="PackedScene" uid="uid://dcnhm0ahyhar8" path="res://Assets/Models/Pipes/Intact_Pipes.glb" id="2_rymuq"]
-[ext_resource type="Texture2D" uid="uid://y5fclac1uh85" path="res://Assets/Models/Pipes/Intact_Pipes_Pipes_BaseColor.1001-Pipes_Alpha.png" id="3_cyvvr"]
-[ext_resource type="Texture2D" uid="uid://blaw66nspppbh" path="res://Assets/Models/Pipes/Pipes_Emission.1001.png" id="4_cyvvr"]
-[ext_resource type="Texture2D" uid="uid://bxnawarh0qodr" path="res://Assets/Models/Pipes/Intact_Pipes_Pipes_Normal.png" id="5_lt5s3"]
-[ext_resource type="Texture2D" uid="uid://dygtqg5m2wnrl" path="res://Assets/Models/Cube/Cube1_Displacement.1001.png" id="5_tkig0"]
-[ext_resource type="Texture2D" uid="uid://dkdetcqyiuy51" path="res://Assets/Models/Pipes/Pipes_Metallic.1001.png" id="6_igu3q"]
-[ext_resource type="Texture2D" uid="uid://2kwrrpugohcl" path="res://Assets/Models/Pipes/Intact_Pipes_Pipes_Metallic.1001-Pipes_Roughness.png" id="6_tkig0"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_igu3q"]
-albedo_texture = ExtResource("3_cyvvr")
-albedo_texture_force_srgb = true
-metallic = 1.0
-metallic_texture = ExtResource("6_igu3q")
-roughness_texture = ExtResource("6_tkig0")
-emission_enabled = true
-emission_texture = ExtResource("4_cyvvr")
-normal_enabled = true
-normal_texture = ExtResource("5_lt5s3")
-heightmap_enabled = true
-heightmap_scale = 0.5
-heightmap_deep_parallax = true
-heightmap_min_layers = 8
-heightmap_max_layers = 32
-heightmap_texture = ExtResource("5_tkig0")
+[ext_resource type="PackedScene" uid="uid://dvvys2psf77g0" path="res://Assets/Models/Pipes/Intact_Pipes.glb" id="9_tkig0"]
 
 [node name="TetherLine_cylinder" type="MeshInstance3D" unique_id=1938631551]
 transform = Transform3D(-4.3711387e-10, 0.0754693, -4.3711387e-10, 0, -3.2988678e-09, -0.01, -0.01, -3.2988678e-09, 1.9106855e-17, 0, 0, 0)
 script = ExtResource("1_g5tvc")
 
-[node name="Intact_Pipes" parent="." unique_id=975036034 instance=ExtResource("2_rymuq")]
-transform = Transform3D(5, 0, 0, 0, 1.6, 0, 0, 0, 5.005, 0, 0, 0)
-
-[node name="Intact_Pipe" parent="Intact_Pipes" index="0" unique_id=453231027]
-extra_cull_margin = 5.0
-surface_material_override/0 = SubResource("StandardMaterial3D_igu3q")
-
-[node name="Intact_Pipes2" parent="." unique_id=1695260016 instance=ExtResource("2_rymuq")]
-transform = Transform3D(5, 0, -8.4703295e-22, -1.7763568e-15, 1.6, -1.7763568e-15, 0, -1.0084958e-21, 5, -2.5023377, -1.4493396e-08, 4.78118e-15)
-visible = false
-
-[node name="Intact_Pipe" parent="Intact_Pipes2" index="0" unique_id=453231027]
-extra_cull_margin = 100.0
-
-[editable path="Intact_Pipes"]
-[editable path="Intact_Pipes2"]
+[node name="Intact_Pipes" parent="." unique_id=1728179329 instance=ExtResource("9_tkig0")]
+transform = Transform3D(5, 0, -8.4703295e-22, -1.7763568e-15, 1.6, -1.7763568e-15, 0, -1.0084958e-21, 5, 0, 0, 0)

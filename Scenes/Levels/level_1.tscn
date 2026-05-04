@@ -3,9 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://dt8t2ejvy7q6u" path="res://Scenes/player.tscn" id="1_tlcug"]
 [ext_resource type="PackedScene" uid="uid://clc5dre31iskm" path="res://addons/godot-xr-tools/xr/start_xr.tscn" id="2_cyadu"]
 [ext_resource type="PackedScene" uid="uid://dyu5lgiudgm3p" path="res://Scenes/Objects/blockchain_component.tscn" id="3_iixi8"]
-[ext_resource type="PackedScene" uid="uid://yitqf7haerdy" path="res://Assets/Models/Table/table.tscn" id="3_xgxfi"]
+[ext_resource type="PackedScene" uid="uid://njdroy1hdlq1" path="res://Assets/Models/Table/Table.glb" id="3_xgxfi"]
 [ext_resource type="PackedScene" uid="uid://bkg7muyrb7lxq" path="res://Scenes/3d_button.tscn" id="5_cyadu"]
-[ext_resource type="PackedScene" uid="uid://ds6a7ejdfondw" path="res://Assets/Models/Server/Server.tscn" id="6_xgxfi"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tlcug"]
 
@@ -19,7 +18,7 @@ glow_enabled = true
 glow_bloom = 0.2
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3mqfk"]
-size = Vector3(2.142, 0.48, 1.245)
+size = Vector3(1.3780293, 0.3533374, 0.9397088)
 
 [sub_resource type="BoxMesh" id="BoxMesh_cyadu"]
 size = Vector3(0.2, 3, 8)
@@ -57,11 +56,21 @@ omni_range = 1.5
 [node name="Table" type="StaticBody3D" parent="." unique_id=275310675]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9099709, 0, -1.75)
 
-[node name="Table" parent="Table" unique_id=1316255771 instance=ExtResource("3_xgxfi")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+[node name="Table" parent="Table" unique_id=102958550 instance=ExtResource("3_xgxfi")]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Table" unique_id=1971503654]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02306366, 0.28044128, -0.020629883)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0023766756, 0.21711, 0.009283066)
+shape = SubResource("BoxShape3D_3mqfk")
+
+[node name="Table2" type="StaticBody3D" parent="." unique_id=277984240]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7951919, 0, -1.7095445)
+
+[node name="Table" parent="Table2" unique_id=703174753 instance=ExtResource("3_xgxfi")]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Table2" unique_id=366276845]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0023766756, 0.21711, 0.009283066)
 shape = SubResource("BoxShape3D_3mqfk")
 
 [node name="DecentralizedComponents" type="Node3D" parent="." unique_id=1005069685]
@@ -82,16 +91,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.35358304, 0.6096899, -1.907
 [node name="BlockchainComponent5" parent="DecentralizedComponents" unique_id=2027818812 instance=ExtResource("3_iixi8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.081265986, 0.60968995, -1.6030328)
 
-[node name="Table2" type="StaticBody3D" parent="." unique_id=1965521795]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.807048, 0, -1.75)
-
-[node name="Table" parent="Table2" unique_id=138543922 instance=ExtResource("3_xgxfi")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Table2" unique_id=1104887830]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02306366, 0.28044128, -0.020629883)
-shape = SubResource("BoxShape3D_3mqfk")
-
 [node name="CentralizedComponents" type="Node3D" parent="." unique_id=1900799817]
 
 [node name="CentralComponent" parent="CentralizedComponents" unique_id=1556335945 instance=ExtResource("3_iixi8")]
@@ -100,19 +99,19 @@ input_number = 4
 output_number = 0
 
 [node name="BlockchainComponent" parent="CentralizedComponents" unique_id=1188579004 instance=ExtResource("3_iixi8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1892512, 0.6096902, -1.7098901)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2121305, 0.6096902, -1.8778564)
 input_number = 0
 
 [node name="BlockchainComponent2" parent="CentralizedComponents" unique_id=2018264266 instance=ExtResource("3_iixi8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5630107, 0.60969007, -1.7219948)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1809232, 0.60969007, -1.4341599)
 input_number = 0
 
 [node name="BlockchainComponent3" parent="CentralizedComponents" unique_id=815411431 instance=ExtResource("3_iixi8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4614275, 0.60969007, -1.7263558)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3677247, 0.60969007, -1.8577234)
 input_number = 0
 
 [node name="BlockchainComponent4" parent="CentralizedComponents" unique_id=1423803013 instance=ExtResource("3_iixi8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1001427, 0.60968995, -1.723523)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3992803, 0.60968995, -1.4254642)
 input_number = 0
 
 [node name="Buttons" type="Node3D" parent="." unique_id=89963063]
@@ -120,13 +119,13 @@ input_number = 0
 [node name="CentralDisableButton" parent="Buttons" unique_id=467292279 instance=ExtResource("5_cyadu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8034588, 1.4002885, -0.9897827)
 
-[node name="BlockchainDisableButton" parent="Buttons" unique_id=417565845 instance=ExtResource("5_cyadu")]
+[node name="BlockchainDisableButton" parent="Buttons" unique_id=55224248 instance=ExtResource("5_cyadu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3404584, 1.4004376, -0.81123954)
 
-[node name="BlockchainDisableButton2" parent="Buttons" unique_id=2062031866 instance=ExtResource("5_cyadu")]
+[node name="BlockchainDisableButton2" parent="Buttons" unique_id=2138992799 instance=ExtResource("5_cyadu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8273438, 1.3989844, -0.7976499)
 
-[node name="BlockchainDisableButton3" parent="Buttons" unique_id=2119973751 instance=ExtResource("5_cyadu")]
+[node name="BlockchainDisableButton3" parent="Buttons" unique_id=1970249916 instance=ExtResource("5_cyadu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.314491, 1.4028615, -0.7840603)
 
 [node name="Box" type="Node3D" parent="." unique_id=2014998134]
@@ -198,18 +197,6 @@ light_energy = 1.5
 shadow_enabled = true
 spot_attenuation = 1.5
 spot_angle = 30.0
-
-[node name="Server2" parent="." unique_id=2068698454 instance=ExtResource("6_xgxfi")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -2.9329445, 0.099999905, -3.166251)
-
-[node name="Server3" parent="." unique_id=1492629546 instance=ExtResource("6_xgxfi")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -1.5113038, 0.099999905, -3.2027857)
-
-[node name="Server4" parent="." unique_id=1690570667 instance=ExtResource("6_xgxfi")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 1.0842332, 0.099999905, -3.1152253)
-
-[node name="Server5" parent="." unique_id=90538746 instance=ExtResource("6_xgxfi")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 1.7230128, 0.099999905, -3.0986755)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1600361334]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7715855, 1.3582108, -1.0401108)

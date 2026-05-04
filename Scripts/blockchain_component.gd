@@ -44,6 +44,7 @@ var unique_id: String
 
 var input_objects := []
 var output_objects := []
+var held_object: XRToolsPickable
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	unique_id = str(get_instance_id())

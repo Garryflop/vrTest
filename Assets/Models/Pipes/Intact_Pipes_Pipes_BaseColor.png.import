@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://y5fclac1uh85"
-path.s3tc="res://.godot/imported/Intact_Pipes_Pipes_BaseColor.1001-Pipes_Alpha.png-781fe072c5a58e6b65ec3a389a0da634.s3tc.ctex"
+uid="uid://1fjdbyhslr35"
+path.s3tc="res://.godot/imported/Intact_Pipes_Pipes_BaseColor.png-5e5666a00dae81318894269d0e2ecd7c.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "005643ff08b4124b704b0649abc6695d"
+"md5": "b05b57177e23d4065a29aa125ca4d957"
 }
 
 [deps]
 
-source_file="res://Assets/Models/Pipes/Intact_Pipes_Pipes_BaseColor.1001-Pipes_Alpha.png"
-dest_files=["res://.godot/imported/Intact_Pipes_Pipes_BaseColor.1001-Pipes_Alpha.png-781fe072c5a58e6b65ec3a389a0da634.s3tc.ctex"]
+source_file="res://Assets/Models/Pipes/Intact_Pipes_Pipes_BaseColor.png"
+dest_files=["res://.godot/imported/Intact_Pipes_Pipes_BaseColor.png-5e5666a00dae81318894269d0e2ecd7c.s3tc.ctex"]
 
 [params]
 

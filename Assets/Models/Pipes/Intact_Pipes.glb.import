@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dcnhm0ahyhar8"
+uid="uid://dvvys2psf77g0"
 path="res://.godot/imported/Intact_Pipes.glb-8930c2699c31576d8c86e099946795c4.scn"
 
 [deps]
@@ -37,18 +37,6 @@ import_script/path=""
 materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
-_subresources={
-"meshes": {
-"Intact_Pipes_Cylinder_001": {
-"generate/lightmap_uv": 0,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 20.0,
-"save_to_file/enabled": false,
-"save_to_file/fallback_path": "",
-"save_to_file/path": ""
-}
-}
-}
+_subresources={}
 gltf/naming_version=2
 gltf/embedded_image_handling=1

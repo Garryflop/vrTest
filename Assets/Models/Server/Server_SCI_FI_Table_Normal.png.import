@@ -2,7 +2,7 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ho1lnuopeulm"
+uid="uid://uo1roojle5ge"
 path.s3tc="res://.godot/imported/Server_SCI_FI_Table_Normal.png-60eda690b120d950182b39d03dde868b.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
@@ -30,7 +30,7 @@ compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=1
-roughness/src_normal="res://Assets/Models/Server_SCI_FI_Table_Normal.png"
+roughness/src_normal="res://Assets/Models/Server/Server_SCI_FI_Table_Normal.png"
 process/channel_remap/red=0
 process/channel_remap/green=1
 process/channel_remap/blue=2

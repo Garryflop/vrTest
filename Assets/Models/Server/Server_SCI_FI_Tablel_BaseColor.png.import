@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dkdetcqyiuy51"
-path.s3tc="res://.godot/imported/Pipes_Metallic.1001.png-a94fe686cd8ba0141f9f75f823f758ce.s3tc.ctex"
+uid="uid://bx61ar4dj8keh"
+path.s3tc="res://.godot/imported/Server_SCI_FI_Tablel_BaseColor.png-c432c6a1f3da92d64b3782b23224a97e.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "455c6b4346fc93ba67ec9f4f75dc3511"
+}
 
 [deps]
 
-source_file="res://Assets/Models/Pipes/Pipes_Metallic.1001.png"
-dest_files=["res://.godot/imported/Pipes_Metallic.1001.png-a94fe686cd8ba0141f9f75f823f758ce.s3tc.ctex"]
+source_file="res://Assets/Models/Server/Server_SCI_FI_Tablel_BaseColor.png"
+dest_files=["res://.godot/imported/Server_SCI_FI_Tablel_BaseColor.png-c432c6a1f3da92d64b3782b23224a97e.s3tc.ctex"]
 
 [params]
 

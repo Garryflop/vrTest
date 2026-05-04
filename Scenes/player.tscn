@@ -72,4 +72,4 @@ show_laser = 2
 laser_length = 1
 
 [node name="PlayerBody" parent="." unique_id=1132407986 instance=ExtResource("4_x3wgy")]
-player_height_max = 1.0
+player_height_max = 0.8

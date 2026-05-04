@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://blaw66nspppbh"
-path.s3tc="res://.godot/imported/Pipes_Emission.1001.png-6713c33763652f189cc0cabe1695606b.s3tc.ctex"
+uid="uid://bek12nqbdy1qy"
+path.s3tc="res://.godot/imported/MonitorV2_SCI_FI_Tablel_BaseColor.png-d9237dd9fe25439ea9f4b25b401a78f1.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "455c6b4346fc93ba67ec9f4f75dc3511"
+}
 
 [deps]
 
-source_file="res://Assets/Models/Pipes/Pipes_Emission.1001.png"
-dest_files=["res://.godot/imported/Pipes_Emission.1001.png-6713c33763652f189cc0cabe1695606b.s3tc.ctex"]
+source_file="res://Assets/Models/MonitorV2/MonitorV2_SCI_FI_Tablel_BaseColor.png"
+dest_files=["res://.godot/imported/MonitorV2_SCI_FI_Tablel_BaseColor.png-d9237dd9fe25439ea9f4b25b401a78f1.s3tc.ctex"]
 
 [params]
 

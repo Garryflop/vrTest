@@ -2,7 +2,7 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://do6tfiy40nw1q"
+uid="uid://vouohemxrs2e"
 path.s3tc="res://.godot/imported/Monitor_SCI_FI_Table_Normal.png-ead7e5f2eeeb0a4e829ce22c2ba0d86a.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
@@ -30,7 +30,7 @@ compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=1
-roughness/src_normal="res://Assets/Models/Monitor_SCI_FI_Table_Normal.png"
+roughness/src_normal="res://Assets/Models/Monitor/Monitor_SCI_FI_Table_Normal.png"
 process/channel_remap/red=0
 process/channel_remap/green=1
 process/channel_remap/blue=2

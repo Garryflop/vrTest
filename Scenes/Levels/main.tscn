@@ -10,7 +10,6 @@
 [ext_resource type="Script" uid="uid://bwgou5oq6tho5" path="res://Scripts/music.gd" id="9_ynf5e"]
 [ext_resource type="PackedScene" uid="uid://vx7xx6qpqgdf" path="res://Scenes/cube_snap_zone.tscn" id="10_hptm8"]
 [ext_resource type="PackedScene" uid="uid://bkg7muyrb7lxq" path="res://Scenes/3d_button.tscn" id="11_0iqpd"]
-[ext_resource type="PackedScene" uid="uid://ds6a7ejdfondw" path="res://Assets/Models/Server/Server.tscn" id="11_asd15"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8gbba"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -116,8 +115,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.30148414, 1.7453315, -1.807
 
 [node name="3DButton" parent="." unique_id=467292279 instance=ExtResource("11_0iqpd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23431659, 1.2692994, -1.525719)
-
-[node name="Server2" parent="." unique_id=2068698454 instance=ExtResource("11_asd15")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -1.462527, 0.05456543, -0.5518539)
 
 [connection signal="button_pressed" from="3DButton" to="BlockchainComponent" method="_on_toggle_state"]
