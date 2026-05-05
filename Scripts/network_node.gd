@@ -46,6 +46,11 @@ func update_visuals() -> void:
     else:
         mesh_instance.set_surface_override_material(0, material_off)
 
-# Requires XRTools function pointer to send this signal
+# Requires XRTools function pointer to send this signal (custom FPS Player)
 func _on_xr_pointer_pressed(_at_position) -> void:
     toggle()
+
+# Standard Godot XR Tools interaction
+func pointer_event(event) -> void:
+    if event.event_type == 2: # Type.PRESSED
+        toggle()
