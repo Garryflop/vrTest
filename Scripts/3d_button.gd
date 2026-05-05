@@ -4,6 +4,11 @@ class_name Button3D
 
 signal button_pressed
 
+@export var visible_monitor: bool = true
+@onready var monitor: Node3D = %MonitorV2
+@onready var static_body_3d: StaticBody3D = %StaticBody3D
+
+
 func _ready():
 	# Wait a frame to ensure the scene inside the viewport is loaded
 	super()
@@ -15,6 +20,9 @@ func _ready():
 	if btn:
 		# Connect the 2D button signal to a local function
 		btn.connect("pressed", _on_inner_button_pressed)
+	
+	if !visible_monitor:
+		monitor.hide()
 
 func _on_inner_button_pressed() -> void:
 	button_pressed.emit()

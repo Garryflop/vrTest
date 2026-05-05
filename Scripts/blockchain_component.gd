@@ -5,6 +5,7 @@ extends Node3D
 
 @onready var connect_object_anchor: Marker3D = %ConnectObjectAnchor
 @onready var connect_object_snap_zone_anchor: Marker3D = %ConnectObjectSnapZoneAnchor
+@onready var button_3d: Button3D = %Button3D
 
 @export var input_number: int = 1
 @export var output_number: int = 1
@@ -47,6 +48,7 @@ var output_objects := []
 var held_object: XRToolsPickable
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	button_3d.static_body_3d.add_collision_exception_with(cube)
 	unique_id = str(get_instance_id())
 	Signals.PlaySound.connect(_right)
 	Signals.ToggleMusic.connect(_wrong)
@@ -56,9 +58,7 @@ func _ready() -> void:
 	setup_connectors(output_number, false)
 	
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+
 
 func setup_connectors(count: int, is_input: bool):
 	if count <= 0:
@@ -113,3 +113,7 @@ func _on_toggle_state() -> void:
 		current_state = state.wrong
 	elif current_state == state.wrong:
 		current_state = state.right
+
+
+func _on_cube_button_pressed() -> void:
+	_on_toggle_state()
