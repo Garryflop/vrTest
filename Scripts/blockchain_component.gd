@@ -17,19 +17,22 @@ enum state {
 	right,
 	wrong
 }
-var current_state: state = state.default : set = _set_state
+var current_state: state = state.right : set = _set_state
 
 func _set_state(new_state: state):
 	current_state = new_state
 	match current_state:
 		state.default:
 			color = Color(0,1,1)
+			is_on = false
 		state.right:
 			color = Color(0,1,0)
+			is_on = true
 			enable_snap_zones()
 			enable_pickables()
 		state.wrong:
 			color = Color(1,0,0)
+			is_on = false
 			reset_blockchain()
 
 var color: Color : set = _set_color
@@ -45,12 +48,26 @@ var unique_id: String
 var input_objects := []
 var output_objects := []
 var held_object: XRToolsPickable
+
+var is_on: bool = true
+var node_id: String = ""
+var initial_transform: Transform3D
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	unique_id = str(get_instance_id())
+	node_id = self.name
+	initial_transform = global_transform
 	Signals.PlaySound.connect(_right)
 	Signals.ToggleMusic.connect(_wrong)
 	
+	# Мы убрали автоматическую регистрацию отсюда, 
+	# потому что level_1_test.gd будет назначать уникальные ID перед регистрацией.
+	# if NetworkManager:
+	# 	NetworkManager.register_node(node_id, self)
+		
+	# Инициализируем визуальное состояние
+	self.current_state = state.right
 	
 	setup_connectors(input_number, true)
 	setup_connectors(output_number, false)
@@ -113,3 +130,11 @@ func _on_toggle_state() -> void:
 		current_state = state.wrong
 	elif current_state == state.wrong:
 		current_state = state.right
+
+func reset() -> void:
+	self.current_state = state.right
+	global_transform = initial_transform
+	if cube and cube is RigidBody3D:
+		cube.linear_velocity = Vector3.ZERO
+		cube.angular_velocity = Vector3.ZERO
+

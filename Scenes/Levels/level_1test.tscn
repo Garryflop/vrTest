@@ -1,0 +1,228 @@
+[gd_scene format=3 uid="uid://n64oo1kbx83d"]
+
+[ext_resource type="Script" uid="uid://o7cnbcfdksmv" path="res://Scripts/level_1_test.gd" id="1_lvlcmd"]
+[ext_resource type="PackedScene" uid="uid://njdroy1hdlq1" path="res://Assets/Models/Table/Table.glb" id="3_aml6n"]
+[ext_resource type="PackedScene" uid="uid://dyu5lgiudgm3p" path="res://Scenes/Objects/blockchain_component.tscn" id="4_1nb6q"]
+[ext_resource type="PackedScene" uid="uid://bkg7muyrb7lxq" path="res://Scenes/3d_button.tscn" id="5_5eo54"]
+[ext_resource type="PackedScene" uid="uid://b2d8x7c1x4f" path="res://Scenes/fps_player.tscn" id="6_fps"]
+[ext_resource type="PackedScene" path="res://Scenes/UI/main_board.tscn" id="7_board"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tlcug"]
+
+[sub_resource type="Sky" id="Sky_4dpyx"]
+sky_material = SubResource("ProceduralSkyMaterial_tlcug")
+
+[sub_resource type="Environment" id="Environment_3mqfk"]
+background_mode = 1
+sky = SubResource("Sky_4dpyx")
+glow_enabled = true
+glow_bloom = 0.2
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3mqfk"]
+size = Vector3(1.3780293, 0.3533374, 0.9397088)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xgxfi"]
+size = Vector3(0.2, 3, 8)
+
+[sub_resource type="BoxMesh" id="BoxMesh_cyadu"]
+size = Vector3(0.2, 3, 8)
+
+[sub_resource type="BoxMesh" id="BoxMesh_xgxfi"]
+size = Vector3(8, 3, 0.2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5f3p6"]
+size = Vector3(8, 3, 0.2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_iixi8"]
+size = Vector3(8, 0.2, 8)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cyadu"]
+size = Vector3(8, 0.2, 8)
+
+[node name="Level1" type="Node3D" unique_id=251571411]
+script = ExtResource("1_lvlcmd")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1005831693]
+environment = SubResource("Environment_3mqfk")
+
+[node name="Table" type="StaticBody3D" parent="." unique_id=275310675]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9099709, 0, -1.75)
+
+[node name="Table" parent="Table" unique_id=102958550 instance=ExtResource("3_aml6n")]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Table" unique_id=1971503654]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0023766756, 0.21711, 0.009283066)
+shape = SubResource("BoxShape3D_3mqfk")
+
+[node name="Table2" type="StaticBody3D" parent="." unique_id=277984240]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7951919, 0, -1.7095445)
+
+[node name="Table" parent="Table2" unique_id=703174753 instance=ExtResource("3_aml6n")]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Table2" unique_id=366276845]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0023766756, 0.21711, 0.009283066)
+shape = SubResource("BoxShape3D_3mqfk")
+
+[node name="DecentralizedComponents" type="Node3D" parent="." unique_id=1005069685]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9099709, 0, 0)
+
+[node name="BlockchainComponent" parent="DecentralizedComponents" unique_id=621460339 instance=ExtResource("4_1nb6q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.40714848, 0.60968995, -1.430007)
+
+[node name="BlockchainComponent2" parent="DecentralizedComponents" unique_id=1981217545 instance=ExtResource("4_1nb6q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.28045195, 0.60968995, -1.4230784)
+
+[node name="BlockchainComponent3" parent="DecentralizedComponents" unique_id=718444212 instance=ExtResource("4_1nb6q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.46253484, 0.6096899, -1.8912842)
+
+[node name="BlockchainComponent4" parent="DecentralizedComponents" unique_id=724377318 instance=ExtResource("4_1nb6q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.35358304, 0.6096899, -1.9075329)
+
+[node name="BlockchainComponent5" parent="DecentralizedComponents" unique_id=2027818812 instance=ExtResource("4_1nb6q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.081265986, 0.60968995, -1.6030328)
+
+[node name="CentralizedComponents" type="Node3D" parent="." unique_id=1900799817]
+
+[node name="CentralComponent" parent="CentralizedComponents" unique_id=1556335945 instance=ExtResource("4_1nb6q")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1.8193995, 0.60968995, -1.7275605)
+input_number = 4
+output_number = 0
+
+[node name="BlockchainComponent" parent="CentralizedComponents" unique_id=1188579004 instance=ExtResource("4_1nb6q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2121305, 0.6096902, -1.8778564)
+input_number = 0
+
+[node name="BlockchainComponent2" parent="CentralizedComponents" unique_id=2018264266 instance=ExtResource("4_1nb6q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1809232, 0.60969007, -1.4341599)
+input_number = 0
+
+[node name="BlockchainComponent3" parent="CentralizedComponents" unique_id=815411431 instance=ExtResource("4_1nb6q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3677247, 0.60969007, -1.8577234)
+input_number = 0
+
+[node name="BlockchainComponent4" parent="CentralizedComponents" unique_id=1423803013 instance=ExtResource("4_1nb6q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3992803, 0.60968995, -1.4254642)
+input_number = 0
+
+[node name="Buttons" type="Node3D" parent="." unique_id=89963063]
+
+[node name="CentralDisableButton" parent="Buttons" unique_id=467292279 instance=ExtResource("5_5eo54")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8034588, 1.4002885, -0.9897827)
+
+[node name="BlockchainDisableButton" parent="Buttons" unique_id=55224248 instance=ExtResource("5_5eo54")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3404584, 1.4004376, -0.81123954)
+
+[node name="BlockchainDisableButton2" parent="Buttons" unique_id=2138992799 instance=ExtResource("5_5eo54")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8273438, 1.3989844, -0.7976499)
+
+[node name="BlockchainDisableButton3" parent="Buttons" unique_id=1970249916 instance=ExtResource("5_5eo54")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.314491, 1.4028615, -0.7840603)
+
+[node name="Box" type="Node3D" parent="." unique_id=2014998134]
+
+[node name="Wall" type="StaticBody3D" parent="Box" unique_id=527165134]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1.5, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Box/Wall" unique_id=253791036]
+shape = SubResource("BoxShape3D_xgxfi")
+
+[node name="Wall2" type="StaticBody3D" parent="Box" unique_id=1438078205]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1.5, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Box/Wall2" unique_id=588036488]
+mesh = SubResource("BoxMesh_cyadu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Box/Wall2" unique_id=1707848144]
+shape = SubResource("BoxShape3D_xgxfi")
+
+[node name="Wall3" type="StaticBody3D" parent="Box" unique_id=485574342]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 4)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Box/Wall3" unique_id=701693187]
+mesh = SubResource("BoxMesh_xgxfi")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Box/Wall3" unique_id=1701817448]
+shape = SubResource("BoxShape3D_5f3p6")
+
+[node name="Wall4" type="StaticBody3D" parent="Box" unique_id=27536075]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -4)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Box/Wall4" unique_id=533225398]
+mesh = SubResource("BoxMesh_xgxfi")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Box/Wall4" unique_id=860561307]
+shape = SubResource("BoxShape3D_5f3p6")
+
+[node name="Floor" type="StaticBody3D" parent="Box" unique_id=435631096]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Box/Floor" unique_id=1349318350]
+mesh = SubResource("BoxMesh_iixi8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Box/Floor" unique_id=132814355]
+shape = SubResource("BoxShape3D_cyadu")
+
+[node name="Roof" type="StaticBody3D" parent="Box" unique_id=124376763]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+visible = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Box/Roof" unique_id=32202204]
+mesh = SubResource("BoxMesh_iixi8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Box/Roof" unique_id=374979790]
+shape = SubResource("BoxShape3D_cyadu")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=436631518]
+transform = Transform3D(1, 0, 0, 0, 0.49999997, 0.86602545, 0, -0.86602545, 0.49999997, -1.756, 2.75, -0.17)
+light_color = Color(0.735357, 1, 1, 1)
+shadow_enabled = true
+spot_attenuation = 1.5
+spot_angle = 30.0
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="." unique_id=926392312]
+transform = Transform3D(1, 0, 0, 0, 0.49999997, 0.86602545, 0, -0.86602545, 0.49999997, 1.8593972, 2.75, -0.11794458)
+light_energy = 1.5
+shadow_enabled = true
+spot_attenuation = 1.5
+spot_angle = 30.0
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1600361334]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7715855, 1.3582108, -1.0401108)
+light_color = Color(0.735357, 1, 1, 1)
+light_energy = 1.5
+omni_range = 2.099193
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="." unique_id=1215000891]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8227574, 1.3582108, -0.8949192)
+light_energy = 1.5
+omni_range = 2.099193
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="." unique_id=2148920]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0757748, 0.8113568, -2.8342938)
+omni_range = 0.7273517
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="." unique_id=642979340]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7180221, 0.8113568, -2.8342938)
+omni_range = 0.7273517
+
+[node name="OmniLight3D5" type="OmniLight3D" parent="." unique_id=1433838122]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5058639, 0.8113568, -2.9314513)
+light_color = Color(0.735357, 1, 1, 1)
+omni_range = 0.7273517
+
+[node name="OmniLight3D6" type="OmniLight3D" parent="." unique_id=1212486682]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9794884, 0.8113568, -2.8911185)
+light_color = Color(0.735357, 1, 1, 1)
+omni_range = 0.7273517
+
+[node name="FPSPlayer" parent="." unique_id=1973206484 instance=ExtResource("6_fps")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 1.5, 2.5)
+
+[node name="MainBoard" parent="." unique_id=1582689944 instance=ExtResource("7_board")]
+transform = Transform3D(0.49980578, 0, 0.013934799, 0, 0.5, 0, -0.013934799, 0, 0.49980578, 0.151106, 1.0271897, -2.5981295)
+
+[connection signal="button_pressed" from="Buttons/CentralDisableButton" to="CentralizedComponents/CentralComponent" method="_on_toggle_state"]
+[connection signal="button_pressed" from="Buttons/BlockchainDisableButton" to="DecentralizedComponents/BlockchainComponent" method="_on_toggle_state"]
+[connection signal="button_pressed" from="Buttons/BlockchainDisableButton2" to="DecentralizedComponents/BlockchainComponent2" method="_on_toggle_state"]
+[connection signal="button_pressed" from="Buttons/BlockchainDisableButton3" to="DecentralizedComponents/BlockchainComponent3" method="_on_toggle_state"]

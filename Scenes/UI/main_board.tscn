@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://df8raw0e1r2t3"]
+
+[ext_resource type="Script" path="res://Scripts/main_board.gd" id="1_bd"]
+[ext_resource type="Script" path="res://Scripts/board_button.gd" id="2_bb"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_panel"]
+size = Vector3(4, 2.5, 0.1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_panel"]
+albedo_color = Color(0.2, 0.2, 0.2, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_btn"]
+size = Vector3(1, 0.4, 0.15)
+
+[sub_resource type="BoxMesh" id="BoxMesh_btn"]
+size = Vector3(1, 0.4, 0.15)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_btn"]
+albedo_color = Color(0.3, 0.4, 0.8, 1)
+
+[node name="MainBoard" type="Node3D"]
+script = ExtResource("1_bd")
+
+[node name="PanelMesh" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_panel")
+surface_material_override/0 = SubResource("StandardMaterial3D_panel")
+
+[node name="StatusLabel" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0.06)
+text = "Status:
+Waiting for transaction..."
+font_size = 64
+outline_size = 12
+
+[node name="BtnDecent" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2, -0.5, 0.05)
+script = ExtResource("2_bb")
+action_name = "send_decent"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BtnDecent"]
+shape = SubResource("BoxShape3D_btn")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="BtnDecent"]
+mesh = SubResource("BoxMesh_btn")
+surface_material_override/0 = SubResource("StandardMaterial3D_btn")
+
+[node name="Label3D" type="Label3D" parent="BtnDecent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.08)
+text = "Send Decent"
+font_size = 32
+
+[node name="BtnCent" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0.05)
+script = ExtResource("2_bb")
+action_name = "send_cent"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BtnCent"]
+shape = SubResource("BoxShape3D_btn")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="BtnCent"]
+mesh = SubResource("BoxMesh_btn")
+surface_material_override/0 = SubResource("StandardMaterial3D_btn")
+
+[node name="Label3D" type="Label3D" parent="BtnCent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.08)
+text = "Send Cent"
+font_size = 32
+
+[node name="BtnReset" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2, -0.5, 0.05)
+script = ExtResource("2_bb")
+action_name = "reset"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BtnReset"]
+shape = SubResource("BoxShape3D_btn")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="BtnReset"]
+mesh = SubResource("BoxMesh_btn")
+surface_material_override/0 = SubResource("StandardMaterial3D_btn")
+
+[node name="Label3D" type="Label3D" parent="BtnReset"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.08)
+text = "Reset All"
+font_size = 32

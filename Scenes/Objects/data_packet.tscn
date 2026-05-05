@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://df7w8ya1ay0q1"]
+
+[ext_resource type="Script" path="res://Scripts/data_packet.gd" id="1_packet"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y1lo1"]
+albedo_color = Color(1, 1, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_packet"]
+material = SubResource("StandardMaterial3D_y1lo1")
+size = Vector3(0.1, 0.1, 0.1)
+
+[node name="DataPacket" type="Node3D"]
+script = ExtResource("1_packet")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_packet")
