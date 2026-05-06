@@ -32,8 +32,9 @@ Waiting for transaction..."
 font_size = 64
 outline_size = 12
 
-[node name="BtnDecent" type="Area3D" parent="."]
+[node name="BtnDecent" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2, -0.5, 0.05)
+collision_layer = 5242881
 script = ExtResource("2_bb")
 action_name = "send_decent"
 
@@ -49,8 +50,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.08)
 text = "Send Decent"
 font_size = 32
 
-[node name="BtnCent" type="Area3D" parent="."]
+[node name="BtnCent" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0.05)
+collision_layer = 5242881
 script = ExtResource("2_bb")
 action_name = "send_cent"
 
@@ -66,8 +68,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.08)
 text = "Send Cent"
 font_size = 32
 
-[node name="BtnReset" type="Area3D" parent="."]
+[node name="BtnReset" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2, -0.5, 0.05)
+collision_layer = 5242881
 script = ExtResource("2_bb")
 action_name = "reset"
 

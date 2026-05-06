@@ -1,11 +1,12 @@
 [gd_scene format=3 uid="uid://n64oo1kbx83d"]
 
 [ext_resource type="Script" uid="uid://o7cnbcfdksmv" path="res://Scripts/level_1_test.gd" id="1_lvlcmd"]
+[ext_resource type="PackedScene" uid="uid://clc5dre31iskm" path="res://addons/godot-xr-tools/xr/start_xr.tscn" id="2_aml6n"]
+[ext_resource type="PackedScene" uid="uid://dt8t2ejvy7q6u" path="res://Scenes/player.tscn" id="3_1nb6q"]
 [ext_resource type="PackedScene" uid="uid://njdroy1hdlq1" path="res://Assets/Models/Table/Table.glb" id="3_aml6n"]
 [ext_resource type="PackedScene" uid="uid://dyu5lgiudgm3p" path="res://Scenes/Objects/blockchain_component.tscn" id="4_1nb6q"]
 [ext_resource type="PackedScene" uid="uid://bkg7muyrb7lxq" path="res://Scenes/3d_button.tscn" id="5_5eo54"]
-[ext_resource type="PackedScene" uid="uid://b2d8x7c1x4f" path="res://Scenes/fps_player.tscn" id="6_fps"]
-[ext_resource type="PackedScene" path="res://Scenes/UI/main_board.tscn" id="7_board"]
+[ext_resource type="PackedScene" uid="uid://df8raw0e1r2t3" path="res://Scenes/UI/main_board.tscn" id="7_board"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tlcug"]
 
@@ -44,6 +45,10 @@ script = ExtResource("1_lvlcmd")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1005831693]
 environment = SubResource("Environment_3mqfk")
+
+[node name="StartXR" parent="." unique_id=953625414 instance=ExtResource("2_aml6n")]
+
+[node name="Player" parent="." unique_id=1392519515 instance=ExtResource("3_1nb6q")]
 
 [node name="Table" type="StaticBody3D" parent="." unique_id=275310675]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9099709, 0, -1.75)
@@ -215,9 +220,6 @@ omni_range = 0.7273517
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9794884, 0.8113568, -2.8911185)
 light_color = Color(0.735357, 1, 1, 1)
 omni_range = 0.7273517
-
-[node name="FPSPlayer" parent="." unique_id=1973206484 instance=ExtResource("6_fps")]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 1.5, 2.5)
 
 [node name="MainBoard" parent="." unique_id=1582689944 instance=ExtResource("7_board")]
 transform = Transform3D(0.49980578, 0, 0.013934799, 0, 0.5, 0, -0.013934799, 0, 0.49980578, 0.151106, 1.0271897, -2.5981295)
