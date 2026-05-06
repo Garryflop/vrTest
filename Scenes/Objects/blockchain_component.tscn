@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://fgp3v54bdycq" path="res://Scenes/Objects/connect_object.tscn" id="11_cqx54"]
 [ext_resource type="PackedScene" uid="uid://bcclikhgsbccj" path="res://Assets/Models/Cube/Cube.glb" id="11_ea7p6"]
 [ext_resource type="PackedScene" uid="uid://bact5mcnrbrnn" path="res://Scenes/Objects/connect_object_snap_zone.tscn" id="12_s1uvy"]
+[ext_resource type="PackedScene" uid="uid://bkg7muyrb7lxq" path="res://Scenes/3d_button.tscn" id="19_wrwdc"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dt3qw"]
 size = Vector3(0.1, 0.1, 0.1)
@@ -103,6 +104,8 @@ grow_amount = 0.001
 
 [node name="BlockchainComponent" type="Node3D" unique_id=621460339]
 script = ExtResource("1_1b67i")
+input_number = 0
+output_number = 0
 input_scene = ExtResource("11_cqx54")
 output_scene = ExtResource("12_s1uvy")
 
@@ -112,6 +115,7 @@ collision_layer = 1048582
 collision_mask = 131075
 freeze_mode = 1
 script = ExtResource("1_r3q6i")
+enabled = false
 ranged_grab_method = 0
 second_hand_grab = 2
 
@@ -154,6 +158,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.055, 0, 0)
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.055, 0, 0)
 
+[node name="Button3D" parent="Cube" unique_id=467292279 instance=ExtResource("19_wrwdc")]
+unique_name_in_owner = true
+transform = Transform3D(0.4, 0, 0, 0, 0.55, 0, 0, 0, 6, 0, 0, 0.061)
+screen_visible = false
+
 [node name="Label3D" type="Label3D" parent="Cube" unique_id=1317204945]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.13200676, 0)
 visible = false
@@ -161,3 +170,5 @@ pixel_size = 0.002
 modulate = Color(1, 1, 1, 0.23529412)
 outline_modulate = Color(0, 0, 0, 0)
 text = "h:0000"
+
+[connection signal="button_pressed" from="Cube/Button3D" to="." method="_on_cube_button_pressed"]

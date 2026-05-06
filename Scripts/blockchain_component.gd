@@ -5,6 +5,7 @@ extends Node3D
 
 @onready var connect_object_anchor: Marker3D = %ConnectObjectAnchor
 @onready var connect_object_snap_zone_anchor: Marker3D = %ConnectObjectSnapZoneAnchor
+@onready var button: Button3D = %Button3D
 
 @export var input_number: int = 1
 @export var output_number: int = 1
@@ -60,6 +61,8 @@ func _ready() -> void:
 	initial_transform = global_transform
 	Signals.PlaySound.connect(_right)
 	Signals.ToggleMusic.connect(_wrong)
+	
+	button.static_body.add_collision_exception_with(cube)
 	
 	# Мы убрали автоматическую регистрацию отсюда, 
 	# потому что level_1_test.gd будет назначать уникальные ID перед регистрацией.
@@ -139,3 +142,6 @@ func reset() -> void:
 		cube.linear_velocity = Vector3.ZERO
 		cube.angular_velocity = Vector3.ZERO
 
+
+func _on_cube_button_pressed() -> void:
+	_on_toggle_state()

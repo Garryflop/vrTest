@@ -92,24 +92,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.081265986, 0.60968995, -1.
 
 [node name="CentralComponent" parent="CentralizedComponents" unique_id=1556335945 instance=ExtResource("4_1nb6q")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1.8193995, 0.60968995, -1.7275605)
-input_number = 4
-output_number = 0
 
 [node name="BlockchainComponent" parent="CentralizedComponents" unique_id=1188579004 instance=ExtResource("4_1nb6q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2121305, 0.6096902, -1.8778564)
-input_number = 0
 
 [node name="BlockchainComponent2" parent="CentralizedComponents" unique_id=2018264266 instance=ExtResource("4_1nb6q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1809232, 0.60969007, -1.4341599)
-input_number = 0
 
 [node name="BlockchainComponent3" parent="CentralizedComponents" unique_id=815411431 instance=ExtResource("4_1nb6q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3677247, 0.60969007, -1.8577234)
-input_number = 0
 
 [node name="BlockchainComponent4" parent="CentralizedComponents" unique_id=1423803013 instance=ExtResource("4_1nb6q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3992803, 0.60968995, -1.4254642)
-input_number = 0
 
 [node name="Buttons" type="Node3D" parent="." unique_id=89963063]
 

@@ -9,24 +9,25 @@
 transparency = 1
 shading_mode = 0
 
-[sub_resource type="QuadMesh" id="QuadMesh_0mc7d"]
+[sub_resource type="QuadMesh" id="QuadMesh_62cct"]
 resource_local_to_scene = true
 size = Vector2(0.3, 0.2)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_bmhu4"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_0mc7d"]
 viewport_path = NodePath("Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tvlke"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bmhu4"]
 transparency = 1
 shading_mode = 0
-albedo_texture = SubResource("ViewportTexture_bmhu4")
+albedo_texture = SubResource("ViewportTexture_0mc7d")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_eob2q"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_tvlke"]
 resource_local_to_scene = true
 size = Vector3(0.3, 0.2, 0.02)
 
 [node name="Button3D" unique_id=467292279 instance=ExtResource("1_4bgi6")]
 script = ExtResource("2_8n0cq")
+screen_visible = true
 screen_size = Vector2(0.3, 0.2)
 scene = ExtResource("3_8n0cq")
 viewport_size = Vector2(1152, 648)
@@ -39,16 +40,19 @@ scene_properties_keys = PackedStringArray()
 size = Vector2i(1152, 648)
 
 [node name="MonitorV2" parent="." index="1" unique_id=261614484 instance=ExtResource("4_62cct")]
+unique_name_in_owner = true
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, -0.1, -0.009)
 
 [node name="Screen" parent="." index="2"]
+unique_name_in_owner = true
 cast_shadow = 0
-mesh = SubResource("QuadMesh_0mc7d")
-surface_material_override/0 = SubResource("StandardMaterial3D_tvlke")
+mesh = SubResource("QuadMesh_62cct")
+surface_material_override/0 = SubResource("StandardMaterial3D_bmhu4")
 
 [node name="StaticBody3D" parent="." index="3"]
+unique_name_in_owner = true
 screen_size = Vector2(0.3, 0.2)
 viewport_size = Vector2(1152, 648)
 
 [node name="CollisionShape3D" parent="StaticBody3D" index="0"]
-shape = SubResource("BoxShape3D_eob2q")
+shape = SubResource("BoxShape3D_tvlke")

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://df8raw0e1r2t3"]
 
-[ext_resource type="Script" path="res://Scripts/main_board.gd" id="1_bd"]
-[ext_resource type="Script" path="res://Scripts/board_button.gd" id="2_bb"]
+[ext_resource type="Script" uid="uid://x21q7t3aqcxd" path="res://Scripts/main_board.gd" id="1_bd"]
+[ext_resource type="Script" uid="uid://d1kw5dib1i2rm" path="res://Scripts/board_button.gd" id="2_bb"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_panel"]
 size = Vector3(4, 2.5, 0.1)
@@ -18,70 +18,69 @@ size = Vector3(1, 0.4, 0.15)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_btn"]
 albedo_color = Color(0.3, 0.4, 0.8, 1)
 
-[node name="MainBoard" type="Node3D"]
+[node name="MainBoard" type="Node3D" unique_id=1485064927]
 script = ExtResource("1_bd")
 
-[node name="PanelMesh" type="MeshInstance3D" parent="."]
+[node name="PanelMesh" type="MeshInstance3D" parent="." unique_id=1189680396]
 mesh = SubResource("BoxMesh_panel")
 surface_material_override/0 = SubResource("StandardMaterial3D_panel")
 
-[node name="StatusLabel" type="Label3D" parent="."]
+[node name="StatusLabel" type="Label3D" parent="." unique_id=235328377]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0.06)
 text = "Status:
 Waiting for transaction..."
 font_size = 64
-outline_size = 12
 
-[node name="BtnDecent" type="StaticBody3D" parent="."]
+[node name="BtnDecent" type="StaticBody3D" parent="." unique_id=413104640]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2, -0.5, 0.05)
-collision_layer = 5242881
+collision_layer = 5242880
+collision_mask = 0
 script = ExtResource("2_bb")
 action_name = "send_decent"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="BtnDecent"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BtnDecent" unique_id=639696728]
 shape = SubResource("BoxShape3D_btn")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="BtnDecent"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="BtnDecent" unique_id=789795227]
 mesh = SubResource("BoxMesh_btn")
 surface_material_override/0 = SubResource("StandardMaterial3D_btn")
 
-[node name="Label3D" type="Label3D" parent="BtnDecent"]
+[node name="Label3D" type="Label3D" parent="BtnDecent" unique_id=851443457]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.08)
 text = "Send Decent"
-font_size = 32
 
-[node name="BtnCent" type="StaticBody3D" parent="."]
+[node name="BtnCent" type="StaticBody3D" parent="." unique_id=236539792]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0.05)
-collision_layer = 5242881
+collision_layer = 5242880
+collision_mask = 0
 script = ExtResource("2_bb")
 action_name = "send_cent"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="BtnCent"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BtnCent" unique_id=1951270852]
 shape = SubResource("BoxShape3D_btn")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="BtnCent"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="BtnCent" unique_id=3814539]
 mesh = SubResource("BoxMesh_btn")
 surface_material_override/0 = SubResource("StandardMaterial3D_btn")
 
-[node name="Label3D" type="Label3D" parent="BtnCent"]
+[node name="Label3D" type="Label3D" parent="BtnCent" unique_id=757811765]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.08)
 text = "Send Cent"
-font_size = 32
 
-[node name="BtnReset" type="StaticBody3D" parent="."]
+[node name="BtnReset" type="StaticBody3D" parent="." unique_id=918810917]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2, -0.5, 0.05)
-collision_layer = 5242881
+collision_layer = 5242880
+collision_mask = 0
 script = ExtResource("2_bb")
 action_name = "reset"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="BtnReset"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BtnReset" unique_id=1783663971]
 shape = SubResource("BoxShape3D_btn")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="BtnReset"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="BtnReset" unique_id=403074751]
 mesh = SubResource("BoxMesh_btn")
 surface_material_override/0 = SubResource("StandardMaterial3D_btn")
 
-[node name="Label3D" type="Label3D" parent="BtnReset"]
+[node name="Label3D" type="Label3D" parent="BtnReset" unique_id=1523183365]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.08)
 text = "Reset All"
-font_size = 32
