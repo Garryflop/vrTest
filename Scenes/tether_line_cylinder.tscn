@@ -8,4 +8,4 @@ transform = Transform3D(-4.3711387e-10, 0.0754693, -4.3711387e-10, 0, -3.2988678
 script = ExtResource("1_g5tvc")
 
 [node name="Intact_Pipes" parent="." unique_id=1728179329 instance=ExtResource("9_tkig0")]
-transform = Transform3D(5, 0, -8.4703295e-22, -1.7763568e-15, 1.6, -1.7763568e-15, 0, -1.0084958e-21, 5, 0, 0, 0)
+transform = Transform3D(5, 0, 0, 0, 1.6, 0, 0, 0, 5, 0, 0, 0)

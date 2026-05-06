@@ -2,6 +2,7 @@ extends Node3D
 
 var packet_scene: PackedScene = preload("res://Scenes/Objects/data_packet.tscn")
 var pipe_scene: PackedScene = preload("res://Assets/Models/Pipes/Intact_Pipes.glb")
+var tether_scene: PackedScene = preload("res://Scenes/tether_line_cylinder.tscn")
 
 @onready var main_board = $MainBoard
 
@@ -23,7 +24,8 @@ func _ready() -> void:
 		$DecentralizedComponents/BlockchainComponent2,
 		$DecentralizedComponents/BlockchainComponent3,
 		$DecentralizedComponents/BlockchainComponent4,
-		$DecentralizedComponents/BlockchainComponent5
+		$DecentralizedComponents/BlockchainComponent5,
+		$DecentralizedComponents/BlockchainComponent6
 	]
 	
 	# Register decentralized nodes securely with unique string IDs
@@ -49,27 +51,31 @@ func make_connection(node_a: Node3D, node_b: Node3D) -> void:
 	NetworkManager.add_connection(node_a.node_id, node_b.node_id)
 	
 	# Draw visual pipe between them
-	var pipe_inst = pipe_scene.instantiate()
+	var pipe_inst = tether_scene.instantiate()
+	pipe_inst.cube = node_a.cube
+	pipe_inst.connect_object = node_b.cube
+	pipe_inst.is_placed = true
+	pipe_inst.thickness = 5
 	add_child(pipe_inst)
 	
-	var distance = node_a.global_position.distance_to(node_b.global_position)
-	
-	# Position midway and lower it down slightly
-	var mid_pos = (node_a.global_position + node_b.global_position) / 2
-	mid_pos.y -= 0.15
-	
-	var target_pos = node_b.global_position
-	target_pos.y -= 0.15
-	
-	# Point A to B
-	pipe_inst.look_at_from_position(mid_pos, target_pos, Vector3.UP)
-	
-	# Fix orientation so the pipe points its height towards the target
-	pipe_inst.rotate_object_local(Vector3(1, 0, 0), PI/2)
-	
-	# Scale the pipe to stretch correctly and make it thinner
-	# X and Z change the thickness, Y stretches the length
-	pipe_inst.scale = Vector3(0.15, distance / 2.0, 0.15) 
+	#var distance = node_a.global_position.distance_to(node_b.global_position)
+	#
+	## Position midway and lower it down slightly
+	#var mid_pos = (node_a.global_position + node_b.global_position) / 2
+	#mid_pos.y -= 0.15
+	#
+	#var target_pos = node_b.global_position
+	#target_pos.y -= 0.15
+	#
+	## Point A to B
+	#pipe_inst.look_at_from_position(mid_pos, target_pos, Vector3.UP)
+	#
+	## Fix orientation so the pipe points its height towards the target
+	#pipe_inst.rotate_object_local(Vector3(1, 0, 0), PI/2)
+	#
+	## Scale the pipe to stretch correctly and make it thinner
+	## X and Z change the thickness, Y stretches the length
+	#pipe_inst.scale = Vector3(0.15, distance / 2.0, 0.15) 
 
 func setup_centralized() -> void:
 	var central = $CentralizedComponents/CentralComponent
@@ -77,7 +83,8 @@ func setup_centralized() -> void:
 		$CentralizedComponents/BlockchainComponent,
 		$CentralizedComponents/BlockchainComponent2,
 		$CentralizedComponents/BlockchainComponent3,
-		$CentralizedComponents/BlockchainComponent4
+		$CentralizedComponents/BlockchainComponent4,
+		$CentralizedComponents/BlockchainComponent5
 	]
 	
 	central.node_id = "CentralComponent"
