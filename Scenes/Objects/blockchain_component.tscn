@@ -108,7 +108,7 @@ output_scene = ExtResource("12_s1uvy")
 
 [node name="Cube" type="RigidBody3D" parent="." unique_id=1305525191 groups=["Cube"]]
 unique_name_in_owner = true
-collision_layer = 6
+collision_layer = 1048582
 collision_mask = 131075
 freeze_mode = 1
 script = ExtResource("1_r3q6i")

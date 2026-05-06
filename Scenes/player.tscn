@@ -47,9 +47,10 @@ grab_distance = 0.15
 
 [node name="FunctionPointer" parent="LeftHand" unique_id=2063322424 instance=ExtResource("4_8erm5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02, 0.05, -0.1)
-collision_mask = 5242881
+collision_mask = 5242887
 collide_with_areas = true
-show_laser = 2
+collide_with_bodies = true
+show_laser = 1
 laser_length = 1
 
 [node name="FunctionTeleport" parent="LeftHand" unique_id=1363324819 instance=ExtResource("8_gymyn")]
@@ -70,9 +71,10 @@ grab_distance = 0.15
 
 [node name="FunctionPointer" parent="RightHand" unique_id=534504831 instance=ExtResource("4_8erm5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.02, 0.05, -0.1)
-collision_mask = 5242881
+collision_mask = 5242887
 collide_with_areas = true
-show_laser = 2
+collide_with_bodies = true
+show_laser = 1
 laser_length = 1
 
 [node name="PlayerBody" parent="." unique_id=1132407986 instance=ExtResource("4_x3wgy")]

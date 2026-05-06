@@ -73,9 +73,10 @@ func _ready() -> void:
 	setup_connectors(output_number, false)
 	
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+# Called when the user presses action/trigger button over the object (XRTools method)
+func pointer_event(event) -> void:
+	if event.event_type == 2: # 2 is PRESSED
+		_on_toggle_state()
 
 func setup_connectors(count: int, is_input: bool):
 	if count <= 0:
