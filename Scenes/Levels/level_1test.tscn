@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://n64oo1kbx83d"]
 
 [ext_resource type="Script" uid="uid://o7cnbcfdksmv" path="res://Scripts/level_1_test.gd" id="1_lvlcmd"]
-[ext_resource type="PackedScene" uid="uid://clc5dre31iskm" path="res://addons/godot-xr-tools/xr/start_xr.tscn" id="2_aml6n"]
 [ext_resource type="PackedScene" uid="uid://dt8t2ejvy7q6u" path="res://Scenes/player.tscn" id="3_1nb6q"]
 [ext_resource type="PackedScene" uid="uid://njdroy1hdlq1" path="res://Assets/Models/Table/Table.glb" id="3_aml6n"]
 [ext_resource type="PackedScene" uid="uid://dyu5lgiudgm3p" path="res://Scenes/Objects/blockchain_component.tscn" id="4_1nb6q"]
@@ -46,9 +45,7 @@ script = ExtResource("1_lvlcmd")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1005831693]
 environment = SubResource("Environment_3mqfk")
 
-[node name="StartXR" parent="." unique_id=953625414 instance=ExtResource("2_aml6n")]
-
-[node name="Player" parent="." unique_id=1392519515 instance=ExtResource("3_1nb6q")]
+[node name="XROrigin3D" parent="." unique_id=1392519515 instance=ExtResource("3_1nb6q")]
 
 [node name="Table" type="StaticBody3D" parent="." unique_id=275310675]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9099709, 0, -1.75)
@@ -228,3 +225,5 @@ transform = Transform3D(0.49980578, 0, 0.013934799, 0, 0.5, 0, -0.013934799, 0, 
 [connection signal="button_pressed" from="Buttons/BlockchainDisableButton" to="DecentralizedComponents/BlockchainComponent" method="_on_toggle_state"]
 [connection signal="button_pressed" from="Buttons/BlockchainDisableButton2" to="DecentralizedComponents/BlockchainComponent2" method="_on_toggle_state"]
 [connection signal="button_pressed" from="Buttons/BlockchainDisableButton3" to="DecentralizedComponents/BlockchainComponent3" method="_on_toggle_state"]
+
+[editable path="XROrigin3D"]

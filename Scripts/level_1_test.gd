@@ -1,4 +1,5 @@
-extends Node3D
+@tool
+extends XRToolsSceneBase
 
 var packet_scene: PackedScene = preload("res://Scenes/Objects/data_packet.tscn")
 var pipe_scene: PackedScene = preload("res://Assets/Models/Pipes/Intact_Pipes.glb")
@@ -13,6 +14,8 @@ var is_decent_looping = false
 var is_cent_looping = false
 
 func _ready() -> void:
+	if Engine.is_editor_hint():
+		return
 	NetworkManager.clear_graph()
 	
 	if main_board:

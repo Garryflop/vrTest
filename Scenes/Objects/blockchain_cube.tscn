@@ -1,5 +1,8 @@
 [gd_scene format=4 uid="uid://od1pkqskq0ka"]
 
+[ext_resource type="Script" uid="uid://dnulhry18hvj" path="res://Scripts/blockchain_cube.gd" id="1_w2tcf"]
+[ext_resource type="PackedScene" uid="uid://fgp3v54bdycq" path="res://Scenes/Objects/connect_object.tscn" id="2_3nnr8"]
+[ext_resource type="PackedScene" uid="uid://bact5mcnrbrnn" path="res://Scenes/Objects/connect_object_snap_zone.tscn" id="3_mmgrb"]
 [ext_resource type="Script" uid="uid://bfrlpbsqg5lqr" path="res://addons/godot-xr-tools/objects/pickable.gd" id="4_51seu"]
 [ext_resource type="Texture2D" uid="uid://c62eo5kj6fmbm" path="res://Assets/Models/Cube/Cube1_BaseColor.1001.png" id="5_i0y0g"]
 [ext_resource type="Texture2D" uid="uid://cpl7wt85nnpin" path="res://Assets/Models/Cube/Cube1_Emission.1001.png" id="6_jn56v"]
@@ -100,6 +103,9 @@ albedo_color = Color(1, 1, 0, 1)
 grow_amount = 0.001
 
 [node name="BlockchainCube" type="Node3D" unique_id=621460339]
+script = ExtResource("1_w2tcf")
+input_scene = ExtResource("2_3nnr8")
+output_scene = ExtResource("3_mmgrb")
 
 [node name="Cube" type="RigidBody3D" parent="." unique_id=1305525191 groups=["Cube"]]
 unique_name_in_owner = true
@@ -157,7 +163,7 @@ screen_visible = false
 
 [node name="INFORMATION_LABEL" type="Label3D" parent="Cube" unique_id=1317204945]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.13200676, 0)
-pixel_size = 0.002
+pixel_size = 0.001
 modulate = Color(1, 1, 1, 0.23529412)
 outline_modulate = Color(0, 0, 0, 0)
 text = "Hash: 0

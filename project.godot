@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="VRtest"
-run/main_scene="uid://d1kjum8tm0r0u"
+run/main_scene="uid://bysvo1ayohojw"
 config/features=PackedStringArray("4.6", "Mobile")
 config/icon="res://icon.svg"
 

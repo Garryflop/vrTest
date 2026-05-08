@@ -13,4 +13,3 @@ func pointer_event(event) -> void:
 	if event.event_type == 2:
 		if get_parent().has_method("click_action"):
 			get_parent().click_action(action_name)
-

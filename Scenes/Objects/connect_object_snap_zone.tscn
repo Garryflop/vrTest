@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://da2qgxxwwitl6" path="res://addons/godot-xr-tools/objects/highlight/highlight_ring.tscn" id="2_h4c3f"]
 [ext_resource type="Script" uid="uid://cmg2gveunmwkh" path="res://Scripts/connect_object_snap_zone.gd" id="2_hg34v"]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_hg34v"]
+[sub_resource type="SphereShape3D" id="SphereShape3D_ocbo4"]
 resource_local_to_scene = true
 radius = 0.075
 
@@ -14,6 +14,6 @@ grab_distance = 0.075
 snap_require = "ConnectObject"
 
 [node name="CollisionShape3D" parent="." index="0"]
-shape = SubResource("SphereShape3D_hg34v")
+shape = SubResource("SphereShape3D_ocbo4")
 
 [node name="HighlightRing" parent="." index="2" unique_id=156300055 instance=ExtResource("2_h4c3f")]

@@ -1,4 +1,5 @@
 extends Node3D
+class_name BlockchainComponent
 
 @onready var cube: XRToolsPickable = %Cube
 @onready var cube_mesh: MeshInstance3D = %MeshInstance3D
@@ -96,6 +97,8 @@ func setup_connectors(count: int, is_input: bool):
 		else:
 			output_objects.append(instance)
 			instance.snap_exclude = unique_id
+			instance.has_dropped.connect(_on_has_dropped)
+			instance.has_picked_up.connect(_on_has_picked_up)
 		# Position Logic
 		var x_pos = connect_object_anchor.position.x if is_input else connect_object_snap_zone_anchor.position.x
 		var z_pos = 0
@@ -104,6 +107,12 @@ func setup_connectors(count: int, is_input: bool):
 			z_pos = -0.05 + (float(i) / (count - 1)) * z_range
 		instance.position = Vector3(x_pos, 0, z_pos)
 		add_child(instance)
+
+func _on_has_dropped() -> void:
+	held_object = null
+# Assuming that we have only one held object (only 1 snap_zone or 1 object)
+func _on_has_picked_up(what: Variant) -> void:
+	held_object = what
 
 func enable_snap_zones() -> void:
 	for snap_zone in output_objects:

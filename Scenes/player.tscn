@@ -15,7 +15,7 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gymyn"]
 no_depth_test = true
 
-[node name="Player" type="XROrigin3D" unique_id=1392519515]
+[node name="XROrigin3D" type="XROrigin3D" unique_id=1392519515]
 
 [node name="FollowCameraMarker" type="Marker3D" parent="." unique_id=947661486 node_paths=PackedStringArray("ui")]
 script = ExtResource("1_gymyn")

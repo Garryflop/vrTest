@@ -6,3 +6,11 @@ signal PlaySound
 signal ToggleMusic
 
 #endregion
+
+#region Main Menu
+
+signal PlayButton
+signal CreditsButton
+signal QuitButton
+
+#endregion

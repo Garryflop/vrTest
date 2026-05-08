@@ -1,0 +1,125 @@
+[gd_scene format=3 uid="uid://dubog6hp2o8ym"]
+
+[ext_resource type="Script" uid="uid://c8wg26lk33rd" path="res://Scripts/lobby.gd" id="1_foxd2"]
+[ext_resource type="PackedScene" uid="uid://dt8t2ejvy7q6u" path="res://Scenes/player.tscn" id="2_641us"]
+[ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="3_1dxtr"]
+[ext_resource type="PackedScene" uid="uid://b531csi3hedwc" path="res://Scenes/UI/main_menu.tscn" id="4_foxd2"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tlcug"]
+
+[sub_resource type="Sky" id="Sky_4dpyx"]
+sky_material = SubResource("ProceduralSkyMaterial_tlcug")
+
+[sub_resource type="Environment" id="Environment_3mqfk"]
+background_mode = 1
+sky = SubResource("Sky_4dpyx")
+glow_enabled = true
+glow_bloom = 0.2
+
+[sub_resource type="BoxMesh" id="BoxMesh_cyadu"]
+size = Vector3(0.2, 3, 8)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xgxfi"]
+size = Vector3(0.2, 3, 8)
+
+[sub_resource type="BoxMesh" id="BoxMesh_xgxfi"]
+size = Vector3(8, 3, 0.2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5f3p6"]
+size = Vector3(8, 3, 0.2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_iixi8"]
+size = Vector3(8, 0.2, 8)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cyadu"]
+size = Vector3(8, 0.2, 8)
+
+[node name="Lobby" type="Node3D" unique_id=251571411]
+script = ExtResource("1_foxd2")
+game_scene = "uid://n64oo1kbx83d"
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1005831693]
+environment = SubResource("Environment_3mqfk")
+
+[node name="XROrigin3D" parent="." unique_id=1392519515 instance=ExtResource("2_641us")]
+
+[node name="MovementDirect" parent="XROrigin3D/LeftHand" parent_id_path=PackedInt32Array(1392519515, 1227984475) index="1" unique_id=1338689258]
+enabled = false
+
+[node name="Box" type="Node3D" parent="." unique_id=2014998134]
+
+[node name="Wall" type="StaticBody3D" parent="Box" unique_id=527165134]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1.5, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Box/Wall" unique_id=1662575800]
+mesh = SubResource("BoxMesh_cyadu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Box/Wall" unique_id=253791036]
+shape = SubResource("BoxShape3D_xgxfi")
+
+[node name="Wall2" type="StaticBody3D" parent="Box" unique_id=1438078205]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1.5, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Box/Wall2" unique_id=588036488]
+mesh = SubResource("BoxMesh_cyadu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Box/Wall2" unique_id=1707848144]
+shape = SubResource("BoxShape3D_xgxfi")
+
+[node name="Wall3" type="StaticBody3D" parent="Box" unique_id=485574342]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 4)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Box/Wall3" unique_id=701693187]
+mesh = SubResource("BoxMesh_xgxfi")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Box/Wall3" unique_id=1701817448]
+shape = SubResource("BoxShape3D_5f3p6")
+
+[node name="Wall4" type="StaticBody3D" parent="Box" unique_id=27536075]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -4)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Box/Wall4" unique_id=533225398]
+mesh = SubResource("BoxMesh_xgxfi")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Box/Wall4" unique_id=860561307]
+shape = SubResource("BoxShape3D_5f3p6")
+
+[node name="Floor" type="StaticBody3D" parent="Box" unique_id=435631096]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Box/Floor" unique_id=1349318350]
+mesh = SubResource("BoxMesh_iixi8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Box/Floor" unique_id=132814355]
+shape = SubResource("BoxShape3D_cyadu")
+
+[node name="Roof" type="StaticBody3D" parent="Box" unique_id=124376763]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+visible = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Box/Roof" unique_id=32202204]
+mesh = SubResource("BoxMesh_iixi8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Box/Roof" unique_id=374979790]
+shape = SubResource("BoxShape3D_cyadu")
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="." unique_id=926392312]
+transform = Transform3D(1, 0, 0, 0, 0.49999997, 0.86602545, 0, -0.86602545, 0.49999997, 0.057753086, 2.75, -0.503766)
+light_energy = 1.5
+shadow_enabled = true
+spot_attenuation = 1.5
+spot_angle = 30.0
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="." unique_id=1215000891]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.021113276, 1.3582108, -2.1168895)
+light_energy = 1.5
+omni_range = 2.099193
+
+[node name="Viewport2Din3D" parent="." unique_id=1944397316 instance=ExtResource("3_1dxtr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7172556, -1.7809201)
+screen_size = Vector2(1.5, 1)
+scene = ExtResource("4_foxd2")
+viewport_size = Vector2(1152, 648)
+transparent = 1
+scene_properties_keys = PackedStringArray("main_menu.gd")
+
+[editable path="XROrigin3D"]
