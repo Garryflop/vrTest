@@ -1,0 +1,12 @@
+[gd_resource type="Environment" format=3 uid="uid://cq340gptymwvp"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tlcug"]
+
+[sub_resource type="Sky" id="Sky_4dpyx"]
+sky_material = SubResource("ProceduralSkyMaterial_tlcug")
+
+[resource]
+background_mode = 1
+sky = SubResource("Sky_4dpyx")
+glow_enabled = true
+glow_bloom = 0.2

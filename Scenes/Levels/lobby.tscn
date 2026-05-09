@@ -2,19 +2,16 @@
 
 [ext_resource type="Script" uid="uid://c8wg26lk33rd" path="res://Scripts/lobby.gd" id="1_foxd2"]
 [ext_resource type="PackedScene" uid="uid://dt8t2ejvy7q6u" path="res://Scenes/player.tscn" id="2_641us"]
+[ext_resource type="Environment" uid="uid://cq340gptymwvp" path="res://Assets/materials/lobby_env.tres" id="2_w8guj"]
 [ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="3_1dxtr"]
 [ext_resource type="PackedScene" uid="uid://b531csi3hedwc" path="res://Scenes/UI/main_menu.tscn" id="4_foxd2"]
-
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tlcug"]
-
-[sub_resource type="Sky" id="Sky_4dpyx"]
-sky_material = SubResource("ProceduralSkyMaterial_tlcug")
-
-[sub_resource type="Environment" id="Environment_3mqfk"]
-background_mode = 1
-sky = SubResource("Sky_4dpyx")
-glow_enabled = true
-glow_bloom = 0.2
+[ext_resource type="Material" uid="uid://rwfrc1fdcjsj" path="res://addons/godot-xr-tools/hands/materials/caucasian_hands_realistic.tres" id="4_yftvo"]
+[ext_resource type="Script" uid="uid://qysntbry26un" path="res://Scripts/panel_menu.gd" id="5_iywj4"]
+[ext_resource type="FontFile" uid="uid://0gvxqdbhr1ls" path="res://Assets/Fonts/CodenameCoderFree4F-Bold.ttf" id="5_k87wc"]
+[ext_resource type="PackedScene" uid="uid://1swsxondwsqt" path="res://Scenes/UI/credits.tscn" id="6_w8guj"]
+[ext_resource type="PackedScene" uid="uid://sph77ko6aqyh" path="res://Scenes/UI/settings.tscn" id="7_18mky"]
+[ext_resource type="PackedScene" uid="uid://dvcrmoblgeere" path="res://Assets/Models/Golem/Golem/Golem.glb" id="10_q2vd4"]
+[ext_resource type="PackedScene" uid="uid://btueh3xtg8277" path="res://Assets/Models/Hand_Textures/Hands.glb" id="11_0gfce"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_cyadu"]
 size = Vector3(0.2, 3, 8)
@@ -39,12 +36,19 @@ script = ExtResource("1_foxd2")
 game_scene = "uid://n64oo1kbx83d"
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1005831693]
-environment = SubResource("Environment_3mqfk")
+environment = ExtResource("2_w8guj")
 
 [node name="XROrigin3D" parent="." unique_id=1392519515 instance=ExtResource("2_641us")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.24392846, 0)
+
+[node name="LeftHand" parent="XROrigin3D/LeftHand" parent_id_path=PackedInt32Array(1392519515, 1227984475) index="0" unique_id=1374004671]
+hand_material_override = ExtResource("4_yftvo")
 
 [node name="MovementDirect" parent="XROrigin3D/LeftHand" parent_id_path=PackedInt32Array(1392519515, 1227984475) index="1" unique_id=1338689258]
 enabled = false
+
+[node name="RightHand" parent="XROrigin3D/RightHand" parent_id_path=PackedInt32Array(1392519515, 1122526834) index="0" unique_id=662973813]
+hand_material_override = ExtResource("4_yftvo")
 
 [node name="Box" type="Node3D" parent="." unique_id=2014998134]
 
@@ -110,16 +114,49 @@ spot_attenuation = 1.5
 spot_angle = 30.0
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="." unique_id=1215000891]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.021113276, 1.3582108, -2.1168895)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09794223, 1.5003047, 0.03075552)
 light_energy = 1.5
-omni_range = 2.099193
+omni_range = 3.0
 
-[node name="Viewport2Din3D" parent="." unique_id=1944397316 instance=ExtResource("3_1dxtr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7172556, -1.7809201)
+[node name="Label3D" type="Label3D" parent="." unique_id=1801824097]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.4264007, -3.436839)
+text = "Blockchain Simulator
+by ChainSaw VR"
+font = ExtResource("5_k87wc")
+
+[node name="panel_play" type="Node3D" parent="." unique_id=1847374633]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -1.3)
+script = ExtResource("5_iywj4")
+
+[node name="MainMenu" parent="panel_play" unique_id=1944397316 instance=ExtResource("3_1dxtr")]
 screen_size = Vector2(1.5, 1)
 scene = ExtResource("4_foxd2")
 viewport_size = Vector2(1152, 648)
-transparent = 1
 scene_properties_keys = PackedStringArray("main_menu.gd")
+
+[node name="panel_settings" type="Node3D" parent="." unique_id=1076921308]
+transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, -1.35, 1, -0.703)
+script = ExtResource("5_iywj4")
+
+[node name="Settings" parent="panel_settings" unique_id=426402539 instance=ExtResource("3_1dxtr")]
+screen_size = Vector2(1.5, 1)
+scene = ExtResource("7_18mky")
+viewport_size = Vector2(1152, 648)
+scene_properties_keys = PackedStringArray("settings.gd")
+
+[node name="panel_credits" type="Node3D" parent="." unique_id=869500469]
+transform = Transform3D(0.7071067, 0, -0.7071067, 0, 1, 0, 0.7071067, 0, 0.7071067, 1.35, 1, -0.7)
+script = ExtResource("5_iywj4")
+
+[node name="Credits" parent="panel_credits" unique_id=447662983 instance=ExtResource("3_1dxtr")]
+screen_size = Vector2(1.5, 1)
+scene = ExtResource("6_w8guj")
+viewport_size = Vector2(1152, 648)
+
+[node name="Golem2" parent="." unique_id=287629467 instance=ExtResource("10_q2vd4")]
+transform = Transform3D(-0.59905154, 0, 0.8007105, 0, 1, 0, -0.8007105, 0, -0.59905154, -1.320415, 0.10660634, 0.5164052)
+
+[node name="Hands" parent="." unique_id=872527750 instance=ExtResource("11_0gfce")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3914739, 0.16861081, 0.080717325)
 
 [editable path="XROrigin3D"]

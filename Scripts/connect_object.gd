@@ -14,7 +14,7 @@ func _ready():
 	add_sibling(instance)
 	super()
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if blockchain_component:
 		if !is_picked_up():
 			global_transform = blockchain_component.connect_object_anchor.global_transform

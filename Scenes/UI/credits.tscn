@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://1swsxondwsqt"]
+
+[ext_resource type="Shader" uid="uid://bai0a8ty5xc15" path="res://Assets/Shaders/main_menu.gdshader" id="2_k0d3f"]
+[ext_resource type="FontFile" uid="uid://0gvxqdbhr1ls" path="res://Assets/Fonts/CodenameCoderFree4F-Bold.ttf" id="3_1g7ho"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_o14dv"]
+shader = ExtResource("2_k0d3f")
+shader_parameter/speed = 0.01
+shader_parameter/scale = Vector2(8, 4.5)
+shader_parameter/rotate_speed = 0.0
+shader_parameter/line_width = 0.1
+shader_parameter/line_size = 0.1
+shader_parameter/back_color = Color(0, 0, 0, 1)
+shader_parameter/line_color = Color(0.36958802, 0.27770823, 0, 1)
+
+[node name="Credits" type="Control" unique_id=898552913]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1016080918]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="." unique_id=694880705]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer2" unique_id=9642563]
+material = SubResource("ShaderMaterial_o14dv")
+layout_mode = 2
+color = Color(0, 1, 0.735357, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=961474717]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1793964043]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1942739245]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_1g7ho")
+theme_override_font_sizes/font_size = 72
+text = "Credits
+"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer" unique_id=225401246]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_1g7ho")
+theme_override_font_sizes/font_size = 48
+text = "ChainSawVR team:
+Harryfloppa
+suber66
+Skameuqq
+Zey
+AraaraRFT"
+horizontal_alignment = 1

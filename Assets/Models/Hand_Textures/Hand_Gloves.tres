@@ -1,0 +1,22 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b7rffyv8alaof"]
+
+[ext_resource type="Texture2D" uid="uid://c7h51vnxqjecf" path="res://Assets/Models/Hand_Textures/Hands_Gloves_hand_BaseColor.png" id="1_3bwl6"]
+[ext_resource type="Texture2D" uid="uid://cjatbcw1gk12x" path="res://Assets/Models/Hand_Textures/Hands_Gloves_hand_Emission.png" id="2_15lfg"]
+[ext_resource type="Texture2D" uid="uid://brk5kypftxmrb" path="res://Assets/Models/Hand_Textures/Hands_Gloves_hand_Metallic.1001-Gloves_hand_Roughness.png" id="3_t3unk"]
+[ext_resource type="Texture2D" uid="uid://ljwubpl1o240" path="res://Assets/Models/Hand_Textures/Hands_Gloves_hand_Normal.png" id="4_u5wnl"]
+
+[resource]
+resource_name = "Hand_Gloves"
+cull_mode = 2
+albedo_texture = ExtResource("1_3bwl6")
+metallic = 1.0
+metallic_texture = ExtResource("3_t3unk")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("3_t3unk")
+roughness_texture_channel = 1
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_operator = 1
+emission_texture = ExtResource("2_15lfg")
+normal_enabled = true
+normal_texture = ExtResource("4_u5wnl")

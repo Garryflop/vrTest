@@ -2,16 +2,68 @@
 
 [ext_resource type="Script" uid="uid://y32u8yv00rvy" path="res://Scripts/main_menu.gd" id="1_5wsvm"]
 [ext_resource type="Shader" uid="uid://bai0a8ty5xc15" path="res://Assets/Shaders/main_menu.gdshader" id="2_i2xx2"]
+[ext_resource type="FontFile" uid="uid://0gvxqdbhr1ls" path="res://Assets/Fonts/CodenameCoderFree4F-Bold.ttf" id="3_o14dv"]
+[ext_resource type="StyleBox" uid="uid://bkk0pqoiwcybl" path="res://Assets/materials/flat.tres" id="4_u7lva"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_o14dv"]
 shader = ExtResource("2_i2xx2")
-shader_parameter/speed = 0.05
+shader_parameter/speed = 0.01
 shader_parameter/scale = Vector2(8, 4.5)
-shader_parameter/rotate_speed = 1.1
+shader_parameter/rotate_speed = 0.0
 shader_parameter/line_width = 0.1
 shader_parameter/line_size = 0.1
 shader_parameter/back_color = Color(0, 0, 0, 1)
-shader_parameter/line_color = Color(0, 1, 1, 1)
+shader_parameter/line_color = Color(0.36958802, 0.27770823, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u7lva"]
+bg_color = Color(0.49111894, 0.37294003, 0, 0.49019608)
+border_width_left = 12
+border_width_top = 12
+border_width_right = 12
+border_width_bottom = 12
+border_color = Color(0, 0, 0, 1)
+corner_detail = 20
+shadow_size = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mrfpk"]
+bg_color = Color(0.49111894, 0.37294003, 0, 0.49019608)
+border_width_left = 12
+border_width_top = 12
+border_width_right = 12
+border_width_bottom = 12
+border_color = Color(0, 0, 0, 1)
+corner_detail = 20
+shadow_size = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4pqbp"]
+bg_color = Color(0.49111894, 0.37294003, 0, 0.49019608)
+border_width_left = 12
+border_width_top = 12
+border_width_right = 12
+border_width_bottom = 12
+border_color = Color(0, 0, 0, 1)
+corner_detail = 20
+shadow_size = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k33u3"]
+bg_color = Color(0.9490196, 0.17254902, 0, 1)
+border_width_left = 12
+border_width_top = 12
+border_width_right = 12
+border_width_bottom = 12
+border_color = Color(0, 0, 0, 1)
+corner_detail = 20
+shadow_size = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gih0s"]
+bg_color = Color(0.49019608, 0.14901961, 0, 0.49019608)
+border_width_left = 12
+border_width_top = 12
+border_width_right = 12
+border_width_bottom = 12
+border_color = Color(0, 0, 0, 1)
+corner_detail = 20
+shadow_size = 6
 
 [node name="MainMenu" type="Control" unique_id=898552913]
 layout_mode = 3
@@ -22,14 +74,29 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_5wsvm")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=9642563]
-material = SubResource("ShaderMaterial_o14dv")
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1016080918]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="." unique_id=694880705]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer2" unique_id=9642563]
+material = SubResource("ShaderMaterial_o14dv")
+layout_mode = 2
 color = Color(0, 1, 0.735357, 1)
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=961474717]
@@ -42,35 +109,70 @@ grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1793964043]
 layout_mode = 2
-theme_override_constants/separation = 45
+size_flags_horizontal = 4
+theme_override_constants/separation = 5
 
-[node name="Separator" type="Control" parent="MarginContainer/VBoxContainer" unique_id=798911604]
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=514753261]
 layout_mode = 2
+size_flags_vertical = 3
 
 [node name="PlayButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1878862711]
-custom_minimum_size = Vector2(640, 160)
+custom_minimum_size = Vector2(640, 128)
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 4
+size_flags_vertical = 6
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("3_o14dv")
 theme_override_font_sizes/font_size = 96
+theme_override_styles/normal = ExtResource("4_u7lva")
+theme_override_styles/hover = SubResource("StyleBoxFlat_u7lva")
 text = "Play"
 
 [node name="CreditsButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=2072473979]
-custom_minimum_size = Vector2(640, 160)
+visible = false
+custom_minimum_size = Vector2(640, 128)
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 4
+size_flags_vertical = 6
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("3_o14dv")
 theme_override_font_sizes/font_size = 96
+theme_override_styles/normal = ExtResource("4_u7lva")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mrfpk")
 text = "Credits"
 
-[node name="QuitButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=173357717]
-custom_minimum_size = Vector2(640, 160)
+[node name="SettingsButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1231335587]
+visible = false
+custom_minimum_size = Vector2(640, 128)
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 4
+size_flags_vertical = 6
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("3_o14dv")
 theme_override_font_sizes/font_size = 96
+theme_override_styles/normal = ExtResource("4_u7lva")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4pqbp")
+text = "Settings
+"
+
+[node name="QuitButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=173357717]
+custom_minimum_size = Vector2(640, 120)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("3_o14dv")
+theme_override_font_sizes/font_size = 96
+theme_override_styles/normal = SubResource("StyleBoxFlat_k33u3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gih0s")
 text = "Quit"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1302002469]
+layout_mode = 2
+size_flags_vertical = 3
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/SettingsButton" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
