@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://df8raw0e1r2t3"]
 
 [ext_resource type="Script" uid="uid://x21q7t3aqcxd" path="res://Scripts/main_board.gd" id="1_bd"]
+[ext_resource type="FontFile" uid="uid://c03up8f7036e4" path="res://Assets/Fonts/Xanmono-Regular.otf" id="2_3jhxv"]
 [ext_resource type="Script" uid="uid://d1kw5dib1i2rm" path="res://Scripts/board_button.gd" id="2_bb"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_panel"]
@@ -29,7 +30,8 @@ surface_material_override/0 = SubResource("StandardMaterial3D_panel")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0.06)
 text = "Status:
 Waiting for transaction..."
-font_size = 64
+font = ExtResource("2_3jhxv")
+font_size = 28
 
 [node name="BtnDecent" type="StaticBody3D" parent="." unique_id=413104640]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2, -0.5, 0.05)
@@ -48,6 +50,8 @@ surface_material_override/0 = SubResource("StandardMaterial3D_btn")
 [node name="Label3D" type="Label3D" parent="BtnDecent" unique_id=851443457]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.08)
 text = "Send Decent"
+font = ExtResource("2_3jhxv")
+font_size = 16
 
 [node name="BtnCent" type="StaticBody3D" parent="." unique_id=236539792]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0.05)
@@ -66,6 +70,8 @@ surface_material_override/0 = SubResource("StandardMaterial3D_btn")
 [node name="Label3D" type="Label3D" parent="BtnCent" unique_id=757811765]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.08)
 text = "Send Cent"
+font = ExtResource("2_3jhxv")
+font_size = 16
 
 [node name="BtnReset" type="StaticBody3D" parent="." unique_id=918810917]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2, -0.5, 0.05)
@@ -84,3 +90,5 @@ surface_material_override/0 = SubResource("StandardMaterial3D_btn")
 [node name="Label3D" type="Label3D" parent="BtnReset" unique_id=1523183365]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.08)
 text = "Reset All"
+font = ExtResource("2_3jhxv")
+font_size = 16

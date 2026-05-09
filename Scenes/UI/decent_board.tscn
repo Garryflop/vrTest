@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dgim750q7sm7b"]
+
+[ext_resource type="PackedScene" uid="uid://df8raw0e1r2t3" path="res://Scenes/UI/main_board.tscn" id="1_hwm1j"]
+
+[node name="DecentBoard" unique_id=1485064927 instance=ExtResource("1_hwm1j")]
+
+[node name="BtnCent" parent="." index="3" unique_id=236539792]
+visible = false
+
+[node name="CollisionShape3D" parent="BtnCent" index="0" unique_id=1951270852]
+disabled = true
+
+[node name="BtnReset" parent="." index="4" unique_id=918810917]
+action_name = "reset_decent"

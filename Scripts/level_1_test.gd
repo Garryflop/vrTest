@@ -5,7 +5,9 @@ var packet_scene: PackedScene = preload("res://Scenes/Objects/data_packet.tscn")
 var pipe_scene: PackedScene = preload("res://Assets/Models/Pipes/Intact_Pipes.glb")
 var tether_scene: PackedScene = preload("res://Scenes/tether_line_cylinder.tscn")
 
-@onready var main_board = $MainBoard
+
+@onready var decent_board: Node3D = $DecentBoard
+@onready var cent_board: Node3D = $CentBoard
 
 var decent_node_ids = []
 var cent_node_ids = []
@@ -13,22 +15,24 @@ var cent_node_ids = []
 var is_decent_looping = false
 var is_cent_looping = false
 
+var d_nodes
+
 func _ready() -> void:
 	if Engine.is_editor_hint():
 		return
 	NetworkManager.clear_graph()
-	
-	if main_board:
-		main_board.action_triggered.connect(_on_board_action)
+	if cent_board:
+		cent_board.action_triggered.connect(_on_board_action)
+	if decent_board:
+		decent_board.action_triggered.connect(_on_board_action)
 
 	# Decentralized nodes references
-	var d_nodes = [
+	d_nodes = [
 		$DecentralizedComponents/BlockchainComponent,
 		$DecentralizedComponents/BlockchainComponent2,
 		$DecentralizedComponents/BlockchainComponent3,
 		$DecentralizedComponents/BlockchainComponent4,
-		$DecentralizedComponents/BlockchainComponent5,
-		$DecentralizedComponents/BlockchainComponent6
+		$DecentralizedComponents/BlockchainComponent5
 	]
 	
 	# Register decentralized nodes securely with unique string IDs
@@ -79,10 +83,11 @@ func make_connection(node_a: Node3D, node_b: Node3D) -> void:
 	## Scale the pipe to stretch correctly and make it thinner
 	## X and Z change the thickness, Y stretches the length
 	#pipe_inst.scale = Vector3(0.15, distance / 2.0, 0.15) 
-
+var central
+var c_nodes
 func setup_centralized() -> void:
-	var central = $CentralizedComponents/CentralComponent
-	var c_nodes = [
+	central = $CentralizedComponents/CentralComponent
+	c_nodes = [
 		$CentralizedComponents/BlockchainComponent,
 		$CentralizedComponents/BlockchainComponent2,
 		$CentralizedComponents/BlockchainComponent3,
@@ -118,8 +123,12 @@ func send_data(table_type: String) -> void:
 	
 	if path.size() > 0:
 		print("Transaction successful, path: ", path)
-		if main_board:
-			main_board.set_status("Transaction Successful!\n" + start_node_id + " -> " + end_node_id)
+		if table_type == "decent":
+			if decent_board:
+				decent_board.set_status("Transaction Successful!\n" + start_node_id + " -> " + end_node_id)
+		else:
+			if cent_board:
+				cent_board.set_status("Transaction Successful!\n" + start_node_id + " -> " + end_node_id)
 		var packet = packet_scene.instantiate()
 		add_child(packet)
 		packet.global_position = NetworkManager.nodes[start_node_id].global_position
@@ -133,9 +142,13 @@ func send_data(table_type: String) -> void:
 		packet.travel(path)
 	else:
 		print("Transaction impossible - no path between ", start_node_id, " and ", end_node_id)
-		if main_board:
-			main_board.set_status("Transaction Impossible!\n" + start_node_id + " -X-> " + end_node_id)
-			
+		if table_type == "decent":
+			if decent_board:
+				decent_board.set_status("Transaction Impossible!\n" + start_node_id + " -X-> " + end_node_id)
+		else:
+			if cent_board:
+				cent_board.set_status("Transaction Impossible!\n" + start_node_id + " -X-> " + end_node_id)
+
 		# Automatically try again after brief delay
 		await get_tree().create_timer(1.0).timeout
 		send_data(table_type)
@@ -143,20 +156,29 @@ func send_data(table_type: String) -> void:
 func _on_board_action(action: String) -> void:
 	if action == "send_decent":
 		is_decent_looping = not is_decent_looping
-		if main_board:
-			main_board.set_button_text("send_decent", "Stop Decent" if is_decent_looping else "Send Decent")
+		if decent_board:
+			decent_board.set_button_text("send_decent", "Stop Decent" if is_decent_looping else "Send Decent")
 		if is_decent_looping:
 			send_data("decent")
 			
 	elif action == "send_cent":
 		is_cent_looping = not is_cent_looping
-		if main_board:
-			main_board.set_button_text("send_cent", "Stop Cent" if is_cent_looping else "Send Cent")
+		if cent_board:
+			cent_board.set_button_text("send_cent", "Stop Cent" if is_cent_looping else "Send Cent")
 		if is_cent_looping:
 			send_data("cent")
 			
+	elif action == "reset_cent":
+		for node in c_nodes:
+			node.reset()
+		central.reset()
+		if cent_board:
+			cent_board.set_status("System Reset.\nAll nodes online.")
+	elif action == "reset_decent":
+		for node in d_nodes:
+			node.reset()
+		if decent_board:
+			decent_board.set_status("System Reset.\nAll nodes online.")
 	elif action == "reset":
 		for node in NetworkManager.nodes.values():
 			node.reset()
-		if main_board:
-			main_board.set_status("System Reset.\nAll nodes online.")
