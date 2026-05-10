@@ -1,0 +1,26 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://baiqqt3p6pdb"]
+
+[ext_resource type="Texture2D" uid="uid://c62eo5kj6fmbm" path="res://Assets/Models/Cube/Cube1_BaseColor.1001.png" id="1_ub54j"]
+[ext_resource type="Texture2D" uid="uid://cpl7wt85nnpin" path="res://Assets/Models/Cube/Cube1_Emission.1001.png" id="2_4v1m1"]
+[ext_resource type="Texture2D" uid="uid://dygtqg5m2wnrl" path="res://Assets/Models/Cube/Cube1_Displacement.1001.png" id="3_23ect"]
+[ext_resource type="Texture2D" uid="uid://dc5b5t7epxsy4" path="res://Assets/Models/Cube/Cube1_Metallic.1001.png" id="4_kjrvh"]
+[ext_resource type="Texture2D" uid="uid://b3kpqka6ymxk5" path="res://Assets/Models/Cube/Cube1_Normal.1001.png" id="5_hjmgo"]
+[ext_resource type="Texture2D" uid="uid://c85wk7q4ol4yg" path="res://Assets/Models/Cube/Cube1_Roughness.1001.png" id="6_yd4ld"]
+
+[resource]
+resource_local_to_scene = true
+albedo_color = Color(1, 0, 0, 1)
+albedo_texture = ExtResource("1_ub54j")
+metallic = 1.0
+metallic_texture = ExtResource("4_kjrvh")
+roughness_texture = ExtResource("6_yd4ld")
+emission_enabled = true
+emission_texture = ExtResource("2_4v1m1")
+normal_enabled = true
+normal_texture = ExtResource("5_hjmgo")
+heightmap_enabled = true
+heightmap_scale = 0.5
+heightmap_deep_parallax = true
+heightmap_min_layers = 8
+heightmap_max_layers = 32
+heightmap_texture = ExtResource("3_23ect")

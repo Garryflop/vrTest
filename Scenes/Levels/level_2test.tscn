@@ -2,9 +2,18 @@
 
 [ext_resource type="Script" uid="uid://xyixp7hs2kvp" path="res://Scripts/level_2_test.gd" id="1_1hnxv"]
 [ext_resource type="PackedScene" uid="uid://clc5dre31iskm" path="res://addons/godot-xr-tools/xr/start_xr.tscn" id="2_g7ior"]
+[ext_resource type="PackedScene" uid="uid://bkg7muyrb7lxq" path="res://Scenes/3d_button.tscn" id="2_jxuhh"]
+[ext_resource type="PackedScene" uid="uid://be4l8d7v2q7pw" path="res://Assets/Models/MonitorV2/MonitorV2.glb" id="3_1la14"]
 [ext_resource type="PackedScene" uid="uid://dt8t2ejvy7q6u" path="res://Scenes/player.tscn" id="3_fh8v0"]
 [ext_resource type="PackedScene" uid="uid://od1pkqskq0ka" path="res://Scenes/Objects/blockchain_cube.tscn" id="4_2kscl"]
 [ext_resource type="PackedScene" uid="uid://njdroy1hdlq1" path="res://Assets/Models/Table/Table.glb" id="4_rihf4"]
+[ext_resource type="FontFile" uid="uid://0gvxqdbhr1ls" path="res://Assets/Fonts/CodenameCoderFree4F-Bold.ttf" id="4_vrv73"]
+[ext_resource type="Texture2D" uid="uid://c62eo5kj6fmbm" path="res://Assets/Models/Cube/Cube1_BaseColor.1001.png" id="6_65qy0"]
+[ext_resource type="Texture2D" uid="uid://cpl7wt85nnpin" path="res://Assets/Models/Cube/Cube1_Emission.1001.png" id="7_jxuhh"]
+[ext_resource type="Texture2D" uid="uid://dygtqg5m2wnrl" path="res://Assets/Models/Cube/Cube1_Displacement.1001.png" id="8_1la14"]
+[ext_resource type="Texture2D" uid="uid://dc5b5t7epxsy4" path="res://Assets/Models/Cube/Cube1_Metallic.1001.png" id="9_vrv73"]
+[ext_resource type="Texture2D" uid="uid://b3kpqka6ymxk5" path="res://Assets/Models/Cube/Cube1_Normal.1001.png" id="10_vr5ab"]
+[ext_resource type="Texture2D" uid="uid://c85wk7q4ol4yg" path="res://Assets/Models/Cube/Cube1_Roughness.1001.png" id="11_m4nht"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tlcug"]
 
@@ -38,8 +47,202 @@ size = Vector3(8, 0.2, 8)
 [sub_resource type="BoxShape3D" id="BoxShape3D_cyadu"]
 size = Vector3(8, 0.2, 8)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vrv73"]
+resource_local_to_scene = true
+albedo_color = Color(0, 1, 0, 1)
+albedo_texture = ExtResource("6_65qy0")
+metallic = 1.0
+metallic_texture = ExtResource("9_vrv73")
+roughness_texture = ExtResource("11_m4nht")
+emission_enabled = true
+emission_texture = ExtResource("7_jxuhh")
+normal_enabled = true
+normal_texture = ExtResource("10_vr5ab")
+heightmap_enabled = true
+heightmap_scale = 0.5
+heightmap_deep_parallax = true
+heightmap_min_layers = 8
+heightmap_max_layers = 32
+heightmap_texture = ExtResource("8_1la14")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vr5ab"]
+resource_local_to_scene = true
+albedo_color = Color(1, 0, 0, 1)
+albedo_texture = ExtResource("6_65qy0")
+metallic = 1.0
+metallic_texture = ExtResource("9_vrv73")
+roughness_texture = ExtResource("11_m4nht")
+emission_enabled = true
+emission_texture = ExtResource("7_jxuhh")
+normal_enabled = true
+normal_texture = ExtResource("10_vr5ab")
+heightmap_enabled = true
+heightmap_scale = 0.5
+heightmap_deep_parallax = true
+heightmap_min_layers = 8
+heightmap_max_layers = 32
+heightmap_texture = ExtResource("8_1la14")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m4nht"]
+resource_local_to_scene = true
+albedo_color = Color(0, 1, 0, 1)
+albedo_texture = ExtResource("6_65qy0")
+metallic = 1.0
+metallic_texture = ExtResource("9_vrv73")
+roughness_texture = ExtResource("11_m4nht")
+emission_enabled = true
+emission_texture = ExtResource("7_jxuhh")
+normal_enabled = true
+normal_texture = ExtResource("10_vr5ab")
+heightmap_enabled = true
+heightmap_scale = 0.5
+heightmap_deep_parallax = true
+heightmap_min_layers = 8
+heightmap_max_layers = 32
+heightmap_texture = ExtResource("8_1la14")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_70gcb"]
+resource_local_to_scene = true
+albedo_color = Color(1, 0, 0, 1)
+albedo_texture = ExtResource("6_65qy0")
+metallic = 1.0
+metallic_texture = ExtResource("9_vrv73")
+roughness_texture = ExtResource("11_m4nht")
+emission_enabled = true
+emission_texture = ExtResource("7_jxuhh")
+normal_enabled = true
+normal_texture = ExtResource("10_vr5ab")
+heightmap_enabled = true
+heightmap_scale = 0.5
+heightmap_deep_parallax = true
+heightmap_min_layers = 8
+heightmap_max_layers = 32
+heightmap_texture = ExtResource("8_1la14")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f7e30"]
+resource_local_to_scene = true
+albedo_color = Color(0, 1, 0, 1)
+albedo_texture = ExtResource("6_65qy0")
+metallic = 1.0
+metallic_texture = ExtResource("9_vrv73")
+roughness_texture = ExtResource("11_m4nht")
+emission_enabled = true
+emission_texture = ExtResource("7_jxuhh")
+normal_enabled = true
+normal_texture = ExtResource("10_vr5ab")
+heightmap_enabled = true
+heightmap_scale = 0.5
+heightmap_deep_parallax = true
+heightmap_min_layers = 8
+heightmap_max_layers = 32
+heightmap_texture = ExtResource("8_1la14")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3mhen"]
+resource_local_to_scene = true
+albedo_color = Color(1, 0, 0, 1)
+albedo_texture = ExtResource("6_65qy0")
+metallic = 1.0
+metallic_texture = ExtResource("9_vrv73")
+roughness_texture = ExtResource("11_m4nht")
+emission_enabled = true
+emission_texture = ExtResource("7_jxuhh")
+normal_enabled = true
+normal_texture = ExtResource("10_vr5ab")
+heightmap_enabled = true
+heightmap_scale = 0.5
+heightmap_deep_parallax = true
+heightmap_min_layers = 8
+heightmap_max_layers = 32
+heightmap_texture = ExtResource("8_1la14")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o06yi"]
+resource_local_to_scene = true
+albedo_color = Color(0, 1, 0, 1)
+albedo_texture = ExtResource("6_65qy0")
+metallic = 1.0
+metallic_texture = ExtResource("9_vrv73")
+roughness_texture = ExtResource("11_m4nht")
+emission_enabled = true
+emission_texture = ExtResource("7_jxuhh")
+normal_enabled = true
+normal_texture = ExtResource("10_vr5ab")
+heightmap_enabled = true
+heightmap_scale = 0.5
+heightmap_deep_parallax = true
+heightmap_min_layers = 8
+heightmap_max_layers = 32
+heightmap_texture = ExtResource("8_1la14")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k0eh1"]
+resource_local_to_scene = true
+albedo_color = Color(1, 0, 0, 1)
+albedo_texture = ExtResource("6_65qy0")
+metallic = 1.0
+metallic_texture = ExtResource("9_vrv73")
+roughness_texture = ExtResource("11_m4nht")
+emission_enabled = true
+emission_texture = ExtResource("7_jxuhh")
+normal_enabled = true
+normal_texture = ExtResource("10_vr5ab")
+heightmap_enabled = true
+heightmap_scale = 0.5
+heightmap_deep_parallax = true
+heightmap_min_layers = 8
+heightmap_max_layers = 32
+heightmap_texture = ExtResource("8_1la14")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rx33s"]
+resource_local_to_scene = true
+albedo_color = Color(0, 1, 0, 1)
+albedo_texture = ExtResource("6_65qy0")
+metallic = 1.0
+metallic_texture = ExtResource("9_vrv73")
+roughness_texture = ExtResource("11_m4nht")
+emission_enabled = true
+emission_texture = ExtResource("7_jxuhh")
+normal_enabled = true
+normal_texture = ExtResource("10_vr5ab")
+heightmap_enabled = true
+heightmap_scale = 0.5
+heightmap_deep_parallax = true
+heightmap_min_layers = 8
+heightmap_max_layers = 32
+heightmap_texture = ExtResource("8_1la14")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4yd0d"]
+resource_local_to_scene = true
+albedo_color = Color(1, 0, 0, 1)
+albedo_texture = ExtResource("6_65qy0")
+metallic = 1.0
+metallic_texture = ExtResource("9_vrv73")
+roughness_texture = ExtResource("11_m4nht")
+emission_enabled = true
+emission_texture = ExtResource("7_jxuhh")
+normal_enabled = true
+normal_texture = ExtResource("10_vr5ab")
+heightmap_enabled = true
+heightmap_scale = 0.5
+heightmap_deep_parallax = true
+heightmap_min_layers = 8
+heightmap_max_layers = 32
+heightmap_texture = ExtResource("8_1la14")
+
 [node name="Level2" type="Node3D" unique_id=251571411]
 script = ExtResource("1_1hnxv")
+
+[node name="ResetButton" parent="." unique_id=467292279 instance=ExtResource("2_jxuhh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.082622, -1.8451531)
+screen_visible = false
+
+[node name="MonitorV3" parent="ResetButton" unique_id=1710385518 instance=ExtResource("3_1la14")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, -0.1, -0.01)
+
+[node name="Label3D" type="Label3D" parent="ResetButton" unique_id=1216632551]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.014603972, 0)
+pixel_size = 0.001
+text = "Reset"
+font = ExtResource("4_vrv73")
+font_size = 64
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1005831693]
 environment = SubResource("Environment_3mqfk")
@@ -158,12 +361,25 @@ omni_range = 0.7273517
 
 [node name="BlockchainCube" parent="blocks" unique_id=621460339 instance=ExtResource("4_2kscl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6134248, 0.48877853, -1.2511995)
+material_valid = SubResource("StandardMaterial3D_vrv73")
+material_invalid = SubResource("StandardMaterial3D_vr5ab")
 
 [node name="BlockchainCube2" parent="blocks" unique_id=1120553873 instance=ExtResource("4_2kscl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.32267585, 0.49313736, -1.2260675)
+material_valid = SubResource("StandardMaterial3D_m4nht")
+material_invalid = SubResource("StandardMaterial3D_70gcb")
 
 [node name="BlockchainCube3" parent="blocks" unique_id=771114752 instance=ExtResource("4_2kscl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.016452014, 0.50197923, -1.2260675)
+material_valid = SubResource("StandardMaterial3D_f7e30")
+material_invalid = SubResource("StandardMaterial3D_3mhen")
 
 [node name="BlockchainCube4" parent="blocks" unique_id=1106805090 instance=ExtResource("4_2kscl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3765781, 0.50197923, -1.2260675)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.311616, 0.4748307, -1.2260675)
+material_valid = SubResource("StandardMaterial3D_o06yi")
+material_invalid = SubResource("StandardMaterial3D_k0eh1")
+
+[node name="BlockchainCube5" parent="blocks" unique_id=143475838 instance=ExtResource("4_2kscl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6030381, 0.47775966, -1.2325084)
+material_valid = SubResource("StandardMaterial3D_rx33s")
+material_invalid = SubResource("StandardMaterial3D_4yd0d")

@@ -3,13 +3,12 @@
 [ext_resource type="Script" uid="uid://dnulhry18hvj" path="res://Scripts/blockchain_cube.gd" id="1_w2tcf"]
 [ext_resource type="PackedScene" uid="uid://fgp3v54bdycq" path="res://Scenes/Objects/connect_object.tscn" id="2_3nnr8"]
 [ext_resource type="PackedScene" uid="uid://bact5mcnrbrnn" path="res://Scenes/Objects/connect_object_snap_zone.tscn" id="3_mmgrb"]
+[ext_resource type="Material" uid="uid://baiqqt3p6pdb" path="res://Assets/materials/Invalid_Material.tres" id="3_x1he6"]
 [ext_resource type="Script" uid="uid://bfrlpbsqg5lqr" path="res://addons/godot-xr-tools/objects/pickable.gd" id="4_51seu"]
 [ext_resource type="Texture2D" uid="uid://c62eo5kj6fmbm" path="res://Assets/Models/Cube/Cube1_BaseColor.1001.png" id="5_i0y0g"]
 [ext_resource type="Texture2D" uid="uid://cpl7wt85nnpin" path="res://Assets/Models/Cube/Cube1_Emission.1001.png" id="6_jn56v"]
 [ext_resource type="Texture2D" uid="uid://b3kpqka6ymxk5" path="res://Assets/Models/Cube/Cube1_Normal.1001.png" id="7_g6g5l"]
-[ext_resource type="Texture2D" uid="uid://dygtqg5m2wnrl" path="res://Assets/Models/Cube/Cube1_Displacement.1001.png" id="8_8joiq"]
-[ext_resource type="Texture2D" uid="uid://dc5b5t7epxsy4" path="res://Assets/Models/Cube/Cube1_Metallic.1001.png" id="9_bkc75"]
-[ext_resource type="Texture2D" uid="uid://c85wk7q4ol4yg" path="res://Assets/Models/Cube/Cube1_Roughness.1001.png" id="10_5obit"]
+[ext_resource type="Material" uid="uid://dxdfa1dphqdre" path="res://Assets/materials/Valid_Material.tres" id="8_w2tcf"]
 [ext_resource type="PackedScene" uid="uid://bcclikhgsbccj" path="res://Assets/Models/Cube/Cube.glb" id="11_q6o1o"]
 [ext_resource type="PackedScene" uid="uid://c25yxb0vt53vc" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" id="12_oximb"]
 [ext_resource type="Animation" uid="uid://nq3xh1olqipq" path="res://addons/godot-xr-tools/hands/animations/left/Grip Shaft.res" id="13_2eoad"]
@@ -18,6 +17,7 @@
 [ext_resource type="Animation" uid="uid://c8dghcftg1thx" path="res://addons/godot-xr-tools/hands/animations/right/Grip Shaft.res" id="16_umgpm"]
 [ext_resource type="PackedScene" uid="uid://dh8grd7s3n8kg" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_snap.tscn" id="17_38js0"]
 [ext_resource type="Script" uid="uid://0b7wkxi4vymb" path="res://addons/godot-xr-tools/objects/highlight/highlight_visible.gd" id="18_njrus"]
+[ext_resource type="FontFile" uid="uid://0gvxqdbhr1ls" path="res://Assets/Fonts/CodenameCoderFree4F-Bold.ttf" id="19_3nnr8"]
 [ext_resource type="PackedScene" uid="uid://bkg7muyrb7lxq" path="res://Scenes/3d_button.tscn" id="19_q570l"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dt3qw"]
@@ -66,23 +66,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_bs3xr")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mrc8b"]
-resource_local_to_scene = true
-albedo_texture = ExtResource("5_i0y0g")
-metallic = 1.0
-metallic_texture = ExtResource("9_bkc75")
-roughness_texture = ExtResource("10_5obit")
-emission_enabled = true
-emission_texture = ExtResource("6_jn56v")
-normal_enabled = true
-normal_texture = ExtResource("7_g6g5l")
-heightmap_enabled = true
-heightmap_scale = 0.5
-heightmap_deep_parallax = true
-heightmap_min_layers = 8
-heightmap_max_layers = 32
-heightmap_texture = ExtResource("8_8joiq")
-
 [sub_resource type="Resource" id="Resource_3lyxs"]
 script = ExtResource("14_ctqpf")
 closed_pose = ExtResource("13_2eoad")
@@ -102,8 +85,21 @@ shading_mode = 0
 albedo_color = Color(1, 1, 0, 1)
 grow_amount = 0.001
 
+[sub_resource type="PrismMesh" id="PrismMesh_x1he6"]
+size = Vector3(0.2, 0.2, 0.001)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mmgrb"]
+albedo_color = Color(1, 1, 0, 1)
+emission_enabled = true
+emission = Color(1, 1, 0, 1)
+
+[sub_resource type="PrismMesh" id="PrismMesh_3nnr8"]
+size = Vector3(0.2, 0.2, 0.001)
+
 [node name="BlockchainCube" type="Node3D" unique_id=621460339]
 script = ExtResource("1_w2tcf")
+material_valid = ExtResource("8_w2tcf")
+material_invalid = ExtResource("3_x1he6")
 input_number = 0
 output_number = 0
 input_scene = ExtResource("2_3nnr8")
@@ -126,7 +122,7 @@ shape = SubResource("BoxShape3D_dt3qw")
 unique_name_in_owner = true
 transform = Transform3D(8, 0, 0, 0, -3.496911e-07, 8, 0, -8, -3.496911e-07, 0, 0, 0)
 mesh = SubResource("ArrayMesh_hsfeh")
-surface_material_override/0 = SubResource("StandardMaterial3D_mrc8b")
+surface_material_override/0 = ExtResource("8_w2tcf")
 
 [node name="Cube" parent="Cube" unique_id=292945663 instance=ExtResource("11_q6o1o")]
 transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
@@ -164,12 +160,31 @@ transform = Transform3D(0.4, 0, 0, 0, 0.55, 0, 0, 0, 6, 0, 0, 0.061)
 screen_visible = false
 
 [node name="INFORMATION_LABEL" type="Label3D" parent="Cube" unique_id=1317204945]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.13200676, 0)
-pixel_size = 0.001
-modulate = Color(1, 1, 1, 0.23529412)
-outline_modulate = Color(0, 0, 0, 0)
-text = "Hash: 0
-Previous Hash:
-"
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15766552, 0)
+pixel_size = 0.0005
+text = "Block: 1
+Tran: 10 BTC
+Hash: 0000
+P.Hash: 0000"
+font = ExtResource("19_3nnr8")
+font_size = 64
+outline_size = 16
+
+[node name="ButtonUp" parent="Cube" unique_id=1644579581 instance=ExtResource("19_q570l")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.14123, 0.20761707, 0)
+screen_visible = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Cube/ButtonUp" unique_id=1393148788]
+mesh = SubResource("PrismMesh_x1he6")
+surface_material_override/0 = SubResource("StandardMaterial3D_mmgrb")
+
+[node name="ButtonDown" parent="Cube" unique_id=1136061085 instance=ExtResource("19_q570l")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.14068604, 0.15509298, 0)
+screen_visible = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Cube/ButtonDown" unique_id=992705305]
+transform = Transform3D(-1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("PrismMesh_3nnr8")
+surface_material_override/0 = SubResource("StandardMaterial3D_mmgrb")
 
 [connection signal="button_pressed" from="Cube/Button3D" to="." method="_on_cube_button_pressed"]
