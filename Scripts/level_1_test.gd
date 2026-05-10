@@ -5,6 +5,7 @@ var packet_scene: PackedScene = preload("res://Scenes/Objects/data_packet.tscn")
 var pipe_scene: PackedScene = preload("res://Assets/Models/Pipes/Intact_Pipes.glb")
 var tether_scene: PackedScene = preload("res://Scenes/tether_line_cylinder.tscn")
 
+@export_file('*.tscn') var next_level_scene : String
 
 @onready var decent_board: Node3D = $DecentBoard
 @onready var cent_board: Node3D = $CentBoard
@@ -182,3 +183,7 @@ func _on_board_action(action: String) -> void:
 	elif action == "reset":
 		for node in NetworkManager.nodes.values():
 			node.reset()
+
+
+func _on_teleport_area_body_entered(body: Node3D) -> void:
+	load_scene(next_level_scene)

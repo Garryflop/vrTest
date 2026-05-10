@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://b0kuqkemp1rk3"]
+
+[ext_resource type="PackedScene" uid="uid://dpy1eg3i331se" path="res://addons/godot-xr-tools/objects/teleport_area.tscn" id="1_jdjlm"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_jdjlm"]
+top_radius = 0.3
+bottom_radius = 0.3
+height = 0.05
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_jdjlm"]
+height = 0.7
+radius = 0.25
+
+[node name="TeleportArea" unique_id=1507852708 instance=ExtResource("1_jdjlm")]
+script = null
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="0" unique_id=238993813]
+mesh = SubResource("CylinderMesh_jdjlm")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." index="1" unique_id=152125564]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.74035907, 0)
+mesh = SubResource("CylinderMesh_jdjlm")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="2" unique_id=1272728097]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.36992067, 0)
+shape = SubResource("CylinderShape3D_jdjlm")

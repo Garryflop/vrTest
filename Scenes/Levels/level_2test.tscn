@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://8vnmsab36r68"]
 
 [ext_resource type="Script" uid="uid://xyixp7hs2kvp" path="res://Scripts/level_2_test.gd" id="1_1hnxv"]
-[ext_resource type="PackedScene" uid="uid://clc5dre31iskm" path="res://addons/godot-xr-tools/xr/start_xr.tscn" id="2_g7ior"]
 [ext_resource type="PackedScene" uid="uid://bkg7muyrb7lxq" path="res://Scenes/3d_button.tscn" id="2_jxuhh"]
 [ext_resource type="PackedScene" uid="uid://be4l8d7v2q7pw" path="res://Assets/Models/MonitorV2/MonitorV2.glb" id="3_1la14"]
 [ext_resource type="PackedScene" uid="uid://dt8t2ejvy7q6u" path="res://Scenes/player.tscn" id="3_fh8v0"]
@@ -231,7 +230,7 @@ heightmap_texture = ExtResource("8_1la14")
 script = ExtResource("1_1hnxv")
 
 [node name="ResetButton" parent="." unique_id=467292279 instance=ExtResource("2_jxuhh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.082622, -1.8451531)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.082622, -0.90188897)
 screen_visible = false
 
 [node name="MonitorV3" parent="ResetButton" unique_id=1710385518 instance=ExtResource("3_1la14")]
@@ -247,9 +246,7 @@ font_size = 64
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1005831693]
 environment = SubResource("Environment_3mqfk")
 
-[node name="StartXR" parent="." unique_id=953625414 instance=ExtResource("2_g7ior")]
-
-[node name="Player" parent="." unique_id=1392519515 instance=ExtResource("3_fh8v0")]
+[node name="XROrigin3D" parent="." unique_id=1392519515 instance=ExtResource("3_fh8v0")]
 
 [node name="Table" type="StaticBody3D" parent="." unique_id=275310675]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.028637648, 0, -1.3384086)
@@ -383,3 +380,5 @@ material_invalid = SubResource("StandardMaterial3D_k0eh1")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6030381, 0.47775966, -1.2325084)
 material_valid = SubResource("StandardMaterial3D_rx33s")
 material_invalid = SubResource("StandardMaterial3D_4yd0d")
+
+[editable path="XROrigin3D"]
