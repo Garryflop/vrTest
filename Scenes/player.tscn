@@ -5,12 +5,11 @@
 [ext_resource type="PackedScene" uid="uid://b4ysuy43poobf" path="res://addons/godot-xr-tools/functions/function_pickup.tscn" id="3_x3wgy"]
 [ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="4_3smsa"]
 [ext_resource type="PackedScene" uid="uid://cqhw276realc" path="res://addons/godot-xr-tools/functions/function_pointer.tscn" id="4_8erm5"]
-[ext_resource type="PackedScene" uid="uid://hpr0v012ghsb" path="res://addons/godot-xr-tools/hands/scenes/highpoly/left_tac_glove.tscn" id="4_gymyn"]
+[ext_resource type="PackedScene" uid="uid://ckpiidtupgkp0" path="res://Scenes/custom_left_hand.tscn" id="4_gymyn"]
 [ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="4_x3wgy"]
-[ext_resource type="Material" uid="uid://dogla70w8hvo8" path="res://addons/godot-xr-tools/hands/materials/glove_caucasian_dark_camo.tres" id="5_pu2lt"]
 [ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="8_f1ek2"]
 [ext_resource type="PackedScene" uid="uid://fiul51tsyoop" path="res://addons/godot-xr-tools/functions/function_teleport.tscn" id="8_gymyn"]
-[ext_resource type="PackedScene" uid="uid://dup2vp8v5rpi5" path="res://addons/godot-xr-tools/hands/scenes/highpoly/right_tac_glove.tscn" id="9_pu2lt"]
+[ext_resource type="PackedScene" uid="uid://b532pk4vcy8uf" path="res://Scenes/custom_right_hand.tscn" id="9_pu2lt"]
 [ext_resource type="PackedScene" uid="uid://cfmbhxhd1vcr1" path="res://Scenes/UI/ui.tscn" id="9_tx1dd"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gymyn"]
@@ -30,7 +29,6 @@ screen_size = Vector2(1, 0.5)
 scene = ExtResource("9_tx1dd")
 viewport_size = Vector2(500, 300)
 material = SubResource("StandardMaterial3D_gymyn")
-transparent = 1
 scene_properties_keys = PackedStringArray("ui.gd")
 
 [node name="XRCamera3D" type="XRCamera3D" parent="." unique_id=1390004443]
@@ -38,8 +36,7 @@ scene_properties_keys = PackedStringArray("ui.gd")
 [node name="LeftHand" type="XRController3D" parent="." unique_id=1227984475]
 tracker = &"left_hand"
 
-[node name="LeftHand" parent="LeftHand" unique_id=1374004671 instance=ExtResource("4_gymyn")]
-hand_material_override = ExtResource("5_pu2lt")
+[node name="LeftHand" parent="LeftHand" unique_id=119385688 instance=ExtResource("4_gymyn")]
 
 [node name="MovementDirect" parent="LeftHand" unique_id=1338689258 instance=ExtResource("2_fkybt")]
 strafe = true
@@ -63,8 +60,7 @@ strength = 15.0
 [node name="RightHand" type="XRController3D" parent="." unique_id=1122526834]
 tracker = &"right_hand"
 
-[node name="RightHand" parent="RightHand" unique_id=662973813 instance=ExtResource("9_pu2lt")]
-hand_material_override = ExtResource("5_pu2lt")
+[node name="RightHand" parent="RightHand" unique_id=1704397147 instance=ExtResource("9_pu2lt")]
 
 [node name="MovementTurn" parent="RightHand" unique_id=12426951 instance=ExtResource("4_3smsa")]
 

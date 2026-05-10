@@ -104,6 +104,8 @@ grow_amount = 0.001
 
 [node name="BlockchainCube" type="Node3D" unique_id=621460339]
 script = ExtResource("1_w2tcf")
+input_number = 0
+output_number = 0
 input_scene = ExtResource("2_3nnr8")
 output_scene = ExtResource("3_mmgrb")
 
