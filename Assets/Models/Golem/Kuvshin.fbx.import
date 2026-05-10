@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bpa0grl6sbal8"
-path="res://.godot/imported/Kuvshin.glb-8bb1031c1f1b85e23bf93c25e22adfeb.scn"
+uid="uid://c2sytplve0v77"
+path="res://.godot/imported/Kuvshin.fbx-cd3b9e9b1a5b0ff267d02740264511bc.scn"
 
 [deps]
 
-source_file="res://Assets/Models/Golem/Golem/Kuvshin.glb"
-dest_files=["res://.godot/imported/Kuvshin.glb-8bb1031c1f1b85e23bf93c25e22adfeb.scn"]
+source_file="res://Assets/Models/Golem/Kuvshin.fbx"
+dest_files=["res://.godot/imported/Kuvshin.fbx-cd3b9e9b1a5b0ff267d02740264511bc.scn"]
 
 [params]
 
@@ -38,5 +38,7 @@ materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
 _subresources={}
-gltf/naming_version=2
-gltf/embedded_image_handling=1
+fbx/importer=0
+fbx/allow_geometry_helper_nodes=false
+fbx/embedded_image_handling=1
+fbx/naming_version=2

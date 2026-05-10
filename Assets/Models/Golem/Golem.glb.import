@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cfay2icx2d5hh"
-path="res://.godot/imported/Shvabra.glb-3091f8a13435712dacfa91a2557e7b47.scn"
+uid="uid://c0b3hhmubwbkx"
+path="res://.godot/imported/Golem.glb-a0e9539fe643f1ebab1ba7130ab3459a.scn"
 
 [deps]
 
-source_file="res://Assets/Models/Golem/Golem/Shvabra.glb"
-dest_files=["res://.godot/imported/Shvabra.glb-3091f8a13435712dacfa91a2557e7b47.scn"]
+source_file="res://Assets/Models/Golem/Golem.glb"
+dest_files=["res://.godot/imported/Golem.glb-a0e9539fe643f1ebab1ba7130ab3459a.scn"]
 
 [params]
 

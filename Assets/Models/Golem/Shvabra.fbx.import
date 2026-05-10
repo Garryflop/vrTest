@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dvcrmoblgeere"
-path="res://.godot/imported/Golem.glb-21294e2f570e0fdf0d741a9007ae7a92.scn"
+uid="uid://bt73j0yxn5gyf"
+path="res://.godot/imported/Shvabra.fbx-15de16383de5ee97ae97b237f681ac2d.scn"
 
 [deps]
 
-source_file="res://Assets/Models/Golem/Golem/Golem.glb"
-dest_files=["res://.godot/imported/Golem.glb-21294e2f570e0fdf0d741a9007ae7a92.scn"]
+source_file="res://Assets/Models/Golem/Shvabra.fbx"
+dest_files=["res://.godot/imported/Shvabra.fbx-15de16383de5ee97ae97b237f681ac2d.scn"]
 
 [params]
 
@@ -38,5 +38,7 @@ materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
 _subresources={}
-gltf/naming_version=2
-gltf/embedded_image_handling=1
+fbx/importer=0
+fbx/allow_geometry_helper_nodes=false
+fbx/embedded_image_handling=1
+fbx/naming_version=2

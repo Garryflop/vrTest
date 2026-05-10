@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cnkfljhp5v0xf"
-path.s3tc="res://.godot/imported/Golem_Golem_Mat_Metallic.1001-Golem_Mat_Roughness.png-828b63271669307e3ad4a861711535c2.s3tc.ctex"
+uid="uid://b5scfy825d5f0"
+path.s3tc="res://.godot/imported/Golem_Golem_Mat_Emission.png-2399f93e80e320a11321c263283a6a85.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "10100952a211acabcb5eca211e76ecf4"
+"md5": "2eeec4ca4a9c635abbcda2d4d7c9a35f"
 }
 
 [deps]
 
-source_file="res://Assets/Models/Golem/Golem/Golem_Golem_Mat_Metallic.1001-Golem_Mat_Roughness.png"
-dest_files=["res://.godot/imported/Golem_Golem_Mat_Metallic.1001-Golem_Mat_Roughness.png-828b63271669307e3ad4a861711535c2.s3tc.ctex"]
+source_file="res://Assets/Models/Golem/Golem_Golem_Mat_Emission.png"
+dest_files=["res://.godot/imported/Golem_Golem_Mat_Emission.png-2399f93e80e320a11321c263283a6a85.s3tc.ctex"]
 
 [params]
 

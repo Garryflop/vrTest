@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dgcepju2kvpx0"
-path="res://.godot/imported/Golem.fbx-7438534af4d5cff7241e49b60ad3831a.scn"
+uid="uid://bh7nkj1ghjm8p"
+path="res://.godot/imported/Golem.fbx-0243060d5a1723bee0861fca1f24b819.scn"
 
 [deps]
 
-source_file="res://Assets/Models/Golem/Golem/Golem.fbx"
-dest_files=["res://.godot/imported/Golem.fbx-7438534af4d5cff7241e49b60ad3831a.scn"]
+source_file="res://Assets/Models/Golem/Golem.fbx"
+dest_files=["res://.godot/imported/Golem.fbx-0243060d5a1723bee0861fca1f24b819.scn"]
 
 [params]
 

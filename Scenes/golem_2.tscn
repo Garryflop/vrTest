@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://ldqmqhl35ocm"]
 
-[ext_resource type="PackedScene" uid="uid://dvcrmoblgeere" path="res://Assets/Models/Golem/Golem/Golem.glb" id="1_r14yv"]
+[ext_resource type="PackedScene" uid="uid://c0b3hhmubwbkx" path="res://Assets/Models/Golem/Golem.glb" id="1_r14yv"]
 
-[node name="Golem2" unique_id=287629467 instance=ExtResource("1_r14yv")]
+[node name="Golem2" unique_id=1694884927 instance=ExtResource("1_r14yv")]
 
-[node name="Skeleton3D" parent="Golem" parent_id_path=PackedInt32Array(382704370) index="0" unique_id=197327605]
+[node name="Skeleton3D" parent="Golem" parent_id_path=PackedInt32Array(1692955726) index="0" unique_id=142565520]
 bones/1/position = Vector3(0.051044554, -0.061904322, -0.2676312)
 bones/1/rotation = Quaternion(-0.7038107, -0.05500336, 0.70811087, 0.014290833)
 bones/3/position = Vector3(0.12153897, 0.14383432, -0.42321515)
@@ -31,5 +31,5 @@ bones/20/rotation = Quaternion(0.70381093, -0.055003375, 0.7081106, -0.014290811
 bones/22/position = Vector3(-0.12153922, 0.14383431, -0.42321512)
 bones/25/position = Vector3(-0.28821534, 0.29312095, -0.315144)
 
-[node name="AnimationPlayer" parent="." index="1" unique_id=1266730907]
+[node name="AnimationPlayer" parent="." index="1" unique_id=158733495]
 autoplay = &"WatchingWindow"
