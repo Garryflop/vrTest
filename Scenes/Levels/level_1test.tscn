@@ -204,7 +204,7 @@ light_color = Color(0.735357, 1, 1, 1)
 omni_range = 0.84168434
 
 [node name="OmniLight3D7" type="OmniLight3D" parent="." unique_id=1047070785]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.407, 0.973, -2.721)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.005102515, 0.615707, -2.1675546)
 light_color = Color(0.735357, 1, 1, 1)
 omni_range = 0.842
 
