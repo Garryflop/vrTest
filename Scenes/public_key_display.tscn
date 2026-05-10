@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://1sntiwrtqky1"]
+
+[ext_resource type="Script" uid="uid://c8w6ns842ydv1" path="res://Scripts/public_key_display.gd" id="1_25wv4"]
+[ext_resource type="PackedScene" uid="uid://bkntskej0xlf6" path="res://Scenes/Objects/key.tscn" id="1_xu7wv"]
+
+[node name="PublicKeyDisplay" type="Node3D" unique_id=1983456545]
+script = ExtResource("1_25wv4")
+
+[node name="PublicKey" parent="." unique_id=759011723 groups=["public_key"] instance=ExtResource("1_xu7wv")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="KeyLabel" type="Label3D" parent="." unique_id=749723853]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.30092722, 0)
+text = "F044 E304 76CC FC85"
+
+[node name="HintLabel" type="Label3D" parent="." unique_id=1064994550]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8130141, 0)
+text = "PUBLIC KEY
+Share with anyone 🌐
+This is your address"
+
+[node name="BeamContainer" type="Node3D" parent="." unique_id=333389144]
+
+[connection signal="dropped" from="PublicKey" to="." method="_on_public_key_dropped"]
+[connection signal="released" from="PublicKey" to="." method="_on_key_mesh_released"]

@@ -1,0 +1,124 @@
+[gd_scene format=3 uid="uid://bh84lojixve1i"]
+
+[ext_resource type="PackedScene" uid="uid://ce7vysyvondf8" path="res://addons/godot-xr-tools/objects/snap_zone.tscn" id="1_ma0ow"]
+[ext_resource type="Script" uid="uid://ndon45xwqeq0" path="res://Scripts/crypto_vault.gd" id="1_uf8mg"]
+[ext_resource type="PackedScene" uid="uid://72yjls4nn314" path="res://Scenes/Objects/cube.tscn" id="3_ijcmc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ijcmc"]
+cull_mode = 1
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gkse3"]
+cull_mode = 1
+albedo_color = Color(1, 0, 0, 1)
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nsjmb"]
+cull_mode = 1
+albedo_color = Color(0, 1, 0, 1)
+emission_enabled = true
+emission = Color(0, 1, 0, 1)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_ijcmc"]
+data = PackedVector3Array(-0.2, -0.2, -0.2, -0.2, 0.2, -0.2, -0.2, -0.2, 0.2, -0.2, -0.2, -0.2, -0.2, -0.2, 0.2, 0.2, -0.2, -0.2, -0.2, -0.2, -0.2, 0.2, -0.2, -0.2, -0.2, 0.2, -0.2, -0.2, -0.2, 0.2, -0.2, 0.2, 0.2, -0.15, -0.15, 0.2, -0.2, -0.2, 0.2, -0.15, -0.15, 0.2, 0.2, -0.2, 0.2, -0.2, -0.2, 0.2, -0.2, 0.2, -0.2, -0.2, 0.2, 0.2, -0.2, 0.2, 0.2, -0.15, 0.15, 0.2, -0.15, -0.15, 0.2, -0.2, 0.2, -0.2, 0.2, 0.2, 0.2, -0.2, 0.2, 0.2, -0.2, 0.2, 0.2, 0.15, 0.15, 0.2, -0.15, 0.15, 0.2, -0.2, -0.2, 0.2, 0.2, -0.2, 0.2, 0.2, -0.2, -0.2, 0.2, -0.2, 0.2, -0.15, -0.15, 0.2, 0.15, -0.15, 0.2, 0.2, -0.2, -0.2, 0.2, -0.2, 0.2, 0.2, 0.2, 0.2, 0.2, -0.2, 0.2, 0.15, -0.15, 0.2, 0.15, 0.15, 0.2, -0.2, 0.2, -0.2, 0.2, -0.2, -0.2, 0.2, 0.2, -0.2, -0.2, 0.2, -0.2, 0.2, 0.2, -0.2, 0.2, 0.2, 0.2, 0.2, -0.2, -0.2, 0.2, 0.2, 0.2, 0.2, 0.2, -0.2, -0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.15, 0.15, 0.2, 0.2, -0.2, 0.2, 0.15, 0.15, 0.2, 0.2, 0.2, 0.2, -0.15, -0.15, -0.14962167, 0.15, -0.15, -0.14962167, -0.15, -0.15, 0.2, -0.15, -0.15, -0.14962167, -0.15, 0.15, -0.14962167, 0.15, -0.15, -0.14962167, -0.15, -0.15, -0.14962167, -0.15, -0.15, 0.2, -0.15, 0.15, 0.2, -0.15, -0.15, -0.14962167, -0.15, 0.15, 0.2, -0.15, 0.15, -0.14962167, -0.15, 0.15, -0.14962167, -0.15, 0.15, 0.2, 0.15, 0.15, 0.2, 0.15, -0.15, -0.14962167, 0.15, 0.15, -0.14962167, 0.15, -0.15, 0.2, 0.15, -0.15, -0.14962167, 0.15, -0.15, 0.2, -0.15, -0.15, 0.2, -0.15, 0.15, -0.14962167, 0.15, 0.15, -0.14962167, 0.15, -0.15, -0.14962167, -0.15, 0.15, -0.14962167, 0.15, 0.15, 0.2, 0.15, 0.15, -0.14962167, 0.15, 0.15, -0.14962167, 0.15, 0.15, 0.2, 0.15, -0.15, 0.2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_7oebg"]
+size = Vector3(0.42, 0.42, 0.42)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ma0ow"]
+size = Vector3(0.4, 0.4, 0.1)
+
+[sub_resource type="Animation" id="Animation_ijcmc"]
+resource_name = "Open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Door:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.33923578, 0.064704366),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 2.0943952, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_on_door_opened"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_7oebg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Door:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gkse3"]
+_data = {
+&"Open": SubResource("Animation_ijcmc"),
+&"RESET": SubResource("Animation_7oebg")
+}
+
+[node name="Terminal" type="StaticBody3D" unique_id=27120533]
+script = ExtResource("1_uf8mg")
+mat_idle = SubResource("StandardMaterial3D_ijcmc")
+mat_denied = SubResource("StandardMaterial3D_gkse3")
+mat_approved = SubResource("StandardMaterial3D_nsjmb")
+
+[node name="TerminalMesh" type="CSGBox3D" parent="." unique_id=1714789915]
+size = Vector3(0.4, 0.4, 0.4)
+
+[node name="TerminalHollowMesh" type="CSGBox3D" parent="TerminalMesh" unique_id=2082243537]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.025378335)
+operation = 2
+size = Vector3(0.3, 0.3, 0.35)
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="." unique_id=1301055097]
+shape = SubResource("ConcavePolygonShape3D_ijcmc")
+
+[node name="StatusLight" type="MeshInstance3D" parent="." unique_id=1349372429]
+material_override = SubResource("StandardMaterial3D_ijcmc")
+mesh = SubResource("BoxMesh_7oebg")
+
+[node name="StatusLabel" type="Label3D" parent="." unique_id=1354858456]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5990354, 0)
+text = "INSERT KEY TO AUTHENTICATE"
+
+[node name="Cube" parent="." unique_id=1305525191 instance=ExtResource("3_ijcmc")]
+visible = false
+
+[node name="Door" type="Node3D" parent="." unique_id=610449473]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0, 0.2)
+
+[node name="DoorMesh" type="MeshInstance3D" parent="Door" unique_id=1708213716]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, 0, 0.05)
+mesh = SubResource("BoxMesh_ma0ow")
+
+[node name="KeySlot" parent="Door" unique_id=37893312 instance=ExtResource("1_ma0ow")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, 0, 0.10010688)
+grab_distance = 0.2
+snap_require = "Key"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1793486101]
+libraries/ = SubResource("AnimationLibrary_gkse3")

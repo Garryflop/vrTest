@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://dcyxoe5x7ful0"]
+
+[ext_resource type="Script" uid="uid://go3ta8k7m0xa" path="res://Scripts/private_key_box.gd" id="1_l5im1"]
+[ext_resource type="PackedScene" uid="uid://b33em3hujbslq" path="res://Scenes/lid.tscn" id="2_8ypus"]
+[ext_resource type="PackedScene" uid="uid://bkntskej0xlf6" path="res://Scenes/Objects/key.tscn" id="3_aqupe"]
+[ext_resource type="PackedScene" uid="uid://ce7vysyvondf8" path="res://addons/godot-xr-tools/objects/snap_zone.tscn" id="4_8ypus"]
+
+[node name="PrivateKeyBox" type="Node3D" unique_id=876825030]
+script = ExtResource("1_l5im1")
+
+[node name="BoxMesh" type="CSGBox3D" parent="." unique_id=1786615254]
+size = Vector3(0.4, 0.2, 0.4)
+
+[node name="BoxHollowMesh" type="CSGBox3D" parent="BoxMesh" unique_id=2130991970]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.013, 0)
+operation = 2
+size = Vector3(0.35, 0.175, 0.35)
+
+[node name="Lid" parent="." unique_id=1734921228 groups=["Lid"] instance=ExtResource("2_8ypus")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.13, 0)
+
+[node name="LidSnapZone" parent="." unique_id=1570547223 instance=ExtResource("4_8ypus")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.13, 0)
+snap_require = "Lid"
+initial_object = NodePath("../Lid")
+
+[node name="PrivateKey" parent="." unique_id=759011723 groups=["private_key"] instance=ExtResource("3_aqupe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07403423, 0.0023478866, 0.008483149)
+
+[node name="KeyLabel" type="Label3D" parent="PrivateKey" unique_id=1070732485]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00012339652, 0.3594801, -0.008483149)
+text = "Private Key"
+
+[node name="WrongKey" parent="." unique_id=693608692 groups=["wrong_key"] instance=ExtResource("3_aqupe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.07044846, 0.002169922, 0)
+
+[node name="WarningLabel" type="Label3D" parent="." unique_id=200202975]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.839399, 0)
+text = "🔒 PRIVATE KEY
+NEVER SHARE THIS
+Only you can use it"

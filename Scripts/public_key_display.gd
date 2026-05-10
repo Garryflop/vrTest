@@ -1,5 +1,6 @@
 extends Node3D
 
+@onready var public_key: XRToolsPickable = $PublicKey
 @onready var key_label: Label3D       = $KeyLabel
 @onready var hint_label: Label3D      = $HintLabel
 @onready var beam_container: Node3D   = $BeamContainer
@@ -37,16 +38,17 @@ func _ready() -> void:
 
 # ── Плавное парение + вращение ───────────────────────────────
 func _start_float_animation() -> void:
-	var origin_y = position.y
-	var tween = create_tween().set_loops()
-	tween.tween_property(self, "position:y", origin_y + 0.08, 1.4) \
-		.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
-	tween.tween_property(self, "position:y", origin_y, 1.4) \
-		.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	pass
+	#var origin_y = position.y
+	#var tween = create_tween().set_loops()
+	#tween.tween_property(self, "position:y", origin_y + 0.08, 1.4) \
+		#.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	#tween.tween_property(self, "position:y", origin_y, 1.4) \
+		#.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 
-	var spin = create_tween().set_loops()
-	spin.tween_property(self, "rotation_degrees:y", 360.0, 8.0) \
-		.set_trans(Tween.TRANS_LINEAR)
+	#var spin = create_tween().set_loops()
+	#spin.tween_property(self, "rotation_degrees:y", 360.0, 8.0) \
+		#.set_trans(Tween.TRANS_LINEAR)
 
 # ── Мигание символов адреса ──────────────────────────────────
 func _start_key_blink() -> void:
@@ -89,3 +91,12 @@ func _redraw_beams() -> void:
 		_beam_imm.surface_add_vertex(origin)
 		_beam_imm.surface_add_vertex(target)
 	_beam_imm.surface_end()
+
+
+func _on_key_mesh_released(pickable: Variant, by: Variant) -> void:
+	public_key.transform = Transform3D.IDENTITY
+	public_key.rotate_y(deg_to_rad(90))
+
+
+func _on_public_key_dropped(pickable: Variant) -> void:
+	pass # Replace with function body.

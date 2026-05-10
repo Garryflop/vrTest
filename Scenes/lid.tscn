@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://b33em3hujbslq"]
+
+[ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="1_oov1d"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_oov1d"]
+size = Vector3(0.4, 0.05, 0.4)
+
+[sub_resource type="BoxMesh" id="BoxMesh_oov1d"]
+size = Vector3(0.4, 0.05, 0.4)
+
+[node name="Lid" unique_id=1734921228 instance=ExtResource("1_oov1d")]
+
+[node name="CollisionShape3D" parent="." index="0"]
+shape = SubResource("BoxShape3D_oov1d")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="1" unique_id=1261633266]
+mesh = SubResource("BoxMesh_oov1d")
