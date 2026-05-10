@@ -49,6 +49,9 @@ environment = SubResource("Environment_3mqfk")
 
 [node name="XROrigin3D" parent="." unique_id=1392519515 instance=ExtResource("3_1nb6q")]
 
+[node name="Viewport2Din3D" parent="XROrigin3D/FollowCameraMarker" parent_id_path=PackedInt32Array(1392519515, 947661486) index="0" unique_id=2025315052]
+scene_properties_keys = PackedStringArray("confirm_ui.gd")
+
 [node name="Table" type="StaticBody3D" parent="." unique_id=275310675]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9099709, 0, -1.75)
 
@@ -213,7 +216,5 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.93, 1, -3)
 
 [node name="TeleportArea" parent="." unique_id=1507852708 instance=ExtResource("7_5eo54")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.036050797, 0.105000146, -1.9993438)
-
-[connection signal="body_entered" from="TeleportArea" to="." method="_on_teleport_area_body_entered"]
 
 [editable path="XROrigin3D"]

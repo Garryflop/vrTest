@@ -1,7 +1,7 @@
 extends Marker3D
 
 @export var rotation_speed: float = 5.0
-@onready var camera = get_viewport().get_camera_3d()
+@onready var camera: XRCamera3D = $"../XRCamera3D"
 @export var ui:XRToolsViewport2DIn3D
 @export var distance: float = -2.0
 @export var scroll_distance: float = 0.2

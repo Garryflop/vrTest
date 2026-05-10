@@ -1,0 +1,384 @@
+[gd_scene format=3 uid="uid://bdiopif0cnb4n"]
+
+[ext_resource type="Script" uid="uid://xyixp7hs2kvp" path="res://Scripts/level_2_test.gd" id="1_md4x4"]
+[ext_resource type="PackedScene" uid="uid://bkg7muyrb7lxq" path="res://Scenes/3d_button.tscn" id="2_1hf40"]
+[ext_resource type="PackedScene" uid="uid://be4l8d7v2q7pw" path="res://Assets/Models/MonitorV2/MonitorV2.glb" id="3_13yca"]
+[ext_resource type="FontFile" uid="uid://0gvxqdbhr1ls" path="res://Assets/Fonts/CodenameCoderFree4F-Bold.ttf" id="4_8dmpc"]
+[ext_resource type="PackedScene" uid="uid://dt8t2ejvy7q6u" path="res://Scenes/player.tscn" id="5_anjjd"]
+[ext_resource type="PackedScene" uid="uid://njdroy1hdlq1" path="res://Assets/Models/Table/Table.glb" id="6_ocbj8"]
+[ext_resource type="PackedScene" uid="uid://od1pkqskq0ka" path="res://Scenes/Objects/blockchain_cube.tscn" id="7_r8neg"]
+[ext_resource type="Texture2D" uid="uid://c62eo5kj6fmbm" path="res://Assets/Models/Cube/Cube1_BaseColor.1001.png" id="8_rcyh2"]
+[ext_resource type="Texture2D" uid="uid://cpl7wt85nnpin" path="res://Assets/Models/Cube/Cube1_Emission.1001.png" id="9_341pv"]
+[ext_resource type="Texture2D" uid="uid://dygtqg5m2wnrl" path="res://Assets/Models/Cube/Cube1_Displacement.1001.png" id="10_wnlxl"]
+[ext_resource type="Texture2D" uid="uid://dc5b5t7epxsy4" path="res://Assets/Models/Cube/Cube1_Metallic.1001.png" id="11_jgaqf"]
+[ext_resource type="Texture2D" uid="uid://b3kpqka6ymxk5" path="res://Assets/Models/Cube/Cube1_Normal.1001.png" id="12_x66yp"]
+[ext_resource type="Texture2D" uid="uid://c85wk7q4ol4yg" path="res://Assets/Models/Cube/Cube1_Roughness.1001.png" id="13_8ve8p"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tlcug"]
+
+[sub_resource type="Sky" id="Sky_4dpyx"]
+sky_material = SubResource("ProceduralSkyMaterial_tlcug")
+
+[sub_resource type="Environment" id="Environment_3mqfk"]
+background_mode = 1
+sky = SubResource("Sky_4dpyx")
+glow_enabled = true
+glow_bloom = 0.2
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3mqfk"]
+size = Vector3(1.3780293, 0.3533374, 0.9397088)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xgxfi"]
+size = Vector3(0.2, 3, 8)
+
+[sub_resource type="BoxMesh" id="BoxMesh_cyadu"]
+size = Vector3(0.2, 3, 8)
+
+[sub_resource type="BoxMesh" id="BoxMesh_xgxfi"]
+size = Vector3(8, 3, 0.2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5f3p6"]
+size = Vector3(8, 3, 0.2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_iixi8"]
+size = Vector3(8, 0.2, 8)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cyadu"]
+size = Vector3(8, 0.2, 8)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vrv73"]
+resource_local_to_scene = true
+albedo_color = Color(0, 1, 0, 1)
+albedo_texture = ExtResource("8_rcyh2")
+metallic = 1.0
+metallic_texture = ExtResource("11_jgaqf")
+roughness_texture = ExtResource("13_8ve8p")
+emission_enabled = true
+emission_texture = ExtResource("9_341pv")
+normal_enabled = true
+normal_texture = ExtResource("12_x66yp")
+heightmap_enabled = true
+heightmap_scale = 0.5
+heightmap_deep_parallax = true
+heightmap_min_layers = 8
+heightmap_max_layers = 32
+heightmap_texture = ExtResource("10_wnlxl")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vr5ab"]
+resource_local_to_scene = true
+albedo_color = Color(1, 0, 0, 1)
+albedo_texture = ExtResource("8_rcyh2")
+metallic = 1.0
+metallic_texture = ExtResource("11_jgaqf")
+roughness_texture = ExtResource("13_8ve8p")
+emission_enabled = true
+emission_texture = ExtResource("9_341pv")
+normal_enabled = true
+normal_texture = ExtResource("12_x66yp")
+heightmap_enabled = true
+heightmap_scale = 0.5
+heightmap_deep_parallax = true
+heightmap_min_layers = 8
+heightmap_max_layers = 32
+heightmap_texture = ExtResource("10_wnlxl")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m4nht"]
+resource_local_to_scene = true
+albedo_color = Color(0, 1, 0, 1)
+albedo_texture = ExtResource("8_rcyh2")
+metallic = 1.0
+metallic_texture = ExtResource("11_jgaqf")
+roughness_texture = ExtResource("13_8ve8p")
+emission_enabled = true
+emission_texture = ExtResource("9_341pv")
+normal_enabled = true
+normal_texture = ExtResource("12_x66yp")
+heightmap_enabled = true
+heightmap_scale = 0.5
+heightmap_deep_parallax = true
+heightmap_min_layers = 8
+heightmap_max_layers = 32
+heightmap_texture = ExtResource("10_wnlxl")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_70gcb"]
+resource_local_to_scene = true
+albedo_color = Color(1, 0, 0, 1)
+albedo_texture = ExtResource("8_rcyh2")
+metallic = 1.0
+metallic_texture = ExtResource("11_jgaqf")
+roughness_texture = ExtResource("13_8ve8p")
+emission_enabled = true
+emission_texture = ExtResource("9_341pv")
+normal_enabled = true
+normal_texture = ExtResource("12_x66yp")
+heightmap_enabled = true
+heightmap_scale = 0.5
+heightmap_deep_parallax = true
+heightmap_min_layers = 8
+heightmap_max_layers = 32
+heightmap_texture = ExtResource("10_wnlxl")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f7e30"]
+resource_local_to_scene = true
+albedo_color = Color(0, 1, 0, 1)
+albedo_texture = ExtResource("8_rcyh2")
+metallic = 1.0
+metallic_texture = ExtResource("11_jgaqf")
+roughness_texture = ExtResource("13_8ve8p")
+emission_enabled = true
+emission_texture = ExtResource("9_341pv")
+normal_enabled = true
+normal_texture = ExtResource("12_x66yp")
+heightmap_enabled = true
+heightmap_scale = 0.5
+heightmap_deep_parallax = true
+heightmap_min_layers = 8
+heightmap_max_layers = 32
+heightmap_texture = ExtResource("10_wnlxl")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3mhen"]
+resource_local_to_scene = true
+albedo_color = Color(1, 0, 0, 1)
+albedo_texture = ExtResource("8_rcyh2")
+metallic = 1.0
+metallic_texture = ExtResource("11_jgaqf")
+roughness_texture = ExtResource("13_8ve8p")
+emission_enabled = true
+emission_texture = ExtResource("9_341pv")
+normal_enabled = true
+normal_texture = ExtResource("12_x66yp")
+heightmap_enabled = true
+heightmap_scale = 0.5
+heightmap_deep_parallax = true
+heightmap_min_layers = 8
+heightmap_max_layers = 32
+heightmap_texture = ExtResource("10_wnlxl")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o06yi"]
+resource_local_to_scene = true
+albedo_color = Color(0, 1, 0, 1)
+albedo_texture = ExtResource("8_rcyh2")
+metallic = 1.0
+metallic_texture = ExtResource("11_jgaqf")
+roughness_texture = ExtResource("13_8ve8p")
+emission_enabled = true
+emission_texture = ExtResource("9_341pv")
+normal_enabled = true
+normal_texture = ExtResource("12_x66yp")
+heightmap_enabled = true
+heightmap_scale = 0.5
+heightmap_deep_parallax = true
+heightmap_min_layers = 8
+heightmap_max_layers = 32
+heightmap_texture = ExtResource("10_wnlxl")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k0eh1"]
+resource_local_to_scene = true
+albedo_color = Color(1, 0, 0, 1)
+albedo_texture = ExtResource("8_rcyh2")
+metallic = 1.0
+metallic_texture = ExtResource("11_jgaqf")
+roughness_texture = ExtResource("13_8ve8p")
+emission_enabled = true
+emission_texture = ExtResource("9_341pv")
+normal_enabled = true
+normal_texture = ExtResource("12_x66yp")
+heightmap_enabled = true
+heightmap_scale = 0.5
+heightmap_deep_parallax = true
+heightmap_min_layers = 8
+heightmap_max_layers = 32
+heightmap_texture = ExtResource("10_wnlxl")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rx33s"]
+resource_local_to_scene = true
+albedo_color = Color(0, 1, 0, 1)
+albedo_texture = ExtResource("8_rcyh2")
+metallic = 1.0
+metallic_texture = ExtResource("11_jgaqf")
+roughness_texture = ExtResource("13_8ve8p")
+emission_enabled = true
+emission_texture = ExtResource("9_341pv")
+normal_enabled = true
+normal_texture = ExtResource("12_x66yp")
+heightmap_enabled = true
+heightmap_scale = 0.5
+heightmap_deep_parallax = true
+heightmap_min_layers = 8
+heightmap_max_layers = 32
+heightmap_texture = ExtResource("10_wnlxl")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4yd0d"]
+resource_local_to_scene = true
+albedo_color = Color(1, 0, 0, 1)
+albedo_texture = ExtResource("8_rcyh2")
+metallic = 1.0
+metallic_texture = ExtResource("11_jgaqf")
+roughness_texture = ExtResource("13_8ve8p")
+emission_enabled = true
+emission_texture = ExtResource("9_341pv")
+normal_enabled = true
+normal_texture = ExtResource("12_x66yp")
+heightmap_enabled = true
+heightmap_scale = 0.5
+heightmap_deep_parallax = true
+heightmap_min_layers = 8
+heightmap_max_layers = 32
+heightmap_texture = ExtResource("10_wnlxl")
+
+[node name="Level2" type="Node3D" unique_id=251571411]
+script = ExtResource("1_md4x4")
+
+[node name="ResetButton" parent="." unique_id=467292279 instance=ExtResource("2_1hf40")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.082622, -0.90188897)
+screen_visible = false
+
+[node name="MonitorV3" parent="ResetButton" unique_id=1710385518 instance=ExtResource("3_13yca")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, -0.1, -0.01)
+
+[node name="Label3D" type="Label3D" parent="ResetButton" unique_id=1216632551]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.014603972, 0)
+pixel_size = 0.001
+text = "Reset"
+font = ExtResource("4_8dmpc")
+font_size = 64
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1005831693]
+environment = SubResource("Environment_3mqfk")
+
+[node name="XROrigin3D" parent="." unique_id=1392519515 instance=ExtResource("5_anjjd")]
+
+[node name="Table" type="StaticBody3D" parent="." unique_id=275310675]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.028637648, 0, -1.3384086)
+
+[node name="Table" parent="Table" unique_id=102958550 instance=ExtResource("6_ocbj8")]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Table" unique_id=1971503654]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0023766756, 0.21711, 0.009283066)
+shape = SubResource("BoxShape3D_3mqfk")
+
+[node name="Box" type="Node3D" parent="." unique_id=2014998134]
+
+[node name="Wall" type="StaticBody3D" parent="Box" unique_id=527165134]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1.5, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Box/Wall" unique_id=253791036]
+shape = SubResource("BoxShape3D_xgxfi")
+
+[node name="Wall2" type="StaticBody3D" parent="Box" unique_id=1438078205]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1.5, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Box/Wall2" unique_id=588036488]
+mesh = SubResource("BoxMesh_cyadu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Box/Wall2" unique_id=1707848144]
+shape = SubResource("BoxShape3D_xgxfi")
+
+[node name="Wall3" type="StaticBody3D" parent="Box" unique_id=485574342]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 4)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Box/Wall3" unique_id=701693187]
+mesh = SubResource("BoxMesh_xgxfi")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Box/Wall3" unique_id=1701817448]
+shape = SubResource("BoxShape3D_5f3p6")
+
+[node name="Wall4" type="StaticBody3D" parent="Box" unique_id=27536075]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -4)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Box/Wall4" unique_id=533225398]
+mesh = SubResource("BoxMesh_xgxfi")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Box/Wall4" unique_id=860561307]
+shape = SubResource("BoxShape3D_5f3p6")
+
+[node name="Floor" type="StaticBody3D" parent="Box" unique_id=435631096]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Box/Floor" unique_id=1349318350]
+mesh = SubResource("BoxMesh_iixi8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Box/Floor" unique_id=132814355]
+shape = SubResource("BoxShape3D_cyadu")
+
+[node name="Roof" type="StaticBody3D" parent="Box" unique_id=124376763]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+visible = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Box/Roof" unique_id=32202204]
+mesh = SubResource("BoxMesh_iixi8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Box/Roof" unique_id=374979790]
+shape = SubResource("BoxShape3D_cyadu")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=436631518]
+transform = Transform3D(1, 0, 0, 0, 0.49999997, 0.86602545, 0, -0.86602545, 0.49999997, -1.756, 2.75, -0.17)
+light_color = Color(0.735357, 1, 1, 1)
+shadow_enabled = true
+spot_attenuation = 1.5
+spot_angle = 30.0
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="." unique_id=926392312]
+transform = Transform3D(1, 0, 0, 0, 0.49999997, 0.86602545, 0, -0.86602545, 0.49999997, 1.8593972, 2.75, -0.11794458)
+light_energy = 1.5
+shadow_enabled = true
+spot_attenuation = 1.5
+spot_angle = 30.0
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1600361334]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.07387495, 1.3582108, -1.0401108)
+light_color = Color(0.735357, 1, 1, 1)
+light_energy = 1.5
+omni_range = 2.099193
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="." unique_id=1215000891]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19770706, 1.3582108, -0.8949192)
+light_energy = 1.5
+omni_range = 2.099193
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="." unique_id=2148920]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0757748, 0.8113568, -2.8342938)
+omni_range = 0.7273517
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="." unique_id=642979340]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7180221, 0.8113568, -2.8342938)
+omni_range = 0.7273517
+
+[node name="OmniLight3D5" type="OmniLight3D" parent="." unique_id=1433838122]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5058639, 0.8113568, -2.9314513)
+light_color = Color(0.735357, 1, 1, 1)
+omni_range = 0.7273517
+
+[node name="OmniLight3D6" type="OmniLight3D" parent="." unique_id=1212486682]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9794884, 0.8113568, -2.8911185)
+light_color = Color(0.735357, 1, 1, 1)
+omni_range = 0.7273517
+
+[node name="blocks" type="Node3D" parent="." unique_id=560835365]
+
+[node name="BlockchainCube" parent="blocks" unique_id=621460339 instance=ExtResource("7_r8neg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6134248, 0.48877853, -1.2511995)
+material_valid = SubResource("StandardMaterial3D_vrv73")
+material_invalid = SubResource("StandardMaterial3D_vr5ab")
+
+[node name="BlockchainCube2" parent="blocks" unique_id=1120553873 instance=ExtResource("7_r8neg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.32267585, 0.49313736, -1.2260675)
+material_valid = SubResource("StandardMaterial3D_m4nht")
+material_invalid = SubResource("StandardMaterial3D_70gcb")
+
+[node name="BlockchainCube3" parent="blocks" unique_id=771114752 instance=ExtResource("7_r8neg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.016452014, 0.50197923, -1.2260675)
+material_valid = SubResource("StandardMaterial3D_f7e30")
+material_invalid = SubResource("StandardMaterial3D_3mhen")
+
+[node name="BlockchainCube4" parent="blocks" unique_id=1106805090 instance=ExtResource("7_r8neg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.311616, 0.4748307, -1.2260675)
+material_valid = SubResource("StandardMaterial3D_o06yi")
+material_invalid = SubResource("StandardMaterial3D_k0eh1")
+
+[node name="BlockchainCube5" parent="blocks" unique_id=143475838 instance=ExtResource("7_r8neg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6030381, 0.47775966, -1.2325084)
+material_valid = SubResource("StandardMaterial3D_rx33s")
+material_invalid = SubResource("StandardMaterial3D_4yd0d")
+
+[editable path="XROrigin3D"]

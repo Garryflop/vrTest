@@ -21,6 +21,9 @@ var d_nodes
 func _ready() -> void:
 	if Engine.is_editor_hint():
 		return
+	
+	Signals.ConfirmNextLevel.connect(_on_confirm_next_level)
+	
 	NetworkManager.clear_graph()
 	if cent_board:
 		cent_board.action_triggered.connect(_on_board_action)
@@ -184,6 +187,5 @@ func _on_board_action(action: String) -> void:
 		for node in NetworkManager.nodes.values():
 			node.reset()
 
-
-func _on_teleport_area_body_entered(body: Node3D) -> void:
+func _on_confirm_next_level() -> void:
 	load_scene(next_level_scene)

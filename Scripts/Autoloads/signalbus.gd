@@ -14,3 +14,9 @@ signal CreditsButton
 signal QuitButton
 
 #endregion
+
+#region NextLevelConfirm
+
+signal ConfirmNextLevel
+
+#endregion
