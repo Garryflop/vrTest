@@ -1,0 +1,153 @@
+[gd_scene format=3 uid="uid://dp8vyk4arbjxx"]
+
+[ext_resource type="PackedScene" uid="uid://clc5dre31iskm" path="res://addons/godot-xr-tools/xr/start_xr.tscn" id="2_3asqb"]
+[ext_resource type="PackedScene" uid="uid://dt8t2ejvy7q6u" path="res://Scenes/player.tscn" id="3_slbhm"]
+[ext_resource type="PackedScene" uid="uid://p3htbfu5scmv" path="res://Scenes/Objects/table_pos.tscn" id="7_h0uxt"]
+[ext_resource type="PackedScene" uid="uid://d0k4dcjhxixum" path="res://Scenes/Objects/table_pow.tscn" id="7_i4hbv"]
+[ext_resource type="PackedScene" uid="uid://bkg7muyrb7lxq" path="res://Scenes/3d_button.tscn" id="8_xpmn3"]
+[ext_resource type="PackedScene" uid="uid://be4l8d7v2q7pw" path="res://Assets/Models/MonitorV2/MonitorV2.glb" id="9_33y7k"]
+[ext_resource type="FontFile" uid="uid://0gvxqdbhr1ls" path="res://Assets/Fonts/CodenameCoderFree4F-Bold.ttf" id="10_khr6i"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tlcug"]
+
+[sub_resource type="Sky" id="Sky_4dpyx"]
+sky_material = SubResource("ProceduralSkyMaterial_tlcug")
+
+[sub_resource type="Environment" id="Environment_3mqfk"]
+background_mode = 1
+sky = SubResource("Sky_4dpyx")
+glow_enabled = true
+glow_bloom = 0.2
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xgxfi"]
+size = Vector3(0.2, 3, 8)
+
+[sub_resource type="BoxMesh" id="BoxMesh_cyadu"]
+size = Vector3(0.2, 3, 8)
+
+[sub_resource type="BoxMesh" id="BoxMesh_xgxfi"]
+size = Vector3(8, 3, 0.2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5f3p6"]
+size = Vector3(8, 3, 0.2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_iixi8"]
+size = Vector3(8, 0.2, 8)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cyadu"]
+size = Vector3(8, 0.2, 8)
+
+[node name="Level4" type="Node3D" unique_id=251571411]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1005831693]
+environment = SubResource("Environment_3mqfk")
+
+[node name="StartXR" parent="." unique_id=134905633 instance=ExtResource("2_3asqb")]
+
+[node name="XROrigin3D" parent="." unique_id=1392519515 instance=ExtResource("3_slbhm")]
+
+[node name="Viewport2Din3D" parent="XROrigin3D/FollowCameraMarker" parent_id_path=PackedInt32Array(1392519515, 947661486) index="0" unique_id=2025315052]
+scene_properties_keys = PackedStringArray("confirm_ui.gd")
+
+[node name="Box" type="Node3D" parent="." unique_id=2014998134]
+
+[node name="Wall" type="StaticBody3D" parent="Box" unique_id=527165134]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1.5, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Box/Wall" unique_id=253791036]
+shape = SubResource("BoxShape3D_xgxfi")
+
+[node name="Wall2" type="StaticBody3D" parent="Box" unique_id=1438078205]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1.5, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Box/Wall2" unique_id=588036488]
+mesh = SubResource("BoxMesh_cyadu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Box/Wall2" unique_id=1707848144]
+shape = SubResource("BoxShape3D_xgxfi")
+
+[node name="Wall3" type="StaticBody3D" parent="Box" unique_id=485574342]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 4)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Box/Wall3" unique_id=701693187]
+mesh = SubResource("BoxMesh_xgxfi")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Box/Wall3" unique_id=1701817448]
+shape = SubResource("BoxShape3D_5f3p6")
+
+[node name="Wall4" type="StaticBody3D" parent="Box" unique_id=27536075]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -4)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Box/Wall4" unique_id=533225398]
+mesh = SubResource("BoxMesh_xgxfi")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Box/Wall4" unique_id=860561307]
+shape = SubResource("BoxShape3D_5f3p6")
+
+[node name="Floor" type="StaticBody3D" parent="Box" unique_id=435631096]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Box/Floor" unique_id=1349318350]
+mesh = SubResource("BoxMesh_iixi8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Box/Floor" unique_id=132814355]
+shape = SubResource("BoxShape3D_cyadu")
+
+[node name="Roof" type="StaticBody3D" parent="Box" unique_id=124376763]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+visible = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Box/Roof" unique_id=32202204]
+mesh = SubResource("BoxMesh_iixi8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Box/Roof" unique_id=374979790]
+shape = SubResource("BoxShape3D_cyadu")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=436631518]
+transform = Transform3D(1, 0, 0, 0, 0.49999997, 0.86602545, 0, -0.86602545, 0.49999997, -1.449494, 2.75, -0.17)
+light_color = Color(0.735357, 1, 1, 1)
+shadow_enabled = true
+spot_attenuation = 1.5
+spot_angle = 30.0
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="." unique_id=926392312]
+transform = Transform3D(1, 0, 0, 0, 0.49999997, 0.86602545, 0, -0.86602545, 0.49999997, 1.8593972, 2.75, -0.11794458)
+light_energy = 1.5
+shadow_enabled = true
+spot_attenuation = 1.5
+spot_angle = 30.0
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1600361334]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.009827033, 1.0220187, -0.33441263)
+light_color = Color(0.735357, 1, 1, 1)
+light_energy = 1.5
+omni_range = 2.099193
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="." unique_id=1215000891]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.029222608, 1.3582108, -0.6671965)
+light_energy = 1.5
+omni_range = 2.099193
+
+[node name="ResetButton" parent="." unique_id=467292279 instance=ExtResource("8_xpmn3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.027254775, 0.28429902, -0.72866523)
+visible = false
+screen_visible = false
+
+[node name="MonitorV3" parent="ResetButton" unique_id=1710385518 instance=ExtResource("9_33y7k")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, -0.1, -0.01)
+
+[node name="Label3D" type="Label3D" parent="ResetButton" unique_id=2071197860]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.014603972, 0)
+pixel_size = 0.001
+text = "Reset"
+font = ExtResource("10_khr6i")
+font_size = 64
+
+[node name="TablePoW" parent="." unique_id=476923200 instance=ExtResource("7_i4hbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1176597, 0.099999905, -1.4550891)
+
+[node name="TablePoS" parent="." unique_id=1027259149 instance=ExtResource("7_h0uxt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8341371, 0.099999666, -1.5206281)
+
+[connection signal="button_pressed" from="ResetButton" to="." method="_on_reset_button_button_pressed"]
+
+[editable path="XROrigin3D"]

@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://p3htbfu5scmv"]
+
+[ext_resource type="PackedScene" uid="uid://njdroy1hdlq1" path="res://Assets/Models/Table/Table.glb" id="1_a4qho"]
+[ext_resource type="PackedScene" uid="uid://bbi78gwtmyv6w" path="res://Scenes/Objects/node_validator.tscn" id="2_a4qho"]
+[ext_resource type="PackedScene" uid="uid://if0nkqfuebb3" path="res://Scenes/Objects/money.tscn" id="3_lgxge"]
+[ext_resource type="PackedScene" uid="uid://bkg7muyrb7lxq" path="res://Scenes/3d_button.tscn" id="4_lgxge"]
+[ext_resource type="PackedScene" uid="uid://be4l8d7v2q7pw" path="res://Assets/Models/MonitorV2/MonitorV2.glb" id="5_t2ort"]
+[ext_resource type="FontFile" uid="uid://0gvxqdbhr1ls" path="res://Assets/Fonts/CodenameCoderFree4F-Bold.ttf" id="6_58uvp"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dk4bl"]
+size = Vector3(2.628662, 0.38458985, 1.7412109)
+
+[node name="TablePoS" type="StaticBody3D" unique_id=476923200]
+
+[node name="Table" parent="." unique_id=102958550 instance=ExtResource("1_a4qho")]
+transform = Transform3D(0.25, 0, 0, 0, 0.15, 0, 0, 0, 0.25, 0, 0, 0)
+
+[node name="TableCollision" type="CollisionShape3D" parent="." unique_id=1009375402]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.19930664, 0)
+shape = SubResource("BoxShape3D_dk4bl")
+
+[node name="NodeValidators" type="Node3D" parent="." unique_id=937040950]
+
+[node name="NodeValidator" parent="NodeValidators" unique_id=1883486052 instance=ExtResource("2_a4qho")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9335101, 0.4441017, -0.40768445)
+
+[node name="NodeValidator2" parent="NodeValidators" unique_id=584843578 instance=ExtResource("2_a4qho")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.58375543, 0.4441017, -0.40768445)
+
+[node name="NodeValidator3" parent="NodeValidators" unique_id=362668408 instance=ExtResource("2_a4qho")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1954858, 0.4441017, -0.40768445)
+
+[node name="NodeValidator4" parent="NodeValidators" unique_id=565512615 instance=ExtResource("2_a4qho")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.20185462, 0.4441017, -0.40768445)
+
+[node name="NodeValidator5" parent="NodeValidators" unique_id=311943401 instance=ExtResource("2_a4qho")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5755973, 0.4441017, -0.40768445)
+
+[node name="NodeValidator6" parent="NodeValidators" unique_id=166327092 instance=ExtResource("2_a4qho")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9456704, 0.4441017, -0.40768445)
+
+[node name="MoneyBags" type="Node3D" parent="." unique_id=701615031]
+
+[node name="Money" parent="MoneyBags" unique_id=763394247 instance=ExtResource("3_lgxge")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8881706, 0.41660157, 0.44264984)
+
+[node name="Money2" parent="MoneyBags" unique_id=1139759556 instance=ExtResource("3_lgxge")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.48874187, 0.41660157, 0.44264984)
+
+[node name="Money3" parent="MoneyBags" unique_id=900870919 instance=ExtResource("3_lgxge")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1681695, 0.41660157, 0.44264984)
+
+[node name="Money4" parent="MoneyBags" unique_id=1094709187 instance=ExtResource("3_lgxge")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1222319, 0.41660157, 0.44264984)
+
+[node name="Money5" parent="MoneyBags" unique_id=1555435945 instance=ExtResource("3_lgxge")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.43016428, 0.41660157, 0.44264984)
+
+[node name="Money6" parent="MoneyBags" unique_id=1681478866 instance=ExtResource("3_lgxge")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.89059657, 0.41660157, 0.44264984)
+
+[node name="SelectButton" parent="." unique_id=467292279 instance=ExtResource("4_lgxge")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.351139e-05, 0.19930315, 0.8857255)
+screen_visible = false
+screen_size = Vector2(0.5, 0.2)
+
+[node name="MonitorV3" parent="SelectButton" unique_id=1710385518 instance=ExtResource("5_t2ort")]
+transform = Transform3D(0.17, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, -0.1, -0.01)
+
+[node name="Label3D" type="Label3D" parent="SelectButton" unique_id=1510867543]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.014603972, 0)
+pixel_size = 0.001
+text = "Select Validator"
+font = ExtResource("6_58uvp")
+font_size = 64

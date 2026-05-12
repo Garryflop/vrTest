@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://d0k4dcjhxixum"]
+
+[ext_resource type="PackedScene" uid="uid://njdroy1hdlq1" path="res://Assets/Models/Table/Table.glb" id="1_nlaky"]
+[ext_resource type="PackedScene" uid="uid://w0a1624ols1c" path="res://Scenes/Objects/node_miner.tscn" id="2_dk4bl"]
+[ext_resource type="PackedScene" uid="uid://cihjloue14pym" path="res://Scenes/Objects/cable.tscn" id="3_e0x88"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dk4bl"]
+size = Vector3(2.628662, 0.38458985, 1.7412109)
+
+[node name="TablePoW" type="StaticBody3D" unique_id=476923200]
+
+[node name="Table" parent="." unique_id=102958550 instance=ExtResource("1_nlaky")]
+transform = Transform3D(0.25, 0, 0, 0, 0.15, 0, 0, 0, 0.25, 0, 0, 0)
+
+[node name="TableCollision" type="CollisionShape3D" parent="." unique_id=1009375402]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.19930664, 0)
+shape = SubResource("BoxShape3D_dk4bl")
+
+[node name="NodeMiners" type="Node3D" parent="." unique_id=62385442]
+
+[node name="NodeMiner" parent="NodeMiners" unique_id=1883486052 instance=ExtResource("2_dk4bl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7806814, 0.46690822, -0.41275537)
+
+[node name="NodeMiner2" parent="NodeMiners" unique_id=1673648676 instance=ExtResource("2_dk4bl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.44215938, 0.46690822, -0.41275537)
+
+[node name="NodeMiner3" parent="NodeMiners" unique_id=1639134072 instance=ExtResource("2_dk4bl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.084480196, 0.46690822, -0.41275537)
+
+[node name="NodeMiner4" parent="NodeMiners" unique_id=967816094 instance=ExtResource("2_dk4bl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3194724, 0.46690822, -0.41275537)
+
+[node name="NodeMiner5" parent="NodeMiners" unique_id=1378859533 instance=ExtResource("2_dk4bl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6981664, 0.46690822, -0.41275537)
+
+[node name="NodeMiner6" parent="NodeMiners" unique_id=787461726 instance=ExtResource("2_dk4bl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0884956, 0.46690822, -0.41275537)
+
+[node name="Cables" type="Node3D" parent="." unique_id=761414579]
+
+[node name="Cable" parent="Cables" unique_id=763394247 instance=ExtResource("3_e0x88")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.80004627, 0.41660145, 0.510891)
+
+[node name="Cable2" parent="Cables" unique_id=1153409752 instance=ExtResource("3_e0x88")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.44299018, 0.41660145, 0.510891)
+
+[node name="Cable3" parent="Cables" unique_id=59204168 instance=ExtResource("3_e0x88")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.17041278, 0.41660145, 0.510891)
+
+[node name="Cable4" parent="Cables" unique_id=2026898296 instance=ExtResource("3_e0x88")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.23787063, 0.41660145, 0.510891)
+
+[node name="Cable5" parent="Cables" unique_id=1222301686 instance=ExtResource("3_e0x88")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.58853143, 0.41660145, 0.510891)
+
+[node name="Cable6" parent="Cables" unique_id=1566367001 instance=ExtResource("3_e0x88")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0144057, 0.41660145, 0.510891)
+
+[node name="EnergyMeter" type="Label3D" parent="." unique_id=1128254177]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4726937, 0)
+text = "Energy Meter
+0%"
+
+[node name="BlockSpawnPos" type="Marker3D" parent="." unique_id=597714379]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0)
