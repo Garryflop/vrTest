@@ -11,6 +11,9 @@
 [ext_resource type="PackedScene" uid="uid://1sntiwrtqky1" path="res://Scenes/public_key_display.tscn" id="6_167vu"]
 [ext_resource type="PackedScene" uid="uid://njdroy1hdlq1" path="res://Assets/Models/Table/Table.glb" id="6_ocbj8"]
 [ext_resource type="PackedScene" uid="uid://b0kuqkemp1rk3" path="res://Scenes/Teleporter.tscn" id="11_osqx1"]
+[ext_resource type="Script" uid="uid://pfo3jad5for0" path="res://Scripts/audio_tutor.gd" id="12_1hf40"]
+[ext_resource type="AudioStream" uid="uid://nlm2n8tdpgvp" path="res://Assets/Audio/AudioTutors/4.mp3" id="13_13yca"]
+[ext_resource type="Shader" uid="uid://bt40vp54i0yb" path="res://Assets/Shaders/hologram.gdshader" id="14_8dmpc"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tlcug"]
 
@@ -43,6 +46,30 @@ size = Vector3(8, 0.2, 8)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cyadu"]
 size = Vector3(8, 0.2, 8)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_anjjd"]
+render_priority = 0
+shader = ExtResource("14_8dmpc")
+shader_parameter/opacity = 1.52800007258
+shader_parameter/ghost_color = Color(0, 0.8117647, 1, 1)
+shader_parameter/flicker_speed = 0.9690000460275
+shader_parameter/phase_frequency = 0.0
+shader_parameter/fresnel_strength = 0.8
+shader_parameter/fresnel_color = Color(1, 1, 0, 1)
+shader_parameter/wave_amplitude = 0.006
+shader_parameter/wave_frequency = 19.397
+shader_parameter/wave_speed = 3.618
+shader_parameter/chroma_amount = 1.0
+shader_parameter/points_enabled = true
+shader_parameter/point_field_scale = 4.377
+shader_parameter/point_size = 0.008
+shader_parameter/point_intensity = 1.0
+shader_parameter/point_axis_speed = 0.051
+shader_parameter/point_move_mode = 1
+shader_parameter/point_color = Color(1, 1, 1, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_ocbj8"]
+material = SubResource("ShaderMaterial_anjjd")
 
 [node name="Level3" type="Node3D" unique_id=251571411]
 script = ExtResource("1_dl55b")
@@ -184,6 +211,59 @@ font_size = 64
 
 [node name="TeleportArea" parent="." unique_id=1507852708 instance=ExtResource("11_osqx1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9707744, 0.12500003, -2.059648)
+
+[node name="AudioTutorSystem" type="Node3D" parent="." unique_id=1075977981]
+transform = Transform3D(-0.9998719, 0, 0.016004018, 0, 1, 0, -0.016004018, 0, -0.9998719, -0.12858629, 1.4020138, 1.019941)
+script = ExtResource("12_1hf40")
+audio_clip = ExtResource("13_13yca")
+scene_title = "Добро пожаловать в архитектуру будущего"
+scene_content = "Приветствуем. Перед вами — вводный курс по технологии блокчейн. Это не просто финансовый инструмент, а фундаментальный протокол передачи данных, способный реорганизовать любые процессы: от банковских транзакций до систем государственного управления.Блокчейн представляет собой децентрализованный реестр, защищенный криптографическими методами. Его невозможно взломать или подделать привычными способами. Изучите четыре базовых принципа этой системы, чтобы понять принципы работы цифровой экономики."
+
+[node name="TutorPanel" type="Node3D" parent="AudioTutorSystem" unique_id=1376639862]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="AudioTutorSystem/TutorPanel" unique_id=1683998994]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("QuadMesh_ocbj8")
+
+[node name="TitleLabel" type="Label3D" parent="AudioTutorSystem/TutorPanel" unique_id=1304545023]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8391018, 0.045947075)
+text = "Добро пожаловать
+ в архитектуру будущего"
+font = ExtResource("4_8dmpc")
+font_size = 16
+autowrap_mode = 3
+
+[node name="ContentLabel" type="Label3D" parent="AudioTutorSystem/TutorPanel" unique_id=413419364]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4901161e-08, -0.06412506, 0.04624486)
+text = "Приветствуем. Перед вами —
+ вводный курс по технологии блокчейн.
+ Это не просто финансовый инструмент,
+ а фундаментальный протокол передачи данных,
+ способный реорганизовать любые процессы:
+ от банковских транзакций
+ до систем государственного управления.
+Блокчейн представляет собой
+ децентрализованный реестр,
+ защищенный криптографическими методами.
+ Его невозможно взломать
+ или подделать привычными способами.
+ Изучите четыре базовых 
+принципа этой системы,
+ чтобы понять принципы
+ работы цифровой экономики."
+font = ExtResource("4_8dmpc")
+font_size = 16
+outline_size = 1
+
+[node name="SpeakerButton" parent="AudioTutorSystem/TutorPanel" unique_id=1636519610 instance=ExtResource("2_1hf40")]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, -1.0898356, 0)
+
+[node name="Label3D" type="Label3D" parent="AudioTutorSystem/TutorPanel/SpeakerButton" unique_id=1849714344]
+text = "play"
+font_size = 16
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="AudioTutorSystem" unique_id=1774599419]
+bus = &"Music"
 
 [connection signal="door_opened" from="Terminal" to="." method="_on_terminal_door_opened"]
 [connection signal="door_opening" from="Terminal" to="." method="_on_terminal_door_opening"]
