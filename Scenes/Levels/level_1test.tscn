@@ -73,7 +73,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0023766756, 0.21711, 0.009
 shape = SubResource("BoxShape3D_3mqfk")
 
 [node name="DecentralizedComponents" type="Node3D" parent="." unique_id=1005069685]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9099709, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9099709, -0.16248596, 0)
 
 [node name="BlockchainComponent" parent="DecentralizedComponents" unique_id=621460339 instance=ExtResource("4_1nb6q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.40714848, 0.60968995, -1.430007)
@@ -91,6 +91,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.35358304, 0.6096899, -1.907
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.081265986, 0.60968995, -1.6030328)
 
 [node name="CentralizedComponents" type="Node3D" parent="." unique_id=1900799817]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.11090529, 0)
 
 [node name="CentralComponent" parent="CentralizedComponents" unique_id=1556335945 instance=ExtResource("4_1nb6q")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1.7591534, 0.60968995, -1.7241834)

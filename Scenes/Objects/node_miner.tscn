@@ -131,4 +131,5 @@ mesh = SubResource("BoxMesh_hww8u")
 surface_material_override/0 = SubResource("StandardMaterial3D_e5hgn")
 
 [node name="Socket" parent="." index="6" unique_id=12088233 instance=ExtResource("15_yuh7e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.195, 0)
 snap_require = "Cable"

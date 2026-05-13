@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://dh8grd7s3n8kg" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_snap.tscn" id="13_uyso2"]
 [ext_resource type="Script" uid="uid://0b7wkxi4vymb" path="res://addons/godot-xr-tools/objects/highlight/highlight_visible.gd" id="14_kj73a"]
 [ext_resource type="PackedScene" uid="uid://ce7vysyvondf8" path="res://addons/godot-xr-tools/objects/snap_zone.tscn" id="15_8bp1u"]
+[ext_resource type="FontFile" uid="uid://0gvxqdbhr1ls" path="res://Assets/Fonts/CodenameCoderFree4F-Bold.ttf" id="16_6tnxj"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fhi5s"]
 size = Vector3(0.1, 0.1, 0.1)
@@ -135,5 +136,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.10218078, 0)
 snap_require = "Money"
 
 [node name="Label3D" type="Label3D" parent="." index="7" unique_id=909199892]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35147685, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.016297594, 0.27203774, 0)
 text = "X BTC"
+font = ExtResource("16_6tnxj")
+font_size = 12
+outline_size = 6
