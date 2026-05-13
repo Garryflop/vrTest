@@ -1,13 +1,26 @@
 [gd_scene format=3 uid="uid://d0k4dcjhxixum"]
 
 [ext_resource type="PackedScene" uid="uid://njdroy1hdlq1" path="res://Assets/Models/Table/Table.glb" id="1_nlaky"]
+[ext_resource type="Script" uid="uid://dbg3hu40oo228" path="res://Scripts/table_pow.gd" id="1_opxr4"]
+[ext_resource type="Material" uid="uid://xemw84j2q3kn" path="res://Assets/materials/mat_states/mat_idle.tres" id="2_3a7jo"]
 [ext_resource type="PackedScene" uid="uid://w0a1624ols1c" path="res://Scenes/Objects/node_miner.tscn" id="2_dk4bl"]
 [ext_resource type="PackedScene" uid="uid://cihjloue14pym" path="res://Scenes/Objects/cable.tscn" id="3_e0x88"]
+[ext_resource type="Material" uid="uid://ceva6bswjh4i2" path="res://Assets/materials/mat_states/mat_waiting.tres" id="3_oyckl"]
+[ext_resource type="Material" uid="uid://cb4ay1lyogckl" path="res://Assets/materials/mat_states/mat_winner.tres" id="4_dx2k1"]
+[ext_resource type="Material" uid="uid://cabc5jdbync6o" path="res://Assets/materials/mat_states/mat_loser.tres" id="5_wmuyk"]
+[ext_resource type="PackedScene" uid="uid://bkg7muyrb7lxq" path="res://Scenes/3d_button.tscn" id="9_wmuyk"]
+[ext_resource type="PackedScene" uid="uid://be4l8d7v2q7pw" path="res://Assets/Models/MonitorV2/MonitorV2.glb" id="10_6p3r8"]
+[ext_resource type="FontFile" uid="uid://0gvxqdbhr1ls" path="res://Assets/Fonts/CodenameCoderFree4F-Bold.ttf" id="11_658c1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dk4bl"]
 size = Vector3(2.628662, 0.38458985, 1.7412109)
 
 [node name="TablePoW" type="StaticBody3D" unique_id=476923200]
+script = ExtResource("1_opxr4")
+mat_idle = ExtResource("2_3a7jo")
+mat_mining = ExtResource("3_oyckl")
+mat_winner = ExtResource("4_dx2k1")
+mat_loser = ExtResource("5_wmuyk")
 
 [node name="Table" parent="." unique_id=102958550 instance=ExtResource("1_nlaky")]
 transform = Transform3D(0.25, 0, 0, 0, 0.15, 0, 0, 0, 0.25, 0, 0, 0)
@@ -63,3 +76,20 @@ text = "Energy Meter
 
 [node name="BlockSpawnPos" type="Marker3D" parent="." unique_id=597714379]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0)
+
+[node name="Node3D" type="Node3D" parent="." unique_id=1589021483]
+
+[node name="StartButton" parent="." unique_id=467292279 instance=ExtResource("9_wmuyk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8354845, 0.28429902, 0.92520416)
+screen_visible = false
+
+[node name="MonitorV3" parent="StartButton" unique_id=1142370581 instance=ExtResource("10_6p3r8")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, -0.1, -0.01)
+
+[node name="Label3D" type="Label3D" parent="StartButton" unique_id=1637145903]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.014603972, 0)
+pixel_size = 0.001
+text = "Start
+"
+font = ExtResource("11_658c1")
+font_size = 64

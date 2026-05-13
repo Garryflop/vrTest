@@ -1,16 +1,26 @@
 [gd_scene format=3 uid="uid://p3htbfu5scmv"]
 
+[ext_resource type="Script" uid="uid://ndo36364pbgr" path="res://Scripts/table_pos.gd" id="1_58uvp"]
 [ext_resource type="PackedScene" uid="uid://njdroy1hdlq1" path="res://Assets/Models/Table/Table.glb" id="1_a4qho"]
 [ext_resource type="PackedScene" uid="uid://bbi78gwtmyv6w" path="res://Scenes/Objects/node_validator.tscn" id="2_a4qho"]
+[ext_resource type="Material" uid="uid://xemw84j2q3kn" path="res://Assets/materials/mat_states/mat_idle.tres" id="2_n3e5q"]
+[ext_resource type="Material" uid="uid://ceva6bswjh4i2" path="res://Assets/materials/mat_states/mat_waiting.tres" id="3_6lsv7"]
 [ext_resource type="PackedScene" uid="uid://if0nkqfuebb3" path="res://Scenes/Objects/money.tscn" id="3_lgxge"]
+[ext_resource type="Material" uid="uid://cb4ay1lyogckl" path="res://Assets/materials/mat_states/mat_winner.tres" id="4_bh1b8"]
 [ext_resource type="PackedScene" uid="uid://bkg7muyrb7lxq" path="res://Scenes/3d_button.tscn" id="4_lgxge"]
 [ext_resource type="PackedScene" uid="uid://be4l8d7v2q7pw" path="res://Assets/Models/MonitorV2/MonitorV2.glb" id="5_t2ort"]
+[ext_resource type="Material" uid="uid://cabc5jdbync6o" path="res://Assets/materials/mat_states/mat_loser.tres" id="5_uludv"]
 [ext_resource type="FontFile" uid="uid://0gvxqdbhr1ls" path="res://Assets/Fonts/CodenameCoderFree4F-Bold.ttf" id="6_58uvp"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dk4bl"]
 size = Vector3(2.628662, 0.38458985, 1.7412109)
 
 [node name="TablePoS" type="StaticBody3D" unique_id=476923200]
+script = ExtResource("1_58uvp")
+mat_idle = ExtResource("2_n3e5q")
+mat_waiting = ExtResource("3_6lsv7")
+mat_winner = ExtResource("4_bh1b8")
+mat_loser = ExtResource("5_uludv")
 
 [node name="Table" parent="." unique_id=102958550 instance=ExtResource("1_a4qho")]
 transform = Transform3D(0.25, 0, 0, 0, 0.15, 0, 0, 0, 0.25, 0, 0, 0)

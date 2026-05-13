@@ -1,5 +1,21 @@
 [gd_scene format=3 uid="uid://bysvo1ayohojw"]
 
 [ext_resource type="PackedScene" uid="uid://bnqnnnet4dw12" path="res://addons/godot-xr-tools/staging/staging.tscn" id="1_p0wkn"]
+[ext_resource type="Texture2D" uid="uid://6god1iwyirx" path="res://Assets/Sprites/BG_loadingScreen.png" id="2_dmx6v"]
+[ext_resource type="FontFile" uid="uid://0gvxqdbhr1ls" path="res://Assets/Fonts/CodenameCoderFree4F-Bold.ttf" id="3_i4eib"]
+[ext_resource type="Script" uid="uid://cufvfd78lmgbd" path="res://Scripts/label_screen.gd" id="3_v78ca"]
 
 [node name="Staging" unique_id=608585378 instance=ExtResource("1_p0wkn")]
+
+[node name="LoadingScreen" parent="." index="2" unique_id=1443910419]
+splash_screen = ExtResource("2_dmx6v")
+
+[node name="LabelScreen" type="Label3D" parent="." index="5" unique_id=1780022608]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.453703, 3.5331273, -25.869625)
+text = "asdasd"
+font = ExtResource("3_i4eib")
+font_size = 128
+outline_size = 24
+script = ExtResource("3_v78ca")
+
+[connection signal="switching_to_loading_scene" from="." to="LabelScreen" method="_on_staging_switching_to_loading_scene"]
