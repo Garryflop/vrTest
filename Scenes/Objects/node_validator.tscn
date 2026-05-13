@@ -106,9 +106,7 @@ enabled = false
 [node name="CollisionShape3D" parent="." index="0"]
 shape = SubResource("BoxShape3D_fhi5s")
 
-[node name="Cube1" type="Node3D" parent="." index="1" unique_id=2093738467]
-
-[node name="Cube_004" type="MeshInstance3D" parent="Cube1" index="0" unique_id=1453399369]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="1" unique_id=1453399369]
 transform = Transform3D(8, 0, 0, 0, -3.496911e-07, 8, 0, -8, -3.496911e-07, 0, 0, 0)
 mesh = SubResource("ArrayMesh_5t5rr")
 surface_material_override/0 = SubResource("StandardMaterial3D_5krvg")

@@ -82,10 +82,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.40714848, 0.60968995, -1.4
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.28045195, 0.60968995, -1.4230784)
 
 [node name="BlockchainComponent3" parent="DecentralizedComponents" unique_id=718444212 instance=ExtResource("4_1nb6q")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.46253484, 0.6096899, -1.8912842)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.30346835, 0.6096899, -1.8912842)
 
 [node name="BlockchainComponent4" parent="DecentralizedComponents" unique_id=724377318 instance=ExtResource("4_1nb6q")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.35358304, 0.6096899, -1.9075329)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3773998, 0.6096899, -1.9075329)
 
 [node name="BlockchainComponent5" parent="DecentralizedComponents" unique_id=2027818812 instance=ExtResource("4_1nb6q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.081265986, 0.60968995, -1.6030328)
@@ -200,9 +200,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2082152, 1.0238826, -2.7716
 omni_range = 0.85
 
 [node name="OmniLight3D6" type="OmniLight3D" parent="." unique_id=1212486682]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4577668, 0.97315013, -2.7208858)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7084794, 0.97315013, -2.7300549)
 light_color = Color(0.735357, 1, 1, 1)
-omni_range = 0.84168434
+omni_range = 0.8187647
+
+[node name="OmniLight3D8" type="OmniLight3D" parent="." unique_id=432934746]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9014306, 0.97315013, -2.7300549)
+light_color = Color(0.735357, 1, 1, 1)
+omni_range = 0.8187647
+
+[node name="OmniLight3D9" type="OmniLight3D" parent="." unique_id=383393648]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.181334, 0.97315013, -2.7300549)
+light_color = Color(0.735357, 1, 1, 1)
+omni_range = 0.8187647
 
 [node name="OmniLight3D7" type="OmniLight3D" parent="." unique_id=1047070785]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.005102515, 0.615707, -2.1675546)

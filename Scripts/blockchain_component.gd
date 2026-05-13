@@ -3,7 +3,8 @@ class_name BlockchainComponent
 
 @onready var cube: XRToolsPickable = %Cube
 @onready var cube_mesh: MeshInstance3D = %MeshInstance3D
-@onready var highlight: MeshInstance3D = $Cube/XRToolsHighlightVisible/MeshInstance3D
+@onready var highlight: MeshInstance3D = $Cube/HighlightMesh
+
 @onready var server: MeshInstance3D = %Server
 
 @onready var connect_object_anchor: Marker3D = %ConnectObjectAnchor
@@ -46,8 +47,8 @@ func _set_color(new_color: Color):
 	if cube_mesh:
 		cube_mesh.get_surface_override_material(0).albedo_color = color
 	if server:
-		server.get_surface_override_material(0).albedo_color = color
-		$Cube/XRToolsHighlightVisible/MeshInstance3D.get_surface_override_material(0).albedo_color = color
+		highlight.get_surface_override_material(0).albedo_color = color
+		
 
 var z_range: float = 0.1
 #var held_object:PhysicsBody3D

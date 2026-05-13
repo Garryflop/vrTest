@@ -80,6 +80,9 @@ func _process(delta: float) -> void:
 	elif _beam_alpha >= 0.9:
 		_beam_dir = -1.0
 	_redraw_beams()
+	if !public_key.is_picked_up():
+		public_key.transform = Transform3D.IDENTITY
+		public_key.rotate_y(deg_to_rad(90))
 
 func _redraw_beams() -> void:
 	_beam_imm.clear_surfaces()
@@ -94,8 +97,7 @@ func _redraw_beams() -> void:
 
 
 func _on_key_mesh_released(pickable: Variant, by: Variant) -> void:
-	public_key.transform = Transform3D.IDENTITY
-	public_key.rotate_y(deg_to_rad(90))
+	pass
 
 
 func _on_public_key_dropped(pickable: Variant) -> void:

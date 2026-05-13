@@ -17,6 +17,8 @@ var start_time: float = 0.0
 var sockets: Array = []
 var connected_count: int = 0
 
+var cable_init_transforms: Array = []
+
 func _ready() -> void:
 	start_button.button_pressed.connect(_on_start)
 	
@@ -30,6 +32,9 @@ func _ready() -> void:
 			push_warning("No Socket in " + miner.name)
 	
 	_update_energy_meter()
+	
+	for cable in cables:
+		cable_init_transforms.append(cable.global_transform)
 
 # ── Энергия ──────────────────────────────────────────────────
 func _on_cable_connected(_what) -> void:
@@ -72,7 +77,7 @@ func _on_start() -> void:
 
 	var times: Array = []
 	for miner in miners:
-		times.append(randf_range(base_time, base_time * 1.8))
+		times.append(randf_range(base_time, base_time * 1.2))
 		_set_node_visual(miner, "mining")
 
 	var winner_time = times.min()
@@ -104,7 +109,7 @@ func _on_winner_found(winner_node: Node3D, elapsed: float, energy_ratio: float) 
 
 	await get_tree().create_timer(2.0).timeout
 	_clear_table()
-	pow_completed.emit(Time.get_ticks_msec() / 1000.0 - start_time)
+	pow_completed.emit(Time.get_ticks_msec() / 1000.0 - start_time - 2.0)#добавил -2.0 потому-что мы ждем 2.0 секунд
 
 # ── Очистка стола ────────────────────────────────────────────
 func _clear_table() -> void:
@@ -112,6 +117,7 @@ func _clear_table() -> void:
 	for socket in sockets:
 		if socket.has_method("drop_object"):
 			socket.drop_object()
+			socket.enabled = false
 	
 	await get_tree().process_frame
 	
@@ -125,7 +131,16 @@ func _clear_table() -> void:
 			label.text = ""
 	
 	await get_tree().create_timer(0.3).timeout
-	_restore_cables()
+	# Возвращаем кабели
+	for i in range(cables.size()):
+		cables[i].global_transform = cable_init_transforms[i]
+		cables[i].visible = true
+		cables[i].enabled = true
+		if cables[i] is RigidBody3D:
+			cables[i].linear_velocity = Vector3.ZERO
+			cables[i].angular_velocity = Vector3.ZERO
+	for socket in sockets:
+		socket.enabled = true
 	
 	connected_count = 0
 	start_button.visible = true
@@ -141,6 +156,7 @@ func _restore_cables() -> void:
 # ── Визуал нод ───────────────────────────────────────────────
 func _set_node_visual(node: Node3D, state: String) -> void:
 	var mesh = node.get_node_or_null("Cube/MeshInstance3D")
+	var particle = node.get_node("GPUParticles3D")
 	if not mesh:
 		mesh = node.get_node_or_null("MeshInstance3D")
 	if not mesh:
@@ -148,16 +164,20 @@ func _set_node_visual(node: Node3D, state: String) -> void:
 		return
 	match state:
 		"mining":
+			particle.emitting = true
 			mesh.material_override = mat_mining
 			_start_blink(node)
 		"winner":
 			_stop_blink(node)
+			particle.emitting = false
 			mesh.material_override = mat_winner
 		"loser":
 			_stop_blink(node)
+			particle.emitting = false
 			mesh.material_override = mat_loser
 		"idle":
 			_stop_blink(node)
+			particle.emitting = false
 			mesh.material_override = mat_idle
 
 func _start_blink(node: Node3D) -> void:
@@ -179,3 +199,31 @@ func _stop_blink(node: Node3D) -> void:
 	if node.has_meta("blink"):
 		node.get_meta("blink").kill()
 		node.remove_meta("blink")
+
+func reset() -> void:
+	# Дропаем из сокетов
+	for socket in sockets:
+		if socket.has_method("drop_object"):
+			socket.drop_object()
+			socket.enabled = false
+	await get_tree().process_frame
+	
+	# Возвращаем кабели
+	for i in range(cables.size()):
+		cables[i].global_transform = cable_init_transforms[i]
+		cables[i].visible = true
+		cables[i].enabled = true
+		if cables[i] is RigidBody3D:
+			cables[i].linear_velocity = Vector3.ZERO
+			cables[i].angular_velocity = Vector3.ZERO
+	for socket in sockets:
+		socket.enabled = true
+	# Сброс состояния
+	connected_count = 0
+	is_running = false
+	start_button.visible = true
+	for miner in nodes_container.get_children():
+		_set_node_visual(miner, "idle")
+		_stop_blink(miner)
+	energy_meter.text = "Energy Meter\n0%"
+	energy_meter.modulate = Color(1, 1, 1)

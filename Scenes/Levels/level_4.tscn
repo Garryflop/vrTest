@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bkg7muyrb7lxq" path="res://Scenes/3d_button.tscn" id="8_xpmn3"]
 [ext_resource type="PackedScene" uid="uid://be4l8d7v2q7pw" path="res://Assets/Models/MonitorV2/MonitorV2.glb" id="9_33y7k"]
 [ext_resource type="Script" uid="uid://dm1ii3ctehusi" path="res://Scripts/comparison_table.gd" id="9_keyqw"]
+[ext_resource type="PackedScene" uid="uid://b0kuqkemp1rk3" path="res://Scenes/Teleporter.tscn" id="10_gsxik"]
 [ext_resource type="FontFile" uid="uid://0gvxqdbhr1ls" path="res://Assets/Fonts/CodenameCoderFree4F-Bold.ttf" id="10_khr6i"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tlcug"]
@@ -41,6 +42,7 @@ size = Vector3(8, 0.2, 8)
 
 [node name="Level4" type="Node3D" unique_id=251571411]
 script = ExtResource("1_h0uxt")
+next_level_scene = "uid://dubog6hp2o8ym"
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1005831693]
 environment = SubResource("Environment_3mqfk")
@@ -154,6 +156,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.029222608, 1.3582108, -0.66
 light_energy = 1.5
 omni_range = 2.099193
 
+[node name="OmniLight3D7" type="OmniLight3D" parent="." unique_id=1675932019]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.104763985, 1.0111594, 1.8555334)
+light_energy = 1.5
+omni_range = 1.5991275
+
 [node name="ResetButton" parent="." unique_id=467292279 instance=ExtResource("8_xpmn3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.027254775, 0.28429902, -0.72866523)
 screen_visible = false
@@ -182,6 +189,9 @@ pos_table = NodePath("../TablePoS")
 
 [node name="Label3D" type="Label3D" parent="ComparisonTable" unique_id=201080947]
 text = "sadasdasd"
+
+[node name="TeleportArea" parent="." unique_id=1507852708 instance=ExtResource("10_gsxik")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00091171265, 0.12500003, 1.923326)
 
 [connection signal="button_pressed" from="ResetButton" to="." method="_on_reset"]
 [connection signal="pow_completed" from="TablePoW" to="ComparisonTable" method="_on_pow_done"]

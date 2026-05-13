@@ -6,6 +6,8 @@ var tether_scene: PackedScene = preload("res://Scenes/tether_line_cylinder.tscn"
 var nodes: Array = []
 var pipes: Array = []
 
+@export_file('*.tscn') var next_level_scene : String
+
 const INITIAL_TRANSACTION := 10
 
 @onready var btn_reset: Button3D = $ResetButton
@@ -13,6 +15,8 @@ const INITIAL_TRANSACTION := 10
 func _ready() -> void:
 	if Engine.is_editor_hint():
 		return
+	
+	Signals.ConfirmNextLevel.connect(_on_confirm_next_level)
 
 	nodes = [
 		$blocks/BlockchainCube,
@@ -59,3 +63,6 @@ func _make_connection(node_a, node_b) -> Node:
 	pipe_inst.thickness = 5
 	add_child(pipe_inst)
 	return pipe_inst
+
+func _on_confirm_next_level() -> void:
+	load_scene(next_level_scene)

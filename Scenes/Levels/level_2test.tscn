@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://dc5b5t7epxsy4" path="res://Assets/Models/Cube/Cube1_Metallic.1001.png" id="9_vrv73"]
 [ext_resource type="Texture2D" uid="uid://b3kpqka6ymxk5" path="res://Assets/Models/Cube/Cube1_Normal.1001.png" id="10_vr5ab"]
 [ext_resource type="Texture2D" uid="uid://c85wk7q4ol4yg" path="res://Assets/Models/Cube/Cube1_Roughness.1001.png" id="11_m4nht"]
+[ext_resource type="PackedScene" uid="uid://b0kuqkemp1rk3" path="res://Scenes/Teleporter.tscn" id="14_vrv73"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tlcug"]
 
@@ -46,9 +47,27 @@ size = Vector3(8, 0.2, 8)
 [sub_resource type="BoxShape3D" id="BoxShape3D_cyadu"]
 size = Vector3(8, 0.2, 8)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vrv73"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1la14"]
 resource_local_to_scene = true
 albedo_color = Color(0, 1, 0, 1)
+albedo_texture = ExtResource("6_65qy0")
+metallic = 1.0
+metallic_texture = ExtResource("9_vrv73")
+roughness_texture = ExtResource("11_m4nht")
+emission_enabled = true
+emission_texture = ExtResource("7_jxuhh")
+normal_enabled = true
+normal_texture = ExtResource("10_vr5ab")
+heightmap_enabled = true
+heightmap_scale = 0.5
+heightmap_deep_parallax = true
+heightmap_min_layers = 8
+heightmap_max_layers = 32
+heightmap_texture = ExtResource("8_1la14")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vrv73"]
+resource_local_to_scene = true
+albedo_color = Color(1, 0, 0, 1)
 albedo_texture = ExtResource("6_65qy0")
 metallic = 1.0
 metallic_texture = ExtResource("9_vrv73")
@@ -66,7 +85,7 @@ heightmap_texture = ExtResource("8_1la14")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vr5ab"]
 resource_local_to_scene = true
-albedo_color = Color(1, 0, 0, 1)
+albedo_color = Color(0, 1, 0, 1)
 albedo_texture = ExtResource("6_65qy0")
 metallic = 1.0
 metallic_texture = ExtResource("9_vrv73")
@@ -84,7 +103,7 @@ heightmap_texture = ExtResource("8_1la14")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m4nht"]
 resource_local_to_scene = true
-albedo_color = Color(0, 1, 0, 1)
+albedo_color = Color(1, 0, 0, 1)
 albedo_texture = ExtResource("6_65qy0")
 metallic = 1.0
 metallic_texture = ExtResource("9_vrv73")
@@ -102,7 +121,7 @@ heightmap_texture = ExtResource("8_1la14")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_70gcb"]
 resource_local_to_scene = true
-albedo_color = Color(1, 0, 0, 1)
+albedo_color = Color(0, 1, 0, 1)
 albedo_texture = ExtResource("6_65qy0")
 metallic = 1.0
 metallic_texture = ExtResource("9_vrv73")
@@ -120,7 +139,7 @@ heightmap_texture = ExtResource("8_1la14")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f7e30"]
 resource_local_to_scene = true
-albedo_color = Color(0, 1, 0, 1)
+albedo_color = Color(1, 0, 0, 1)
 albedo_texture = ExtResource("6_65qy0")
 metallic = 1.0
 metallic_texture = ExtResource("9_vrv73")
@@ -138,7 +157,7 @@ heightmap_texture = ExtResource("8_1la14")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3mhen"]
 resource_local_to_scene = true
-albedo_color = Color(1, 0, 0, 1)
+albedo_color = Color(0, 1, 0, 1)
 albedo_texture = ExtResource("6_65qy0")
 metallic = 1.0
 metallic_texture = ExtResource("9_vrv73")
@@ -156,7 +175,7 @@ heightmap_texture = ExtResource("8_1la14")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o06yi"]
 resource_local_to_scene = true
-albedo_color = Color(0, 1, 0, 1)
+albedo_color = Color(1, 0, 0, 1)
 albedo_texture = ExtResource("6_65qy0")
 metallic = 1.0
 metallic_texture = ExtResource("9_vrv73")
@@ -174,24 +193,6 @@ heightmap_texture = ExtResource("8_1la14")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k0eh1"]
 resource_local_to_scene = true
-albedo_color = Color(1, 0, 0, 1)
-albedo_texture = ExtResource("6_65qy0")
-metallic = 1.0
-metallic_texture = ExtResource("9_vrv73")
-roughness_texture = ExtResource("11_m4nht")
-emission_enabled = true
-emission_texture = ExtResource("7_jxuhh")
-normal_enabled = true
-normal_texture = ExtResource("10_vr5ab")
-heightmap_enabled = true
-heightmap_scale = 0.5
-heightmap_deep_parallax = true
-heightmap_min_layers = 8
-heightmap_max_layers = 32
-heightmap_texture = ExtResource("8_1la14")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rx33s"]
-resource_local_to_scene = true
 albedo_color = Color(0, 1, 0, 1)
 albedo_texture = ExtResource("6_65qy0")
 metallic = 1.0
@@ -208,7 +209,7 @@ heightmap_min_layers = 8
 heightmap_max_layers = 32
 heightmap_texture = ExtResource("8_1la14")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4yd0d"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rx33s"]
 resource_local_to_scene = true
 albedo_color = Color(1, 0, 0, 1)
 albedo_texture = ExtResource("6_65qy0")
@@ -228,6 +229,7 @@ heightmap_texture = ExtResource("8_1la14")
 
 [node name="Level2" type="Node3D" unique_id=251571411]
 script = ExtResource("1_1hnxv")
+next_level_scene = "uid://bdiopif0cnb4n"
 
 [node name="ResetButton" parent="." unique_id=467292279 instance=ExtResource("2_jxuhh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.082622, -0.90188897)
@@ -247,6 +249,9 @@ font_size = 64
 environment = SubResource("Environment_3mqfk")
 
 [node name="XROrigin3D" parent="." unique_id=1392519515 instance=ExtResource("3_fh8v0")]
+
+[node name="Viewport2Din3D" parent="XROrigin3D/FollowCameraMarker" parent_id_path=PackedInt32Array(1392519515, 947661486) index="0" unique_id=2025315052]
+scene_properties_keys = PackedStringArray("confirm_ui.gd")
 
 [node name="Table" type="StaticBody3D" parent="." unique_id=275310675]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.028637648, 0, -1.3384086)
@@ -358,27 +363,30 @@ omni_range = 0.7273517
 
 [node name="BlockchainCube" parent="blocks" unique_id=621460339 instance=ExtResource("4_2kscl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6134248, 0.48877853, -1.2511995)
-material_valid = SubResource("StandardMaterial3D_vrv73")
-material_invalid = SubResource("StandardMaterial3D_vr5ab")
+material_valid = SubResource("StandardMaterial3D_1la14")
+material_invalid = SubResource("StandardMaterial3D_vrv73")
 
 [node name="BlockchainCube2" parent="blocks" unique_id=1120553873 instance=ExtResource("4_2kscl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.32267585, 0.49313736, -1.2260675)
-material_valid = SubResource("StandardMaterial3D_m4nht")
-material_invalid = SubResource("StandardMaterial3D_70gcb")
+material_valid = SubResource("StandardMaterial3D_vr5ab")
+material_invalid = SubResource("StandardMaterial3D_m4nht")
 
 [node name="BlockchainCube3" parent="blocks" unique_id=771114752 instance=ExtResource("4_2kscl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.016452014, 0.50197923, -1.2260675)
-material_valid = SubResource("StandardMaterial3D_f7e30")
-material_invalid = SubResource("StandardMaterial3D_3mhen")
+material_valid = SubResource("StandardMaterial3D_70gcb")
+material_invalid = SubResource("StandardMaterial3D_f7e30")
 
 [node name="BlockchainCube4" parent="blocks" unique_id=1106805090 instance=ExtResource("4_2kscl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.311616, 0.4748307, -1.2260675)
-material_valid = SubResource("StandardMaterial3D_o06yi")
-material_invalid = SubResource("StandardMaterial3D_k0eh1")
+material_valid = SubResource("StandardMaterial3D_3mhen")
+material_invalid = SubResource("StandardMaterial3D_o06yi")
 
 [node name="BlockchainCube5" parent="blocks" unique_id=143475838 instance=ExtResource("4_2kscl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6030381, 0.47775966, -1.2325084)
-material_valid = SubResource("StandardMaterial3D_rx33s")
-material_invalid = SubResource("StandardMaterial3D_4yd0d")
+material_valid = SubResource("StandardMaterial3D_k0eh1")
+material_invalid = SubResource("StandardMaterial3D_rx33s")
+
+[node name="TeleportArea" parent="." unique_id=1507852708 instance=ExtResource("14_vrv73")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2078023, 0.12500003, -1.6718637)
 
 [editable path="XROrigin3D"]

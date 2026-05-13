@@ -4,6 +4,9 @@
 
 [node name="DecentBoard" unique_id=1485064927 instance=ExtResource("1_hwm1j")]
 
+[node name="PanelMesh" parent="." index="0" unique_id=1189680396]
+transform = Transform3D(1.35, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
 [node name="BtnCent" parent="." index="3" unique_id=236539792]
 visible = false
 

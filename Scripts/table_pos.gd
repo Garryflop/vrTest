@@ -13,6 +13,9 @@ signal pos_completed(time_seconds: float)
 var is_running: bool = false
 var stakes: Array = []  # stakes[i] = текущий стейк ноды i
 
+var bag_init_transforms: Array = []
+var bags: Array = []
+
 func _ready() -> void:
 	select_button.button_pressed.connect(_on_select)
 	
@@ -28,6 +31,10 @@ func _ready() -> void:
 			push_warning("No MoneyBagSnapZone in " + validators[i].name)
 	
 	_update_stake_labels()
+	
+	bags = get_tree().get_nodes_in_group("Money")
+	for bag in bags:
+		bag_init_transforms.append(bag.global_transform)
 
 func _on_bag_placed(_what, idx: int) -> void:
 	stakes[idx] = 10
@@ -108,3 +115,26 @@ func _set_node_visual(node: Node3D, state: String) -> void:
 			mesh.material_override = mat_winner
 		"loser":
 			mesh.material_override = mat_loser
+
+func reset() -> void:
+	for validator in nodes_container.get_children():
+		var slot = validator.get_node_or_null("MoneyBagSnapZone")
+		if slot and slot.has_method("drop_object"):
+			slot.drop_object()
+	await get_tree().process_frame
+	
+	for i in range(bags.size()):
+		bags[i].global_transform = bag_init_transforms[i]
+		bags[i].visible = true
+		bags[i].enabled = true
+		if bags[i] is RigidBody3D:
+			bags[i].linear_velocity = Vector3.ZERO
+			bags[i].angular_velocity = Vector3.ZERO
+	
+	for i in range(stakes.size()):
+		stakes[i] = 1
+	is_running = false
+	select_button.visible = true
+	for node in nodes_container.get_children():
+		_set_node_visual(node, "idle")
+	_update_stake_labels()
