@@ -2,8 +2,7 @@ extends Node3D
 
 @onready var audio_player: AudioStreamPlayer3D = $AudioStreamPlayer3D
 @onready var speaker_button: Node = $TutorPanel/SpeakerButton
-@onready var title_label: Label3D = $TutorPanel/TitleLabel
-@onready var content_label: Label3D = $TutorPanel/ContentLabel
+
 
 # Назначить в инспекторе — .mp3 файл для этой сцены
 @export var audio_clip: AudioStream

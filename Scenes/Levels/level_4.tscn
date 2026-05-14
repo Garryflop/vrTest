@@ -10,6 +10,9 @@
 [ext_resource type="Script" uid="uid://dm1ii3ctehusi" path="res://Scripts/comparison_table.gd" id="9_keyqw"]
 [ext_resource type="PackedScene" uid="uid://b0kuqkemp1rk3" path="res://Scenes/Teleporter.tscn" id="10_gsxik"]
 [ext_resource type="FontFile" uid="uid://0gvxqdbhr1ls" path="res://Assets/Fonts/CodenameCoderFree4F-Bold.ttf" id="10_khr6i"]
+[ext_resource type="Script" uid="uid://pfo3jad5for0" path="res://Scripts/audio_tutor.gd" id="11_i5g5g"]
+[ext_resource type="AudioStream" uid="uid://clcseauwps1xe" path="res://Assets/Audio/AudioTutors/5.mp3" id="12_3osng"]
+[ext_resource type="Shader" uid="uid://bt40vp54i0yb" path="res://Assets/Shaders/hologram.gdshader" id="13_eb4ip"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tlcug"]
 
@@ -39,6 +42,36 @@ size = Vector3(8, 0.2, 8)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cyadu"]
 size = Vector3(8, 0.2, 8)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_ecora"]
+viewport_path = NodePath("AudioTutorSystem/TutorPanel/SubViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xpmn3"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("13_eb4ip")
+shader_parameter/albedo_texture = SubResource("ViewportTexture_ecora")
+shader_parameter/opacity = 1.52800007258
+shader_parameter/ghost_color = Color(0, 0.8117647, 1, 1)
+shader_parameter/flicker_speed = 0.9690000460275
+shader_parameter/phase_frequency = 0.0
+shader_parameter/fresnel_strength = 0.8
+shader_parameter/fresnel_color = Color(1, 1, 0, 1)
+shader_parameter/wave_amplitude = 0.006
+shader_parameter/wave_frequency = 19.397
+shader_parameter/wave_speed = 3.618
+shader_parameter/chroma_amount = 1.0
+shader_parameter/points_enabled = true
+shader_parameter/point_field_scale = 4.377
+shader_parameter/point_size = 0.008
+shader_parameter/point_intensity = 1.0
+shader_parameter/point_axis_speed = 0.051
+shader_parameter/point_move_mode = 1
+shader_parameter/point_color = Color(1, 1, 1, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_33y7k"]
+resource_local_to_scene = true
+material = SubResource("ShaderMaterial_xpmn3")
 
 [node name="Level4" type="Node3D" unique_id=251571411]
 script = ExtResource("1_h0uxt")
@@ -192,6 +225,66 @@ text = "sadasdasd"
 
 [node name="TeleportArea" parent="." unique_id=1507852708 instance=ExtResource("10_gsxik")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00091171265, 0.12500003, 1.923326)
+
+[node name="AudioTutorSystem" type="Node3D" parent="." unique_id=25589877]
+transform = Transform3D(-0.9998719, 0, 0.016004018, 0, 1, 0, -0.016004018, 0, -0.9998719, 0.0031298995, 1.4020138, 1.019941)
+script = ExtResource("11_i5g5g")
+audio_clip = ExtResource("12_3osng")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="AudioTutorSystem" unique_id=937136147]
+bus = &"Music"
+
+[node name="TutorPanel" type="Node3D" parent="AudioTutorSystem" unique_id=113984847]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="AudioTutorSystem/TutorPanel" unique_id=658911242]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, -0.5010576, 0)
+mesh = SubResource("QuadMesh_33y7k")
+
+[node name="SpeakerButton" parent="AudioTutorSystem/TutorPanel" unique_id=748713304 instance=ExtResource("8_xpmn3")]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, -1.0898356, 0)
+screen_visible = false
+
+[node name="Label3D" type="Label3D" parent="AudioTutorSystem/TutorPanel/SpeakerButton" unique_id=641480574]
+text = "play"
+font_size = 16
+
+[node name="SubViewport" type="SubViewport" parent="AudioTutorSystem/TutorPanel" unique_id=2126112475]
+
+[node name="MarginContainer" type="MarginContainer" parent="AudioTutorSystem/TutorPanel/SubViewport" unique_id=133414106]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 58.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AudioTutorSystem/TutorPanel/SubViewport/MarginContainer" unique_id=1589372467]
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="AudioTutorSystem/TutorPanel/SubViewport/MarginContainer/VBoxContainer" unique_id=263702570]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("10_khr6i")
+text = "МОДУЛЬ 4: Механизмы консенсуса
+Протоколы достижения согласия"
+horizontal_alignment = 1
+
+[node name="ContentLabel" type="Label" parent="AudioTutorSystem/TutorPanel/SubViewport/MarginContainer/VBoxContainer" unique_id=1148771841]
+custom_minimum_size = Vector2(512, 517)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("10_khr6i")
+text = "Поскольку в децентрализованной сети нет «главного», узлы должны договариваться о том, какие записи считать истинными. Этот процесс называется Консенсусом. Существует два основных алгоритма:
+
+Proof of Work (Доказательство работы): Участники (майнеры) используют вычислительную мощность оборудования для решения сложных математических задач. Тот, кто решит задачу первым, получает право записать блок.
+Особенности: Высочайшая безопасность, но значительное потребление электроэнергии и низкая скорость транзакций.
+
+Proof of Stake (Доказательство доли): Право на проверку транзакций (валидацию) получают участники, владеющие определенным количеством монет сети.
+Особенности: Высокая скорость работы, энергоэффективность и масштабируемость."
+autowrap_mode = 2
 
 [connection signal="button_pressed" from="ResetButton" to="." method="_on_reset"]
 [connection signal="pow_completed" from="TablePoW" to="ComparisonTable" method="_on_pow_done"]

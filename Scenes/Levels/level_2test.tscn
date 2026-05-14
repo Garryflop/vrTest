@@ -17,6 +17,7 @@
 [ext_resource type="Script" uid="uid://pfo3jad5for0" path="res://Scripts/audio_tutor.gd" id="15_70gcb"]
 [ext_resource type="AudioStream" uid="uid://c4rhxep6hpaqw" path="res://Assets/Audio/AudioTutors/3.mp3" id="16_70gcb"]
 [ext_resource type="Shader" uid="uid://bt40vp54i0yb" path="res://Assets/Shaders/hologram.gdshader" id="17_3mhen"]
+[ext_resource type="Script" uid="uid://ces1j6plojyra" path="res://addons/godot-xr-tools/xr/start_xr.gd" id="18_f7e30"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tlcug"]
 
@@ -50,9 +51,63 @@ size = Vector3(8, 0.2, 8)
 [sub_resource type="BoxShape3D" id="BoxShape3D_cyadu"]
 size = Vector3(8, 0.2, 8)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o06yi"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_70gcb"]
 resource_local_to_scene = true
 albedo_color = Color(0, 1, 0, 1)
+albedo_texture = ExtResource("6_65qy0")
+metallic = 1.0
+metallic_texture = ExtResource("9_vrv73")
+roughness_texture = ExtResource("11_m4nht")
+emission_enabled = true
+emission_texture = ExtResource("7_jxuhh")
+normal_enabled = true
+normal_texture = ExtResource("10_vr5ab")
+heightmap_enabled = true
+heightmap_scale = 0.5
+heightmap_deep_parallax = true
+heightmap_min_layers = 8
+heightmap_max_layers = 32
+heightmap_texture = ExtResource("8_1la14")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f7e30"]
+resource_local_to_scene = true
+albedo_color = Color(1, 0, 0, 1)
+albedo_texture = ExtResource("6_65qy0")
+metallic = 1.0
+metallic_texture = ExtResource("9_vrv73")
+roughness_texture = ExtResource("11_m4nht")
+emission_enabled = true
+emission_texture = ExtResource("7_jxuhh")
+normal_enabled = true
+normal_texture = ExtResource("10_vr5ab")
+heightmap_enabled = true
+heightmap_scale = 0.5
+heightmap_deep_parallax = true
+heightmap_min_layers = 8
+heightmap_max_layers = 32
+heightmap_texture = ExtResource("8_1la14")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3mhen"]
+resource_local_to_scene = true
+albedo_color = Color(0, 1, 0, 1)
+albedo_texture = ExtResource("6_65qy0")
+metallic = 1.0
+metallic_texture = ExtResource("9_vrv73")
+roughness_texture = ExtResource("11_m4nht")
+emission_enabled = true
+emission_texture = ExtResource("7_jxuhh")
+normal_enabled = true
+normal_texture = ExtResource("10_vr5ab")
+heightmap_enabled = true
+heightmap_scale = 0.5
+heightmap_deep_parallax = true
+heightmap_min_layers = 8
+heightmap_max_layers = 32
+heightmap_texture = ExtResource("8_1la14")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o06yi"]
+resource_local_to_scene = true
+albedo_color = Color(1, 0, 0, 1)
 albedo_texture = ExtResource("6_65qy0")
 metallic = 1.0
 metallic_texture = ExtResource("9_vrv73")
@@ -70,7 +125,7 @@ heightmap_texture = ExtResource("8_1la14")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k0eh1"]
 resource_local_to_scene = true
-albedo_color = Color(1, 0, 0, 1)
+albedo_color = Color(0, 1, 0, 1)
 albedo_texture = ExtResource("6_65qy0")
 metallic = 1.0
 metallic_texture = ExtResource("9_vrv73")
@@ -88,7 +143,7 @@ heightmap_texture = ExtResource("8_1la14")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rx33s"]
 resource_local_to_scene = true
-albedo_color = Color(0, 1, 0, 1)
+albedo_color = Color(1, 0, 0, 1)
 albedo_texture = ExtResource("6_65qy0")
 metallic = 1.0
 metallic_texture = ExtResource("9_vrv73")
@@ -106,7 +161,7 @@ heightmap_texture = ExtResource("8_1la14")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4yd0d"]
 resource_local_to_scene = true
-albedo_color = Color(1, 0, 0, 1)
+albedo_color = Color(0, 1, 0, 1)
 albedo_texture = ExtResource("6_65qy0")
 metallic = 1.0
 metallic_texture = ExtResource("9_vrv73")
@@ -124,7 +179,7 @@ heightmap_texture = ExtResource("8_1la14")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ufv4r"]
 resource_local_to_scene = true
-albedo_color = Color(0, 1, 0, 1)
+albedo_color = Color(1, 0, 0, 1)
 albedo_texture = ExtResource("6_65qy0")
 metallic = 1.0
 metallic_texture = ExtResource("9_vrv73")
@@ -142,7 +197,7 @@ heightmap_texture = ExtResource("8_1la14")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0y6kd"]
 resource_local_to_scene = true
-albedo_color = Color(1, 0, 0, 1)
+albedo_color = Color(0, 1, 0, 1)
 albedo_texture = ExtResource("6_65qy0")
 metallic = 1.0
 metallic_texture = ExtResource("9_vrv73")
@@ -160,24 +215,6 @@ heightmap_texture = ExtResource("8_1la14")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xa7w8"]
 resource_local_to_scene = true
-albedo_color = Color(0, 1, 0, 1)
-albedo_texture = ExtResource("6_65qy0")
-metallic = 1.0
-metallic_texture = ExtResource("9_vrv73")
-roughness_texture = ExtResource("11_m4nht")
-emission_enabled = true
-emission_texture = ExtResource("7_jxuhh")
-normal_enabled = true
-normal_texture = ExtResource("10_vr5ab")
-heightmap_enabled = true
-heightmap_scale = 0.5
-heightmap_deep_parallax = true
-heightmap_min_layers = 8
-heightmap_max_layers = 32
-heightmap_texture = ExtResource("8_1la14")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c5l33"]
-resource_local_to_scene = true
 albedo_color = Color(1, 0, 0, 1)
 albedo_texture = ExtResource("6_65qy0")
 metallic = 1.0
@@ -194,45 +231,14 @@ heightmap_min_layers = 8
 heightmap_max_layers = 32
 heightmap_texture = ExtResource("8_1la14")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ln4is"]
-resource_local_to_scene = true
-albedo_color = Color(0, 1, 0, 1)
-albedo_texture = ExtResource("6_65qy0")
-metallic = 1.0
-metallic_texture = ExtResource("9_vrv73")
-roughness_texture = ExtResource("11_m4nht")
-emission_enabled = true
-emission_texture = ExtResource("7_jxuhh")
-normal_enabled = true
-normal_texture = ExtResource("10_vr5ab")
-heightmap_enabled = true
-heightmap_scale = 0.5
-heightmap_deep_parallax = true
-heightmap_min_layers = 8
-heightmap_max_layers = 32
-heightmap_texture = ExtResource("8_1la14")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ahmsf"]
-resource_local_to_scene = true
-albedo_color = Color(1, 0, 0, 1)
-albedo_texture = ExtResource("6_65qy0")
-metallic = 1.0
-metallic_texture = ExtResource("9_vrv73")
-roughness_texture = ExtResource("11_m4nht")
-emission_enabled = true
-emission_texture = ExtResource("7_jxuhh")
-normal_enabled = true
-normal_texture = ExtResource("10_vr5ab")
-heightmap_enabled = true
-heightmap_scale = 0.5
-heightmap_deep_parallax = true
-heightmap_min_layers = 8
-heightmap_max_layers = 32
-heightmap_texture = ExtResource("8_1la14")
+[sub_resource type="ViewportTexture" id="ViewportTexture_f7e30"]
+viewport_path = NodePath("AudioTutorSystem/TutorPanel/SubViewport")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mljyq"]
+resource_local_to_scene = true
 render_priority = 0
 shader = ExtResource("17_3mhen")
+shader_parameter/albedo_texture = SubResource("ViewportTexture_f7e30")
 shader_parameter/opacity = 1.52800007258
 shader_parameter/ghost_color = Color(0, 0.8117647, 1, 1)
 shader_parameter/flicker_speed = 0.9690000460275
@@ -252,6 +258,7 @@ shader_parameter/point_move_mode = 1
 shader_parameter/point_color = Color(1, 1, 1, 1)
 
 [sub_resource type="QuadMesh" id="QuadMesh_niomj"]
+resource_local_to_scene = true
 material = SubResource("ShaderMaterial_mljyq")
 
 [node name="Level2" type="Node3D" unique_id=251571411]
@@ -390,28 +397,28 @@ omni_range = 0.7273517
 
 [node name="BlockchainCube" parent="blocks" unique_id=621460339 instance=ExtResource("4_2kscl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6134248, 0.48877853, -1.2511995)
-material_valid = SubResource("StandardMaterial3D_o06yi")
-material_invalid = SubResource("StandardMaterial3D_k0eh1")
+material_valid = SubResource("StandardMaterial3D_70gcb")
+material_invalid = SubResource("StandardMaterial3D_f7e30")
 
 [node name="BlockchainCube2" parent="blocks" unique_id=1120553873 instance=ExtResource("4_2kscl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.32267585, 0.49313736, -1.2260675)
-material_valid = SubResource("StandardMaterial3D_rx33s")
-material_invalid = SubResource("StandardMaterial3D_4yd0d")
+material_valid = SubResource("StandardMaterial3D_3mhen")
+material_invalid = SubResource("StandardMaterial3D_o06yi")
 
 [node name="BlockchainCube3" parent="blocks" unique_id=771114752 instance=ExtResource("4_2kscl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.016452014, 0.50197923, -1.2260675)
-material_valid = SubResource("StandardMaterial3D_ufv4r")
-material_invalid = SubResource("StandardMaterial3D_0y6kd")
+material_valid = SubResource("StandardMaterial3D_k0eh1")
+material_invalid = SubResource("StandardMaterial3D_rx33s")
 
 [node name="BlockchainCube4" parent="blocks" unique_id=1106805090 instance=ExtResource("4_2kscl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.311616, 0.4748307, -1.2260675)
-material_valid = SubResource("StandardMaterial3D_xa7w8")
-material_invalid = SubResource("StandardMaterial3D_c5l33")
+material_valid = SubResource("StandardMaterial3D_4yd0d")
+material_invalid = SubResource("StandardMaterial3D_ufv4r")
 
 [node name="BlockchainCube5" parent="blocks" unique_id=143475838 instance=ExtResource("4_2kscl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6030381, 0.47775966, -1.2325084)
-material_valid = SubResource("StandardMaterial3D_ln4is")
-material_invalid = SubResource("StandardMaterial3D_ahmsf")
+material_valid = SubResource("StandardMaterial3D_0y6kd")
+material_invalid = SubResource("StandardMaterial3D_xa7w8")
 
 [node name="TeleportArea" parent="." unique_id=1507852708 instance=ExtResource("14_vrv73")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2078023, 0.12500003, -1.6718637)
@@ -429,16 +436,43 @@ scene_content = "Приветствуем. Перед вами — вводны�
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("QuadMesh_niomj")
 
-[node name="TitleLabel" type="Label3D" parent="AudioTutorSystem/TutorPanel" unique_id=928921570]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8391018, 0.045947075)
+[node name="SpeakerButton" parent="AudioTutorSystem/TutorPanel" unique_id=1740797110 instance=ExtResource("2_jxuhh")]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, -1.0898356, 0)
+screen_visible = false
+
+[node name="Label3D" type="Label3D" parent="AudioTutorSystem/TutorPanel/SpeakerButton" unique_id=49713726]
+text = "play"
+font_size = 16
+
+[node name="SubViewport" type="SubViewport" parent="AudioTutorSystem/TutorPanel" unique_id=180354501]
+
+[node name="MarginContainer" type="MarginContainer" parent="AudioTutorSystem/TutorPanel/SubViewport" unique_id=1911319174]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 58.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AudioTutorSystem/TutorPanel/SubViewport/MarginContainer" unique_id=497320839]
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="AudioTutorSystem/TutorPanel/SubViewport/MarginContainer/VBoxContainer" unique_id=496728282]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("4_vrv73")
 text = "МОДУЛЬ 2: Структура блока
 Анатомия неизменяемости"
-font = ExtResource("4_vrv73")
-font_size = 16
-autowrap_mode = 3
+horizontal_alignment = 1
 
-[node name="ContentLabel" type="Label3D" parent="AudioTutorSystem/TutorPanel" unique_id=1948336154]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4901161e-08, -0.06412506, 0.04624486)
+[node name="ContentLabel" type="Label" parent="AudioTutorSystem/TutorPanel/SubViewport/MarginContainer/VBoxContainer" unique_id=1552961622]
+custom_minimum_size = Vector2(512, 517)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("4_vrv73")
 text = "Блок — это базовая единица хранения информации в сети (например, данных о транзакциях). Каждый блок обладает уникальной структурой, состоящей из трех критически важных элементов:
 
 Данные: Информация о совершенных операциях (отправитель, получатель, сумма).
@@ -447,18 +481,13 @@ text = "Блок — это базовая единица хранения ин�
 
 Хэш предыдущего блока: Связующее звено, которое соединяет блоки в неразрывную цепь.
 Почему это безопасно? Если злоумышленник попытается изменить данные в старом блоке, хэш этого блока изменится. Это приведет к разрыву связи со всеми последующими блоками в цепи. Вся цепочка после измененного блока станет невалидной, и сеть мгновенно отвергнет подделку."
-font = ExtResource("4_vrv73")
-font_size = 16
-outline_size = 1
-
-[node name="SpeakerButton" parent="AudioTutorSystem/TutorPanel" unique_id=1740797110 instance=ExtResource("2_jxuhh")]
-transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, -1.0898356, 0)
-
-[node name="Label3D" type="Label3D" parent="AudioTutorSystem/TutorPanel/SpeakerButton" unique_id=49713726]
-text = "play"
-font_size = 16
+autowrap_mode = 2
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="AudioTutorSystem" unique_id=39479435]
 bus = &"Music"
+
+[node name="XRToolsStartXR" type="Node" parent="." unique_id=1237882869]
+script = ExtResource("18_f7e30")
+metadata/_custom_type_script = "uid://ces1j6plojyra"
 
 [editable path="XROrigin3D"]

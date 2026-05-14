@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://b0kuqkemp1rk3" path="res://Scenes/Teleporter.tscn" id="7_5eo54"]
 [ext_resource type="PackedScene" uid="uid://dgim750q7sm7b" path="res://Scenes/UI/decent_board.tscn" id="7_aml6n"]
 [ext_resource type="Script" uid="uid://pfo3jad5for0" path="res://Scripts/audio_tutor.gd" id="8_ntgjo"]
-[ext_resource type="AudioStream" uid="uid://doo8s2nmhrik8" path="res://Assets/Audio/AudioTutors/2.mp3" id="9_ntgjo"]
+[ext_resource type="AudioStream" uid="uid://cjxdstuyecy12" path="res://Assets/Audio/AudioTutors/ogg/2.ogg" id="9_ntgjo"]
 [ext_resource type="Shader" uid="uid://bt40vp54i0yb" path="res://Assets/Shaders/hologram.gdshader" id="10_ul33m"]
 [ext_resource type="FontFile" uid="uid://0gvxqdbhr1ls" path="res://Assets/Fonts/CodenameCoderFree4F-Bold.ttf" id="11_b1nrc"]
 [ext_resource type="PackedScene" uid="uid://bkg7muyrb7lxq" path="res://Scenes/3d_button.tscn" id="12_8hkrx"]
@@ -45,9 +45,14 @@ size = Vector3(8, 0.2, 8)
 [sub_resource type="BoxShape3D" id="BoxShape3D_cyadu"]
 size = Vector3(8, 0.2, 8)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_fni1g"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_f7e30"]
+viewport_path = NodePath("AudioTutorSystem/TutorPanel/SubViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mljyq"]
+resource_local_to_scene = true
 render_priority = 0
 shader = ExtResource("10_ul33m")
+shader_parameter/albedo_texture = SubResource("ViewportTexture_f7e30")
 shader_parameter/opacity = 1.52800007258
 shader_parameter/ghost_color = Color(0, 0.8117647, 1, 1)
 shader_parameter/flicker_speed = 0.9690000460275
@@ -66,8 +71,9 @@ shader_parameter/point_axis_speed = 0.051
 shader_parameter/point_move_mode = 1
 shader_parameter/point_color = Color(1, 1, 1, 1)
 
-[sub_resource type="QuadMesh" id="QuadMesh_u2hrg"]
-material = SubResource("ShaderMaterial_fni1g")
+[sub_resource type="QuadMesh" id="QuadMesh_niomj"]
+resource_local_to_scene = true
+material = SubResource("ShaderMaterial_mljyq")
 
 [node name="Level1" type="Node3D" unique_id=251571411]
 script = ExtResource("1_lvlcmd")
@@ -262,53 +268,57 @@ transform = Transform3D(-0.9998719, 0, 0.016004018, 0, 1, 0, -0.016004018, 0, -0
 script = ExtResource("8_ntgjo")
 audio_clip = ExtResource("9_ntgjo")
 
-[node name="TutorPanel" type="Node3D" parent="AudioTutorSystem" unique_id=531846263]
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="AudioTutorSystem" unique_id=1300803897]
+bus = &"Music"
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="AudioTutorSystem/TutorPanel" unique_id=892862838]
-transform = Transform3D(2.0000002, 0, 0, 0, 2.3, 0, 0, 0, 1.0000001, 0, -0.17263627, 0)
-mesh = SubResource("QuadMesh_u2hrg")
+[node name="TutorPanel" type="Node3D" parent="AudioTutorSystem" unique_id=774662899]
 
-[node name="TitleLabel" type="Label3D" parent="AudioTutorSystem/TutorPanel" unique_id=1315380985]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8391018, 0.045947075)
-text = "МОДУЛЬ 1: Сетевая архитектура
-Централизация vs Децентрализация"
-font = ExtResource("11_b1nrc")
-font_size = 16
-autowrap_mode = 3
+[node name="MeshInstance3D" type="MeshInstance3D" parent="AudioTutorSystem/TutorPanel" unique_id=252535801]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("QuadMesh_niomj")
 
-[node name="ContentLabel" type="Label3D" parent="AudioTutorSystem/TutorPanel" unique_id=1248158295]
-transform = Transform3D(1.0000002, 0, 0, 0, 1, 0, 0, 0, 1.0000002, -3.7252903e-08, -0.23837686, 0.04624498)
-text = "В основе традиционных систем лежит
- Централизованная модель.
- Представьте городское управление:
- все решения принимаются в мэрии. 
-Если центральный узел выходит из строя
- или подвергается атаке —
- вся инфраструктура города парализуется.
-Блокчейн — это Децентрализованная сеть.
- Она функционирует по принципу
- биологического улья.
- Здесь нет единого контролирующего органа.
- Каждый компьютер в сети (узел или «нода») 
-является равноправным участником.
-Отказоустойчивость: Если один или 
-несколько узлов отключаются, сеть продолжает
- работу без потери данных.
-Прозрачность: Идентичная копия всей базы
- данных хранится одновременно 
-у каждого участника сети."
-font = ExtResource("11_b1nrc")
-font_size = 16
-outline_size = 1
+[node name="SpeakerButton" parent="AudioTutorSystem/TutorPanel" unique_id=1670963952 instance=ExtResource("12_8hkrx")]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, -1.0898356, 0)
+screen_visible = false
 
-[node name="SpeakerButton" parent="AudioTutorSystem/TutorPanel" unique_id=467292279 instance=ExtResource("12_8hkrx")]
-transform = Transform3D(1.0000004, 0, 0, 0, 1, 0, 0, 0, 1.0000004, 0.7093315, -1.0898356, 0.09116155)
-
-[node name="Label3D" type="Label3D" parent="AudioTutorSystem/TutorPanel/SpeakerButton" unique_id=769759301]
+[node name="Label3D" type="Label3D" parent="AudioTutorSystem/TutorPanel/SpeakerButton" unique_id=388905128]
 text = "play"
 font_size = 16
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="AudioTutorSystem" unique_id=1300803897]
-bus = &"Music"
+[node name="SubViewport" type="SubViewport" parent="AudioTutorSystem/TutorPanel" unique_id=1454979657]
+
+[node name="MarginContainer" type="MarginContainer" parent="AudioTutorSystem/TutorPanel/SubViewport" unique_id=1376998980]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 58.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AudioTutorSystem/TutorPanel/SubViewport/MarginContainer" unique_id=1892373821]
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="AudioTutorSystem/TutorPanel/SubViewport/MarginContainer/VBoxContainer" unique_id=1446289415]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("11_b1nrc")
+text = "МОДУЛЬ 1: Сетевая архитектура
+Централизация vs Децентрализация"
+horizontal_alignment = 1
+
+[node name="ContentLabel" type="Label" parent="AudioTutorSystem/TutorPanel/SubViewport/MarginContainer/VBoxContainer" unique_id=1993713348]
+custom_minimum_size = Vector2(512, 517)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("11_b1nrc")
+text = "В основе традиционных систем лежит Централизованная модель. Представьте городское управление: все решения принимаются в мэрии. Если центральный узел выходит из строя или подвергается атаке — вся инфраструктура города парализуется.
+
+Блокчейн — это Децентрализованная сеть. Она функционирует по принципу биологического улья. Здесь нет единого контролирующего органа. Каждый компьютер в сети (узел или «нода») является равноправным участником.
+Отказоустойчивость: Если один или несколько узлов отключаются, сеть продолжает работу без потери данных.
+Прозрачность: Идентичная копия всей базы данных хранится одновременно у каждого участника сети."
+autowrap_mode = 2
 
 [editable path="XROrigin3D"]

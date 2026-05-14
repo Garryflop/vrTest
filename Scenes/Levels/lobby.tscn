@@ -26,7 +26,8 @@
 [ext_resource type="Shader" uid="uid://bt40vp54i0yb" path="res://Assets/Shaders/hologram.gdshader" id="24_kavh7"]
 [ext_resource type="PackedScene" uid="uid://bkg7muyrb7lxq" path="res://Scenes/3d_button.tscn" id="25_5yi86"]
 [ext_resource type="Script" uid="uid://pfo3jad5for0" path="res://Scripts/audio_tutor.gd" id="25_x8l11"]
-[ext_resource type="AudioStream" uid="uid://dchxch1mrogyn" path="res://Assets/Audio/AudioTutors/1.mp3" id="27_8d7cw"]
+[ext_resource type="AudioStream" uid="uid://7tiykj8311hj" path="res://Assets/Audio/AudioTutors/ogg/1.ogg" id="26_kavh7"]
+[ext_resource type="AudioStream" uid="uid://bn0c8w0owupkw" path="res://Assets/Audio/AudioTutors/ogg/5.1.ogg" id="28_d3nbn"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gymyn"]
 no_depth_test = true
@@ -774,9 +775,14 @@ _data = {
 &"Yberaiet": SubResource("Animation_0uc8k")
 }
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_fni1g"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_f7e30"]
+viewport_path = NodePath("AudioTutorSystem/TutorPanel/SubViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mljyq"]
+resource_local_to_scene = true
 render_priority = 0
 shader = ExtResource("24_kavh7")
+shader_parameter/albedo_texture = SubResource("ViewportTexture_f7e30")
 shader_parameter/opacity = 1.52800007258
 shader_parameter/ghost_color = Color(0, 0.8117647, 1, 1)
 shader_parameter/flicker_speed = 0.9690000460275
@@ -795,8 +801,9 @@ shader_parameter/point_axis_speed = 0.051
 shader_parameter/point_move_mode = 1
 shader_parameter/point_color = Color(1, 1, 1, 1)
 
-[sub_resource type="QuadMesh" id="QuadMesh_1kndf"]
-material = SubResource("ShaderMaterial_fni1g")
+[sub_resource type="QuadMesh" id="QuadMesh_niomj"]
+resource_local_to_scene = true
+material = SubResource("ShaderMaterial_mljyq")
 
 [node name="Lobby" type="Node3D" unique_id=251571411]
 script = ExtResource("1_foxd2")
@@ -1193,52 +1200,111 @@ autoplay = &"WatchingWindow"
 [node name="AudioTutorSystem" type="Node3D" parent="." unique_id=1128786688]
 transform = Transform3D(-0.9998719, 0, 0.016004018, 0, 1, 0, -0.016004018, 0, -0.9998719, -0.12858629, 1.4020138, 1.019941)
 script = ExtResource("25_x8l11")
-audio_clip = ExtResource("27_8d7cw")
+audio_clip = ExtResource("26_kavh7")
 scene_title = "Добро пожаловать в архитектуру будущего"
 scene_content = "Приветствуем. Перед вами — вводный курс по технологии блокчейн. Это не просто финансовый инструмент, а фундаментальный протокол передачи данных, способный реорганизовать любые процессы: от банковских транзакций до систем государственного управления.Блокчейн представляет собой децентрализованный реестр, защищенный криптографическими методами. Его невозможно взломать или подделать привычными способами. Изучите четыре базовых принципа этой системы, чтобы понять принципы работы цифровой экономики."
 
-[node name="TutorPanel" type="Node3D" parent="AudioTutorSystem" unique_id=1252916841]
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="AudioTutorSystem" unique_id=716895971]
+bus = &"Music"
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="AudioTutorSystem/TutorPanel" unique_id=1527008754]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 1, 0, 0, 0)
-mesh = SubResource("QuadMesh_1kndf")
+[node name="TutorPanel" type="Node3D" parent="AudioTutorSystem" unique_id=123571256]
 
-[node name="TitleLabel" type="Label3D" parent="AudioTutorSystem/TutorPanel" unique_id=1711884994]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8391018, 0.045947075)
-text = "Добро пожаловать
- в архитектуру будущего"
-font = ExtResource("5_k87wc")
-font_size = 16
-autowrap_mode = 3
+[node name="MeshInstance3D" type="MeshInstance3D" parent="AudioTutorSystem/TutorPanel" unique_id=1978360995]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, -0.5010576, 0)
+mesh = SubResource("QuadMesh_niomj")
 
-[node name="ContentLabel" type="Label3D" parent="AudioTutorSystem/TutorPanel" unique_id=121401120]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4901161e-08, -0.06412506, 0.04624486)
-text = "Приветствуем. Перед вами —
- вводный курс по технологии блокчейн.
- Это не просто финансовый инструмент,
- а фундаментальный протокол передачи данных,
- способный реорганизовать любые процессы:
- от банковских транзакций
- до систем государственного управления.
-Блокчейн представляет собой
- децентрализованный реестр,
- защищенный криптографическими методами.
- Его невозможно взломать
- или подделать привычными способами.
- Изучите четыре базовых 
-принципа этой системы,
- чтобы понять принципы
- работы цифровой экономики."
-font = ExtResource("5_k87wc")
-font_size = 16
-outline_size = 1
-
-[node name="SpeakerButton" parent="AudioTutorSystem/TutorPanel" unique_id=467292279 instance=ExtResource("25_5yi86")]
+[node name="SpeakerButton" parent="AudioTutorSystem/TutorPanel" unique_id=694175069 instance=ExtResource("25_5yi86")]
 transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, -1.0898356, 0)
+screen_visible = false
 
-[node name="Label3D" type="Label3D" parent="AudioTutorSystem/TutorPanel/SpeakerButton" unique_id=1433409684]
+[node name="Label3D" type="Label3D" parent="AudioTutorSystem/TutorPanel/SpeakerButton" unique_id=1204635027]
 text = "play"
 font_size = 16
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="AudioTutorSystem" unique_id=716895971]
+[node name="SubViewport" type="SubViewport" parent="AudioTutorSystem/TutorPanel" unique_id=1243307778]
+
+[node name="MarginContainer" type="MarginContainer" parent="AudioTutorSystem/TutorPanel/SubViewport" unique_id=512655127]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 58.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AudioTutorSystem/TutorPanel/SubViewport/MarginContainer" unique_id=2127818527]
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="AudioTutorSystem/TutorPanel/SubViewport/MarginContainer/VBoxContainer" unique_id=1780520877]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("5_k87wc")
+text = "Вступление: Добро пожаловать в архитектуру будущего"
+horizontal_alignment = 1
+
+[node name="ContentLabel" type="Label" parent="AudioTutorSystem/TutorPanel/SubViewport/MarginContainer/VBoxContainer" unique_id=1106201347]
+custom_minimum_size = Vector2(512, 517)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("5_k87wc")
+text = "Приветствуем. Перед вами — вводный курс по технологии блокчейн. Это не просто финансовый инструмент, а фундаментальный протокол передачи данных, способный реорганизовать любые процессы: от банковских транзакций до систем государственного управления.
+Блокчейн представляет собой децентрализованный реестр, защищенный криптографическими методами. Его невозможно взломать или подделать привычными способами. Изучите четыре базовых принципа этой системы, чтобы понять принципы работы цифровой экономики."
+autowrap_mode = 2
+
+[node name="AudioTutorSystem2" type="Node3D" parent="." unique_id=1841116531]
+transform = Transform3D(-0.9998719, 0, 0.016004018, 0, 1, 0, -0.016004018, 0, -0.9998719, -0.12858629, 3.4555116, 1.019941)
+script = ExtResource("25_x8l11")
+audio_clip = ExtResource("28_d3nbn")
+scene_title = "Добро пожаловать в архитектуру будущего"
+scene_content = "Приветствуем. Перед вами — вводный курс по технологии блокчейн. Это не просто финансовый инструмент, а фундаментальный протокол передачи данных, способный реорганизовать любые процессы: от банковских транзакций до систем государственного управления.Блокчейн представляет собой децентрализованный реестр, защищенный криптографическими методами. Его невозможно взломать или подделать привычными способами. Изучите четыре базовых принципа этой системы, чтобы понять принципы работы цифровой экономики."
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="AudioTutorSystem2" unique_id=1802594379]
 bus = &"Music"
+
+[node name="TutorPanel" type="Node3D" parent="AudioTutorSystem2" unique_id=283289884]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="AudioTutorSystem2/TutorPanel" unique_id=1817494188]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, -0.5010576, 0)
+mesh = SubResource("QuadMesh_niomj")
+
+[node name="SpeakerButton" parent="AudioTutorSystem2/TutorPanel" unique_id=467292279 instance=ExtResource("25_5yi86")]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, -1.0898356, 0)
+screen_visible = false
+
+[node name="Label3D" type="Label3D" parent="AudioTutorSystem2/TutorPanel/SpeakerButton" unique_id=1225573049]
+text = "play"
+font_size = 16
+
+[node name="SubViewport" type="SubViewport" parent="AudioTutorSystem2/TutorPanel" unique_id=658767565]
+
+[node name="MarginContainer" type="MarginContainer" parent="AudioTutorSystem2/TutorPanel/SubViewport" unique_id=349875240]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 58.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AudioTutorSystem2/TutorPanel/SubViewport/MarginContainer" unique_id=580399676]
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="AudioTutorSystem2/TutorPanel/SubViewport/MarginContainer/VBoxContainer" unique_id=2021500286]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("5_k87wc")
+text = "Заключение: Новая эра доверия"
+horizontal_alignment = 1
+
+[node name="ContentLabel" type="Label" parent="AudioTutorSystem2/TutorPanel/SubViewport/MarginContainer/VBoxContainer" unique_id=1759734395]
+custom_minimum_size = Vector2(512, 517)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("5_k87wc")
+text = "Поздравляем с прохождением базового инструктажа. Блокчейн — это технология, исключающая посредников и обеспечивающая абсолютное доверие между незнакомыми людьми в цифровой среде.
+Теперь вы понимаете фундамент, на котором строится интернет нового поколения. Добро пожаловать в мир прозрачных и защищенных технологий!"
+autowrap_mode = 2
