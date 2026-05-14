@@ -50,6 +50,7 @@ func _init_chain() -> void:
 		nodes[i].initialize(INITIAL_TRANSACTION, nodes[i - 1].block_hash)
 
 func _on_reset() -> void:
+	Signals.LevelReset.emit()
 	for node in nodes:
 		node.reset()
 	# После reset пересчитываем цепочку заново

@@ -21,6 +21,7 @@ NetworkManager="*res://Scripts/Autoloads/network_manager.gd"
 XRToolsUserSettings="*uid://bqgb8i74tm0t"
 XRToolsRumbleManager="*uid://by853dk86g1qw"
 Signals="*uid://dh6hvadto3aue"
+Globals="*uid://dkojqw74gojpr"
 
 [editor_plugins]
 

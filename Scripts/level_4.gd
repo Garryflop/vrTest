@@ -16,8 +16,10 @@ func _ready() -> void:
 	#reset_button.button_pressed.connect(_on_reset)
 
 func _on_reset() -> void:
+	Signals.LevelReset.emit()
 	pow_table.reset()
 	pos_table.reset()
 
 func _on_confirm_next_level() -> void:
+	Globals.is_completed_game = true
 	load_scene(next_level_scene)

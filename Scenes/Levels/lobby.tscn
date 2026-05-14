@@ -785,7 +785,7 @@ shader = ExtResource("24_kavh7")
 shader_parameter/albedo_texture = SubResource("ViewportTexture_f7e30")
 shader_parameter/opacity = 1.52800007258
 shader_parameter/ghost_color = Color(0, 0.8117647, 1, 1)
-shader_parameter/flicker_speed = 0.9690000460275
+shader_parameter/flicker_speed = 0.0
 shader_parameter/phase_frequency = 0.0
 shader_parameter/fresnel_strength = 0.8
 shader_parameter/fresnel_color = Color(1, 1, 0, 1)
@@ -1254,7 +1254,8 @@ text = "Приветствуем. Перед вами — вводный кур�
 autowrap_mode = 2
 
 [node name="AudioTutorSystem2" type="Node3D" parent="." unique_id=1841116531]
-transform = Transform3D(-0.9998719, 0, 0.016004018, 0, 1, 0, -0.016004018, 0, -0.9998719, -0.12858629, 3.4555116, 1.019941)
+transform = Transform3D(-0.9998719, 0, 0.016004018, 0, 1, 0, -0.016004018, 0, -0.9998719, -0.129, 1.402, 1.02)
+visible = false
 script = ExtResource("25_x8l11")
 audio_clip = ExtResource("28_d3nbn")
 scene_title = "Добро пожаловать в архитектуру будущего"

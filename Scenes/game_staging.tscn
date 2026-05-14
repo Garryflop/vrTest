@@ -4,18 +4,29 @@
 [ext_resource type="Texture2D" uid="uid://6god1iwyirx" path="res://Assets/Sprites/BG_loadingScreen.png" id="2_dmx6v"]
 [ext_resource type="FontFile" uid="uid://0gvxqdbhr1ls" path="res://Assets/Fonts/CodenameCoderFree4F-Bold.ttf" id="3_i4eib"]
 [ext_resource type="Script" uid="uid://cufvfd78lmgbd" path="res://Scripts/label_screen.gd" id="3_v78ca"]
+[ext_resource type="Script" uid="uid://cxl62egrh3kox" path="res://Scripts/global_sfx_audio.gd" id="5_nbj22"]
+[ext_resource type="AudioStream" uid="uid://bsre6asivrw11" path="res://Assets/Audio/SFX/error.mp3" id="6_j4ldo"]
+[ext_resource type="AudioStream" uid="uid://c8nioc1bp2a82" path="res://Assets/Audio/SFX/Success1.mp3" id="7_mtjvn"]
+[ext_resource type="AudioStream" uid="uid://b715xpf4xl2dy" path="res://Assets/Audio/SFX/SystemAlert.mp3" id="8_mtjvn"]
 
 [node name="Staging" unique_id=608585378 instance=ExtResource("1_p0wkn")]
 
 [node name="LoadingScreen" parent="." index="2" unique_id=1443910419]
 splash_screen = ExtResource("2_dmx6v")
 
-[node name="LabelScreen" type="Label3D" parent="." index="5" unique_id=1780022608]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.453703, 3.5331273, -25.869625)
+[node name="LabelScreen" type="Label3D" parent="LoadingScreen" index="3" unique_id=1780022608]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.533, -25.87)
 text = "asdasd"
 font = ExtResource("3_i4eib")
 font_size = 128
 outline_size = 24
 script = ExtResource("3_v78ca")
 
-[connection signal="switching_to_loading_scene" from="." to="LabelScreen" method="_on_staging_switching_to_loading_scene"]
+[node name="GlobalSFXAudio" type="AudioStreamPlayer" parent="." index="5" unique_id=1232747376]
+bus = &"SFX"
+script = ExtResource("5_nbj22")
+error_sound = ExtResource("6_j4ldo")
+success_sound = ExtResource("7_mtjvn")
+reset_sound = ExtResource("8_mtjvn")
+
+[connection signal="switching_to_loading_scene" from="." to="LoadingScreen/LabelScreen" method="_on_staging_switching_to_loading_scene"]

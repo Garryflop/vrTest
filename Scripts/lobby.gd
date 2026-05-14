@@ -6,8 +6,15 @@ extends XRToolsSceneBase
 @onready var panel_settings: Node3D = $panel_settings
 @onready var panel_play: Node3D = $panel_play
 
+@onready var audio_tutor_system: Node3D = $AudioTutorSystem
+@onready var audio_tutor_system_2: Node3D = $AudioTutorSystem2
+
 
 func _ready() -> void:
+	if Globals.is_completed_game:
+		audio_tutor_system.hide()
+		audio_tutor_system_2.show()
+	
 	var y_ex: float = 0.7
 	panel_play.position     = Vector3(0.0,y_ex,-1.3)
 	panel_settings.position = Vector3(-1.35, y_ex, -0.7)

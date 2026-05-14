@@ -7,7 +7,17 @@ var transaction: int = 10
 var block_hash: String = ""
 var prev_hash: String = ""
 var _original_prev_hash: String = "" 
-var is_chain_valid: bool = true
+
+var one_shot_ignore_sound: bool = true
+var is_chain_valid: bool = true:
+	set(value):
+		is_chain_valid = value
+		if one_shot_ignore_sound:
+			one_shot_ignore_sound = false
+		elif value:
+			Signals.LevelSuccess.emit()
+		else:
+			Signals.LevelError.emit()
 
 var next_block: Node3D = null
 var prev_block: Node3D = null
@@ -68,6 +78,7 @@ func initialize(p_transaction: int, p_prev_hash: String) -> void:
 	_original_prev_hash = p_prev_hash
 	transaction = p_transaction
 	prev_hash = p_prev_hash
+	one_shot_ignore_sound = true
 	is_chain_valid = true
 	block_hash = _compute_hash(transaction, prev_hash)
 	update_block_visuals()

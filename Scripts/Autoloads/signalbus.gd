@@ -20,3 +20,11 @@ signal QuitButton
 signal ConfirmNextLevel
 
 #endregion
+
+#region Level
+
+signal LevelSuccess
+signal LevelError
+signal LevelReset
+
+#endregion

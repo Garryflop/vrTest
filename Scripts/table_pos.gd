@@ -78,7 +78,9 @@ func _on_select() -> void:
 	var label = validators[winner_idx].get_node_or_null("Label3D")
 	if label:
 		label.text = "✓ VALIDATOR\nStake: %d BTC\nSELECTED!" % stakes[winner_idx]
-
+	
+	Signals.LevelSuccess.emit()
+	
 	await get_tree().create_timer(2.0).timeout
 	_clear_table()
 	pos_completed.emit(0.8)

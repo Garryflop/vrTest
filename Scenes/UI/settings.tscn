@@ -14,6 +14,33 @@ shader_parameter/line_size = 0.1
 shader_parameter/back_color = Color(0, 0, 0, 1)
 shader_parameter/line_color = Color(0.36958802, 0.27770823, 0, 1)
 
+[sub_resource type="DPITexture" id="DPITexture_p46qs"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><circle cx=\"8\" cy=\"8\" r=\"7\" fill=\"#fefefe\" fill-opacity=\".75\"/></svg>
+"
+base_scale = 3.0
+
+[sub_resource type="DPITexture" id="DPITexture_ygnii"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><circle cx=\"8\" cy=\"8\" r=\"7\" fill=\"#fefefe\"/></svg>
+"
+base_scale = 3.0
+
+[sub_resource type="DPITexture" id="DPITexture_n8st6"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><circle cx=\"8\" cy=\"8\" r=\"7\" fill=\"#fefefe\" fill-opacity=\".37\"/></svg>
+"
+base_scale = 3.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p46qs"]
+content_margin_top = 15.0
+content_margin_bottom = 15.0
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.23248097, 0.23248091, 0.23248073, 1)
+border_blend = true
+shadow_color = Color(1, 1, 1, 1)
+shadow_size = 4
+
 [node name="Settings" type="Control" unique_id=898552913]
 layout_mode = 3
 anchors_preset = 15
@@ -81,108 +108,49 @@ horizontal_alignment = 1
 
 [node name="Music" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Audio" unique_id=1473386577]
 layout_mode = 2
+theme_override_constants/separation = 35
 
 [node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/Audio/Music" unique_id=777406648]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_dkbde")
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 36
 text = "MUSIC"
 
 [node name="MusicSlider" type="HSlider" parent="MarginContainer/VBoxContainer/Audio/Music" unique_id=2141912897]
-custom_minimum_size = Vector2(180, 0)
+custom_minimum_size = Vector2(360, 100)
 layout_mode = 2
 size_flags_vertical = 1
+theme_override_constants/center_grabber = 15
+theme_override_icons/grabber = SubResource("DPITexture_p46qs")
+theme_override_icons/grabber_highlight = SubResource("DPITexture_ygnii")
+theme_override_icons/grabber_disabled = SubResource("DPITexture_n8st6")
+theme_override_styles/slider = SubResource("StyleBoxFlat_p46qs")
+max_value = 1.0
+step = 0.001
+value = 1.0
 
 [node name="SFX" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Audio" unique_id=1046703113]
 layout_mode = 2
+theme_override_constants/separation = 35
 
 [node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/Audio/SFX" unique_id=139187398]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_dkbde")
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 36
 text = "SFX  "
 
-[node name="SfxSlider" type="HSlider" parent="MarginContainer/VBoxContainer/Audio/SFX" unique_id=1835126145]
-custom_minimum_size = Vector2(180, 0)
+[node name="SfxSlider" type="HSlider" parent="MarginContainer/VBoxContainer/Audio/SFX" unique_id=817054238]
+custom_minimum_size = Vector2(360, 100)
 layout_mode = 2
 size_flags_vertical = 1
+theme_override_constants/center_grabber = 15
+theme_override_icons/grabber = SubResource("DPITexture_p46qs")
+theme_override_icons/grabber_highlight = SubResource("DPITexture_ygnii")
+theme_override_icons/grabber_disabled = SubResource("DPITexture_n8st6")
+theme_override_styles/slider = SubResource("StyleBoxFlat_p46qs")
+max_value = 1.0
+step = 0.001
+value = 1.0
 
-[node name="Display" type="VBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=435624391]
-layout_mode = 2
-size_flags_horizontal = 4
-
-[node name="Display" type="Label" parent="MarginContainer/VBoxContainer/Display" unique_id=159527968]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("3_dkbde")
-theme_override_font_sizes/font_size = 48
-text = "DISPLAY"
-horizontal_alignment = 1
-
-[node name="bright" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Display" unique_id=251741616]
-layout_mode = 2
-
-[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/Display/bright" unique_id=345111048]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("3_dkbde")
-theme_override_font_sizes/font_size = 24
-text = "BRIGH"
-
-[node name="BrSlider" type="HSlider" parent="MarginContainer/VBoxContainer/Display/bright" unique_id=481371710]
-custom_minimum_size = Vector2(180, 0)
-layout_mode = 2
-size_flags_vertical = 1
-
-[node name="VR comf" type="VBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=975843545]
-layout_mode = 2
-size_flags_horizontal = 4
-
-[node name="VR" type="Label" parent="MarginContainer/VBoxContainer/VR comf" unique_id=79049287]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("3_dkbde")
-theme_override_font_sizes/font_size = 48
-text = "VR COMFORT"
-horizontal_alignment = 1
-
-[node name="VR2" type="HBoxContainer" parent="MarginContainer/VBoxContainer/VR comf" unique_id=1125388432]
-layout_mode = 2
-
-[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/VR comf/VR2" unique_id=109548883]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("3_dkbde")
-theme_override_font_sizes/font_size = 24
-text = "INTEN"
-
-[node name="VignSlider" type="HSlider" parent="MarginContainer/VBoxContainer/VR comf/VR2" unique_id=2029036537]
-custom_minimum_size = Vector2(180, 0)
-layout_mode = 2
-size_flags_vertical = 1
-
-[node name="VR3" type="HBoxContainer" parent="MarginContainer/VBoxContainer/VR comf" unique_id=285086206]
-layout_mode = 2
-
-[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/VR comf/VR3" unique_id=1314370830]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("3_dkbde")
-theme_override_font_sizes/font_size = 24
-text = "VIGNE"
-
-[node name="CheckBox" type="CheckBox" parent="MarginContainer/VBoxContainer/VR comf/VR3" unique_id=1191209787]
-layout_mode = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1850208152]
-custom_minimum_size = Vector2(300, 0)
-layout_mode = 2
-size_flags_horizontal = 4
-
-[node name="BACK" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=701028585]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "<BACK"
-
-[node name="SAVE" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=695122252]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "SAVE
-"
-
-[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/SAVE" to="." method="_on_save_pressed"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/Audio/Music/MusicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/Audio/SFX/SfxSlider" to="." method="_on_sfx_slider_value_changed"]

@@ -11,9 +11,7 @@ var dialogues := {
 	3: ["Two keys. One secret.\n
 		Guess which one opens the vault."],
 	4: ["No boss. No center.\n 
-		Just math. And agreement."],
-	5: ["Placeholder.\n
-		Please don't forget to replace"]
+		Just math. And agreement."]
 }
 
 func _on_staging_switching_to_loading_scene(user_data: Variant) -> void:

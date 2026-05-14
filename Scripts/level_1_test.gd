@@ -126,6 +126,7 @@ func send_data(table_type: String) -> void:
 	var path = NetworkManager.find_path(start_node_id, end_node_id)
 	
 	if path.size() > 0:
+		Signals.LevelSuccess.emit()
 		print("Transaction successful, path: ", path)
 		if table_type == "decent":
 			if decent_board:
@@ -145,6 +146,7 @@ func send_data(table_type: String) -> void:
 		
 		packet.travel(path)
 	else:
+		Signals.LevelError.emit()
 		print("Transaction impossible - no path between ", start_node_id, " and ", end_node_id)
 		if table_type == "decent":
 			if decent_board:

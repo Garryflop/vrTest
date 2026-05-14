@@ -56,6 +56,7 @@ func _sequence_denied(reason: String) -> void:
 	if current_state == VaultState.DENIED:
 		return
 	current_state = VaultState.DENIED
+	Signals.LevelError.emit()
 	#sound_denied.play()
 	status_label.text = "[!] ACCESS DENIED\n" + reason
 
@@ -81,6 +82,7 @@ func _sequence_denied(reason: String) -> void:
 func _sequence_approved() -> void:
 	door_opening.emit()
 	current_state = VaultState.DECRYPTING
+	Signals.LevelSuccess.emit()
 	#sound_approved.play()
 	status_light.material_override = mat_approved
 	await _animate_decrypting()

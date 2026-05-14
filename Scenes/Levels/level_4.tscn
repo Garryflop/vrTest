@@ -53,7 +53,7 @@ shader = ExtResource("13_eb4ip")
 shader_parameter/albedo_texture = SubResource("ViewportTexture_ecora")
 shader_parameter/opacity = 1.52800007258
 shader_parameter/ghost_color = Color(0, 0.8117647, 1, 1)
-shader_parameter/flicker_speed = 0.9690000460275
+shader_parameter/flicker_speed = 0.0
 shader_parameter/phase_frequency = 0.0
 shader_parameter/fresnel_strength = 0.8
 shader_parameter/fresnel_color = Color(1, 1, 0, 1)
@@ -94,6 +94,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1.5, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Box/Wall" unique_id=253791036]
 shape = SubResource("BoxShape3D_xgxfi")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Box/Wall" unique_id=735471671]
+mesh = SubResource("BoxMesh_cyadu")
 
 [node name="Wall2" type="StaticBody3D" parent="Box" unique_id=1438078205]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1.5, 0)

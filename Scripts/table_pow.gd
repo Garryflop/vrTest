@@ -100,6 +100,8 @@ func _on_start() -> void:
 func _on_winner_found(winner_node: Node3D, elapsed: float, energy_ratio: float) -> void:
 	_set_node_visual(winner_node, "winner")
 
+	Signals.LevelSuccess.emit()
+
 	var label = winner_node.get_node_or_null("INFORMATION_LABEL")
 	if label:
 		label.text = "⛏ WINNER!\nTime: %.1fs" % elapsed

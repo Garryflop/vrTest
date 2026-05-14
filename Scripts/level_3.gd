@@ -15,6 +15,7 @@ func _on_reset_button_button_pressed() -> void:
 	if can_reset:
 		terminal.reset()
 		private_key_box.reset()
+		Signals.LevelReset.emit()
 
 
 func _on_terminal_door_opened() -> void:
