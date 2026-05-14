@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dpy1eg3i331se" path="res://addons/godot-xr-tools/objects/teleport_area.tscn" id="1_jdjlm"]
 [ext_resource type="Script" uid="uid://d00axwiq8b0x7" path="res://Scripts/teleporter.gd" id="2_lrpa0"]
+[ext_resource type="Shader" uid="uid://bt40vp54i0yb" path="res://Assets/Shaders/hologram.gdshader" id="3_503h8"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_jdjlm"]
 top_radius = 0.3
@@ -11,6 +12,33 @@ height = 0.05
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_jdjlm"]
 height = 1.0
 radius = 0.25
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d221f"]
+render_priority = 0
+shader = ExtResource("3_503h8")
+shader_parameter/opacity = 0.35
+shader_parameter/ghost_color = Color(0, 1, 1, 1)
+shader_parameter/flicker_speed = 1.2
+shader_parameter/phase_frequency = 0.4
+shader_parameter/fresnel_strength = 0.8
+shader_parameter/fresnel_color = Color(1, 1, 0, 1)
+shader_parameter/wave_amplitude = 0.006
+shader_parameter/wave_frequency = 19.397
+shader_parameter/wave_speed = 3.618
+shader_parameter/chroma_amount = 1.0
+shader_parameter/points_enabled = true
+shader_parameter/point_field_scale = 4.377
+shader_parameter/point_size = 0.008
+shader_parameter/point_intensity = 1.0
+shader_parameter/point_axis_speed = 0.051
+shader_parameter/point_move_mode = 1
+shader_parameter/point_color = Color(1, 1, 1, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_rfbas"]
+material = SubResource("ShaderMaterial_d221f")
+top_radius = 0.3
+bottom_radius = 0.3
+height = 1.0
 
 [node name="TeleportArea" unique_id=1507852708 instance=ExtResource("1_jdjlm")]
 script = ExtResource("2_lrpa0")
@@ -25,6 +53,17 @@ mesh = SubResource("CylinderMesh_jdjlm")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." index="2" unique_id=1272728097]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5229791, 0)
 shape = SubResource("CylinderShape3D_jdjlm")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." index="3" unique_id=1398468900]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7389777, 0)
+light_color = Color(0, 1, 1, 1)
+light_energy = 2.0
+omni_range = 0.94363487
+omni_attenuation = 1.25
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." index="4" unique_id=1492662783]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+mesh = SubResource("CylinderMesh_rfbas")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

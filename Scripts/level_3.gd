@@ -9,6 +9,8 @@ extends XRToolsSceneBase
 var can_reset: bool = true
 
 func _ready() -> void:
+	if Engine.is_editor_hint():
+		return
 	Signals.ConfirmNextLevel.connect(_on_confirm_next_level)
 
 func _on_reset_button_button_pressed() -> void:

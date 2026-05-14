@@ -26,9 +26,9 @@ func _ready() -> void:
 	# Play панель — главная, всегда яркая
 	panel_play.is_main = true
 
-	_animate_in(panel_play,     0.0)
-	_animate_in(panel_settings, 0.15)
-	_animate_in(panel_credits,  0.30)
+	#_animate_in(panel_play,     0.0)
+	#_animate_in(panel_settings, 0.15)
+	#_animate_in(panel_credits,  0.30)
 	Signals.PlayButton.connect(_on_play_button_pressed)
 	Signals.CreditsButton.connect(_on_credits_button_pressed)
 	Signals.QuitButton.connect(_on_quit_button_pressed)

@@ -8,7 +8,7 @@ signal door_opening
 @onready var key_slot: XRToolsSnapZone        = $Door/KeySlot
 @onready var status_label: Label3D            = $StatusLabel
 @onready var status_light: MeshInstance3D     = $StatusLight
-@onready var door: Node3D                     = $Door
+@onready var door: StaticBody3D               = $Door
 @onready var reward: XRToolsPickable          = $Cube
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
