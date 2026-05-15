@@ -1,17 +1,68 @@
-[gd_scene format=3 uid="uid://b33em3hujbslq"]
+[gd_scene format=4 uid="uid://b33em3hujbslq"]
 
 [ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="1_oov1d"]
+[ext_resource type="Texture2D" uid="uid://v5hneivinvc" path="res://Assets/Models/Box/Box_Box_BaseColor.png" id="2_mw3p4"]
+[ext_resource type="Texture2D" uid="uid://cbqu4pdxye08w" path="res://Assets/Models/Box/Box_Box_Emission.png" id="3_mnh3j"]
+[ext_resource type="Texture2D" uid="uid://d2dq426fbkkur" path="res://Assets/Models/Box/Box_Box_Metallic.1001-Box_Roughness.png" id="4_4iv3k"]
+[ext_resource type="Texture2D" uid="uid://ckuw1bubtxdnl" path="res://Assets/Models/Box/Box_Box_Normal.png" id="5_bwfwm"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_oov1d"]
-size = Vector3(0.4, 0.05, 0.4)
+size = Vector3(0.44857177, 0.05, 0.4)
 
-[sub_resource type="BoxMesh" id="BoxMesh_oov1d"]
-size = Vector3(0.4, 0.05, 0.4)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pq2xm"]
+resource_name = "Box"
+cull_mode = 2
+albedo_texture = ExtResource("2_mw3p4")
+metallic = 1.0
+metallic_texture = ExtResource("4_4iv3k")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("4_4iv3k")
+roughness_texture_channel = 1
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_operator = 1
+emission_texture = ExtResource("3_mnh3j")
+normal_enabled = true
+normal_texture = ExtResource("5_bwfwm")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_vgkrh"]
+_surfaces = [{
+"aabb": AABB(-1.7881166, 0, -1, 1.7881166, 0.19010615, 2),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAQADAAIAAAAEAAEAAgADAAUAAgAFAAAAAAAGAAQAAAAFAAYABAAHAAEAAQAHAAMABAAGAAcABQADAAcABQAHAAYA"),
+"name": "Box",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAAAAP//AAD//wAAAAAAAAAAAAAAAAAAAAD//wAAAAD//wAA//8AAAAA/////wAA////////AAD/////AAAAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_50ehk"]
+resource_name = "Box_Cube_019"
+_surfaces = [{
+"aabb": AABB(-1.7881166, 0, -1, 1.7881166, 0.19010615, 2),
+"attribute_data": PackedByteArray("Rt4nbPqQsxVG3rMV+pAnbEYIpLKSVTBcklWkskYIMFzJXfD/klWkssldpLKSVfD/DgAwXEYIpLIOAKSyRggwXMldpLKSVTBcyV0wXJJVpLLJXTBcklXkDsld5A6SVTBc"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUA"),
+"material": SubResource("StandardMaterial3D_pq2xm"),
+"name": "Box",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("AAAAAP///////wAAAAD//wAAAAAAAP////8AAP////8AAP//////v/////8AAP+//////////78AAP//AAD/vwAAAAD///+//////////7///wAA////vwAA//////+/AAAAAAAAVNUAAP////9U1QAAAAD//1TVAAD//wAAVNX//wAA//9U1f////8AAFTV//8AAAAAVNX///////9U1f//AAAAAP//AAD//wAA//8AAAAAAAD///////8AAP///3//P/9//z//f/8//3//P////3////9/////f////3//f/9//3//f/9//3//f/9/VNVU1VTVVNVU1VTVVNVU1aqqVFWqqlRVqqpUVaqqVFX/P/+//z//v/8//7//P/+/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_vgkrh")
 
 [node name="Lid" unique_id=1734921228 instance=ExtResource("1_oov1d")]
 
 [node name="CollisionShape3D" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0007751584, 0, 0)
 shape = SubResource("BoxShape3D_oov1d")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="1" unique_id=1261633266]
-mesh = SubResource("BoxMesh_oov1d")
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="1" unique_id=2130377387]
+transform = Transform3D(0.25, 0, 0, 0, 0.15, 0, 0, 0, 0.2, 0.22351457, -0.014062703, 0)
+mesh = SubResource("ArrayMesh_50ehk")

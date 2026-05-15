@@ -1,5 +1,8 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://xemw84j2q3kn"]
 
 [resource]
+cull_mode = 1
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
+grow = true
+grow_amount = 0.05

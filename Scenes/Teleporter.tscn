@@ -48,6 +48,7 @@ mesh = SubResource("CylinderMesh_jdjlm")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="." index="1" unique_id=152125564]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0278336, 0)
+cast_shadow = 0
 mesh = SubResource("CylinderMesh_jdjlm")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." index="2" unique_id=1272728097]

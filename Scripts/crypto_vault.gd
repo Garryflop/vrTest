@@ -9,7 +9,7 @@ signal door_opening
 @onready var status_label: Label3D            = $StatusLabel
 @onready var status_light: MeshInstance3D     = $StatusLight
 @onready var door: StaticBody3D               = $Door
-@onready var reward: XRToolsPickable          = $Cube
+@onready var reward: XRToolsPickable          = $Money
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 #@onready var sound_denied: AudioStreamPlayer3D  = $AudioManager/SoundDenied

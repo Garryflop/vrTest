@@ -71,8 +71,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0144057, 0.41660145, 0.5108
 
 [node name="EnergyMeter" type="Label3D" parent="." unique_id=1128254177]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4726937, 0)
+pixel_size = 0.0025
 text = "Energy Meter
 0%"
+font = ExtResource("11_658c1")
+font_size = 64
+outline_size = 24
 
 [node name="BlockSpawnPos" type="Marker3D" parent="." unique_id=597714379]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0)
@@ -80,7 +84,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0)
 [node name="Node3D" type="Node3D" parent="." unique_id=1589021483]
 
 [node name="StartButton" parent="." unique_id=467292279 instance=ExtResource("9_wmuyk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8354845, 0.28429902, 0.92520416)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.035131633, 0.28429902, 0.8925084)
 screen_visible = false
 
 [node name="MonitorV3" parent="StartButton" unique_id=1142370581 instance=ExtResource("10_6p3r8")]

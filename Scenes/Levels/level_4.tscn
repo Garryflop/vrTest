@@ -43,6 +43,12 @@ size = Vector3(8, 0.2, 8)
 [sub_resource type="BoxShape3D" id="BoxShape3D_cyadu"]
 size = Vector3(8, 0.2, 8)
 
+[sub_resource type="BoxMesh" id="BoxMesh_i5g5g"]
+size = Vector3(4, 2.5, 0.1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3osng"]
+albedo_color = Color(0.2, 0.2, 0.2, 1)
+
 [sub_resource type="ViewportTexture" id="ViewportTexture_ecora"]
 viewport_path = NodePath("AudioTutorSystem/TutorPanel/SubViewport")
 
@@ -144,61 +150,46 @@ mesh = SubResource("BoxMesh_iixi8")
 shape = SubResource("BoxShape3D_cyadu")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=436631518]
-transform = Transform3D(1, 0, 0, 0, 0.49999997, 0.86602545, 0, -0.86602545, 0.49999997, -1.449494, 2.75, -0.17)
-light_color = Color(0.735357, 1, 1, 1)
+transform = Transform3D(1, 0, 0, 0, 0.49999997, 0.86602545, 0, -0.86602545, 0.49999997, -1.9100481, 2.75, 0.26935506)
 shadow_enabled = true
 spot_attenuation = 1.5
-spot_angle = 30.0
+spot_angle = 35.18413
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="." unique_id=1243518092]
+transform = Transform3D(1, 0, 0, 0, 0.9256594, 0.3783579, 0, -0.3783579, 0.9256594, -0.21962011, 2.75, -0.7687637)
+light_color = Color(0.735357, 1, 1, 1)
+shadow_enabled = true
+spot_range = 5.4644227
+spot_attenuation = 1.5
+spot_angle = 36.569912
+spot_angle_attenuation = 0.2176381
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="." unique_id=926392312]
-transform = Transform3D(1, 0, 0, 0, 0.49999997, 0.86602545, 0, -0.86602545, 0.49999997, 1.8593972, 2.75, -0.11794458)
+transform = Transform3D(0.96542263, -0.22576405, 0.13034493, 0, 0.49999997, 0.86602545, -0.26068985, -0.83608055, 0.48271126, 2.6942995, 2.75, -0.11794458)
 light_energy = 1.5
 shadow_enabled = true
 spot_attenuation = 1.5
-spot_angle = 30.0
-
-[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1600361334]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.009827033, 1.0220187, -0.33441263)
-light_color = Color(0.735357, 1, 1, 1)
-light_energy = 1.5
-omni_range = 2.099193
-
-[node name="OmniLight3D3" type="OmniLight3D" parent="." unique_id=1953898763]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.009827033, 1.0220187, -2.2749865)
-light_color = Color(0.735357, 1, 1, 1)
-light_energy = 1.5
-omni_range = 2.099193
-
-[node name="OmniLight3D4" type="OmniLight3D" parent="." unique_id=162089148]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9727962, 1.0220187, -2.2749865)
-light_color = Color(0.735357, 1, 1, 1)
-light_energy = 1.5
-omni_range = 2.099193
-
-[node name="OmniLight3D5" type="OmniLight3D" parent="." unique_id=1631489177]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8895886, 1.0220187, -2.2749865)
-light_color = Color(0.735357, 1, 1, 1)
-light_energy = 1.5
-omni_range = 2.099193
-
-[node name="OmniLight3D6" type="OmniLight3D" parent="." unique_id=1314902987]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8895886, 1.0220187, -0.6097201)
-light_color = Color(0.735357, 1, 1, 1)
-light_energy = 1.5
-omni_range = 2.099193
+spot_angle = 34.107693
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="." unique_id=1215000891]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.029222608, 1.3582108, -0.6671965)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4386047, 1.2463157, -1.5554368)
 light_energy = 1.5
-omni_range = 2.099193
+omni_range = 2.239
+omni_attenuation = -0.5
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="." unique_id=2053587732]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.526533, 1.2463157, -1.5554368)
+light_energy = 1.5
+omni_range = 2.239
+omni_attenuation = -0.5
 
 [node name="OmniLight3D7" type="OmniLight3D" parent="." unique_id=1675932019]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.104763985, 1.0111594, 1.8555334)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.104763985, 1.0111594, 0.027975798)
 light_energy = 1.5
 omni_range = 1.5991275
 
 [node name="ResetButton" parent="." unique_id=467292279 instance=ExtResource("8_xpmn3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.027254775, 0.28429902, -0.72866523)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.047332674, 0.32706904, -0.72866523)
 screen_visible = false
 
 [node name="MonitorV3" parent="ResetButton" unique_id=1710385518 instance=ExtResource("9_33y7k")]
@@ -212,19 +203,53 @@ font = ExtResource("10_khr6i")
 font_size = 64
 
 [node name="TablePoW" parent="." unique_id=476923200 instance=ExtResource("7_i4hbv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1135092, 0.10189903, -1.4570686)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.43, 0.102, -1.521)
 
 [node name="TablePoS" parent="." unique_id=1027259149 instance=ExtResource("7_h0uxt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8341371, 0.099999666, -1.5206281)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5173646, 0.099999666, -1.5206281)
 
 [node name="ComparisonTable" type="Node3D" parent="." unique_id=824901318]
-transform = Transform3D(0.4914054, 0, 0.87093097, 0, 1, 0, -0.87093097, 0, 0.4914054, -2.393331, 1.1030742, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6080627, -3.8373353)
 script = ExtResource("9_keyqw")
 pow_table = NodePath("../TablePoW")
 pos_table = NodePath("../TablePoS")
 
 [node name="Label3D" type="Label3D" parent="ComparisonTable" unique_id=201080947]
-text = "sadasdasd"
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00023648143, 0.8470881, 0.06131649)
+pixel_size = 0.004
+text = "CONSENSUS COMPARISON"
+font = ExtResource("10_khr6i")
+font_size = 96
+outline_size = 36
+line_spacing = 10.0
+
+[node name="PanelMesh" type="MeshInstance3D" parent="ComparisonTable" unique_id=1401684624]
+mesh = SubResource("BoxMesh_i5g5g")
+surface_material_override/0 = SubResource("StandardMaterial3D_3osng")
+
+[node name="PoWLabel3D" type="Label3D" parent="ComparisonTable" unique_id=575948869]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6418204, -0.11036754, 0.06100011)
+pixel_size = 0.002
+text = "  PROOF OF WORK
+⚡ Energy: HIGH 
+🔥 Heat: MAX
+⏱ Time: 10.1"
+font = ExtResource("10_khr6i")
+font_size = 96
+outline_size = 36
+horizontal_alignment = 0
+
+[node name="PoSLabel3D" type="Label3D" parent="ComparisonTable" unique_id=1284044673]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.175, -0.11, 0.061)
+pixel_size = 0.002
+text = " PROOF OF STAKE
+🌱 Energy: LOW 
+❄ Heat: NONE  
+⏱ Time: 6.6 "
+font = ExtResource("10_khr6i")
+font_size = 96
+outline_size = 36
+horizontal_alignment = 0
 
 [node name="TeleportArea" parent="." unique_id=1507852708 instance=ExtResource("10_gsxik")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00091171265, 0.12500003, 1.923326)
@@ -248,8 +273,10 @@ transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, -1.0898356
 screen_visible = false
 
 [node name="Label3D" type="Label3D" parent="AudioTutorSystem/TutorPanel/SpeakerButton" unique_id=641480574]
+pixel_size = 0.0013
 text = "play"
-font_size = 16
+font = ExtResource("10_khr6i")
+font_size = 64
 
 [node name="SubViewport" type="SubViewport" parent="AudioTutorSystem/TutorPanel" unique_id=2126112475]
 

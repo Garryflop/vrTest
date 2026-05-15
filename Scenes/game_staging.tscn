@@ -16,7 +16,7 @@ splash_screen = ExtResource("2_dmx6v")
 
 [node name="LabelScreen" type="Label3D" parent="LoadingScreen" index="3" unique_id=1780022608]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.533, -12.160037)
-text = "asdasd"
+text = "Loading to the game"
 font = ExtResource("3_i4eib")
 font_size = 128
 outline_size = 24

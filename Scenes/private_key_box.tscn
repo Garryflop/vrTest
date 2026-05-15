@@ -1,38 +1,151 @@
-[gd_scene format=3 uid="uid://dcyxoe5x7ful0"]
+[gd_scene format=4 uid="uid://dcyxoe5x7ful0"]
 
 [ext_resource type="Script" uid="uid://go3ta8k7m0xa" path="res://Scripts/private_key_box.gd" id="1_l5im1"]
 [ext_resource type="PackedScene" uid="uid://b33em3hujbslq" path="res://Scenes/lid.tscn" id="2_8ypus"]
 [ext_resource type="PackedScene" uid="uid://bkntskej0xlf6" path="res://Scenes/Objects/key.tscn" id="3_aqupe"]
 [ext_resource type="PackedScene" uid="uid://ce7vysyvondf8" path="res://addons/godot-xr-tools/objects/snap_zone.tscn" id="4_8ypus"]
+[ext_resource type="Texture2D" uid="uid://v5hneivinvc" path="res://Assets/Models/Box/Box_Box_BaseColor.png" id="5_pstre"]
+[ext_resource type="Texture2D" uid="uid://cbqu4pdxye08w" path="res://Assets/Models/Box/Box_Box_Emission.png" id="6_06t28"]
+[ext_resource type="Texture2D" uid="uid://d2dq426fbkkur" path="res://Assets/Models/Box/Box_Box_Metallic.1001-Box_Roughness.png" id="7_dbohq"]
+[ext_resource type="Texture2D" uid="uid://ckuw1bubtxdnl" path="res://Assets/Models/Box/Box_Box_Normal.png" id="8_507w8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pq2xm"]
+resource_name = "Box"
+cull_mode = 2
+albedo_texture = ExtResource("5_pstre")
+metallic = 1.0
+metallic_texture = ExtResource("7_dbohq")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("7_dbohq")
+roughness_texture_channel = 1
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_operator = 1
+emission_texture = ExtResource("6_06t28")
+normal_enabled = true
+normal_texture = ExtResource("8_507w8")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_sxgoy"]
+_surfaces = [{
+"aabb": AABB(-0.8940583, -0.0009152889, -1, 1.7881166, 1.6018306, 2),
+"format": 34896613377,
+"index_count": 84,
+"index_data": PackedByteArray("AAABAAIAAAADAAEAAwAAAAQABAAAAAIAAwAEAAUABAACAAYABQAEAAYAAwAFAAcAAwAHAAEABQAGAAcACAACAAEACQAGAAIACQACAAgACgAHAAYACgAGAAkACwABAAcACwAHAAoACAABAAsACgAMAAsACAANAAkACQAOAAoACgAOAAwACQANAA4ACwAMAA8ACwAPAAgADwAMAA4ACAAPAA0ADwAOAA0A"),
+"name": "Box",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 16,
+"vertex_data": PackedByteArray("AAAAAP//AAAAAP//AAAAAAAA/////wAAAAAAAAAAAAD//wAA//8AAP//AAAAAAAA////////AAD/////AAAAAIM0//8L0QAAe8v//wvRAAB7y///8y4AAIM0///zLgAAgzSnIvMuAAB7y6ciC9EAAHvLpyLzLgAAgzSnIgvRAAA=")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_2bw20"]
+resource_name = "Box_Cube_017"
+_surfaces = [{
+"aabb": AABB(-0.8940583, -0.0009152889, -1, 1.7881166, 1.6018306, 2),
+"attribute_data": PackedByteArray("3ZDNR+ddbYfnXc1H3ZBth92QbYfnXU/A511th92QT8DdkE/A513w/+ddT8DdkPD/3ZDqDuddzUfnXeoO3ZDNRwr2T8AovfD/KL1PwAr28P/6kBq2Cr1k3vqQZN4KvRq208iGtCi9kYDTyD2MCvaRgCi9MsBf6j2MX+qGtAr2MsBk3ids8P/eQ/D/J2xk3t5D+pBk3gq98P/6kPD/Cr1k3vqQj5QKvRq2+pAatgq9j5T6kEVsCr2PlPqQj5QKvUVs"),
+"format": 34896613399,
+"index_count": 84,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUAGAAZABoAGgAZABsAGAAcABkAGgAbAB0AHgAcABgAHQAbAB8AHgAfABwAHQAfAB4AIAAhACIAIAAjACEAJAAlACYAJAAnACUAKAApACoAKAArACkALAAtAC4ALAAvAC0A"),
+"material": SubResource("StandardMaterial3D_pq2xm"),
+"name": "Box",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 48,
+"vertex_data": PackedByteArray("AAAAAP//VNUAAP//AABU1QAA/////1TVAAAAAAAAVNUAAAAAAAD///////8AAP//AAD//wAA/////wAAAAD/////AAAAAFTV////////VNX/////AABU1f//AAD//1TV//8AAP///78AAP//////v/////////+/AAAAAP///78AAAAAAAD/////AAD///////8AAAAA//8AAAAA/////3vL//8L0VTVe8unIvMuVNV7y///8y5U1XvLpyIL0VTVgzT//wvR/78AAP//AAD/v4M0///zLv+//////wAA/78AAP//////v3vL///zLv+/e8v//wvR/7//////////v4M0pyIL0f+/e8unIvMu/797y6ciC9H/v4M0pyLzLv+/e8v///Mu/7+DNKci8y7/v4M0///zLv+/e8unIvMu/7+DNP//C9H//3vLpyIL0f//e8v//wvR//+DNKciC9H//4M0///zLlTVgzSnIgvRVNWDNP//C9FU1YM0pyLzLlTVVFWqqlRVqqpUVaqqVFWqqv8//7//P/+//z//v/8//7+qqlRVqqpUVaqqVFWqqlRV/3//f/9//3//f/9//3//f/9//z//f/8//3//P/9//z9UVaqqVFWqqlRVqqpUVaqq////f////3////9/////f////3////9/////f////3////9/////f////3////9//3//f/9//3//f/9//3//f/8//7//P/+//z//v/8//7+qqlRVqqpUVaqqVFWqqlRV")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_sxgoy")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8u3rf"]
+resource_local_to_scene = true
+render_priority = -1
+cull_mode = 1
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+grow = true
+grow_amount = 0.01
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0ddfy"]
+resource_local_to_scene = true
+render_priority = -1
+cull_mode = 1
+albedo_color = Color(0, 1, 0, 1)
+emission_enabled = true
+emission = Color(0, 1, 0, 1)
+grow = true
+grow_amount = 0.01
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qlwjp"]
+resource_local_to_scene = true
+render_priority = -1
+cull_mode = 1
+albedo_color = Color(1, 0, 0, 1)
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
+grow = true
+grow_amount = 0.01
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kl4j8"]
+resource_local_to_scene = true
+render_priority = -1
+cull_mode = 1
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+grow = true
+grow_amount = 0.01
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xr028"]
+resource_local_to_scene = true
+render_priority = -1
+cull_mode = 1
+albedo_color = Color(0, 1, 0, 1)
+emission_enabled = true
+emission = Color(0, 1, 0, 1)
+grow = true
+grow_amount = 0.01
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_37jlx"]
+resource_local_to_scene = true
+render_priority = -1
+cull_mode = 1
+albedo_color = Color(1, 0, 0, 1)
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
+grow = true
+grow_amount = 0.01
 
 [node name="PrivateKeyBox" type="Node3D" unique_id=876825030]
 script = ExtResource("1_l5im1")
 
-[node name="BoxMesh" type="CSGBox3D" parent="." unique_id=1786615254]
-size = Vector3(0.4, 0.2, 0.4)
-
-[node name="BoxHollowMesh" type="CSGBox3D" parent="BoxMesh" unique_id=2130991970]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.013, 0)
-operation = 2
-size = Vector3(0.35, 0.175, 0.35)
+[node name="Box" type="MeshInstance3D" parent="." unique_id=1398600879]
+transform = Transform3D(0.25, 0, 0, 0, 0.15, 0, 0, 0, 0.2, 0, -0.09818241, 0)
+mesh = SubResource("ArrayMesh_2bw20")
 
 [node name="Lid" parent="." unique_id=1734921228 groups=["Lid"] instance=ExtResource("2_8ypus")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.13, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15695661, 0)
 
 [node name="LidSnapZone" parent="." unique_id=1570547223 instance=ExtResource("4_8ypus")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.13, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15695661, 0)
 snap_require = "Lid"
 initial_object = NodePath("../Lid")
 
 [node name="PrivateKey" parent="." unique_id=759011723 groups=["private_key"] instance=ExtResource("3_aqupe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07403423, 0.0023478866, 0.008483149)
+public_key_highlight = SubResource("StandardMaterial3D_8u3rf")
+private_key_highlight = SubResource("StandardMaterial3D_0ddfy")
+wrong_key_highlight = SubResource("StandardMaterial3D_qlwjp")
 
 [node name="KeyLabel" type="Label3D" parent="PrivateKey" unique_id=1070732485]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00012339652, 0.3594801, -0.008483149)
+visible = false
 text = "Private Key"
 
 [node name="WrongKey" parent="." unique_id=693608692 groups=["wrong_key"] instance=ExtResource("3_aqupe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.07044846, 0.002169922, 0)
+public_key_highlight = SubResource("StandardMaterial3D_kl4j8")
+private_key_highlight = SubResource("StandardMaterial3D_xr028")
+wrong_key_highlight = SubResource("StandardMaterial3D_37jlx")
 
 [node name="WarningLabel" type="Label3D" parent="." unique_id=200202975]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.839399, 0)

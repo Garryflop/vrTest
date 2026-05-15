@@ -3,11 +3,43 @@
 [ext_resource type="Script" uid="uid://c8w6ns842ydv1" path="res://Scripts/public_key_display.gd" id="1_25wv4"]
 [ext_resource type="PackedScene" uid="uid://bkntskej0xlf6" path="res://Scenes/Objects/key.tscn" id="1_xu7wv"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_25wv4"]
+resource_local_to_scene = true
+render_priority = -1
+cull_mode = 1
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+grow = true
+grow_amount = 0.01
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_skclu"]
+resource_local_to_scene = true
+render_priority = -1
+cull_mode = 1
+albedo_color = Color(0, 1, 0, 1)
+emission_enabled = true
+emission = Color(0, 1, 0, 1)
+grow = true
+grow_amount = 0.01
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ap3wx"]
+resource_local_to_scene = true
+render_priority = -1
+cull_mode = 1
+albedo_color = Color(1, 0, 0, 1)
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
+grow = true
+grow_amount = 0.01
+
 [node name="PublicKeyDisplay" type="Node3D" unique_id=1983456545]
 script = ExtResource("1_25wv4")
 
 [node name="PublicKey" parent="." unique_id=759011723 groups=["public_key"] instance=ExtResource("1_xu7wv")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+public_key_highlight = SubResource("StandardMaterial3D_25wv4")
+private_key_highlight = SubResource("StandardMaterial3D_skclu")
+wrong_key_highlight = SubResource("StandardMaterial3D_ap3wx")
 
 [node name="KeyLabel" type="Label3D" parent="." unique_id=749723853]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.30092722, 0)
