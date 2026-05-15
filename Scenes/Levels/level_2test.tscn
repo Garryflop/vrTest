@@ -18,6 +18,7 @@
 [ext_resource type="AudioStream" uid="uid://c4rhxep6hpaqw" path="res://Assets/Audio/AudioTutors/3.mp3" id="16_70gcb"]
 [ext_resource type="Shader" uid="uid://bt40vp54i0yb" path="res://Assets/Shaders/hologram.gdshader" id="17_3mhen"]
 [ext_resource type="Script" uid="uid://ces1j6plojyra" path="res://addons/godot-xr-tools/xr/start_xr.gd" id="18_f7e30"]
+[ext_resource type="PackedScene" uid="uid://ldqmqhl35ocm" path="res://Scenes/golem_2.tscn" id="19_3mhen"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tlcug"]
 
@@ -53,42 +54,6 @@ size = Vector3(8, 0.2, 8)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cyadu"]
 size = Vector3(8, 0.2, 8)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f7e30"]
-resource_local_to_scene = true
-albedo_color = Color(0, 1, 0, 1)
-albedo_texture = ExtResource("6_65qy0")
-metallic = 1.0
-metallic_texture = ExtResource("9_vrv73")
-roughness_texture = ExtResource("11_m4nht")
-emission_enabled = true
-emission_texture = ExtResource("7_jxuhh")
-normal_enabled = true
-normal_texture = ExtResource("10_vr5ab")
-heightmap_enabled = true
-heightmap_scale = 0.5
-heightmap_deep_parallax = true
-heightmap_min_layers = 8
-heightmap_max_layers = 32
-heightmap_texture = ExtResource("8_1la14")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3mhen"]
-resource_local_to_scene = true
-albedo_color = Color(1, 0, 0, 1)
-albedo_texture = ExtResource("6_65qy0")
-metallic = 1.0
-metallic_texture = ExtResource("9_vrv73")
-roughness_texture = ExtResource("11_m4nht")
-emission_enabled = true
-emission_texture = ExtResource("7_jxuhh")
-normal_enabled = true
-normal_texture = ExtResource("10_vr5ab")
-heightmap_enabled = true
-heightmap_scale = 0.5
-heightmap_deep_parallax = true
-heightmap_min_layers = 8
-heightmap_max_layers = 32
-heightmap_texture = ExtResource("8_1la14")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o06yi"]
 resource_local_to_scene = true
@@ -217,6 +182,42 @@ heightmap_max_layers = 32
 heightmap_texture = ExtResource("8_1la14")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c5l33"]
+resource_local_to_scene = true
+albedo_color = Color(1, 0, 0, 1)
+albedo_texture = ExtResource("6_65qy0")
+metallic = 1.0
+metallic_texture = ExtResource("9_vrv73")
+roughness_texture = ExtResource("11_m4nht")
+emission_enabled = true
+emission_texture = ExtResource("7_jxuhh")
+normal_enabled = true
+normal_texture = ExtResource("10_vr5ab")
+heightmap_enabled = true
+heightmap_scale = 0.5
+heightmap_deep_parallax = true
+heightmap_min_layers = 8
+heightmap_max_layers = 32
+heightmap_texture = ExtResource("8_1la14")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ln4is"]
+resource_local_to_scene = true
+albedo_color = Color(0, 1, 0, 1)
+albedo_texture = ExtResource("6_65qy0")
+metallic = 1.0
+metallic_texture = ExtResource("9_vrv73")
+roughness_texture = ExtResource("11_m4nht")
+emission_enabled = true
+emission_texture = ExtResource("7_jxuhh")
+normal_enabled = true
+normal_texture = ExtResource("10_vr5ab")
+heightmap_enabled = true
+heightmap_scale = 0.5
+heightmap_deep_parallax = true
+heightmap_min_layers = 8
+heightmap_max_layers = 32
+heightmap_texture = ExtResource("8_1la14")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ahmsf"]
 resource_local_to_scene = true
 albedo_color = Color(1, 0, 0, 1)
 albedo_texture = ExtResource("6_65qy0")
@@ -385,28 +386,28 @@ omni_range = 2.099193
 
 [node name="BlockchainCube" parent="blocks" unique_id=621460339 instance=ExtResource("4_2kscl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6134248, 0.48877853, -1.2511995)
-material_valid = SubResource("StandardMaterial3D_f7e30")
-material_invalid = SubResource("StandardMaterial3D_3mhen")
-
-[node name="BlockchainCube2" parent="blocks" unique_id=1120553873 instance=ExtResource("4_2kscl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.32267585, 0.49313736, -1.2260675)
 material_valid = SubResource("StandardMaterial3D_o06yi")
 material_invalid = SubResource("StandardMaterial3D_k0eh1")
 
-[node name="BlockchainCube3" parent="blocks" unique_id=771114752 instance=ExtResource("4_2kscl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.016452014, 0.50197923, -1.2260675)
+[node name="BlockchainCube2" parent="blocks" unique_id=1120553873 instance=ExtResource("4_2kscl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.32267585, 0.49313736, -1.2260675)
 material_valid = SubResource("StandardMaterial3D_rx33s")
 material_invalid = SubResource("StandardMaterial3D_4yd0d")
 
-[node name="BlockchainCube4" parent="blocks" unique_id=1106805090 instance=ExtResource("4_2kscl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.311616, 0.4748307, -1.2260675)
+[node name="BlockchainCube3" parent="blocks" unique_id=771114752 instance=ExtResource("4_2kscl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.016452014, 0.50197923, -1.2260675)
 material_valid = SubResource("StandardMaterial3D_ufv4r")
 material_invalid = SubResource("StandardMaterial3D_0y6kd")
 
-[node name="BlockchainCube5" parent="blocks" unique_id=143475838 instance=ExtResource("4_2kscl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6030381, 0.47775966, -1.2325084)
+[node name="BlockchainCube4" parent="blocks" unique_id=1106805090 instance=ExtResource("4_2kscl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.311616, 0.4748307, -1.2260675)
 material_valid = SubResource("StandardMaterial3D_xa7w8")
 material_invalid = SubResource("StandardMaterial3D_c5l33")
+
+[node name="BlockchainCube5" parent="blocks" unique_id=143475838 instance=ExtResource("4_2kscl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6030381, 0.47775966, -1.2325084)
+material_valid = SubResource("StandardMaterial3D_ln4is")
+material_invalid = SubResource("StandardMaterial3D_ahmsf")
 
 [node name="TeleportArea" parent="." unique_id=1507852708 instance=ExtResource("14_vrv73")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2078023, 0.12500003, -1.6718637)
@@ -478,4 +479,19 @@ bus = &"Music"
 script = ExtResource("18_f7e30")
 metadata/_custom_type_script = "uid://ces1j6plojyra"
 
+[node name="Golem2" parent="." unique_id=2087226474 instance=ExtResource("19_3mhen")]
+transform = Transform3D(0.18534075, 0, -0.9826743, 0, 1, 0, 0.9826743, 0, 0.18534075, 1.8518189, -0.12518814, -1.4441917)
+
+[node name="Skeleton3D" parent="Golem2/Golem" parent_id_path=PackedInt32Array(2087226474, 1682896966) index="0" unique_id=1726780764]
+bones/3/position = Vector3(0.1311541, 0.13572337, -0.42320818)
+bones/8/rotation = Quaternion(0.13200143, 1.18192354e-07, 1.4489972e-08, 0.99124956)
+bones/10/rotation = Quaternion(-0.047016, 4.269907e-11, 1.2052947e-08, 0.99889416)
+bones/11/rotation = Quaternion(-0.23348019, -0.03979138, -0.0013829481, 0.9715461)
+bones/12/rotation = Quaternion(-0.025101688, 0.27267337, 0.94636303, -0.17151144)
+bones/13/rotation = Quaternion(0.4188831, -0.018971803, -0.24370258, 0.8745205)
+bones/14/rotation = Quaternion(0.025102017, 0.27267325, 0.9463631, 0.17151126)
+bones/15/rotation = Quaternion(0.41888317, 0.018971795, 0.24370249, 0.8745205)
+bones/22/position = Vector3(-0.13115437, 0.13572338, -0.42320815)
+
 [editable path="XROrigin3D"]
+[editable path="Golem2"]

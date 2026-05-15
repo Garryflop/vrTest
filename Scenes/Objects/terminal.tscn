@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b3vfn4e1yh4e6" path="res://Assets/Models/CryptoVault/Vault_Crypto_Vault_Emission.png" id="3_feq8a"]
 [ext_resource type="Texture2D" uid="uid://rniqdjlgb5xq" path="res://Assets/Models/CryptoVault/Vault_Crypto_Vault_Metallic.1001-Crypto_Vault_Roughness.png" id="4_of3d5"]
 [ext_resource type="Texture2D" uid="uid://bwklympfcvtmb" path="res://Assets/Models/CryptoVault/Vault_Crypto_Vault_Normal.png" id="5_8vhix"]
+[ext_resource type="FontFile" uid="uid://0gvxqdbhr1ls" path="res://Assets/Fonts/CodenameCoderFree4F-Bold.ttf" id="7_feq8a"]
 [ext_resource type="PackedScene" uid="uid://if0nkqfuebb3" path="res://Scenes/Objects/money.tscn" id="8_feq8a"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ijcmc"]
@@ -215,8 +216,11 @@ surface_material_override/0 = SubResource("StandardMaterial3D_feq8a")
 
 [node name="StatusLabel" type="Label3D" parent="." unique_id=1354858456]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0076006204, 0.7617254, 0.35381782)
-pixel_size = 0.001
+pixel_size = 0.0005
 text = "INSERT KEY TO AUTHENTICATE"
+font = ExtResource("7_feq8a")
+font_size = 64
+outline_size = 24
 
 [node name="Money" parent="." unique_id=763394247 instance=ExtResource("8_feq8a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.01749155, -0.06132725, -0.023728011)

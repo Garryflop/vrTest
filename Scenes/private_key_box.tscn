@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cbqu4pdxye08w" path="res://Assets/Models/Box/Box_Box_Emission.png" id="6_06t28"]
 [ext_resource type="Texture2D" uid="uid://d2dq426fbkkur" path="res://Assets/Models/Box/Box_Box_Metallic.1001-Box_Roughness.png" id="7_dbohq"]
 [ext_resource type="Texture2D" uid="uid://ckuw1bubtxdnl" path="res://Assets/Models/Box/Box_Box_Normal.png" id="8_507w8"]
+[ext_resource type="FontFile" uid="uid://0gvxqdbhr1ls" path="res://Assets/Fonts/CodenameCoderFree4F-Bold.ttf" id="9_06t28"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pq2xm"]
 resource_name = "Box"
@@ -57,7 +58,7 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_sxgoy")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8u3rf"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dbohq"]
 resource_local_to_scene = true
 render_priority = -1
 cull_mode = 1
@@ -66,7 +67,7 @@ emission = Color(1, 1, 1, 1)
 grow = true
 grow_amount = 0.01
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0ddfy"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_507w8"]
 resource_local_to_scene = true
 render_priority = -1
 cull_mode = 1
@@ -76,7 +77,7 @@ emission = Color(0, 1, 0, 1)
 grow = true
 grow_amount = 0.01
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qlwjp"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8u3rf"]
 resource_local_to_scene = true
 render_priority = -1
 cull_mode = 1
@@ -86,7 +87,7 @@ emission = Color(1, 0, 0, 1)
 grow = true
 grow_amount = 0.01
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kl4j8"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0ddfy"]
 resource_local_to_scene = true
 render_priority = -1
 cull_mode = 1
@@ -95,7 +96,7 @@ emission = Color(1, 1, 1, 1)
 grow = true
 grow_amount = 0.01
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xr028"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qlwjp"]
 resource_local_to_scene = true
 render_priority = -1
 cull_mode = 1
@@ -105,7 +106,7 @@ emission = Color(0, 1, 0, 1)
 grow = true
 grow_amount = 0.01
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_37jlx"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kl4j8"]
 resource_local_to_scene = true
 render_priority = -1
 cull_mode = 1
@@ -132,9 +133,9 @@ initial_object = NodePath("../Lid")
 
 [node name="PrivateKey" parent="." unique_id=759011723 groups=["private_key"] instance=ExtResource("3_aqupe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07403423, 0.0023478866, 0.008483149)
-public_key_highlight = SubResource("StandardMaterial3D_8u3rf")
-private_key_highlight = SubResource("StandardMaterial3D_0ddfy")
-wrong_key_highlight = SubResource("StandardMaterial3D_qlwjp")
+public_key_highlight = SubResource("StandardMaterial3D_dbohq")
+private_key_highlight = SubResource("StandardMaterial3D_507w8")
+wrong_key_highlight = SubResource("StandardMaterial3D_8u3rf")
 
 [node name="KeyLabel" type="Label3D" parent="PrivateKey" unique_id=1070732485]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00012339652, 0.3594801, -0.008483149)
@@ -143,12 +144,16 @@ text = "Private Key"
 
 [node name="WrongKey" parent="." unique_id=693608692 groups=["wrong_key"] instance=ExtResource("3_aqupe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.07044846, 0.002169922, 0)
-public_key_highlight = SubResource("StandardMaterial3D_kl4j8")
-private_key_highlight = SubResource("StandardMaterial3D_xr028")
-wrong_key_highlight = SubResource("StandardMaterial3D_37jlx")
+public_key_highlight = SubResource("StandardMaterial3D_0ddfy")
+private_key_highlight = SubResource("StandardMaterial3D_qlwjp")
+wrong_key_highlight = SubResource("StandardMaterial3D_kl4j8")
 
 [node name="WarningLabel" type="Label3D" parent="." unique_id=200202975]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.839399, 0)
+pixel_size = 0.0025
 text = "🔒 PRIVATE KEY
 NEVER SHARE THIS
 Only you can use it"
+font = ExtResource("9_06t28")
+font_size = 64
+outline_size = 24

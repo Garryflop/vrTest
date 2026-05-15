@@ -2,6 +2,28 @@
 
 [ext_resource type="FontFile" uid="uid://0gvxqdbhr1ls" path="res://Assets/Fonts/CodenameCoderFree4F-Bold.ttf" id="1_1rh3t"]
 [ext_resource type="Script" uid="uid://cjy6gwwqbeydu" path="res://Scripts/confirm_ui.gd" id="1_obooq"]
+[ext_resource type="Shader" uid="uid://bai0a8ty5xc15" path="res://Assets/Shaders/main_menu.gdshader" id="2_0pkop"]
+[ext_resource type="StyleBox" uid="uid://bkk0pqoiwcybl" path="res://Assets/materials/flat.tres" id="4_rxybm"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sox2x"]
+shader = ExtResource("2_0pkop")
+shader_parameter/speed = 0.01
+shader_parameter/scale = Vector2(8, 4.5)
+shader_parameter/rotate_speed = 0.0
+shader_parameter/line_width = 0.1
+shader_parameter/line_size = 0.1
+shader_parameter/back_color = Color(0, 0, 0, 1)
+shader_parameter/line_color = Color(0.36958802, 0.27770823, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jvk7s"]
+bg_color = Color(0.49111894, 0.37294003, 0, 0.49019608)
+border_width_left = 12
+border_width_top = 12
+border_width_right = 12
+border_width_bottom = 12
+border_color = Color(0, 0, 0, 1)
+corner_detail = 20
+shadow_size = 6
 
 [node name="ConfirmUi" type="Control" unique_id=875034203]
 layout_mode = 3
@@ -12,14 +34,30 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_obooq")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1934467021]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=122135886]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.4849202, 0.4849202, 0.4849202, 1)
+
+[node name="MarginContainer2" type="MarginContainer" parent="." unique_id=1351108272]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer2" unique_id=1323068137]
+material = SubResource("ShaderMaterial_sox2x")
+layout_mode = 2
+color = Color(0, 1, 0.735357, 1)
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=978630543]
 layout_mode = 1
@@ -49,13 +87,17 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="ConfirmButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=80629908]
-custom_minimum_size = Vector2(400, 200)
+[node name="ConfirmButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1869019424]
+custom_minimum_size = Vector2(480, 156)
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 4
+size_flags_vertical = 6
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
 theme_override_fonts/font = ExtResource("1_1rh3t")
 theme_override_font_sizes/font_size = 96
+theme_override_styles/normal = ExtResource("4_rxybm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jvk7s")
 text = "Okay"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/ConfirmButton" to="." method="_on_confirm_button_pressed"]

@@ -2,9 +2,18 @@
 
 [ext_resource type="PackedScene" uid="uid://c0b3hhmubwbkx" path="res://Assets/Models/Golem/Golem.glb" id="1_r14yv"]
 
-[node name="Golem2" unique_id=1694884927 instance=ExtResource("1_r14yv")]
+[sub_resource type="BoxShape3D" id="BoxShape3D_r14yv"]
+size = Vector3(0.6154785, 1.0866699, 0.7446289)
 
-[node name="Skeleton3D" parent="Golem" parent_id_path=PackedInt32Array(1692955726) index="0" unique_id=142565520]
+[node name="Golem2" unique_id=2087226474 instance=ExtResource("1_r14yv")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="0" unique_id=2032068735]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=1709337473]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.54382324, 0.12768555)
+shape = SubResource("BoxShape3D_r14yv")
+
+[node name="Skeleton3D" parent="Golem" parent_id_path=PackedInt32Array(1682896966) index="0" unique_id=1726780764]
 bones/1/position = Vector3(0.051044554, -0.061904322, -0.2676312)
 bones/1/rotation = Quaternion(-0.7038107, -0.05500336, 0.70811087, 0.014290833)
 bones/3/position = Vector3(0.12153897, 0.14383432, -0.42321515)
@@ -31,5 +40,5 @@ bones/20/rotation = Quaternion(0.70381093, -0.055003375, 0.7081106, -0.014290811
 bones/22/position = Vector3(-0.12153922, 0.14383431, -0.42321512)
 bones/25/position = Vector3(-0.28821534, 0.29312095, -0.315144)
 
-[node name="AnimationPlayer" parent="." index="1" unique_id=158733495]
+[node name="AnimationPlayer" parent="." index="2" unique_id=1612466195]
 autoplay = &"WatchingWindow"

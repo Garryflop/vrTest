@@ -12,6 +12,7 @@
 [ext_resource type="Shader" uid="uid://bt40vp54i0yb" path="res://Assets/Shaders/hologram.gdshader" id="10_ul33m"]
 [ext_resource type="FontFile" uid="uid://0gvxqdbhr1ls" path="res://Assets/Fonts/CodenameCoderFree4F-Bold.ttf" id="11_b1nrc"]
 [ext_resource type="PackedScene" uid="uid://bkg7muyrb7lxq" path="res://Scenes/3d_button.tscn" id="12_8hkrx"]
+[ext_resource type="PackedScene" uid="uid://ldqmqhl35ocm" path="res://Scenes/golem_2.tscn" id="13_le0g5"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tlcug"]
 
@@ -324,4 +325,35 @@ text = "В основе традиционных систем лежит Цен�
 Прозрачность: Идентичная копия всей базы данных хранится одновременно у каждого участника сети."
 autowrap_mode = 2
 
+[node name="Golem2" parent="." unique_id=1694884927 instance=ExtResource("13_le0g5")]
+transform = Transform3D(-0.79590684, 0, -0.60541916, 0, 1, 0, 0.60541916, 0, -0.79590684, 2.35815, 0.10660634, -1.0455229)
+
+[node name="Skeleton3D" parent="Golem2/Golem" parent_id_path=PackedInt32Array(1694884927, 1682896966) index="0" unique_id=1726780764]
+bones/1/position = Vector3(0.121051475, -0.02500652, -0.033348788)
+bones/1/rotation = Quaternion(0.012334185, -3.5053185e-16, 0.99992394, -3.6278098e-09)
+bones/3/position = Vector3(0.23806098, -0.019096233, -0.37336048)
+bones/6/position = Vector3(0.11423147, 0.318264, -0.2226021)
+bones/7/position = Vector3(-1.3798385e-07, -0.0009091763, -0.3543368)
+bones/7/rotation = Quaternion(-0.69776857, 1.3947329e-07, 1.358605e-07, 0.7163234)
+bones/8/rotation = Quaternion(0.19099534, 1.17014736e-07, 2.2768463e-08, 0.9815909)
+bones/9/rotation = Quaternion(0.16755418, 0.09052546, -0.061085865, 0.9797955)
+bones/10/rotation = Quaternion(0.0008291678, 7.093611e-09, 7.713474e-09, 0.9999997)
+bones/11/rotation = Quaternion(0.045377072, -0.09466424, 0.11226677, 0.98811734)
+bones/12/rotation = Quaternion(0.008388034, -0.0077128643, 0.9274636, -0.37373996)
+bones/13/rotation = Quaternion(0.46967146, -0.018207587, -0.27325076, 0.8392921)
+bones/14/rotation = Quaternion(-0.110719815, 0.44683793, 0.87066364, 0.17326862)
+bones/15/rotation = Quaternion(0.38263977, 0.01944789, 0.2226164, 0.89646566)
+bones/16/rotation = Quaternion(0.0042152954, 0.44088417, 0.89018154, -0.11480579)
+bones/17/rotation = Quaternion(-0.6761348, -0.001658839, -0.09127205, 0.73110086)
+bones/18/rotation = Quaternion(-0.0042152693, 0.44088417, 0.89018154, 0.114805765)
+bones/19/rotation = Quaternion(-0.6761348, 0.0016588343, 0.09127204, 0.7311009)
+bones/20/position = Vector3(-0.121051505, -0.02500652, -0.033348694)
+bones/20/rotation = Quaternion(-0.012333797, 3.5254176e-16, 0.99992394, 3.6276955e-09)
+bones/22/position = Vector3(-0.1384112, 0.29783374, -0.38500145)
+bones/25/position = Vector3(-0.114231646, 0.31826404, -0.22260201)
+
+[node name="AnimationPlayer" parent="Golem2" index="2" unique_id=1612466195]
+autoplay = &"PolivanieFlower"
+
 [editable path="XROrigin3D"]
+[editable path="Golem2"]
