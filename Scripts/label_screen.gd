@@ -3,19 +3,18 @@ extends Label3D
 @export var level_index: int = 0
 
 var is_one_shot_dialogue: bool = true
-var one_shot_dialogue: String = "Loading to the game"
+var one_shot_dialogue: String = "Загрузка игры"
 
 var dialogues := {
-	0: ["Welcome to the Microcircuit.\n
-		You will learn how trust works without a center." ],
-	1: ["One block changed.\n 
-		The chain broke.\n 
-		This is why blockchains are tamper-proof."],
-	2: ["Two keys. One secret.\n
-		Guess which one opens the vault."],
-	3: ["No boss. No center.\n 
-		Just math. And agreement."],
-	4: ["Thanks for Playing."]
+	0: ["Добро пожаловать в Микросхему.\n
+		Здесь вы поймете, как устроено децентрализованное доверие." ],
+	1: ["Один измененный блок — и цепочка разрушена.\n
+		Именно поэтому блокчейны защищены от взлома."],
+	2: ["Два ключа. Один секрет.\n
+		Угадайте, какой именно откроет хранилище."],
+	3: ["Без руководства. Без единого центра.\n 
+		Только математика и консенсус."],
+	4: ["Спасибо за игру."]
 }
 
 func _on_staging_switching_to_loading_scene(user_data: Variant) -> void:

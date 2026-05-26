@@ -3,7 +3,7 @@ extends Node3D
 signal action_triggered(action: String)
 
 func set_status(text: String):
-	$StatusLabel.text = "Status:\n" + text
+	$StatusLabel.text = "Статус:\n" + text
 
 func set_button_text(action_name: String, text: String):
 	if action_name == "send_decent":

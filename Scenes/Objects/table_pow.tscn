@@ -72,7 +72,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0144057, 0.41660145, 0.5108
 [node name="EnergyMeter" type="Label3D" parent="." unique_id=1128254177]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4726937, 0)
 pixel_size = 0.0025
-text = "Energy Meter
+text = "Запас Энергии
 0%"
 font = ExtResource("11_658c1")
 font_size = 64
@@ -93,7 +93,6 @@ transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, -0.1, -0.01)
 [node name="Label3D" type="Label3D" parent="StartButton" unique_id=1637145903]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.014603972, 0)
 pixel_size = 0.001
-text = "Start
-"
+text = "Старт"
 font = ExtResource("11_658c1")
 font_size = 64

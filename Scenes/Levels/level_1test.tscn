@@ -13,6 +13,7 @@
 [ext_resource type="FontFile" uid="uid://0gvxqdbhr1ls" path="res://Assets/Fonts/CodenameCoderFree4F-Bold.ttf" id="11_b1nrc"]
 [ext_resource type="PackedScene" uid="uid://bkg7muyrb7lxq" path="res://Scenes/3d_button.tscn" id="12_8hkrx"]
 [ext_resource type="PackedScene" uid="uid://ldqmqhl35ocm" path="res://Scenes/golem_2.tscn" id="13_le0g5"]
+[ext_resource type="PackedScene" uid="uid://b3id8xmk3dmnl" path="res://Scenes/quiz_in_3d.tscn" id="13_ul33m"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tlcug"]
 
@@ -56,7 +57,7 @@ shader = ExtResource("10_ul33m")
 shader_parameter/albedo_texture = SubResource("ViewportTexture_f7e30")
 shader_parameter/opacity = 1.52800007258
 shader_parameter/ghost_color = Color(0, 0.8117647, 1, 1)
-shader_parameter/flicker_speed = 0.9690000460275
+shader_parameter/flicker_speed = 0.0
 shader_parameter/phase_frequency = 0.0
 shader_parameter/fresnel_strength = 0.8
 shader_parameter/fresnel_color = Color(1, 1, 0, 1)
@@ -284,10 +285,14 @@ mesh = SubResource("QuadMesh_niomj")
 [node name="SpeakerButton" parent="AudioTutorSystem/TutorPanel" unique_id=1670963952 instance=ExtResource("12_8hkrx")]
 transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, -1.0898356, 0)
 screen_visible = false
+screen_size = Vector2(0.8, 0.2)
 
-[node name="Label3D" type="Label3D" parent="AudioTutorSystem/TutorPanel/SpeakerButton" unique_id=388905128]
-text = "play"
-font_size = 16
+[node name="Label3D" type="Label3D" parent="AudioTutorSystem/TutorPanel/SpeakerButton" unique_id=100747168]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, 0, 0)
+pixel_size = 0.0013
+text = "Воспроизводить аудио"
+font = ExtResource("11_b1nrc")
+font_size = 64
 
 [node name="SubViewport" type="SubViewport" parent="AudioTutorSystem/TutorPanel" unique_id=1454979657]
 
@@ -326,9 +331,9 @@ text = "В основе традиционных систем лежит Цен�
 autowrap_mode = 2
 
 [node name="Golem2" parent="." unique_id=1694884927 instance=ExtResource("13_le0g5")]
-transform = Transform3D(-0.79590684, 0, -0.60541916, 0, 1, 0, 0.60541916, 0, -0.79590684, 2.35815, 0.10660634, -1.0455229)
+transform = Transform3D(-0.79590684, 0, -0.60541916, 0, 1, 0, 0.60541916, 0, -0.79590684, 2.7150233, 0.10660622, -0.9002186)
 
-[node name="Skeleton3D" parent="Golem2/Golem" parent_id_path=PackedInt32Array(1694884927, 1682896966) index="0" unique_id=1726780764]
+[node name="Skeleton3D" parent="Golem2/Golem" parent_id_path=PackedInt32Array(1694884927, 456624368) index="0" unique_id=992964028]
 bones/1/position = Vector3(0.121051475, -0.02500652, -0.033348788)
 bones/1/rotation = Quaternion(0.012334185, -3.5053185e-16, 0.99992394, -3.6278098e-09)
 bones/3/position = Vector3(0.23806098, -0.019096233, -0.37336048)
@@ -352,8 +357,11 @@ bones/20/rotation = Quaternion(-0.012333797, 3.5254176e-16, 0.99992394, 3.627695
 bones/22/position = Vector3(-0.1384112, 0.29783374, -0.38500145)
 bones/25/position = Vector3(-0.114231646, 0.31826404, -0.22260201)
 
-[node name="AnimationPlayer" parent="Golem2" index="2" unique_id=1612466195]
+[node name="AnimationPlayer" parent="Golem2" index="2" unique_id=749544066]
 autoplay = &"PolivanieFlower"
+
+[node name="Quiz" parent="." unique_id=447662983 instance=ExtResource("13_ul33m")]
+transform = Transform3D(0.9999997, 0, -3.7252903e-09, 0, 1, 0, 3.7252903e-09, 0, 0.9999997, -0.017376587, 0.53438956, -1.2101976)
 
 [editable path="XROrigin3D"]
 [editable path="Golem2"]

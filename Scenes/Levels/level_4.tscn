@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bkg7muyrb7lxq" path="res://Scenes/3d_button.tscn" id="8_xpmn3"]
 [ext_resource type="PackedScene" uid="uid://be4l8d7v2q7pw" path="res://Assets/Models/MonitorV2/MonitorV2.glb" id="9_33y7k"]
 [ext_resource type="Script" uid="uid://dm1ii3ctehusi" path="res://Scripts/comparison_table.gd" id="9_keyqw"]
+[ext_resource type="PackedScene" uid="uid://b3id8xmk3dmnl" path="res://Scenes/quiz_in_3d.tscn" id="10_eb4ip"]
 [ext_resource type="PackedScene" uid="uid://b0kuqkemp1rk3" path="res://Scenes/Teleporter.tscn" id="10_gsxik"]
 [ext_resource type="FontFile" uid="uid://0gvxqdbhr1ls" path="res://Assets/Fonts/CodenameCoderFree4F-Bold.ttf" id="10_khr6i"]
 [ext_resource type="Script" uid="uid://pfo3jad5for0" path="res://Scripts/audio_tutor.gd" id="11_i5g5g"]
@@ -45,7 +46,7 @@ size = Vector3(8, 0.2, 8)
 size = Vector3(8, 0.2, 8)
 
 [sub_resource type="BoxMesh" id="BoxMesh_i5g5g"]
-size = Vector3(4, 2.5, 0.1)
+size = Vector3(6, 2.5, 0.1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3osng"]
 albedo_color = Color(0.2, 0.2, 0.2, 1)
@@ -165,6 +166,24 @@ spot_attenuation = 1.5
 spot_angle = 36.569912
 spot_angle_attenuation = 0.2176381
 
+[node name="SpotLight3D4" type="SpotLight3D" parent="." unique_id=1229494902]
+transform = Transform3D(1, 0, 0, 0, 0.9256594, 0.3783579, 0, -0.3783579, 0.9256594, -1.267106, 2.75, -0.7687637)
+light_color = Color(0.735357, 1, 1, 1)
+shadow_enabled = true
+spot_range = 5.4644227
+spot_attenuation = 1.5
+spot_angle = 36.569912
+spot_angle_attenuation = 0.2176381
+
+[node name="SpotLight3D5" type="SpotLight3D" parent="." unique_id=1915793127]
+transform = Transform3D(1, 0, 0, 0, 0.9256594, 0.3783579, 0, -0.3783579, 0.9256594, 1.2527313, 2.75, -0.7687637)
+light_color = Color(0.735357, 1, 1, 1)
+shadow_enabled = true
+spot_range = 5.4644227
+spot_attenuation = 1.5
+spot_angle = 34.823166
+spot_angle_attenuation = 0.2176381
+
 [node name="SpotLight3D2" type="SpotLight3D" parent="." unique_id=926392312]
 transform = Transform3D(0.96542263, -0.22576405, 0.13034493, 0, 0.49999997, 0.86602545, -0.26068985, -0.83608055, 0.48271126, 2.6942995, 2.75, -0.11794458)
 light_energy = 1.5
@@ -204,7 +223,7 @@ transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, -0.1, -0.01)
 [node name="Label3D" type="Label3D" parent="ResetButton" unique_id=2071197860]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.014603972, 0)
 pixel_size = 0.001
-text = "Reset"
+text = "Сброс"
 font = ExtResource("10_khr6i")
 font_size = 64
 
@@ -223,7 +242,7 @@ pos_table = NodePath("../TablePoS")
 [node name="Label3D" type="Label3D" parent="ComparisonTable" unique_id=201080947]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00023648143, 0.8470881, 0.06131649)
 pixel_size = 0.004
-text = "CONSENSUS COMPARISON"
+text = "Сравнение механизмов"
 font = ExtResource("10_khr6i")
 font_size = 96
 outline_size = 36
@@ -234,28 +253,32 @@ mesh = SubResource("BoxMesh_i5g5g")
 surface_material_override/0 = SubResource("StandardMaterial3D_3osng")
 
 [node name="PoWLabel3D" type="Label3D" parent="ComparisonTable" unique_id=575948869]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6418204, -0.11036754, 0.06100011)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8079252, -0.11036754, 0.06100011)
 pixel_size = 0.002
-text = "  PROOF OF WORK
-⚡ Energy: HIGH 
-🔥 Heat: MAX
-⏱ Time: 10.1"
+text = " ДОКАЗАТЕЛЬСТВО РАБОТЫ
+⚡ Энергия: Высокая 
+🔥 Выделение тепла: Высокое
+⏱ Время: 10.1"
 font = ExtResource("10_khr6i")
 font_size = 96
 outline_size = 36
 horizontal_alignment = 0
 
 [node name="PoSLabel3D" type="Label3D" parent="ComparisonTable" unique_id=1284044673]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.175, -0.11, 0.061)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07303266, -0.110000014, 0.06100011)
 pixel_size = 0.002
-text = " PROOF OF STAKE
-🌱 Energy: LOW 
-❄ Heat: NONE  
-⏱ Time: 6.6 "
+text = " ДОКАЗАТЕЛЬСТВО ДОЛИ ВЛАДЕНИЯ
+🌱 Энергия: Низкая
+❄ Выделения тепла: Отсутствует
+⏱ Время: 6.6 "
 font = ExtResource("10_khr6i")
 font_size = 96
 outline_size = 36
 horizontal_alignment = 0
+
+[node name="Quiz" parent="ComparisonTable" unique_id=447662983 instance=ExtResource("10_eb4ip")]
+transform = Transform3D(-0.9988717, 0, 0.047490045, 0, 1, 0, -0.047490045, 0, -0.9988717, -1.080393, -0.9860783, 5.3622284)
+room_id = "room_4"
 
 [node name="TeleportArea" parent="." unique_id=1507852708 instance=ExtResource("10_gsxik")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00091171265, 0.12500003, 1.923326)
@@ -277,10 +300,12 @@ mesh = SubResource("QuadMesh_33y7k")
 [node name="SpeakerButton" parent="AudioTutorSystem/TutorPanel" unique_id=748713304 instance=ExtResource("8_xpmn3")]
 transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, -1.0898356, 0)
 screen_visible = false
+screen_size = Vector2(0.8, 0.2)
 
 [node name="Label3D" type="Label3D" parent="AudioTutorSystem/TutorPanel/SpeakerButton" unique_id=641480574]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, 0, 0)
 pixel_size = 0.0013
-text = "play"
+text = "Воспроизводить аудио"
 font = ExtResource("10_khr6i")
 font_size = 64
 
@@ -325,7 +350,7 @@ autowrap_mode = 2
 [node name="Golem2" parent="." unique_id=2087226474 instance=ExtResource("14_3osng")]
 transform = Transform3D(-0.82607865, 0, 0.56355476, 0, 1, 0, -0.56355476, 0, -0.82607865, -2.4930816, -0.13756657, 1.1985728)
 
-[node name="Skeleton3D" parent="Golem2/Golem" parent_id_path=PackedInt32Array(2087226474, 1682896966) index="0" unique_id=1726780764]
+[node name="Skeleton3D" parent="Golem2/Golem" parent_id_path=PackedInt32Array(2087226474, 456624368) index="0" unique_id=992964028]
 bones/3/position = Vector3(0.15829387, 0.11282942, -0.42318854)
 bones/8/rotation = Quaternion(0.14673217, 1.1780555e-07, 2.287786e-08, 0.98917633)
 bones/10/rotation = Quaternion(-0.03715752, -1.8323872e-10, 5.2389644e-09, 0.9993095)

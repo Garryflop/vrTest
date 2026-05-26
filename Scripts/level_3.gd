@@ -3,6 +3,8 @@ extends XRToolsSceneBase
 
 @onready var terminal: StaticBody3D = $Terminal
 @onready var private_key_box: Node3D = $PrivateKeyBox
+@onready var wrong_private_key_box: Node3D = $WrongPrivateKeyBox
+
 
 @export_file('*.tscn') var next_level_scene : String
 
@@ -17,6 +19,7 @@ func _on_reset_button_button_pressed() -> void:
 	if can_reset:
 		terminal.reset()
 		private_key_box.reset()
+		wrong_private_key_box.reset()
 		Signals.LevelReset.emit()
 
 

@@ -49,7 +49,7 @@ func _update_stake_labels() -> void:
 	for i in range(min(validators.size(), stakes.size())):
 		var label = validators[i].get_node_or_null("Label3D")
 		if label:
-			label.text = "Node %d\nStake: %d BTC" % [i + 1, stakes[i]]
+			label.text = "Блок %d\nДоля: %d BTC" % [i + 1, stakes[i]]
 		var mesh = validators[i].get_node_or_null("Cube/MeshInstance3D")
 		if not mesh:
 			mesh = validators[i].get_node_or_null("MeshInstance3D")
@@ -77,7 +77,7 @@ func _on_select() -> void:
 
 	var label = validators[winner_idx].get_node_or_null("Label3D")
 	if label:
-		label.text = "✓ VALIDATOR\nStake: %d BTC\nSELECTED!" % stakes[winner_idx]
+		label.text = "✓ ВАЛИДАТОР\nДоля: %d BTC\nВЫБРАН!" % stakes[winner_idx]
 	
 	Signals.LevelSuccess.emit()
 	

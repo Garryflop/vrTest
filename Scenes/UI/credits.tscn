@@ -62,7 +62,7 @@ theme_override_constants/separation = 5
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_1g7ho")
 theme_override_font_sizes/font_size = 72
-text = "Credits
+text = "Авторы
 "
 horizontal_alignment = 1
 

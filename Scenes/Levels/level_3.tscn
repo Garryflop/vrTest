@@ -10,11 +10,13 @@
 [ext_resource type="PackedScene" uid="uid://dcyxoe5x7ful0" path="res://Scenes/private_key_box.tscn" id="5_yy6i0"]
 [ext_resource type="PackedScene" uid="uid://1sntiwrtqky1" path="res://Scenes/public_key_display.tscn" id="6_167vu"]
 [ext_resource type="PackedScene" uid="uid://njdroy1hdlq1" path="res://Assets/Models/Table/Table.glb" id="6_ocbj8"]
+[ext_resource type="PackedScene" uid="uid://dp6yeqjaoistm" path="res://Scenes/wrong_private_key_box.tscn" id="7_8dmpc"]
 [ext_resource type="PackedScene" uid="uid://b0kuqkemp1rk3" path="res://Scenes/Teleporter.tscn" id="11_osqx1"]
 [ext_resource type="Script" uid="uid://pfo3jad5for0" path="res://Scripts/audio_tutor.gd" id="12_1hf40"]
 [ext_resource type="AudioStream" uid="uid://nlm2n8tdpgvp" path="res://Assets/Audio/AudioTutors/4.mp3" id="13_13yca"]
 [ext_resource type="Shader" uid="uid://bt40vp54i0yb" path="res://Assets/Shaders/hologram.gdshader" id="14_8dmpc"]
 [ext_resource type="PackedScene" uid="uid://ldqmqhl35ocm" path="res://Scenes/golem_2.tscn" id="15_13yca"]
+[ext_resource type="PackedScene" uid="uid://b3id8xmk3dmnl" path="res://Scenes/quiz_in_3d.tscn" id="17_anjjd"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tlcug"]
 
@@ -102,6 +104,16 @@ transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0023766756, 0.21711, 0.009283066)
 shape = SubResource("BoxShape3D_3mqfk")
 
+[node name="Table3" type="StaticBody3D" parent="." unique_id=304372549]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8835342, -0.08, -1.338)
+
+[node name="Table" parent="Table3" unique_id=102958550 instance=ExtResource("6_ocbj8")]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Table3" unique_id=2147118674]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0023766756, 0.21711, 0.009283066)
+shape = SubResource("BoxShape3D_3mqfk")
+
 [node name="Box" type="Node3D" parent="." unique_id=2014998134]
 
 [node name="Wall" type="StaticBody3D" parent="Box" unique_id=527165134]
@@ -159,7 +171,7 @@ mesh = SubResource("BoxMesh_iixi8")
 shape = SubResource("BoxShape3D_cyadu")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=436631518]
-transform = Transform3D(1, 0, 0, 0, 0.49999997, 0.86602545, 0, -0.86602545, 0.49999997, -1.449494, 2.75, -0.17)
+transform = Transform3D(1, 0, 0, 0, 0.49999997, 0.86602545, 0, -0.86602545, 0.49999997, -0.2080104, 2.7499998, 3.8230243)
 light_color = Color(0.735357, 1, 1, 1)
 shadow_enabled = true
 spot_attenuation = 1.5
@@ -167,6 +179,13 @@ spot_angle = 30.0
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="." unique_id=926392312]
 transform = Transform3D(1, 0, 0, 0, 0.49999997, 0.86602545, 0, -0.86602545, 0.49999997, 1.8593972, 2.75, -0.11794458)
+light_energy = 1.5
+shadow_enabled = true
+spot_attenuation = 1.5
+spot_angle = 30.0
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="." unique_id=1778365548]
+transform = Transform3D(1, 0, 0, 0, 0.49999997, 0.86602545, 0, -0.86602545, 0.49999997, -1.6877674, 2.75, -0.11794458)
 light_energy = 1.5
 shadow_enabled = true
 spot_attenuation = 1.5
@@ -183,11 +202,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.029222608, 1.3582108, -0.66
 light_energy = 1.5
 omni_range = 2.099193
 
+[node name="OmniLight3D3" type="OmniLight3D" parent="." unique_id=1563645405]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2901535, 0.89665616, -0.7751477)
+light_energy = 1.5
+omni_range = 1.5932214
+
 [node name="Terminal" parent="." unique_id=27120533 instance=ExtResource("4_t8c31")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.01683154, 0.31491435, -1.3970503)
 
 [node name="PrivateKeyBox" parent="." unique_id=876825030 instance=ExtResource("5_yy6i0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.116, 0.414, -1.318)
+
+[node name="WrongPrivateKeyBox" parent="." unique_id=768714059 instance=ExtResource("7_8dmpc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8937929, 0.41209835, -1.3474855)
 
 [node name="PublicKeyDisplay" parent="." unique_id=1983456545 instance=ExtResource("6_167vu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.012848377, 1.4419513, -1.403536)
@@ -202,12 +229,12 @@ transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, -0.1, -0.01)
 [node name="Label3D" type="Label3D" parent="ResetButton" unique_id=2071197860]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.014603972, 0)
 pixel_size = 0.001
-text = "Reset"
+text = "Сброс"
 font = ExtResource("4_8dmpc")
 font_size = 64
 
 [node name="TeleportArea" parent="." unique_id=1507852708 instance=ExtResource("11_osqx1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9707744, 0.12500003, -2.059648)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1640949, 0.12499979, 2.3485014)
 
 [node name="AudioTutorSystem" type="Node3D" parent="." unique_id=1075977981]
 transform = Transform3D(-0.9998719, 0, 0.016004018, 0, 1, 0, -0.016004018, 0, -0.9998719, -0.12858629, 1.4020138, 1.019941)
@@ -228,10 +255,14 @@ mesh = SubResource("QuadMesh_8dmpc")
 [node name="SpeakerButton" parent="AudioTutorSystem/TutorPanel" unique_id=459755968 instance=ExtResource("2_1hf40")]
 transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, -1.0898356, 0)
 screen_visible = false
+screen_size = Vector2(0.8, 0.2)
 
-[node name="Label3D" type="Label3D" parent="AudioTutorSystem/TutorPanel/SpeakerButton" unique_id=921508017]
-text = "play"
-font_size = 16
+[node name="Label3D" type="Label3D" parent="AudioTutorSystem/TutorPanel/SpeakerButton" unique_id=513263758]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, 0, 0)
+pixel_size = 0.0013
+text = "Воспроизводить аудио"
+font = ExtResource("4_8dmpc")
+font_size = 64
 
 [node name="SubViewport" type="SubViewport" parent="AudioTutorSystem/TutorPanel" unique_id=1740400038]
 
@@ -271,9 +302,9 @@ text = "Для взаимодействия с блокчейном исполь
 autowrap_mode = 2
 
 [node name="Golem2" parent="." unique_id=2087226474 instance=ExtResource("15_13yca")]
-transform = Transform3D(0.9167466, 0, -0.39946923, 0, 1, 0, 0.39946923, 0, 0.9167466, 2.5141528, 0.10660634, -2.1204388)
+transform = Transform3D(-0.7163262, 0, 0.69776547, 0, 1, 0, -0.69776547, 0, -0.7163262, -2.7224083, 0.10660646, -0.54739326)
 
-[node name="Skeleton3D" parent="Golem2/Golem" parent_id_path=PackedInt32Array(2087226474, 1682896966) index="0" unique_id=1726780764]
+[node name="Skeleton3D" parent="Golem2/Golem" parent_id_path=PackedInt32Array(2087226474, 456624368) index="0" unique_id=992964028]
 bones/1/position = Vector3(0.121051475, -0.02500652, -0.033348788)
 bones/1/rotation = Quaternion(0.012334185, -3.5053185e-16, 0.99992394, -3.6278098e-09)
 bones/3/position = Vector3(0.23840286, -0.01187305, -0.38181794)
@@ -297,8 +328,12 @@ bones/20/rotation = Quaternion(-0.012333797, 3.5254176e-16, 0.99992394, 3.627695
 bones/22/position = Vector3(-0.16847233, 0.27563357, -0.4143241)
 bones/25/position = Vector3(-0.114231646, 0.31826404, -0.22260201)
 
-[node name="AnimationPlayer" parent="Golem2" index="2" unique_id=1612466195]
+[node name="AnimationPlayer" parent="Golem2" index="2" unique_id=749544066]
 autoplay = &"PolivanieFlower"
+
+[node name="Quiz" parent="." unique_id=447662983 instance=ExtResource("17_anjjd")]
+transform = Transform3D(-0.99996036, 0, 0.008901153, 0, 1, 0, -0.008901153, 0, -0.99996036, -1.3197393, 0.6011107, 1.6992112)
+room_id = "room_3"
 
 [connection signal="door_opened" from="Terminal" to="." method="_on_terminal_door_opened"]
 [connection signal="door_opening" from="Terminal" to="." method="_on_terminal_door_opening"]

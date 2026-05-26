@@ -1,0 +1,277 @@
+[gd_scene format=3 uid="uid://c1o1va0dwstek"]
+
+[ext_resource type="Shader" uid="uid://bai0a8ty5xc15" path="res://Assets/Shaders/main_menu.gdshader" id="1_4ee40"]
+[ext_resource type="Script" uid="uid://dh8yuwrfjav8n" path="res://Scripts/quiz.gd" id="1_8oa6b"]
+[ext_resource type="FontFile" uid="uid://0gvxqdbhr1ls" path="res://Assets/Fonts/CodenameCoderFree4F-Bold.ttf" id="2_miajm"]
+[ext_resource type="StyleBox" uid="uid://bkk0pqoiwcybl" path="res://Assets/materials/flat.tres" id="3_miajm"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8oa6b"]
+shader = ExtResource("1_4ee40")
+shader_parameter/speed = 0.01
+shader_parameter/scale = Vector2(8, 4.5)
+shader_parameter/rotate_speed = 0.0
+shader_parameter/line_width = 0.1
+shader_parameter/line_size = 0.1
+shader_parameter/back_color = Color(0, 0, 0, 1)
+shader_parameter/line_color = Color(0.36958802, 0.27770823, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8oa6b"]
+bg_color = Color(0.49111894, 0.37294003, 0, 0.49019608)
+border_width_left = 12
+border_width_top = 12
+border_width_right = 12
+border_width_bottom = 12
+border_color = Color(0, 0, 0, 1)
+corner_detail = 20
+shadow_size = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_miajm"]
+bg_color = Color(0.9490196, 0.17254902, 0, 1)
+border_width_left = 12
+border_width_top = 12
+border_width_right = 12
+border_width_bottom = 12
+border_color = Color(0, 0, 0, 1)
+corner_detail = 20
+shadow_size = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u77sh"]
+bg_color = Color(0.49019608, 0.14901961, 0, 0.49019608)
+border_width_left = 12
+border_width_top = 12
+border_width_right = 12
+border_width_bottom = 12
+border_color = Color(0, 0, 0, 1)
+corner_detail = 20
+shadow_size = 6
+
+[node name="Quiz" type="Control" unique_id=19589569]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8oa6b")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=581231484]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="OutlineContainer" type="MarginContainer" parent="." unique_id=504642964]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="ColorRect" type="ColorRect" parent="OutlineContainer" unique_id=2007869819]
+material = SubResource("ShaderMaterial_8oa6b")
+layout_mode = 2
+color = Color(0, 1, 0.735357, 1)
+
+[node name="QuestionContainer" type="MarginContainer" parent="." unique_id=648969568]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="QuestionContainer" unique_id=903837820]
+layout_mode = 2
+
+[node name="QuestionNumber" type="Label" parent="QuestionContainer/VBoxContainer" unique_id=1747746708]
+custom_minimum_size = Vector2(1152, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_miajm")
+theme_override_font_sizes/font_size = 64
+text = "1/4"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="QuestionText" type="Label" parent="QuestionContainer/VBoxContainer" unique_id=89312731]
+custom_minimum_size = Vector2(1138, 250)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_miajm")
+theme_override_font_sizes/font_size = 64
+text = "Что произойдет, если отключить единственный центральный сервер в Central Bank City?"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="AnswerOptions" type="ItemList" parent="QuestionContainer/VBoxContainer" unique_id=1336332086]
+custom_minimum_size = Vector2(1136, 198)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_miajm")
+theme_override_font_sizes/font_size = 48
+item_count = 3
+item_0/text = "A.Сеть продолжит работать через другие узлы"
+item_1/text = "B.Система полностью остановится"
+item_2/text = "C.Автоматически выберется новый сервер"
+
+[node name="ExplanationPanel" type="Panel" parent="." unique_id=538687499]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="ExplanationPanel" unique_id=1678988638]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="OutlineContainer" type="MarginContainer" parent="ExplanationPanel" unique_id=847991511]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="ColorRect" type="ColorRect" parent="ExplanationPanel/OutlineContainer" unique_id=2041163364]
+material = SubResource("ShaderMaterial_8oa6b")
+layout_mode = 2
+color = Color(0, 1, 0.735357, 1)
+
+[node name="ExplanationContainer" type="MarginContainer" parent="ExplanationPanel" unique_id=2082796104]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ExplanationPanel/ExplanationContainer" unique_id=872367798]
+layout_mode = 2
+
+[node name="QuestionNumber" type="Label" parent="ExplanationPanel/ExplanationContainer/VBoxContainer" unique_id=1234778574]
+custom_minimum_size = Vector2(1152, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_miajm")
+theme_override_font_sizes/font_size = 64
+text = "1/4"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="ExplanationText" type="Label" parent="ExplanationPanel/ExplanationContainer/VBoxContainer" unique_id=776711115]
+custom_minimum_size = Vector2(1138, 250)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("2_miajm")
+theme_override_font_sizes/font_size = 48
+text = "В централизованной системе падение главного сервера полностью парализует сеть. Блокчейн (децентрализованная сеть) состоит из множества независимых узлов (nodes), поэтому отключение одного или нескольких из них не нарушает работу всей системы."
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="NextButton" type="Button" parent="ExplanationPanel/ExplanationContainer/VBoxContainer" unique_id=434971631]
+custom_minimum_size = Vector2(640, 128)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("2_miajm")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = ExtResource("3_miajm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8oa6b")
+text = "Следующий вопрос"
+
+[node name="ResultsPanel" type="Panel" parent="." unique_id=2014073037]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="ResultsPanel" unique_id=1316630561]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="OutlineContainer" type="MarginContainer" parent="ResultsPanel" unique_id=307197985]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="ColorRect" type="ColorRect" parent="ResultsPanel/OutlineContainer" unique_id=1869128093]
+material = SubResource("ShaderMaterial_8oa6b")
+layout_mode = 2
+color = Color(0, 1, 0.735357, 1)
+
+[node name="ResultsContainer" type="MarginContainer" parent="ResultsPanel" unique_id=393331016]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ResultsPanel/ResultsContainer" unique_id=1107355876]
+layout_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="ResultsPanel/ResultsContainer/VBoxContainer" unique_id=458545069]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_constants/separation = 74
+
+[node name="Results Text" type="Label" parent="ResultsPanel/ResultsContainer/VBoxContainer" unique_id=1887117104]
+custom_minimum_size = Vector2(1138, 250)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("2_miajm")
+theme_override_font_sizes/font_size = 96
+text = "Тест пройден!
+Прогресс: 100.00%"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="RestartButton" type="Button" parent="ResultsPanel/ResultsContainer/VBoxContainer" unique_id=562285373]
+custom_minimum_size = Vector2(640, 120)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("2_miajm")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_miajm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_u77sh")
+text = "Заново пройти"
+
+[connection signal="item_selected" from="QuestionContainer/VBoxContainer/AnswerOptions" to="." method="_on_answer_options_item_selected"]
+[connection signal="pressed" from="ExplanationPanel/ExplanationContainer/VBoxContainer/NextButton" to="." method="_on_next_button_pressed"]
+[connection signal="pressed" from="ResultsPanel/ResultsContainer/VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]

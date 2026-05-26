@@ -279,10 +279,14 @@ mesh = SubResource("QuadMesh_niomj")
 [node name="SpeakerButton" parent="AudioTutorSystem/TutorPanel" unique_id=694175069 instance=ExtResource("25_5yi86")]
 transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, -1.0898356, 0)
 screen_visible = false
+screen_size = Vector2(0.8, 0.2)
 
-[node name="Label3D" type="Label3D" parent="AudioTutorSystem/TutorPanel/SpeakerButton" unique_id=1204635027]
-text = "play"
-font_size = 16
+[node name="Label3D" type="Label3D" parent="AudioTutorSystem/TutorPanel/SpeakerButton" unique_id=501138599]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, 0, 0)
+pixel_size = 0.0013
+text = "Воспроизводить аудио"
+font = ExtResource("5_k87wc")
+font_size = 64
 
 [node name="SubViewport" type="SubViewport" parent="AudioTutorSystem/TutorPanel" unique_id=1243307778]
 

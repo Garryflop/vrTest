@@ -91,30 +91,31 @@ theme_override_constants/separation = 5
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_dkbde")
 theme_override_font_sizes/font_size = 48
-text = "Settings"
+text = "Настройки"
 horizontal_alignment = 1
 
 [node name="Audio" type="VBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=177822752]
 custom_minimum_size = Vector2(180, 0)
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_constants/separation = 15
 
 [node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/Audio" unique_id=98390341]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_dkbde")
 theme_override_font_sizes/font_size = 48
-text = "AUDIO"
+text = "Аудио"
 horizontal_alignment = 1
 
 [node name="Music" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Audio" unique_id=1473386577]
 layout_mode = 2
-theme_override_constants/separation = 35
+theme_override_constants/separation = 168
 
 [node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/Audio/Music" unique_id=777406648]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_dkbde")
 theme_override_font_sizes/font_size = 36
-text = "MUSIC"
+text = "Нарратор"
 
 [node name="MusicSlider" type="HSlider" parent="MarginContainer/VBoxContainer/Audio/Music" unique_id=2141912897]
 custom_minimum_size = Vector2(360, 100)
@@ -131,13 +132,14 @@ value = 1.0
 
 [node name="SFX" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Audio" unique_id=1046703113]
 layout_mode = 2
+size_flags_horizontal = 4
 theme_override_constants/separation = 35
 
 [node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/Audio/SFX" unique_id=139187398]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_dkbde")
 theme_override_font_sizes/font_size = 36
-text = "SFX  "
+text = "Звуковые эффекты"
 
 [node name="SfxSlider" type="HSlider" parent="MarginContainer/VBoxContainer/Audio/SFX" unique_id=817054238]
 custom_minimum_size = Vector2(360, 100)

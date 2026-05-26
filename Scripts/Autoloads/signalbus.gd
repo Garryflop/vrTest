@@ -17,6 +17,7 @@ signal QuitButton
 
 #region NextLevelConfirm
 
+signal QuizCompleted
 signal ConfirmNextLevel
 
 #endregion

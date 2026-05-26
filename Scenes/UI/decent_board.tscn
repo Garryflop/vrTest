@@ -7,6 +7,13 @@
 [node name="PanelMesh" parent="." index="0" unique_id=1189680396]
 transform = Transform3D(1.35, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
+[node name="StatusLabel" parent="." index="1" unique_id=235328377]
+text = "Статус:
+Ожидание транзакции..."
+
+[node name="Label3D" parent="BtnDecent" parent_id_path=PackedInt32Array(413104640) index="2" unique_id=851443457]
+text = "Отправить"
+
 [node name="BtnCent" parent="." index="3" unique_id=236539792]
 visible = false
 
@@ -15,3 +22,6 @@ disabled = true
 
 [node name="BtnReset" parent="." index="4" unique_id=918810917]
 action_name = "reset_decent"
+
+[node name="Label3D" parent="BtnReset" index="2" unique_id=1523183365]
+text = "Сбросить"

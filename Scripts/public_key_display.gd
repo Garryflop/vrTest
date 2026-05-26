@@ -17,7 +17,7 @@ var _beam_imm: ImmediateMesh
 var _chars := "0123456789ABCDEF"
 
 func _ready() -> void:
-	hint_label.text = "PUBLIC KEY\nShare with anyone 🌐\nThis is your address"
+	hint_label.text = "Публичный ключ\nМожно делиться со всеми 🌐\nЭто твой адрес"
 
 	# Создаём один ImmediateMesh для всех линий
 	var mesh_inst = MeshInstance3D.new()

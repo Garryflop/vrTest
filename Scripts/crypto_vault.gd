@@ -28,7 +28,7 @@ func _ready() -> void:
 	reward.enabled = false
 	reward_init_transform = reward.transform
 	status_light.material_override = mat_idle
-	status_label.text = "INSERT KEY TO AUTHENTICATE"
+	status_label.text = "ВСТАВЬТЕ КЛЮЧ ДЛЯ АУТЕНТИФИКАЦИИ"
 	key_slot.has_picked_up.connect(_on_key_inserted)
 	key_slot.has_dropped.connect(_on_key_removed)
 
@@ -37,7 +37,7 @@ func _on_key_removed() -> void:
 		return
 	current_state = VaultState.IDLE
 	status_light.material_override = mat_idle
-	status_label.text = "INSERT KEY TO AUTHENTICATE"
+	status_label.text = "ВСТАВЬТЕ КЛЮЧ ДЛЯ АУТЕНТИФИКАЦИИ"
 
 func _on_key_inserted(key_object) -> void:
 	if current_state == VaultState.OPEN:
@@ -45,11 +45,11 @@ func _on_key_inserted(key_object) -> void:
 	if key_object.is_in_group("private_key"):
 		_sequence_approved()
 	elif key_object.is_in_group("public_key"):
-		_sequence_denied("PUBLIC KEY IS NOT A SIGNATURE\nIt's your address, not a password\nUse your PRIVATE KEY")
+		_sequence_denied("ПУБЛИЧНЫЙ КЛЮЧ — НЕ ПОДПИСЬ\nЭто ваш адрес, а не пароль\nИспользуйте ПРИВАТНЫЙ КЛЮЧ")
 	elif key_object.is_in_group("wrong_key"):
-		_sequence_denied("WRONG PRIVATE KEY\nThis signature belongs to someone else\nOnly YOUR key can sign")
+		_sequence_denied("НЕПРАВИЛЬНЫЙ ЛИЧНЫЙ КЛЮЧ\nЭта подпись принадлежит другому\nТолько ВАШ ключ может подписывать")
 	else:
-		_sequence_denied("INVALID OBJECT\nThis is not a key")
+		_sequence_denied("НЕПРАВИЛЬНЫЙ ОБЪЕКТ\nЭто не ключ")
 
 # ── DENIED ──────────────────────────────────────────────────
 func _sequence_denied(reason: String) -> void:
@@ -58,7 +58,7 @@ func _sequence_denied(reason: String) -> void:
 	current_state = VaultState.DENIED
 	Signals.LevelError.emit()
 	#sound_denied.play()
-	status_label.text = "[!] ACCESS DENIED\n" + reason
+	status_label.text = "[!] ДОСТУП ЗАПРЕЩЕН\n" + reason
 
 	# Красный пульс x3
 	var tween = create_tween()
@@ -75,7 +75,7 @@ func _sequence_denied(reason: String) -> void:
 	if key_slot.has_method("drop_object"):
 		key_slot.drop_object()
 	current_state = VaultState.IDLE
-	status_label.text = "INSERT KEY TO AUTHENTICATE"
+	status_label.text = "ВСТАВЬТЕ КЛЮЧ ДЛЯ АУТЕНТИФИКАЦИИ"
 	status_light.material_override = mat_idle
 
 # ── APPROVED ─────────────────────────────────────────────────
@@ -90,18 +90,18 @@ func _sequence_approved() -> void:
 	reward.enabled = true
 	_open_door()
 	await get_tree().create_timer(0.9).timeout
-	status_label.text = "[✓] VAULT OPEN\nTake your crypto asset"
+	status_label.text = "[✓] СЕЙФ ОТКРЫТ\nTake your crypto asset"
 	current_state = VaultState.OPEN
 
 func _animate_decrypting() -> void:
 	var steps := [
-		"[✓] PRIVATE KEY VERIFIED",
-		"[✓] PRIVATE KEY VERIFIED\nCHECKING SIGNATURE.",
-		"[✓] PRIVATE KEY VERIFIED\nCHECKING SIGNATURE..",
-		"[✓] PRIVATE KEY VERIFIED\nCHECKING SIGNATURE...",
-		"[✓] SIGNATURE VALID\nDECRYPTING VAULT.",
-		"[✓] SIGNATURE VALID\nDECRYPTING VAULT..",
-		"[✓] SIGNATURE VALID\nDECRYPTING VAULT...",
+		"[✓] ЛИЧНЫЙ КЛЮЧ ВЕРИФИЦИРУЕТСЯ",
+		"[✓] ЛИЧНЫЙ КЛЮЧ ВЕРИФИЦИРУЕТСЯ\nПРОВЕРКА ПОДПИСИ.",
+		"[✓] ЛИЧНЫЙ КЛЮЧ ВЕРИФИЦИРУЕТСЯ\nПРОВЕРКА ПОДПИСИ..",
+		"[✓] ЛИЧНЫЙ КЛЮЧ ВЕРИФИЦИРУЕТСЯ\nПРОВЕРКА ПОДПИСИ...",
+		"[✓] ПОДПИСЬ ДЕЙСТВИТЕЛЬНА\nВСКРЫТИЕ ХРАНИЛИЩА.",
+		"[✓] ПОДПИСЬ ДЕЙСТВИТЕЛЬНА\nВСКРЫТИЕ ХРАНИЛИЩА..",
+		"[✓] ПОДПИСЬ ДЕЙСТВИТЕЛЬНА\nВСКРЫТИЕ ХРАНИЛИЩА...",
 	]
 	for step in steps:
 		status_label.text = step
@@ -126,5 +126,5 @@ func reset() -> void:
 	await get_tree().process_frame
 	key_slot.enabled = true
 	status_light.material_override = mat_idle
-	status_label.text = "INSERT KEY TO AUTHENTICATE"
+	status_label.text = "ВСТАВЬТЕ КЛЮЧ ДЛЯ АУТЕНТИФИКАЦИИ"
 	current_state = VaultState.IDLE
