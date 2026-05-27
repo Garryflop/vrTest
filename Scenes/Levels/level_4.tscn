@@ -350,7 +350,7 @@ autowrap_mode = 2
 [node name="Golem2" parent="." unique_id=2087226474 instance=ExtResource("14_3osng")]
 transform = Transform3D(-0.82607865, 0, 0.56355476, 0, 1, 0, -0.56355476, 0, -0.82607865, -2.4930816, -0.13756657, 1.1985728)
 
-[node name="Skeleton3D" parent="Golem2/Golem" parent_id_path=PackedInt32Array(2087226474, 456624368) index="0" unique_id=992964028]
+[node name="Skeleton3D" parent="Golem2/Golem" parent_id_path=PackedInt32Array(2087226474, 97092665) index="0" unique_id=1240757896]
 bones/3/position = Vector3(0.15829387, 0.11282942, -0.42318854)
 bones/8/rotation = Quaternion(0.14673217, 1.1780555e-07, 2.287786e-08, 0.98917633)
 bones/10/rotation = Quaternion(-0.03715752, -1.8323872e-10, 5.2389644e-09, 0.9993095)

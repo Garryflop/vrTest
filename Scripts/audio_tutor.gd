@@ -41,7 +41,7 @@ func _update_button_label() -> void:
 	# Визуальная индикация на кнопке
 	var label = speaker_button.get_node_or_null("Label3D")
 	if label:
-		label.text = "⏹ Остановить" if is_playing else "▶ Воспроизводить аудио"
+		label.text = "⏹ Остановить" if is_playing else "▶ Воспроизвести аудио"
 
 func stop_audio() -> void:
 	if is_playing:

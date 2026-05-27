@@ -290,7 +290,7 @@ screen_size = Vector2(0.8, 0.2)
 [node name="Label3D" type="Label3D" parent="AudioTutorSystem/TutorPanel/SpeakerButton" unique_id=100747168]
 transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, 0, 0)
 pixel_size = 0.0013
-text = "Воспроизводить аудио"
+text = "▶ Воспроизвести аудио"
 font = ExtResource("11_b1nrc")
 font_size = 64
 
@@ -333,7 +333,7 @@ autowrap_mode = 2
 [node name="Golem2" parent="." unique_id=1694884927 instance=ExtResource("13_le0g5")]
 transform = Transform3D(-0.79590684, 0, -0.60541916, 0, 1, 0, 0.60541916, 0, -0.79590684, 2.7150233, 0.10660622, -0.9002186)
 
-[node name="Skeleton3D" parent="Golem2/Golem" parent_id_path=PackedInt32Array(1694884927, 456624368) index="0" unique_id=992964028]
+[node name="Skeleton3D" parent="Golem2/Golem" parent_id_path=PackedInt32Array(1694884927, 97092665) index="0" unique_id=1240757896]
 bones/1/position = Vector3(0.121051475, -0.02500652, -0.033348788)
 bones/1/rotation = Quaternion(0.012334185, -3.5053185e-16, 0.99992394, -3.6278098e-09)
 bones/3/position = Vector3(0.23806098, -0.019096233, -0.37336048)
@@ -357,7 +357,7 @@ bones/20/rotation = Quaternion(-0.012333797, 3.5254176e-16, 0.99992394, 3.627695
 bones/22/position = Vector3(-0.1384112, 0.29783374, -0.38500145)
 bones/25/position = Vector3(-0.114231646, 0.31826404, -0.22260201)
 
-[node name="AnimationPlayer" parent="Golem2" index="2" unique_id=749544066]
+[node name="AnimationPlayer" parent="Golem2" index="2" unique_id=1787709862]
 autoplay = &"PolivanieFlower"
 
 [node name="Quiz" parent="." unique_id=447662983 instance=ExtResource("13_ul33m")]

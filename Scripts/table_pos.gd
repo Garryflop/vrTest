@@ -19,7 +19,6 @@ var bags: Array = []
 func _ready() -> void:
 	select_button.button_pressed.connect(_on_select)
 	
-	# Инициализируем стейки и подключаем сигналы
 	var validators = nodes_container.get_children()
 	for i in range(validators.size()):
 		stakes.append(1)  # минимум 1
@@ -49,7 +48,8 @@ func _update_stake_labels() -> void:
 	for i in range(min(validators.size(), stakes.size())):
 		var label = validators[i].get_node_or_null("Label3D")
 		if label:
-			label.text = "Блок %d\nДоля: %d BTC" % [i + 1, stakes[i]]
+			# ИСПРАВЛЕНИЕ: Переименовываем Блоки в Валидаторы/Узлы в соответствии с логикой PoS
+			label.text = "Узел %d\nДоля: %d BTC" % [i + 1, stakes[i]]
 		var mesh = validators[i].get_node_or_null("Cube/MeshInstance3D")
 		if not mesh:
 			mesh = validators[i].get_node_or_null("MeshInstance3D")
@@ -66,9 +66,29 @@ func _on_select() -> void:
 	select_button.visible = false
 
 	var validators = nodes_container.get_children()
-	await get_tree().create_timer(0.8).timeout
-
+	
+	# Вычисляем победителя заранее математически
 	var winner_idx = _weighted_random(stakes)
+	
+	# ЭФФЕКТ СИНХРОНИЗАЦИИ: Запускаем красивую анимацию перебора (рулетка/сканирование)
+	# Эффект последовательно подсвечивает ноды желтым, имитируя выбор
+	var total_flashes = 12 # Сколько раз моргнет огонек перед остановкой
+	var current_flash_node = 0
+	
+	for flash in range(total_flashes):
+		# Сбрасываем все ноды в idle
+		for v in validators:
+			_set_node_visual(v, "idle")
+			
+		# Подсвечиваем текущую ноду как "в ожидании выборки"
+		current_flash_node = flash % validators.size()
+		_set_node_visual(validators[current_flash_node], "waiting")
+		
+		# Динамически замедляем скорость перебора к концу анимации (эффект торможения рулетки)
+		var wait_time = 0.05 + (float(flash) / total_flashes) * 0.15
+		await get_tree().create_timer(wait_time).timeout
+	
+	# Финальный аккорд: выкатываем результаты сканирования на арену
 	for i in range(validators.size()):
 		if i == winner_idx:
 			_set_node_visual(validators[i], "winner")
@@ -77,11 +97,12 @@ func _on_select() -> void:
 
 	var label = validators[winner_idx].get_node_or_null("Label3D")
 	if label:
-		label.text = "✓ ВАЛИДАТОР\nДоля: %d BTC\nВЫБРАН!" % stakes[winner_idx]
+		label.text = "✓ ВАЛИДАТОР %d\nДоля: %d BTC\nВЫБРАН!" % [winner_idx + 1, stakes[winner_idx]]
 	
+	# Сигнал успеха уровня теперь генерируется строго синхронно с окончанием 3D-анимации
 	Signals.LevelSuccess.emit()
 	
-	await get_tree().create_timer(2.0).timeout
+	await get_tree().create_timer(2.5).timeout
 	_clear_table()
 	pos_completed.emit(0.8)
 
@@ -113,6 +134,8 @@ func _set_node_visual(node: Node3D, state: String) -> void:
 	match state:
 		"idle":
 			mesh.material_override = mat_idle
+		"waiting":
+			mesh.material_override = mat_waiting
 		"winner":
 			mesh.material_override = mat_winner
 		"loser":
