@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dh3bxeeaw5qnh"
 path.s3tc="res://.godot/imported/Golem_Golem_Mat_Normal.png-60fdeab3eb4421bedc33bbc20f9c7b3b.s3tc.ctex"
+path.etc2="res://.godot/imported/Golem_Golem_Mat_Normal.png-60fdeab3eb4421bedc33bbc20f9c7b3b.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Assets/Models/Golem/Golem_Golem_Mat_Normal.png"
-dest_files=["res://.godot/imported/Golem_Golem_Mat_Normal.png-60fdeab3eb4421bedc33bbc20f9c7b3b.s3tc.ctex"]
+dest_files=["res://.godot/imported/Golem_Golem_Mat_Normal.png-60fdeab3eb4421bedc33bbc20f9c7b3b.s3tc.ctex", "res://.godot/imported/Golem_Golem_Mat_Normal.png-60fdeab3eb4421bedc33bbc20f9c7b3b.etc2.ctex"]
 
 [params]
 

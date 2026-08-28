@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dcpxx6lgn548e"
 path.s3tc="res://.godot/imported/MonitorV2_SCI_FI_Tablel_BaseColor.1001-SCI_FI_Table_Alpha.png-6c73a8f0300c1c7ab2cae2466e5dfe2f.s3tc.ctex"
+path.etc2="res://.godot/imported/MonitorV2_SCI_FI_Tablel_BaseColor.1001-SCI_FI_Table_Alpha.png-6c73a8f0300c1c7ab2cae2466e5dfe2f.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Assets/Models/MonitorV2/MonitorV2_SCI_FI_Tablel_BaseColor.1001-SCI_FI_Table_Alpha.png"
-dest_files=["res://.godot/imported/MonitorV2_SCI_FI_Tablel_BaseColor.1001-SCI_FI_Table_Alpha.png-6c73a8f0300c1c7ab2cae2466e5dfe2f.s3tc.ctex"]
+dest_files=["res://.godot/imported/MonitorV2_SCI_FI_Tablel_BaseColor.1001-SCI_FI_Table_Alpha.png-6c73a8f0300c1c7ab2cae2466e5dfe2f.s3tc.ctex", "res://.godot/imported/MonitorV2_SCI_FI_Tablel_BaseColor.1001-SCI_FI_Table_Alpha.png-6c73a8f0300c1c7ab2cae2466e5dfe2f.etc2.ctex"]
 
 [params]
 

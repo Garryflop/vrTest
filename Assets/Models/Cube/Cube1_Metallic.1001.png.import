@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dc5b5t7epxsy4"
 path.s3tc="res://.godot/imported/Cube1_Metallic.1001.png-daadbc13072ef692471586d171abb7b4.s3tc.ctex"
+path.etc2="res://.godot/imported/Cube1_Metallic.1001.png-daadbc13072ef692471586d171abb7b4.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/Models/Cube/Cube1_Metallic.1001.png"
-dest_files=["res://.godot/imported/Cube1_Metallic.1001.png-daadbc13072ef692471586d171abb7b4.s3tc.ctex"]
+dest_files=["res://.godot/imported/Cube1_Metallic.1001.png-daadbc13072ef692471586d171abb7b4.s3tc.ctex", "res://.godot/imported/Cube1_Metallic.1001.png-daadbc13072ef692471586d171abb7b4.etc2.ctex"]
 
 [params]
 

@@ -234,7 +234,7 @@ font = ExtResource("4_8dmpc")
 font_size = 64
 
 [node name="TeleportArea" parent="." unique_id=1507852708 instance=ExtResource("11_osqx1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1640949, 0.12499979, 2.3485014)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.1640949, 0.12499979, 2.3485014)
 
 [node name="AudioTutorSystem" type="Node3D" parent="." unique_id=1075977981]
 transform = Transform3D(-0.9998719, 0, 0.016004018, 0, 1, 0, -0.016004018, 0, -0.9998719, -0.12858629, 1.4020138, 1.019941)
@@ -304,7 +304,7 @@ autowrap_mode = 2
 [node name="Golem2" parent="." unique_id=2087226474 instance=ExtResource("15_13yca")]
 transform = Transform3D(-0.7163262, 0, 0.69776547, 0, 1, 0, -0.69776547, 0, -0.7163262, -2.7224083, 0.10660646, -0.54739326)
 
-[node name="Skeleton3D" parent="Golem2/Golem" parent_id_path=PackedInt32Array(2087226474, 97092665) index="0" unique_id=1240757896]
+[node name="Skeleton3D" parent="Golem2/Golem" parent_id_path=PackedInt32Array(2087226474, 456624368) index="0" unique_id=992964028]
 bones/1/position = Vector3(0.121051475, -0.02500652, -0.033348788)
 bones/1/rotation = Quaternion(0.012334185, -3.5053185e-16, 0.99992394, -3.6278098e-09)
 bones/3/position = Vector3(0.23840286, -0.01187305, -0.38181794)
@@ -328,7 +328,7 @@ bones/20/rotation = Quaternion(-0.012333797, 3.5254176e-16, 0.99992394, 3.627695
 bones/22/position = Vector3(-0.16847233, 0.27563357, -0.4143241)
 bones/25/position = Vector3(-0.114231646, 0.31826404, -0.22260201)
 
-[node name="AnimationPlayer" parent="Golem2" index="2" unique_id=1787709862]
+[node name="AnimationPlayer" parent="Golem2" index="2" unique_id=749544066]
 autoplay = &"PolivanieFlower"
 
 [node name="Quiz" parent="." unique_id=447662983 instance=ExtResource("17_anjjd")]

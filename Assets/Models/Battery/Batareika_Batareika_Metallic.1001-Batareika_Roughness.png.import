@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://byishj7g45ajp"
 path.s3tc="res://.godot/imported/Batareika_Batareika_Metallic.1001-Batareika_Roughness.png-de07392b27077af5c90281862ca8ae6d.s3tc.ctex"
+path.etc2="res://.godot/imported/Batareika_Batareika_Metallic.1001-Batareika_Roughness.png-de07392b27077af5c90281862ca8ae6d.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Assets/Models/Battery/Batareika_Batareika_Metallic.1001-Batareika_Roughness.png"
-dest_files=["res://.godot/imported/Batareika_Batareika_Metallic.1001-Batareika_Roughness.png-de07392b27077af5c90281862ca8ae6d.s3tc.ctex"]
+dest_files=["res://.godot/imported/Batareika_Batareika_Metallic.1001-Batareika_Roughness.png-de07392b27077af5c90281862ca8ae6d.s3tc.ctex", "res://.godot/imported/Batareika_Batareika_Metallic.1001-Batareika_Roughness.png-de07392b27077af5c90281862ca8ae6d.etc2.ctex"]
 
 [params]
 

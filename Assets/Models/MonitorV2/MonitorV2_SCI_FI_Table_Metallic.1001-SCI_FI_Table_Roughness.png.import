@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dg25yxt5oaqgq"
 path.s3tc="res://.godot/imported/MonitorV2_SCI_FI_Table_Metallic.1001-SCI_FI_Table_Roughness.png-578005345da2e28cf03178c6f5816da0.s3tc.ctex"
+path.etc2="res://.godot/imported/MonitorV2_SCI_FI_Table_Metallic.1001-SCI_FI_Table_Roughness.png-578005345da2e28cf03178c6f5816da0.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Assets/Models/MonitorV2/MonitorV2_SCI_FI_Table_Metallic.1001-SCI_FI_Table_Roughness.png"
-dest_files=["res://.godot/imported/MonitorV2_SCI_FI_Table_Metallic.1001-SCI_FI_Table_Roughness.png-578005345da2e28cf03178c6f5816da0.s3tc.ctex"]
+dest_files=["res://.godot/imported/MonitorV2_SCI_FI_Table_Metallic.1001-SCI_FI_Table_Roughness.png-578005345da2e28cf03178c6f5816da0.s3tc.ctex", "res://.godot/imported/MonitorV2_SCI_FI_Table_Metallic.1001-SCI_FI_Table_Roughness.png-578005345da2e28cf03178c6f5816da0.etc2.ctex"]
 
 [params]
 

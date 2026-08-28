@@ -9,3 +9,7 @@ func _ready():
 	if Engine.is_editor_hint():
 		return
 	get_scene_instance().start_quiz(room_id)
+	Signals.QuizCompleted.connect(_on_quiz_completed)
+
+func _on_quiz_completed() -> void:
+	hide()

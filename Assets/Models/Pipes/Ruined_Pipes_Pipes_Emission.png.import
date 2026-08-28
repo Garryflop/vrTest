@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://c1q3cv8yf76nu"
 path.s3tc="res://.godot/imported/Ruined_Pipes_Pipes_Emission.png-52ffa34cf9e6d249870e92b6d1060f0f.s3tc.ctex"
+path.etc2="res://.godot/imported/Ruined_Pipes_Pipes_Emission.png-52ffa34cf9e6d249870e92b6d1060f0f.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Assets/Models/Pipes/Ruined_Pipes_Pipes_Emission.png"
-dest_files=["res://.godot/imported/Ruined_Pipes_Pipes_Emission.png-52ffa34cf9e6d249870e92b6d1060f0f.s3tc.ctex"]
+dest_files=["res://.godot/imported/Ruined_Pipes_Pipes_Emission.png-52ffa34cf9e6d249870e92b6d1060f0f.s3tc.ctex", "res://.godot/imported/Ruined_Pipes_Pipes_Emission.png-52ffa34cf9e6d249870e92b6d1060f0f.etc2.ctex"]
 
 [params]
 

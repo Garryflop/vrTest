@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dtoqwb7220jys"
 path.s3tc="res://.godot/imported/Intact_Pipes_Pipes_Metallic.1001-Pipes_Roughness.png-8344db80cf547704b3b69ceda7eab8a4.s3tc.ctex"
+path.etc2="res://.godot/imported/Intact_Pipes_Pipes_Metallic.1001-Pipes_Roughness.png-8344db80cf547704b3b69ceda7eab8a4.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Assets/Models/Pipes/Intact_Pipes_Pipes_Metallic.1001-Pipes_Roughness.png"
-dest_files=["res://.godot/imported/Intact_Pipes_Pipes_Metallic.1001-Pipes_Roughness.png-8344db80cf547704b3b69ceda7eab8a4.s3tc.ctex"]
+dest_files=["res://.godot/imported/Intact_Pipes_Pipes_Metallic.1001-Pipes_Roughness.png-8344db80cf547704b3b69ceda7eab8a4.s3tc.ctex", "res://.godot/imported/Intact_Pipes_Pipes_Metallic.1001-Pipes_Roughness.png-8344db80cf547704b3b69ceda7eab8a4.etc2.ctex"]
 
 [params]
 

@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://d0c1jd8ri3lfs"
 path.s3tc="res://.godot/imported/Golem_Golem_Mat_Metallic.1001-Golem_Mat_Roughness.png-1c2705931076cdb3d2a43364b68bc243.s3tc.ctex"
+path.etc2="res://.godot/imported/Golem_Golem_Mat_Metallic.1001-Golem_Mat_Roughness.png-1c2705931076cdb3d2a43364b68bc243.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Assets/Models/Golem/Golem_Golem_Mat_Metallic.1001-Golem_Mat_Roughness.png"
-dest_files=["res://.godot/imported/Golem_Golem_Mat_Metallic.1001-Golem_Mat_Roughness.png-1c2705931076cdb3d2a43364b68bc243.s3tc.ctex"]
+dest_files=["res://.godot/imported/Golem_Golem_Mat_Metallic.1001-Golem_Mat_Roughness.png-1c2705931076cdb3d2a43364b68bc243.s3tc.ctex", "res://.godot/imported/Golem_Golem_Mat_Metallic.1001-Golem_Mat_Roughness.png-1c2705931076cdb3d2a43364b68bc243.etc2.ctex"]
 
 [params]
 

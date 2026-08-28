@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cjatbcw1gk12x"
 path.s3tc="res://.godot/imported/Hands_Gloves_hand_Emission.png-51c7c49ba2c28d1ffad4c9878ddec2cf.s3tc.ctex"
+path.etc2="res://.godot/imported/Hands_Gloves_hand_Emission.png-51c7c49ba2c28d1ffad4c9878ddec2cf.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Assets/Models/Hand_Textures/Hands_Gloves_hand_Emission.png"
-dest_files=["res://.godot/imported/Hands_Gloves_hand_Emission.png-51c7c49ba2c28d1ffad4c9878ddec2cf.s3tc.ctex"]
+dest_files=["res://.godot/imported/Hands_Gloves_hand_Emission.png-51c7c49ba2c28d1ffad4c9878ddec2cf.s3tc.ctex", "res://.godot/imported/Hands_Gloves_hand_Emission.png-51c7c49ba2c28d1ffad4c9878ddec2cf.etc2.ctex"]
 
 [params]
 

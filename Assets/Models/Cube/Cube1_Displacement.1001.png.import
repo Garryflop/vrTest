@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dygtqg5m2wnrl"
 path.s3tc="res://.godot/imported/Cube1_Displacement.1001.png-d76a60b6097ac3d0b53ff9a6b00148ff.s3tc.ctex"
+path.etc2="res://.godot/imported/Cube1_Displacement.1001.png-d76a60b6097ac3d0b53ff9a6b00148ff.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/Models/Cube/Cube1_Displacement.1001.png"
-dest_files=["res://.godot/imported/Cube1_Displacement.1001.png-d76a60b6097ac3d0b53ff9a6b00148ff.s3tc.ctex"]
+dest_files=["res://.godot/imported/Cube1_Displacement.1001.png-d76a60b6097ac3d0b53ff9a6b00148ff.s3tc.ctex", "res://.godot/imported/Cube1_Displacement.1001.png-d76a60b6097ac3d0b53ff9a6b00148ff.etc2.ctex"]
 
 [params]
 

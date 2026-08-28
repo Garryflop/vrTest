@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://baln8iaavr7na"
 path.s3tc="res://.godot/imported/Batareika_Batareika_BaseColor.png-68a97aa535dac83f65652e979d13629f.s3tc.ctex"
+path.etc2="res://.godot/imported/Batareika_Batareika_BaseColor.png-68a97aa535dac83f65652e979d13629f.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Assets/Models/Battery/Batareika_Batareika_BaseColor.png"
-dest_files=["res://.godot/imported/Batareika_Batareika_BaseColor.png-68a97aa535dac83f65652e979d13629f.s3tc.ctex"]
+dest_files=["res://.godot/imported/Batareika_Batareika_BaseColor.png-68a97aa535dac83f65652e979d13629f.s3tc.ctex", "res://.godot/imported/Batareika_Batareika_BaseColor.png-68a97aa535dac83f65652e979d13629f.etc2.ctex"]
 
 [params]
 

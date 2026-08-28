@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://rniqdjlgb5xq"
 path.s3tc="res://.godot/imported/Vault_Crypto_Vault_Metallic.1001-Crypto_Vault_Roughness.png-84d332bbcf7e3bfd21ca944708856e3f.s3tc.ctex"
+path.etc2="res://.godot/imported/Vault_Crypto_Vault_Metallic.1001-Crypto_Vault_Roughness.png-84d332bbcf7e3bfd21ca944708856e3f.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Assets/Models/CryptoVault/Vault_Crypto_Vault_Metallic.1001-Crypto_Vault_Roughness.png"
-dest_files=["res://.godot/imported/Vault_Crypto_Vault_Metallic.1001-Crypto_Vault_Roughness.png-84d332bbcf7e3bfd21ca944708856e3f.s3tc.ctex"]
+dest_files=["res://.godot/imported/Vault_Crypto_Vault_Metallic.1001-Crypto_Vault_Roughness.png-84d332bbcf7e3bfd21ca944708856e3f.s3tc.ctex", "res://.godot/imported/Vault_Crypto_Vault_Metallic.1001-Crypto_Vault_Roughness.png-84d332bbcf7e3bfd21ca944708856e3f.etc2.ctex"]
 
 [params]
 

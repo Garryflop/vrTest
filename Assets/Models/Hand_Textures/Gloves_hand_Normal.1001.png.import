@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://eam0bdqi3su7"
 path.s3tc="res://.godot/imported/Gloves_hand_Normal.1001.png-5da84427096ea7426a1505c8d8bc055a.s3tc.ctex"
+path.etc2="res://.godot/imported/Gloves_hand_Normal.1001.png-5da84427096ea7426a1505c8d8bc055a.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/Models/Hand_Textures/Gloves_hand_Normal.1001.png"
-dest_files=["res://.godot/imported/Gloves_hand_Normal.1001.png-5da84427096ea7426a1505c8d8bc055a.s3tc.ctex"]
+dest_files=["res://.godot/imported/Gloves_hand_Normal.1001.png-5da84427096ea7426a1505c8d8bc055a.s3tc.ctex", "res://.godot/imported/Gloves_hand_Normal.1001.png-5da84427096ea7426a1505c8d8bc055a.etc2.ctex"]
 
 [params]
 

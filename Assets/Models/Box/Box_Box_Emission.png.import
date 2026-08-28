@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cbqu4pdxye08w"
 path.s3tc="res://.godot/imported/Box_Box_Emission.png-dfcd8691278d7854cbc6c19c7b91efd5.s3tc.ctex"
+path.etc2="res://.godot/imported/Box_Box_Emission.png-dfcd8691278d7854cbc6c19c7b91efd5.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Assets/Models/Box/Box_Box_Emission.png"
-dest_files=["res://.godot/imported/Box_Box_Emission.png-dfcd8691278d7854cbc6c19c7b91efd5.s3tc.ctex"]
+dest_files=["res://.godot/imported/Box_Box_Emission.png-dfcd8691278d7854cbc6c19c7b91efd5.s3tc.ctex", "res://.godot/imported/Box_Box_Emission.png-dfcd8691278d7854cbc6c19c7b91efd5.etc2.ctex"]
 
 [params]
 

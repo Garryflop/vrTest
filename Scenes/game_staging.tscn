@@ -8,6 +8,8 @@
 [ext_resource type="AudioStream" uid="uid://bsre6asivrw11" path="res://Assets/Audio/SFX/error.mp3" id="6_j4ldo"]
 [ext_resource type="AudioStream" uid="uid://c8nioc1bp2a82" path="res://Assets/Audio/SFX/Success1.mp3" id="7_mtjvn"]
 [ext_resource type="AudioStream" uid="uid://b715xpf4xl2dy" path="res://Assets/Audio/SFX/SystemAlert.mp3" id="8_mtjvn"]
+[ext_resource type="AudioStream" uid="uid://btxokq3lr6o6l" path="res://Assets/Audio/SFX/completedSFX.mp3" id="9_yqhyx"]
+[ext_resource type="AudioStream" uid="uid://nfhtbgetvjul" path="res://Assets/Audio/SFX/notCompletedSFX.mp3" id="10_w84ax"]
 
 [node name="Staging" unique_id=608585378 instance=ExtResource("1_p0wkn")]
 
@@ -28,5 +30,7 @@ script = ExtResource("5_nbj22")
 error_sound = ExtResource("6_j4ldo")
 success_sound = ExtResource("7_mtjvn")
 reset_sound = ExtResource("8_mtjvn")
+quiz_complete_sound = ExtResource("9_yqhyx")
+quiz_not_complete_sound = ExtResource("10_w84ax")
 
 [connection signal="switching_to_loading_scene" from="." to="LoadingScreen/LabelScreen" method="_on_staging_switching_to_loading_scene"]

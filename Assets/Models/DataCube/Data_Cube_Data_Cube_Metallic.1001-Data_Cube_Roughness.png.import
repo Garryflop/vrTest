@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bk0l8imj0e3ae"
 path.s3tc="res://.godot/imported/Data_Cube_Data_Cube_Metallic.1001-Data_Cube_Roughness.png-4c3a4f43068b3d4b2121a297d7192dd0.s3tc.ctex"
+path.etc2="res://.godot/imported/Data_Cube_Data_Cube_Metallic.1001-Data_Cube_Roughness.png-4c3a4f43068b3d4b2121a297d7192dd0.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Assets/Models/DataCube/Data_Cube_Data_Cube_Metallic.1001-Data_Cube_Roughness.png"
-dest_files=["res://.godot/imported/Data_Cube_Data_Cube_Metallic.1001-Data_Cube_Roughness.png-4c3a4f43068b3d4b2121a297d7192dd0.s3tc.ctex"]
+dest_files=["res://.godot/imported/Data_Cube_Data_Cube_Metallic.1001-Data_Cube_Roughness.png-4c3a4f43068b3d4b2121a297d7192dd0.s3tc.ctex", "res://.godot/imported/Data_Cube_Data_Cube_Metallic.1001-Data_Cube_Roughness.png-4c3a4f43068b3d4b2121a297d7192dd0.etc2.ctex"]
 
 [params]
 

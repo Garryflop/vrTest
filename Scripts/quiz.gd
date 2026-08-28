@@ -109,9 +109,10 @@ func _on_answer_options_item_selected(index: int) -> void:
 		correct_answers_count += 1
 		current_question_idx += 1
 		
-		# Звук успеха (закомментирован)
-		# if Signals.has_signal("PlaySound"):
-		# 	Signals.PlaySound.emit("success")
+		# Звук успеха
+		if Signals.has_signal("PlaySound"):
+			Signals.PlaySound.emit("success")
+		Signals.LevelSuccess.emit()
 			
 		await get_tree().create_timer(0.8).timeout
 		refresh_scene()
@@ -119,9 +120,9 @@ func _on_answer_options_item_selected(index: int) -> void:
 		answer_options.set_item_custom_bg_color(index, bg_incorrect)
 		current_question_idx += 1
 		
-		# Звук ошибки (закомментирован)
-		# if Signals.has_signal("PlaySound"):
-		# 	Signals.PlaySound.emit("error")
+		# Звук ошибки
+		if Signals.has_signal("PlaySound"):
+			Signals.PlaySound.emit("error")
 			
 		await get_tree().create_timer(0.4).timeout
 		fade_switch_panels(question_container, explanation_panel, show_explanation)
@@ -147,15 +148,18 @@ func show_quiz_results() -> void:
 		restart_button.text = "Активировать портал"
 		restart_button.modulate = COLOR_VALID
 		
-		# if Signals.has_signal("PlaySound"):
-		# 	Signals.PlaySound.emit("quiz_perfect")
-		Signals.QuizCompleted.emit()
+		if Signals.has_signal("PlaySound"):
+			Signals.PlaySound.emit("quiz_complete")
+		
 	else:
 		results_text.text = "Не сдано!\nПрогресс: %.1f%%" % score_percent
 		results_text.add_theme_color_override("font_color", COLOR_INVALID)
 		
 		restart_button.text = "Заново пройти"
 		restart_button.modulate = COLOR_INVALID
+		
+		if Signals.has_signal("PlaySound"):
+			Signals.PlaySound.emit("quiz_not_complete")
 	
 	is_transitioning = false
 
@@ -179,6 +183,9 @@ func _on_restart_button_pressed() -> void:
 	if is_transitioning:
 		return
 	is_transitioning = true
+	var score_percent: float = (float(correct_answers_count) / float(total_questions_count)) * 100.0
+	if score_percent >= 50.0:
+		Signals.QuizCompleted.emit()
 	restart_button.modulate = Color.WHITE
 	start_quiz(current_room_id)
 
