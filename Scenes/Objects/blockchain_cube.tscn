@@ -157,6 +157,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.055, 0, 0)
 [node name="Button3D" parent="Cube" unique_id=467292279 instance=ExtResource("19_q570l")]
 unique_name_in_owner = true
 transform = Transform3D(0.4, 0, 0, 0, 0.55, 0, 0, 0, 6, 0, 0, 0.061)
+visible = false
 screen_visible = false
 
 [node name="INFORMATION_LABEL" type="Label3D" parent="Cube" unique_id=1317204945]

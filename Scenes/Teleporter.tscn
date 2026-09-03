@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dpy1eg3i331se" path="res://addons/godot-xr-tools/objects/teleport_area.tscn" id="1_jdjlm"]
 [ext_resource type="Script" uid="uid://d00axwiq8b0x7" path="res://Scripts/teleporter.gd" id="2_lrpa0"]
 [ext_resource type="Shader" uid="uid://bt40vp54i0yb" path="res://Assets/Shaders/hologram.gdshader" id="3_503h8"]
+[ext_resource type="FontFile" uid="uid://0gvxqdbhr1ls" path="res://Assets/Fonts/CodenameCoderFree4F-Bold.ttf" id="4_d221f"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_jdjlm"]
 top_radius = 0.3
@@ -51,20 +52,27 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0278336, 0)
 cast_shadow = 0
 mesh = SubResource("CylinderMesh_jdjlm")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="2" unique_id=1272728097]
+[node name="TeleportCollision" type="CollisionShape3D" parent="." index="2" unique_id=1272728097]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5229791, 0)
 shape = SubResource("CylinderShape3D_jdjlm")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="." index="3" unique_id=1398468900]
+[node name="TeleportLight" type="OmniLight3D" parent="." index="3" unique_id=1398468900]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7389777, 0)
 light_color = Color(0, 1, 1, 1)
 light_energy = 2.0
 omni_range = 0.94363487
 omni_attenuation = 1.25
 
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="." index="4" unique_id=1492662783]
+[node name="TeleportEffect" type="MeshInstance3D" parent="." index="4" unique_id=1492662783]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 mesh = SubResource("CylinderMesh_rfbas")
+
+[node name="TeleportLabel" type="Label3D" parent="." index="5" unique_id=1204678121]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.61, 0)
+text = "Пройдите тест
+чтобы перейти на 
+следующий уровень"
+font = ExtResource("4_d221f")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

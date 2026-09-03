@@ -99,6 +99,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15695661, 0)
 
 [node name="LidSnapZone" parent="." unique_id=1570547223 instance=ExtResource("4_8ypus")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15695661, 0)
+grab_distance = 0.15
 snap_require = "Lid"
 initial_object = NodePath("../Lid")
 
@@ -115,7 +116,7 @@ text = "Private Key"
 
 [node name="WarningLabel" type="Label3D" parent="." unique_id=200202975]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.839399, 0)
-pixel_size = 0.0025
+pixel_size = 0.002
 text = "🔒ВАШ ЛИЧНЫЙ КЛЮЧ
 НИ С КЕМ НЕ ДЕЛИТЕСЬ
 Только для вашего использования"

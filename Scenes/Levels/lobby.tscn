@@ -261,7 +261,7 @@ transform = Transform3D(-0.99987805, 0, 0.015620112, 0, 1, 0, -0.015620112, 0, -
 transform = Transform3D(-0.87953234, 0, -0.4758391, 0, 1, 0, 0.4758391, 0, -0.87953234, 1.1408689, -0.14429903, 1.3212692)
 
 [node name="AudioTutorSystem" type="Node3D" parent="." unique_id=1128786688]
-transform = Transform3D(-0.9998719, 0, 0.016004018, 0, 1, 0, -0.016004018, 0, -0.9998719, -0.12858629, 1.4020138, 1.019941)
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0.007922977, 1.4020138, -1.0745808)
 script = ExtResource("25_x8l11")
 audio_clip = ExtResource("26_kavh7")
 scene_title = "Добро пожаловать в архитектуру будущего"
@@ -274,6 +274,7 @@ bus = &"Music"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="AudioTutorSystem/TutorPanel" unique_id=1978360995]
 transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, -0.5010576, 0)
+visible = false
 mesh = SubResource("QuadMesh_niomj")
 
 [node name="SpeakerButton" parent="AudioTutorSystem/TutorPanel" unique_id=694175069 instance=ExtResource("25_5yi86")]
@@ -321,7 +322,7 @@ text = "Приветствуем. Перед вами — вводный кур�
 autowrap_mode = 2
 
 [node name="AudioTutorSystem2" type="Node3D" parent="." unique_id=1841116531]
-transform = Transform3D(-0.9998719, 0, 0.016004018, 0, 1, 0, -0.016004018, 0, -0.9998719, -0.129, 1.402, 1.02)
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0.007922977, 1.4020138, -1.0745808)
 visible = false
 script = ExtResource("25_x8l11")
 audio_clip = ExtResource("28_d3nbn")
@@ -335,6 +336,7 @@ bus = &"Music"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="AudioTutorSystem2/TutorPanel" unique_id=1817494188]
 transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, -0.5010576, 0)
+visible = false
 mesh = SubResource("QuadMesh_niomj")
 
 [node name="SpeakerButton" parent="AudioTutorSystem2/TutorPanel" unique_id=467292279 instance=ExtResource("25_5yi86")]

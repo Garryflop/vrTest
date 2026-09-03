@@ -171,7 +171,7 @@ mesh = SubResource("BoxMesh_iixi8")
 shape = SubResource("BoxShape3D_cyadu")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=436631518]
-transform = Transform3D(1, 0, 0, 0, 0.49999997, 0.86602545, 0, -0.86602545, 0.49999997, -0.2080104, 2.7499998, 3.8230243)
+transform = Transform3D(1, 0, 0, 0, 0.49999997, 0.86602545, 0, -0.86602545, 0.49999997, 2.1921465, 2.7499998, 2.8094215)
 light_color = Color(0.735357, 1, 1, 1)
 shadow_enabled = true
 spot_attenuation = 1.5
@@ -220,7 +220,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8937929, 0.41209835, -1.34
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.012848377, 1.4419513, -1.403536)
 
 [node name="ResetButton" parent="." unique_id=467292279 instance=ExtResource("2_1hf40")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.027254775, 0.28429902, -0.72866523)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7651056, 0.28429902, -1.0716336)
 screen_visible = false
 
 [node name="MonitorV3" parent="ResetButton" unique_id=1710385518 instance=ExtResource("3_13yca")]
@@ -234,10 +234,10 @@ font = ExtResource("4_8dmpc")
 font_size = 64
 
 [node name="TeleportArea" parent="." unique_id=1507852708 instance=ExtResource("11_osqx1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1640949, 0.12499979, 2.3485014)
+transform = Transform3D(-0.50000006, 0, -0.8660254, 0, 1, 0, 0.8660254, 0, -0.50000006, 2.848676, 0.12499979, 1.4811788)
 
 [node name="AudioTutorSystem" type="Node3D" parent="." unique_id=1075977981]
-transform = Transform3D(-0.9998719, 0, 0.016004018, 0, 1, 0, -0.016004018, 0, -0.9998719, -0.12858629, 1.4020138, 1.019941)
+transform = Transform3D(-0.9998719, 0, 0.016004018, 0, 1, 0, -0.016004018, 0, -0.9998719, 0.01342088, 1.4020138, -0.7784475)
 script = ExtResource("12_1hf40")
 audio_clip = ExtResource("13_13yca")
 scene_title = "Добро пожаловать в архитектуру будущего"
@@ -247,9 +247,11 @@ scene_content = "Приветствуем. Перед вами — вводны�
 bus = &"Music"
 
 [node name="TutorPanel" type="Node3D" parent="AudioTutorSystem" unique_id=1391776195]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="AudioTutorSystem/TutorPanel" unique_id=1940461272]
 transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, -0.5010576, 0)
+visible = false
 mesh = SubResource("QuadMesh_8dmpc")
 
 [node name="SpeakerButton" parent="AudioTutorSystem/TutorPanel" unique_id=459755968 instance=ExtResource("2_1hf40")]
@@ -260,7 +262,7 @@ screen_size = Vector2(0.8, 0.2)
 [node name="Label3D" type="Label3D" parent="AudioTutorSystem/TutorPanel/SpeakerButton" unique_id=513263758]
 transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, 0, 0)
 pixel_size = 0.0013
-text = "Воспроизводить аудио"
+text = "▶ Воспроизвести аудио"
 font = ExtResource("4_8dmpc")
 font_size = 64
 
@@ -304,7 +306,7 @@ autowrap_mode = 2
 [node name="Golem2" parent="." unique_id=2087226474 instance=ExtResource("15_13yca")]
 transform = Transform3D(-0.7163262, 0, 0.69776547, 0, 1, 0, -0.69776547, 0, -0.7163262, -2.7224083, 0.10660646, -0.54739326)
 
-[node name="Skeleton3D" parent="Golem2/Golem" parent_id_path=PackedInt32Array(2087226474, 97092665) index="0" unique_id=1240757896]
+[node name="Skeleton3D" parent="Golem2/Golem" parent_id_path=PackedInt32Array(2087226474, 456624368) index="0" unique_id=992964028]
 bones/1/position = Vector3(0.121051475, -0.02500652, -0.033348788)
 bones/1/rotation = Quaternion(0.012334185, -3.5053185e-16, 0.99992394, -3.6278098e-09)
 bones/3/position = Vector3(0.23840286, -0.01187305, -0.38181794)
@@ -328,11 +330,11 @@ bones/20/rotation = Quaternion(-0.012333797, 3.5254176e-16, 0.99992394, 3.627695
 bones/22/position = Vector3(-0.16847233, 0.27563357, -0.4143241)
 bones/25/position = Vector3(-0.114231646, 0.31826404, -0.22260201)
 
-[node name="AnimationPlayer" parent="Golem2" index="2" unique_id=1787709862]
+[node name="AnimationPlayer" parent="Golem2" index="2" unique_id=749544066]
 autoplay = &"PolivanieFlower"
 
 [node name="Quiz" parent="." unique_id=447662983 instance=ExtResource("17_anjjd")]
-transform = Transform3D(-0.99996036, 0, 0.008901153, 0, 1, 0, -0.008901153, 0, -0.99996036, -1.3197393, 0.6011107, 1.6992112)
+transform = Transform3D(-0.5, 0, -0.8660253, 0, 1, 0, 0.8660253, 0, -0.5, 2.0354156, 0.6011107, 0.9018406)
 room_id = "room_3"
 
 [connection signal="door_opened" from="Terminal" to="." method="_on_terminal_door_opened"]

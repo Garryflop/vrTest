@@ -95,8 +95,7 @@ func setup_centralized() -> void:
 		$CentralizedComponents/BlockchainComponent,
 		$CentralizedComponents/BlockchainComponent2,
 		$CentralizedComponents/BlockchainComponent3,
-		$CentralizedComponents/BlockchainComponent4,
-		$CentralizedComponents/BlockchainComponent5
+		$CentralizedComponents/BlockchainComponent4
 	]
 	
 	central.node_id = "CentralComponent"

@@ -19,7 +19,6 @@
 [ext_resource type="Shader" uid="uid://bt40vp54i0yb" path="res://Assets/Shaders/hologram.gdshader" id="17_3mhen"]
 [ext_resource type="Script" uid="uid://ces1j6plojyra" path="res://addons/godot-xr-tools/xr/start_xr.gd" id="18_f7e30"]
 [ext_resource type="PackedScene" uid="uid://b3id8xmk3dmnl" path="res://Scenes/quiz_in_3d.tscn" id="18_o06yi"]
-[ext_resource type="PackedScene" uid="uid://ldqmqhl35ocm" path="res://Scenes/golem_2.tscn" id="19_3mhen"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tlcug"]
 
@@ -365,13 +364,6 @@ shadow_enabled = true
 spot_attenuation = 1.5
 spot_angle = 30.0
 
-[node name="SpotLight3D2" type="SpotLight3D" parent="." unique_id=926392312]
-transform = Transform3D(1, 0, 0, 0, 0.49999997, 0.86602545, 0, -0.86602545, 0.49999997, 1.8593972, 2.75, -0.11794458)
-light_energy = 1.5
-shadow_enabled = true
-spot_attenuation = 1.5
-spot_angle = 30.0
-
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1600361334]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.07387495, 1.3582108, -1.0401108)
 light_color = Color(0.735357, 1, 1, 1)
@@ -421,9 +413,11 @@ scene_title = "Добро пожаловать в архитектуру буд�
 scene_content = "Приветствуем. Перед вами — вводный курс по технологии блокчейн. Это не просто финансовый инструмент, а фундаментальный протокол передачи данных, способный реорганизовать любые процессы: от банковских транзакций до систем государственного управления.Блокчейн представляет собой децентрализованный реестр, защищенный криптографическими методами. Его невозможно взломать или подделать привычными способами. Изучите четыре базовых принципа этой системы, чтобы понять принципы работы цифровой экономики."
 
 [node name="TutorPanel" type="Node3D" parent="AudioTutorSystem" unique_id=1488682335]
+transform = Transform3D(-1.0000004, 0, -8.754432e-08, 0, 1, 0, 8.754432e-08, 0, -1.0000004, -0.112557516, -0.081160545, 1.7964954)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="AudioTutorSystem/TutorPanel" unique_id=392900861]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 1, 0, 0, 0)
+visible = false
 mesh = SubResource("QuadMesh_niomj")
 
 [node name="SpeakerButton" parent="AudioTutorSystem/TutorPanel" unique_id=1740797110 instance=ExtResource("2_jxuhh")]
@@ -434,12 +428,12 @@ screen_size = Vector2(0.8, 0.2)
 [node name="Label3D" type="Label3D" parent="AudioTutorSystem/TutorPanel/SpeakerButton" unique_id=1339794511]
 transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, 0, 0)
 pixel_size = 0.0013
-text = "Воспроизводить аудио"
+text = "▶ Воспроизвести аудио"
 font = ExtResource("4_vrv73")
 font_size = 64
 
 [node name="Quiz" parent="AudioTutorSystem/TutorPanel/SpeakerButton" unique_id=447662983 instance=ExtResource("18_o06yi")]
-transform = Transform3D(-0.6855134, 0, -0.7280599, 0, 1, 0, 0.7280599, 0, -0.6855134, 1.7503023, 0.31694818, 1.6164525)
+transform = Transform3D(0.7071066, 0, 0.70710635, 0, 1, 0, -0.70710635, 0, 0.7071066, -1.7739147, 0.33767742, -0.24562556)
 room_id = "room_2"
 
 [node name="SubViewport" type="SubViewport" parent="AudioTutorSystem/TutorPanel" unique_id=180354501]
@@ -488,19 +482,4 @@ bus = &"Music"
 script = ExtResource("18_f7e30")
 metadata/_custom_type_script = "uid://ces1j6plojyra"
 
-[node name="Golem2" parent="." unique_id=2087226474 instance=ExtResource("19_3mhen")]
-transform = Transform3D(0.18534075, 0, -0.9826743, 0, 1, 0, 0.9826743, 0, 0.18534075, 1.8518189, -0.12518814, -1.4441917)
-
-[node name="Skeleton3D" parent="Golem2/Golem" parent_id_path=PackedInt32Array(2087226474, 456624368) index="0" unique_id=992964028]
-bones/3/position = Vector3(0.1311541, 0.13572337, -0.42320818)
-bones/8/rotation = Quaternion(0.13200143, 1.18192354e-07, 1.4489972e-08, 0.99124956)
-bones/10/rotation = Quaternion(-0.047016, 4.269907e-11, 1.2052947e-08, 0.99889416)
-bones/11/rotation = Quaternion(-0.23348019, -0.03979138, -0.0013829481, 0.9715461)
-bones/12/rotation = Quaternion(-0.025101688, 0.27267337, 0.94636303, -0.17151144)
-bones/13/rotation = Quaternion(0.4188831, -0.018971803, -0.24370258, 0.8745205)
-bones/14/rotation = Quaternion(0.025102017, 0.27267325, 0.9463631, 0.17151126)
-bones/15/rotation = Quaternion(0.41888317, 0.018971795, 0.24370249, 0.8745205)
-bones/22/position = Vector3(-0.13115437, 0.13572338, -0.42320815)
-
 [editable path="XROrigin3D"]
-[editable path="Golem2"]

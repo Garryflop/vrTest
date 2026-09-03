@@ -216,7 +216,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_feq8a")
 
 [node name="StatusLabel" type="Label3D" parent="." unique_id=1354858456]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0076006204, 0.7617254, 0.35381782)
-pixel_size = 0.0005
+pixel_size = 0.001
 text = "ВСТАВЬТЕ КЛЮЧ ДЛЯ АУТЕНТИФИКАЦИИ"
 font = ExtResource("7_feq8a")
 font_size = 64

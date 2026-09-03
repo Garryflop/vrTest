@@ -117,6 +117,8 @@ func _on_door_opened() -> void:
 	door_opened.emit()
 
 func reset() -> void:
+	reward.drop()
+	await get_tree().process_frame
 	reward.transform = reward_init_transform
 	animation_player.play("RESET")
 	reward.visible = false

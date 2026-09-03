@@ -52,7 +52,7 @@ outline_size = 24
 
 [node name="HintLabel" type="Label3D" parent="." unique_id=1064994550]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8130141, 0)
-pixel_size = 0.0025
+pixel_size = 0.002
 text = "Публичный ключ
 Можно делиться со всеми 🌐
 Это твой адрес"

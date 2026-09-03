@@ -110,11 +110,13 @@ horizontal_alignment = 1
 autowrap_mode = 3
 
 [node name="AnswerOptions" type="ItemList" parent="QuestionContainer/VBoxContainer" unique_id=1336332086]
-custom_minimum_size = Vector2(1136, 198)
+custom_minimum_size = Vector2(1136, 300)
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_constants/v_separation = 44
 theme_override_fonts/font = ExtResource("2_miajm")
 theme_override_font_sizes/font_size = 48
+auto_height = true
 item_count = 3
 item_0/text = "A.Сеть продолжит работать через другие узлы"
 item_1/text = "B.Система полностью остановится"
@@ -272,6 +274,80 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_miajm")
 theme_override_styles/hover = SubResource("StyleBoxFlat_u77sh")
 text = "Заново пройти"
 
+[node name="StartPanel" type="Panel" parent="." unique_id=796970768]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="StartPanel" unique_id=427398739]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="OutlineContainer" type="MarginContainer" parent="StartPanel" unique_id=1139628169]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="ColorRect" type="ColorRect" parent="StartPanel/OutlineContainer" unique_id=1424037273]
+material = SubResource("ShaderMaterial_8oa6b")
+layout_mode = 2
+color = Color(0, 1, 0.735357, 1)
+
+[node name="StartContainer" type="MarginContainer" parent="StartPanel" unique_id=1850246301]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="StartPanel/StartContainer" unique_id=1967183695]
+layout_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="StartPanel/StartContainer/VBoxContainer" unique_id=2011064266]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_constants/separation = 74
+
+[node name="Start Text" type="Label" parent="StartPanel/StartContainer/VBoxContainer" unique_id=1378426350]
+custom_minimum_size = Vector2(1138, 250)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("2_miajm")
+theme_override_font_sizes/font_size = 128
+text = "Начать тест?"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="StartButton" type="Button" parent="StartPanel/StartContainer/VBoxContainer" unique_id=34889891]
+custom_minimum_size = Vector2(640, 120)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("2_miajm")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_miajm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_u77sh")
+text = "Начать"
+
 [connection signal="item_selected" from="QuestionContainer/VBoxContainer/AnswerOptions" to="." method="_on_answer_options_item_selected"]
 [connection signal="pressed" from="ExplanationPanel/ExplanationContainer/VBoxContainer/NextButton" to="." method="_on_next_button_pressed"]
 [connection signal="pressed" from="ResultsPanel/ResultsContainer/VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="StartPanel/StartContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]

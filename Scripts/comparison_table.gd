@@ -31,12 +31,12 @@ func _on_pos_done(t: float) -> void:
 
 func _update_panel() -> void:
 	var pow_str = "%.1fs" % pow_time if pow_time > 0 else "—"
-	pow_label_3d.text = " ДОКАЗАТЕЛЬСТВО РАБОТЫ
+	pow_label_3d.text = " Proof of Work (POW)
 ⚡ Энергия: Высокая 
 🔥 Выделение тепла: Высокое
 ⏱ Время: %s" % pow_str
 	var pos_str = "%.1fs" % pos_time if pos_time > 0 else "—"
-	pos_label_3d.text = " ДОКАЗАТЕЛЬСТВО ДОЛИ ВЛАДЕНИЯ
+	pos_label_3d.text = " Proof of Stakes (POS)
 🌱 Энергия: Низкая
 ❄ Выделения тепла: Отсутствует
 ⏱ Время: %s" % pos_str

@@ -13,6 +13,11 @@ extends Control
 @onready var results_text: Label = $"ResultsPanel/ResultsContainer/VBoxContainer/Results Text"
 @onready var restart_button: Button = $ResultsPanel/ResultsContainer/VBoxContainer/RestartButton
 
+@onready var start_panel: Panel = $StartPanel
+@onready var start_text: Label = $"StartPanel/StartContainer/VBoxContainer/Start Text"
+@onready var start_button: Button = $StartPanel/StartContainer/VBoxContainer/StartButton
+
+
 var current_room_id: String = ""
 var setted_room_id: String = "room_1"
 var current_questions: Array = []
@@ -33,6 +38,7 @@ func _ready() -> void:
 	explanation_panel.modulate.a = 0.0
 	explanation_panel.hide()
 	results_panel.hide()
+	start_panel.show()
 
 # Глобальный перехват ввода на системном уровне (починит кнопку P)
 func _input(event: InputEvent) -> void:
@@ -58,6 +64,7 @@ func start_quiz(room_id: String) -> void:
 	explanation_panel.modulate.a = 0.0
 	question_container.show()
 	question_container.modulate.a = 1.0
+	start_panel.hide()
 	
 	current_room_id = room_id
 	var room_data = Globals.QUESTION_DATA[room_id]
@@ -112,6 +119,7 @@ func _on_answer_options_item_selected(index: int) -> void:
 		# Звук успеха (закомментирован)
 		# if Signals.has_signal("PlaySound"):
 		# 	Signals.PlaySound.emit("success")
+		Signals.LevelSuccess.emit()
 			
 		await get_tree().create_timer(0.8).timeout
 		refresh_scene()
@@ -122,6 +130,7 @@ func _on_answer_options_item_selected(index: int) -> void:
 		# Звук ошибки (закомментирован)
 		# if Signals.has_signal("PlaySound"):
 		# 	Signals.PlaySound.emit("error")
+		Signals.LevelError.emit()
 			
 		await get_tree().create_timer(0.4).timeout
 		fade_switch_panels(question_container, explanation_panel, show_explanation)
@@ -149,7 +158,7 @@ func show_quiz_results() -> void:
 		
 		# if Signals.has_signal("PlaySound"):
 		# 	Signals.PlaySound.emit("quiz_perfect")
-		Signals.QuizCompleted.emit()
+		Signals
 	else:
 		results_text.text = "Не сдано!\nПрогресс: %.1f%%" % score_percent
 		results_text.add_theme_color_override("font_color", COLOR_INVALID)
@@ -179,6 +188,11 @@ func _on_restart_button_pressed() -> void:
 	if is_transitioning:
 		return
 	is_transitioning = true
+	var score_percent: float = (float(correct_answers_count) / float(total_questions_count)) * 100.0
+	if score_percent >= 50.0:
+		Signals.QuizCompleted.emit()
+	else:
+		Signals.QuizNotCompleted.emit()
 	restart_button.modulate = Color.WHITE
 	start_quiz(current_room_id)
 
@@ -187,3 +201,10 @@ func _on_next_button_pressed() -> void:
 		return
 	is_transitioning = true
 	fade_switch_panels(explanation_panel, question_container, refresh_scene)
+
+
+func _on_start_button_pressed() -> void:
+	if is_transitioning:
+		return
+	is_transitioning = true
+	start_quiz(current_room_id)

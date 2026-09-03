@@ -70,7 +70,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.58853143, 0.41660145, 0.510
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0144057, 0.41660145, 0.510891)
 
 [node name="EnergyMeter" type="Label3D" parent="." unique_id=1128254177]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4726937, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1135837, 0)
 pixel_size = 0.0025
 text = "Запас Энергии
 0%"

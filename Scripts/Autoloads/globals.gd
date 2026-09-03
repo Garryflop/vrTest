@@ -27,7 +27,7 @@ const QUESTION_DATA = {
 		]
 	},
 	"room_2": {
-		"title": "Structure of Block",
+		"title": "Структура блока",
 		"questions": [
 			{
 				"question": "Какие обязательные элементы определяют внутреннюю структуру блока в блокчейне?",
