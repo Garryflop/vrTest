@@ -234,7 +234,7 @@ font = ExtResource("4_8dmpc")
 font_size = 64
 
 [node name="TeleportArea" parent="." unique_id=1507852708 instance=ExtResource("11_osqx1")]
-transform = Transform3D(-0.50000006, 0, -0.8660254, 0, 1, 0, 0.8660254, 0, -0.50000006, 2.848676, 0.12499979, 1.4811788)
+transform = Transform3D(-0.50000006, 0, -0.8660254, 0, 1, 0, 0.8660254, 0, -0.50000006, 2.5608635, 0.12499979, 1.1672051)
 
 [node name="AudioTutorSystem" type="Node3D" parent="." unique_id=1075977981]
 transform = Transform3D(-0.9998719, 0, 0.016004018, 0, 1, 0, -0.016004018, 0, -0.9998719, 0.01342088, 1.4020138, -0.7784475)
@@ -258,6 +258,7 @@ mesh = SubResource("QuadMesh_8dmpc")
 transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, -1.0898356, 0)
 screen_visible = false
 screen_size = Vector2(0.8, 0.2)
+collision_layer = 5242880
 
 [node name="Label3D" type="Label3D" parent="AudioTutorSystem/TutorPanel/SpeakerButton" unique_id=513263758]
 transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, 0, 0)

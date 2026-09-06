@@ -5,7 +5,9 @@ enum VaultState { IDLE, DENIED, DECRYPTING, OPEN }
 signal door_opened
 signal door_opening
 
-@onready var key_slot: XRToolsSnapZone        = $Door/KeySlot
+#@onready var key_slot: XRToolsSnapZone        = $Door/KeySlot
+@onready var key_slot_right: XRToolsSnapZone = $Door/KeySlotRight
+@onready var key_slot_left: XRToolsSnapZone = $Door/KeySlotLeft
 @onready var status_label: Label3D            = $StatusLabel
 @onready var status_light: MeshInstance3D     = $StatusLight
 @onready var door: StaticBody3D               = $Door
@@ -23,22 +25,69 @@ var current_state: VaultState = VaultState.IDLE
 
 var reward_init_transform: Transform3D 
 
+var left_object: Variant = null
+var right_object: Variant = null
+
 func _ready() -> void:
 	reward.visible = false
 	reward.enabled = false
 	reward_init_transform = reward.transform
 	status_light.material_override = mat_idle
-	status_label.text = "ВСТАВЬТЕ КЛЮЧ ДЛЯ АУТЕНТИФИКАЦИИ"
-	key_slot.has_picked_up.connect(_on_key_inserted)
-	key_slot.has_dropped.connect(_on_key_removed)
+	status_label.text = "ВСТАВЬТЕ ВАШ ЛИЧНЫЙ И ПУБЛИЧНЫЙ КЛЮЧ 
+ДЛЯ ВХОДА В КРИПТОКОШЕЛЕК"
+	#key_slot.has_picked_up.connect(_on_key_inserted)
+	#key_slot.has_dropped.connect(_on_key_removed)
 
+func _on_keyslot_inserted(what: Variant, is_right: bool) -> void:
+	print("Key inserted is right: ", is_right)
+	if is_right:
+		right_object = what
+	else:
+		left_object = what
+	update_terminal()
+
+func _on_keyslot_removed(is_right: bool) -> void:
+	print("Key removed is right: ", is_right)
+	if is_right:
+		right_object = null
+	else:
+		left_object = null
+	update_terminal()
+
+func update_terminal() -> void:
+	if current_state == VaultState.OPEN:
+		return
+	var keys: Array = [right_object, left_object]
+	var is_wrong_key: bool = keys.any(func(node): 
+		if is_instance_valid(node):
+			return node.is_in_group("wrong_key")
+		return false)
+	var is_private_key: bool = keys.any(func(node): 
+		if is_instance_valid(node):
+			return node.is_in_group("private_key")
+		return false)
+	var is_public_key: bool = keys.any(func(node): 
+		if is_instance_valid(node):
+			return node.is_in_group("public_key")
+		return false)
+	if is_private_key and is_public_key:
+		_sequence_approved()
+	elif is_private_key and !is_public_key:
+		_sequence_denied("НУЖЕН ПУБЛИЧНЫЙ КЛЮЧ")
+	elif !is_private_key and is_public_key:
+		_sequence_denied("НУЖЕН ТВОЙ ЛИЧНЫЙ КЛЮЧ")
+	else:
+		_sequence_denied("ВСТАВЬТЕ ВАШ ЛИЧНЫЙ И ПУБЛИЧНЫЙ КЛЮЧ 
+ДЛЯ ВХОДА В КРИПТОКОШЕЛЕК")
+
+#remove later
 func _on_key_removed() -> void:
 	if current_state == VaultState.OPEN:
 		return
 	current_state = VaultState.IDLE
 	status_light.material_override = mat_idle
-	status_label.text = "ВСТАВЬТЕ КЛЮЧ ДЛЯ АУТЕНТИФИКАЦИИ"
-
+	status_label.text = "ВСТАВЬТЕ КЛЮЧ ДЛЯ ВХОДА В КРИПТОКОШЕЛЕК"
+#remove later
 func _on_key_inserted(key_object) -> void:
 	if current_state == VaultState.OPEN:
 		return
@@ -69,14 +118,15 @@ func _sequence_denied(reason: String) -> void:
 		tween.tween_callback(func():
 			status_light.material_override = mat_idle)
 		tween.tween_interval(0.18)
-
-	# Выбросить ключ через 1.5 сек
-	await get_tree().create_timer(1.5).timeout
-	if key_slot.has_method("drop_object"):
-		key_slot.drop_object()
+	
 	current_state = VaultState.IDLE
-	status_label.text = "ВСТАВЬТЕ КЛЮЧ ДЛЯ АУТЕНТИФИКАЦИИ"
-	status_light.material_override = mat_idle
+	# Выбросить ключ через 1.5 сек
+	#await get_tree().create_timer(1.5).timeout
+	#if key_slot.has_method("drop_object"):
+		#key_slot.drop_object()
+	#current_state = VaultState.IDLE
+	#status_label.text = "ВСТАВЬТЕ КЛЮЧ ДЛЯ ВХОДА В КРИПТОКОШЕЛЕК"
+	#status_light.material_override = mat_idle
 
 # ── APPROVED ─────────────────────────────────────────────────
 func _sequence_approved() -> void:
@@ -90,7 +140,7 @@ func _sequence_approved() -> void:
 	reward.enabled = true
 	_open_door()
 	await get_tree().create_timer(0.9).timeout
-	status_label.text = "[✓] СЕЙФ ОТКРЫТ\nTake your crypto asset"
+	status_label.text = "[✓] СЕЙФ ОТКРЫТ"
 	current_state = VaultState.OPEN
 
 func _animate_decrypting() -> void:
@@ -117,16 +167,24 @@ func _on_door_opened() -> void:
 	door_opened.emit()
 
 func reset() -> void:
-	reward.drop()
-	await get_tree().process_frame
-	reward.transform = reward_init_transform
 	animation_player.play("RESET")
 	reward.visible = false
+	key_slot_left.drop_object()
+	key_slot_left.enabled = false
+	key_slot_right.drop_object()
+	key_slot_right.enabled = false
+	#key_slot.drop_object()
+	#key_slot.enabled = false
+	reward.drop()
 	reward.enabled = false
-	key_slot.drop_object()
-	key_slot.enabled = false
-	await get_tree().process_frame
-	key_slot.enabled = true
+	reward.set_deferred("transform", reward_init_transform)
+	reward.set_deferred("linear_velocity", Vector3.ZERO)
+	reward.set_deferred("angular_velocity", Vector3.ZERO)
+	await get_tree().create_timer(0.2).timeout
+	key_slot_left.enabled = true
+	key_slot_right.enabled = true
+	#key_slot.enabled = true
 	status_light.material_override = mat_idle
-	status_label.text = "ВСТАВЬТЕ КЛЮЧ ДЛЯ АУТЕНТИФИКАЦИИ"
+	status_label.text = "ВСТАВЬТЕ ВАШ ЛИЧНЫЙ И ПУБЛИЧНЫЙ КЛЮЧ 
+ДЛЯ ВХОДА В КРИПТОКОШЕЛЕК"
 	current_state = VaultState.IDLE

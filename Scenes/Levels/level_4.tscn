@@ -280,7 +280,7 @@ transform = Transform3D(-0.67272836, 0, 0.73988944, 0, 1, 0, -0.73988944, 0, -0.
 room_id = "room_4"
 
 [node name="TeleportArea" parent="." unique_id=1507852708 instance=ExtResource("10_gsxik")]
-transform = Transform3D(-0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, -0.70710677, -2.518162, 0.12500075, 1.7192757)
+transform = Transform3D(-0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, -0.70710677, -2.287696, 0.12500075, 1.574323)
 
 [node name="AudioTutorSystem" type="Node3D" parent="." unique_id=25589877]
 transform = Transform3D(-0.9998719, 0, 0.016004018, 0, 1, 0, -0.016004018, 0, -0.9998719, 0.055190787, 1.691148, -0.74255186)

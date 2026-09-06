@@ -15,17 +15,17 @@ var stakes: Array = []  # stakes[i] = текущий стейк ноды i
 
 var bag_init_transforms: Array = []
 var bags: Array = []
-
 func _ready() -> void:
 	select_button.button_pressed.connect(_on_select)
 	
 	var validators = nodes_container.get_children()
 	for i in range(validators.size()):
 		stakes.append(1)  # минимум 1
-		var slot = validators[i].get_node_or_null("MoneyBagSnapZone")
-		if slot:
-			slot.has_picked_up.connect(_on_bag_placed.bind(i))
-			slot.has_dropped.connect(_on_bag_removed.bind(i))
+		var slots = validators[i].get_node_or_null("MoneyBagSnapZones").get_children()
+		if slots:
+			for j in range(slots.size()):
+				slots[j].has_picked_up.connect(_on_bag_placed.bind(i,j))
+				slots[j].has_dropped.connect(_on_bag_removed.bind(i,j))
 		else:
 			push_warning("No MoneyBagSnapZone in " + validators[i].name)
 	
@@ -35,12 +35,12 @@ func _ready() -> void:
 	for bag in bags:
 		bag_init_transforms.append(bag.global_transform)
 
-func _on_bag_placed(_what, idx: int) -> void:
-	stakes[idx] = 10
+func _on_bag_placed(_what, idx_i: int, _idx_j: int) -> void:
+	stakes[idx_i] += 2
 	_update_stake_labels()
 
-func _on_bag_removed(idx: int) -> void:
-	stakes[idx] = 1
+func _on_bag_removed(idx_i: int, _idx_j: int) -> void:
+	stakes[idx_i] -= 2
 	_update_stake_labels()
 
 func _update_stake_labels() -> void:
@@ -149,6 +149,7 @@ func reset() -> void:
 	await get_tree().process_frame
 	
 	for i in range(bags.size()):
+		bags[i].drop()
 		bags[i].global_transform = bag_init_transforms[i]
 		bags[i].visible = true
 		bags[i].enabled = true

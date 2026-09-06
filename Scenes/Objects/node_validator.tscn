@@ -77,12 +77,20 @@ mesh = SubResource("ArrayMesh_2qm6y")
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, -0.06430006, 0)
 mesh = SubResource("ArrayMesh_2qm6y")
 
-[node name="MoneyBagSnapZone" parent="." index="3" unique_id=12088233 instance=ExtResource("15_8bp1u")]
+[node name="MoneyBagSnapZones" type="Node3D" parent="." index="3" unique_id=603884519]
+
+[node name="MoneyBagSnapZone" parent="MoneyBagSnapZones" index="0" unique_id=12088233 instance=ExtResource("15_8bp1u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2610862, 0)
+grab_distance = 0.1
+snap_require = "Money"
+
+[node name="MoneyBagSnapZone2" parent="MoneyBagSnapZones" index="1" unique_id=84479726 instance=ExtResource("15_8bp1u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.28664926, 0)
+grab_distance = 0.1
 snap_require = "Money"
 
 [node name="Label3D" type="Label3D" parent="." index="4" unique_id=909199892]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.016297594, 0.4010086, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.016297594, 0.4211939, 0)
 pixel_size = 0.001
 text = "X BTC"
 font = ExtResource("16_6tnxj")
