@@ -59,6 +59,10 @@ scene={
 "skins/use_named_skins": true
 }
 
+[internationalization]
+
+locale/translations=PackedStringArray("res://Assets/Language/VR_GAME_TRANSLATION_KAZAKH_COMPLETE - Лист1.KAZAKH.translation", "res://Assets/Language/VR_GAME_TRANSLATION_KAZAKH_COMPLETE - Лист1.RUSSIAN.translation")
+
 [layer_names]
 
 3d_physics/layer_1="Static World"

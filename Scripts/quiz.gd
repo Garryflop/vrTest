@@ -138,7 +138,7 @@ func _on_answer_options_item_selected(index: int) -> void:
 func show_explanation() -> void:
 	var q_data = current_questions[current_question_idx - 1]
 	question_number_explanation.text = "%d/%d" % [current_question_idx, total_questions_count]
-	explanation_text.text = "Неверно!\n\nРазбор: %s" % q_data["explanation"]
+	explanation_text.text = (tr("QUESTION_EXPLANATION_TEXT") + "\n %s") % tr(q_data["explanation"])
 	explanation_text.add_theme_color_override("font_color", Color(1.0, 0.65, 0.2))
 	is_transitioning = false # Разблокируем клики для кнопки "Далее"
 
@@ -150,20 +150,19 @@ func show_quiz_results() -> void:
 	var score_percent: float = (float(correct_answers_count) / float(total_questions_count)) * 100.0
 	
 	if score_percent >= 50.0:
-		results_text.text = "Тест пройден!\nПрогресс: %.1f%%" % score_percent
+		results_text.text = (tr("QUESTION_RESULTS_SUCCESS_TEXT") + " %.1f%%") % score_percent
 		results_text.add_theme_color_override("font_color", COLOR_VALID)
 		
-		restart_button.text = "Активировать портал"
+		restart_button.text = tr("QUESTION_RESULTS_SUCCESS_BUTTON")
 		restart_button.modulate = COLOR_VALID
 		
 		# if Signals.has_signal("PlaySound"):
 		# 	Signals.PlaySound.emit("quiz_perfect")
-		Signals
 	else:
-		results_text.text = "Не сдано!\nПрогресс: %.1f%%" % score_percent
+		results_text.text = (tr("QUESTION_RESULTS_WRONG_TEXT") + " %.1f%%") % score_percent
 		results_text.add_theme_color_override("font_color", COLOR_INVALID)
 		
-		restart_button.text = "Заново пройти"
+		restart_button.text = tr("QUESTION_RESULTS_WRONG_BUTTON")
 		restart_button.modulate = COLOR_INVALID
 	
 	is_transitioning = false

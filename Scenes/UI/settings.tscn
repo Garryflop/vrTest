@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cw5xqd1ic1upd" path="res://Scripts/settings.gd" id="1_ma1v7"]
 [ext_resource type="Shader" uid="uid://bai0a8ty5xc15" path="res://Assets/Shaders/main_menu.gdshader" id="2_n8st6"]
 [ext_resource type="FontFile" uid="uid://0gvxqdbhr1ls" path="res://Assets/Fonts/CodenameCoderFree4F-Bold.ttf" id="3_dkbde"]
+[ext_resource type="StyleBox" uid="uid://bkk0pqoiwcybl" path="res://Assets/materials/flat.tres" id="4_ygnii"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_o14dv"]
 shader = ExtResource("2_n8st6")
@@ -40,6 +41,28 @@ border_color = Color(0.23248097, 0.23248091, 0.23248073, 1)
 border_blend = true
 shadow_color = Color(1, 1, 1, 1)
 shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ygnii"]
+bg_color = Color(0.35652202, 0.26813754, 1.4439226e-07, 1)
+border_width_left = 12
+border_width_top = 12
+border_width_right = 12
+border_width_bottom = 12
+border_color = Color(0, 0, 0, 1)
+corner_detail = 20
+shadow_size = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n8st6"]
+bg_color = Color(0.49111894, 0.37294003, 0, 0.49019608)
+border_width_left = 12
+border_width_top = 12
+border_width_right = 12
+border_width_bottom = 12
+border_color = Color(0, 0, 0, 1)
+corner_detail = 20
+shadow_size = 6
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_dkbde"]
 
 [node name="Settings" type="Control" unique_id=898552913]
 layout_mode = 3
@@ -91,7 +114,7 @@ theme_override_constants/separation = 5
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_dkbde")
 theme_override_font_sizes/font_size = 48
-text = "Настройки"
+text = "SETTINGS_TEXT"
 horizontal_alignment = 1
 
 [node name="Audio" type="VBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=177822752]
@@ -104,18 +127,23 @@ theme_override_constants/separation = 15
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_dkbde")
 theme_override_font_sizes/font_size = 48
-text = "Аудио"
+text = "SETTINGS_AUDIO_TEXT"
 horizontal_alignment = 1
 
 [node name="Music" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Audio" unique_id=1473386577]
 layout_mode = 2
-theme_override_constants/separation = 168
+theme_override_constants/separation = 8
 
 [node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/Audio/Music" unique_id=777406648]
 layout_mode = 2
+size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("3_dkbde")
 theme_override_font_sizes/font_size = 36
-text = "Нарратор"
+text = "SETTINGS_AUDIO_NARRATOR_TEXT"
+
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer/Audio/Music" unique_id=1257935773]
+layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="MusicSlider" type="HSlider" parent="MarginContainer/VBoxContainer/Audio/Music" unique_id=2141912897]
 custom_minimum_size = Vector2(360, 100)
@@ -133,13 +161,17 @@ value = 1.0
 [node name="SFX" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Audio" unique_id=1046703113]
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_constants/separation = 35
+theme_override_constants/separation = 8
 
 [node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/Audio/SFX" unique_id=139187398]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_dkbde")
 theme_override_font_sizes/font_size = 36
-text = "Звуковые эффекты"
+text = "SETTINGS_AUDIO_SFX_TEXT"
+
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer/Audio/SFX" unique_id=2140737137]
+layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="SfxSlider" type="HSlider" parent="MarginContainer/VBoxContainer/Audio/SFX" unique_id=817054238]
 custom_minimum_size = Vector2(360, 100)
@@ -154,5 +186,44 @@ max_value = 1.0
 step = 0.001
 value = 1.0
 
+[node name="LanguageButtonContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1796676251]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="RusToggleButton" type="Button" parent="MarginContainer/VBoxContainer/LanguageButtonContainer" unique_id=1265067758]
+custom_minimum_size = Vector2(213.333, 42.667)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("3_dkbde")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = ExtResource("4_ygnii")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ygnii")
+theme_override_styles/hover = SubResource("StyleBoxFlat_n8st6")
+toggle_mode = true
+button_pressed = true
+button_group = SubResource("ButtonGroup_dkbde")
+text = "Русский"
+
+[node name="KazToggleButton" type="Button" parent="MarginContainer/VBoxContainer/LanguageButtonContainer" unique_id=580239993]
+custom_minimum_size = Vector2(213.333, 42.667)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("3_dkbde")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = ExtResource("4_ygnii")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ygnii")
+theme_override_styles/hover = SubResource("StyleBoxFlat_n8st6")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_dkbde")
+text = "Қазақ"
+
 [connection signal="value_changed" from="MarginContainer/VBoxContainer/Audio/Music/MusicSlider" to="." method="_on_music_slider_value_changed"]
 [connection signal="value_changed" from="MarginContainer/VBoxContainer/Audio/SFX/SfxSlider" to="." method="_on_sfx_slider_value_changed"]
+[connection signal="toggled" from="MarginContainer/VBoxContainer/LanguageButtonContainer/RusToggleButton" to="." method="_on_rus_toggle_button_toggled"]
+[connection signal="toggled" from="MarginContainer/VBoxContainer/LanguageButtonContainer/KazToggleButton" to="." method="_on_kaz_toggle_button_toggled"]

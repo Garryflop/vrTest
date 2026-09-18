@@ -11,9 +11,11 @@ var cfg := ConfigFile.new()
 @onready var env             = preload("res://Assets/materials/lobby_env.tres")
 
 func _ready():
-	cfg.load(CFG_PATH)
-	music_slider.value   = cfg.get_value("audio",   "music",      0.8)
-	sfx_slider.value     = cfg.get_value("audio",   "sfx",        1.0)
+	music_slider.value = 0.5
+	sfx_slider.value = 0.5
+	#cfg.load(CFG_PATH)
+	#music_slider.value   = cfg.get_value("audio",   "music",      0.8)
+	#sfx_slider.value     = cfg.get_value("audio",   "sfx",        1.0)
 	#brightness_sl.value  = cfg.get_value("display", "brightness", 0.5)
 	#vignette_check.button_pressed = cfg.get_value("vr", "vignette", true)
 	#vignette_sl.value    = cfg.get_value("vr",      "vignette_amount", 0.4)
@@ -55,7 +57,18 @@ func _on_save_pressed():
 
 func _on_music_slider_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_linear(1,value)
+	print(value)
 
 
 func _on_sfx_slider_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_linear(2,value)
+
+
+func _on_rus_toggle_button_toggled(toggled_on: bool) -> void:
+	TranslationServer.set_locale("RUSSIAN")
+	print(tr("LOADING_DIALOGUE_0"))
+
+
+func _on_kaz_toggle_button_toggled(toggled_on: bool) -> void:
+	TranslationServer.set_locale("KAZAKH")
+	print(tr("LOADING_DIALOGUE_0"))

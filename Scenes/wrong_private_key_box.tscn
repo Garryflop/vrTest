@@ -112,9 +112,7 @@ wrong_key_highlight = SubResource("StandardMaterial3D_osqdu")
 [node name="WarningLabel" type="Label3D" parent="." unique_id=200202975]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.839399, 0)
 pixel_size = 0.002
-text = "🔒ЧУЖОЙ ЛИЧНЫЙ КЛЮЧ
-НИ С КЕМ НЕ ДЕЛИТЕСЬ
-Только для вашего использования"
+text = "ROOM_3_WRONG_PRIVATE_KEY_TEXT"
 font = ExtResource("9_6j6eh")
 font_size = 64
 outline_size = 24

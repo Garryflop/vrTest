@@ -69,9 +69,7 @@ mesh = SubResource("CylinderMesh_rfbas")
 
 [node name="TeleportLabel" type="Label3D" parent="." index="5" unique_id=1204678121]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.61, 0)
-text = "Пройдите тест
-чтобы перейти на 
-следующий уровень"
+text = "TELEPORT_TEXT"
 font = ExtResource("4_d221f")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

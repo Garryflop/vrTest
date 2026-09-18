@@ -123,7 +123,6 @@ item_1/text = "B.Система полностью остановится"
 item_2/text = "C.Автоматически выберется новый сервер"
 
 [node name="ExplanationPanel" type="Panel" parent="." unique_id=538687499]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -198,7 +197,7 @@ theme_override_fonts/font = ExtResource("2_miajm")
 theme_override_font_sizes/font_size = 64
 theme_override_styles/normal = ExtResource("3_miajm")
 theme_override_styles/hover = SubResource("StyleBoxFlat_8oa6b")
-text = "Следующий вопрос"
+text = "QUESTION_EXPLANATION_BUTTON"
 
 [node name="ResultsPanel" type="Panel" parent="." unique_id=2014073037]
 visible = false
@@ -258,7 +257,7 @@ size_flags_vertical = 1
 theme_override_fonts/font = ExtResource("2_miajm")
 theme_override_font_sizes/font_size = 96
 text = "Тест пройден!
-Прогресс: 100.00%"
+Прогресс:100.00%"
 horizontal_alignment = 1
 autowrap_mode = 3
 
@@ -331,7 +330,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 1
 theme_override_fonts/font = ExtResource("2_miajm")
 theme_override_font_sizes/font_size = 128
-text = "Начать тест?"
+text = "QUESTION_START_TEXT"
 horizontal_alignment = 1
 autowrap_mode = 3
 
@@ -345,7 +344,7 @@ theme_override_fonts/font = ExtResource("2_miajm")
 theme_override_font_sizes/font_size = 64
 theme_override_styles/normal = SubResource("StyleBoxFlat_miajm")
 theme_override_styles/hover = SubResource("StyleBoxFlat_u77sh")
-text = "Начать"
+text = "START_BUTTON"
 
 [connection signal="item_selected" from="QuestionContainer/VBoxContainer/AnswerOptions" to="." method="_on_answer_options_item_selected"]
 [connection signal="pressed" from="ExplanationPanel/ExplanationContainer/VBoxContainer/NextButton" to="." method="_on_next_button_pressed"]

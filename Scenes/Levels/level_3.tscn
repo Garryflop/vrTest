@@ -224,12 +224,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7651056, 0.28429902, -1.071
 screen_visible = false
 
 [node name="MonitorV3" parent="ResetButton" unique_id=1710385518 instance=ExtResource("3_13yca")]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, -0.1, -0.01)
+transform = Transform3D(0.16, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, -0.1, -0.01)
 
 [node name="Label3D" type="Label3D" parent="ResetButton" unique_id=2071197860]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.014603972, 0)
 pixel_size = 0.001
-text = "Сброс"
+text = "RESET_BUTTON_TEXT"
 font = ExtResource("4_8dmpc")
 font_size = 64
 

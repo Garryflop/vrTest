@@ -8,11 +8,10 @@
 transform = Transform3D(1.35, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="StatusLabel" parent="." index="1" unique_id=235328377]
-text = "Статус:
-Ожидание транзакции..."
+text = "ROOM_1_MAIN_BOARD_TEXT"
 
 [node name="Label3D" parent="BtnDecent" parent_id_path=PackedInt32Array(413104640) index="2" unique_id=851443457]
-text = "Отправить"
+text = "ROOM_1_MAIN_BOARD_BUTTON_PLAY"
 
 [node name="BtnCent" parent="." index="3" unique_id=236539792]
 visible = false
@@ -24,4 +23,4 @@ disabled = true
 action_name = "reset_decent"
 
 [node name="Label3D" parent="BtnReset" index="2" unique_id=1523183365]
-text = "Сбросить"
+text = "RESET_BUTTON_TEXT"

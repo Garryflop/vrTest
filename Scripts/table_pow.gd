@@ -51,7 +51,7 @@ func _get_connected_count() -> int:
 func _update_energy_meter() -> void:
 	var total = max(sockets.size(), 1)
 	var percent = int((float(connected_count) / total) * 100)
-	energy_meter.text = "Запас Энергии\n%d%%" % percent
+	energy_meter.text = (tr("ROOM_4_TABLE_POW_ENERGY_TEXT") + "\n%d%%") % percent
 	if percent < 40:
 		energy_meter.modulate = Color(1, 0.2, 0.2)
 	elif percent < 80:
@@ -64,7 +64,7 @@ func _on_start() -> void:
 	if is_running:
 		return
 	if connected_count == 0:
-		energy_meter.text = "⚠ Подсоедините кабели!"
+		energy_meter.text = tr("ROOM_4_TABLE_POW_ENERGY_WARNING")
 		return
 
 	is_running = true
@@ -82,7 +82,7 @@ func _on_start() -> void:
 
 	var winner_time = times.min()
 	var winner_idx = times.find(winner_time)
-	energy_meter.text = "⛏ МАЙНИНГ...\n%d%% энергии" % int(energy_ratio * 100)
+	energy_meter.text = (tr("ROOM_4_TABLE_POW_ENERGY_MINING_1") + "\n%d%% " + tr("ROOM_4_TABLE_POW_ENERGY_MINING_2")) % int(energy_ratio * 100)
 
 	for i in range(miners.size()):
 		var t = times[i]
@@ -104,10 +104,10 @@ func _on_winner_found(winner_node: Node3D, elapsed: float, energy_ratio: float) 
 
 	var label = winner_node.get_node_or_null("INFORMATION_LABEL")
 	if label:
-		label.text = "⛏ ПОБЕДИТЕЛЬ!\nВремя: %.1fs" % elapsed
+		label.text = (tr("ROOM_4_TABLE_POW_WINNER") + "%.1fs") % elapsed
 
-	var efficiency = "МАЛО ⚡⚡⚡" if energy_ratio < 0.8 else "МНОГО ⚡"
-	energy_meter.text = "✓ БЛОК НАЙДЕН!\nВремя: %.1fs\nЗатраты: %s" % [elapsed, efficiency]
+	var efficiency = tr("ROOM_4_TABLE_POW_LOW_EFFICIENCY") if energy_ratio < 0.8 else tr("ROOM_4_TABLE_POW_HIGH_EFFICIENCY")
+	energy_meter.text = (tr("ROOM_4_TABLE_POW_BLOCK_FOUND") + "\n" + tr("ROOM_4_TABLE_POW_TIME") + " %.1fs\n" + tr("ROOM_4_TABLE_POW_COST") + " %s") % [elapsed, efficiency]
 
 	await get_tree().create_timer(2.0).timeout
 	_clear_table()
@@ -147,7 +147,7 @@ func _clear_table() -> void:
 	connected_count = 0
 	start_button.visible = true
 	is_running = false
-	energy_meter.text = "Запас Энергии\n0%"
+	energy_meter.text = tr("ROOM_4_TABLE_POW_ENERGY_TEXT") + "\n0%"
 	energy_meter.modulate = Color(1, 1, 1)
 
 func _restore_cables() -> void:
@@ -227,5 +227,5 @@ func reset() -> void:
 	for miner in nodes_container.get_children():
 		_set_node_visual(miner, "idle")
 		_stop_blink(miner)
-	energy_meter.text = "Запас Энергии\n0%"
+	energy_meter.text = tr("ROOM_4_TABLE_POW_ENERGY_TEXT") + "\n0%"
 	energy_meter.modulate = Color(1, 1, 1)

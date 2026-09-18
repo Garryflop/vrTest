@@ -49,7 +49,7 @@ func _update_stake_labels() -> void:
 		var label = validators[i].get_node_or_null("Label3D")
 		if label:
 			# ИСПРАВЛЕНИЕ: Переименовываем Блоки в Валидаторы/Узлы в соответствии с логикой PoS
-			label.text = "Узел %d\nДоля: %d BTC" % [i + 1, stakes[i]]
+			label.text = (tr("ROOM_4_TABLE_POS_NODE") + " %d\n" + tr("ROOM_4_TABLE_POS_SHARE") + " %d BTC") % [i + 1, stakes[i]]
 		var mesh = validators[i].get_node_or_null("Cube/MeshInstance3D")
 		if not mesh:
 			mesh = validators[i].get_node_or_null("MeshInstance3D")
@@ -97,7 +97,7 @@ func _on_select() -> void:
 
 	var label = validators[winner_idx].get_node_or_null("Label3D")
 	if label:
-		label.text = "✓ ВАЛИДАТОР %d\nДоля: %d BTC\nВЫБРАН!" % [winner_idx + 1, stakes[winner_idx]]
+		label.text = (tr("ROOM_4_TABLE_POS_VALIDATOR") + " %d\n" + tr("ROOM_4_TABLE_POS_SHARE") + " %d BTC\n" + tr("ROOM_4_TABLE_POS_SELECTED")) % [winner_idx + 1, stakes[winner_idx]]
 	
 	# Сигнал успеха уровня теперь генерируется строго синхронно с окончанием 3D-анимации
 	Signals.LevelSuccess.emit()

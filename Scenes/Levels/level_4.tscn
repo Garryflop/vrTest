@@ -217,12 +217,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.047332674, 0.32706904, -0.7
 screen_visible = false
 
 [node name="MonitorV3" parent="ResetButton" unique_id=1710385518 instance=ExtResource("9_33y7k")]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, -0.1, -0.01)
+transform = Transform3D(0.16, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, -0.1, -0.01)
 
 [node name="Label3D" type="Label3D" parent="ResetButton" unique_id=2071197860]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.014603972, 0)
 pixel_size = 0.001
-text = "Сброс"
+text = "RESET_BUTTON_TEXT"
 font = ExtResource("10_khr6i")
 font_size = 64
 
@@ -241,7 +241,7 @@ pos_table = NodePath("../TablePoS")
 [node name="Label3D" type="Label3D" parent="ComparisonTable" unique_id=201080947]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00023648143, 0.8470881, 0.06131649)
 pixel_size = 0.004
-text = "Сравнение механизмов"
+text = "ROOM_4_COMPARISON_TABLE_TEXT"
 font = ExtResource("10_khr6i")
 font_size = 96
 outline_size = 36

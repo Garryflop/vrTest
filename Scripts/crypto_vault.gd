@@ -33,8 +33,7 @@ func _ready() -> void:
 	reward.enabled = false
 	reward_init_transform = reward.transform
 	status_light.material_override = mat_idle
-	status_label.text = "ВСТАВЬТЕ ВАШ ЛИЧНЫЙ И ПУБЛИЧНЫЙ КЛЮЧ 
-ДЛЯ ВХОДА В КРИПТОКОШЕЛЕК"
+	status_label.text = tr("ROOM_3_TERMINAL_ENTRY_TEXT")
 	#key_slot.has_picked_up.connect(_on_key_inserted)
 	#key_slot.has_dropped.connect(_on_key_removed)
 
@@ -73,12 +72,11 @@ func update_terminal() -> void:
 	if is_private_key and is_public_key:
 		_sequence_approved()
 	elif is_private_key and !is_public_key:
-		_sequence_denied("НУЖЕН ПУБЛИЧНЫЙ КЛЮЧ")
+		_sequence_denied(tr("ROOM_3_TERMINAL_PUBLIC_KEY_NEED"))
 	elif !is_private_key and is_public_key:
-		_sequence_denied("НУЖЕН ТВОЙ ЛИЧНЫЙ КЛЮЧ")
+		_sequence_denied(tr("ROOM_3_TERMINAL_PRIVATE_KEY_NEED"))
 	else:
-		_sequence_denied("ВСТАВЬТЕ ВАШ ЛИЧНЫЙ И ПУБЛИЧНЫЙ КЛЮЧ 
-ДЛЯ ВХОДА В КРИПТОКОШЕЛЕК")
+		_sequence_denied(tr("ROOM_3_TERMINAL_ENTRY_TEXT"))
 
 #remove later
 func _on_key_removed() -> void:
@@ -107,7 +105,7 @@ func _sequence_denied(reason: String) -> void:
 	current_state = VaultState.DENIED
 	Signals.LevelError.emit()
 	#sound_denied.play()
-	status_label.text = "[!] ДОСТУП ЗАПРЕЩЕН\n" + reason
+	status_label.text = tr("ROOM_3_TERMINAL_SEQUENCE_DENIED") + "\n" + reason
 
 	# Красный пульс x3
 	var tween = create_tween()
@@ -145,13 +143,13 @@ func _sequence_approved() -> void:
 
 func _animate_decrypting() -> void:
 	var steps := [
-		"[✓] ЛИЧНЫЙ КЛЮЧ ВЕРИФИЦИРУЕТСЯ",
-		"[✓] ЛИЧНЫЙ КЛЮЧ ВЕРИФИЦИРУЕТСЯ\nПРОВЕРКА ПОДПИСИ.",
-		"[✓] ЛИЧНЫЙ КЛЮЧ ВЕРИФИЦИРУЕТСЯ\nПРОВЕРКА ПОДПИСИ..",
-		"[✓] ЛИЧНЫЙ КЛЮЧ ВЕРИФИЦИРУЕТСЯ\nПРОВЕРКА ПОДПИСИ...",
-		"[✓] ПОДПИСЬ ДЕЙСТВИТЕЛЬНА\nВСКРЫТИЕ ХРАНИЛИЩА.",
-		"[✓] ПОДПИСЬ ДЕЙСТВИТЕЛЬНА\nВСКРЫТИЕ ХРАНИЛИЩА..",
-		"[✓] ПОДПИСЬ ДЕЙСТВИТЕЛЬНА\nВСКРЫТИЕ ХРАНИЛИЩА...",
+		tr("ROOM_3_TERMINAL_DECRYPTING_1"),
+		tr("ROOM_3_TERMINAL_DECRYPTING_1") + "\n" + tr("ROOM_3_TERMINAL_DECRYPTING_2"),
+		tr("ROOM_3_TERMINAL_DECRYPTING_1") + "\n" + tr("ROOM_3_TERMINAL_DECRYPTING_2") + ".",
+		tr("ROOM_3_TERMINAL_DECRYPTING_1") + "\n" + tr("ROOM_3_TERMINAL_DECRYPTING_2") + "..",
+		tr("ROOM_3_TERMINAL_DECRYPTING_3") + "\n" + tr("ROOM_3_TERMINAL_DECRYPTING_4"),
+		tr("ROOM_3_TERMINAL_DECRYPTING_3") + "\n"+ tr("ROOM_3_TERMINAL_DECRYPTING_4") + ".",
+		tr("ROOM_3_TERMINAL_DECRYPTING_3") + "\n" + tr("ROOM_3_TERMINAL_DECRYPTING_4") + "..",
 	]
 	for step in steps:
 		status_label.text = step
@@ -185,6 +183,5 @@ func reset() -> void:
 	key_slot_right.enabled = true
 	#key_slot.enabled = true
 	status_light.material_override = mat_idle
-	status_label.text = "ВСТАВЬТЕ ВАШ ЛИЧНЫЙ И ПУБЛИЧНЫЙ КЛЮЧ 
-ДЛЯ ВХОДА В КРИПТОКОШЕЛЕК"
+	status_label.text = tr("ROOM_3_TERMINAL_ENTRY_TEXT")
 	current_state = VaultState.IDLE

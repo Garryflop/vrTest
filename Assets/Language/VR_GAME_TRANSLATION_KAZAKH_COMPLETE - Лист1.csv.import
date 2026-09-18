@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://dgn1fg5cmv0jr"
+
+[deps]
+
+files=["res://Assets/Language/VR_GAME_TRANSLATION_KAZAKH_COMPLETE - Лист1.RUSSIAN.translation", "res://Assets/Language/VR_GAME_TRANSLATION_KAZAKH_COMPLETE - Лист1.KAZAKH.translation"]
+
+source_file="res://Assets/Language/VR_GAME_TRANSLATION_KAZAKH_COMPLETE - Лист1.csv"
+dest_files=["res://Assets/Language/VR_GAME_TRANSLATION_KAZAKH_COMPLETE - Лист1.RUSSIAN.translation", "res://Assets/Language/VR_GAME_TRANSLATION_KAZAKH_COMPLETE - Лист1.KAZAKH.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

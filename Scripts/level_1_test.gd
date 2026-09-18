@@ -129,10 +129,10 @@ func send_data(table_type: String) -> void:
 		print("Transaction successful, path: ", path)
 		if table_type == "decent":
 			if decent_board:
-				decent_board.set_status("Транзакция успешна!\n" + start_node_id + " -> " + end_node_id)
+				decent_board.set_status(tr("ROOM_1_MAIN_BOARD_SUCCESS_TEXT") + "\n" + start_node_id + " -> " + end_node_id)
 		else:
 			if cent_board:
-				cent_board.set_status("Транзакция успешна!\n" + start_node_id + " -> " + end_node_id)
+				cent_board.set_status(tr("ROOM_1_MAIN_BOARD_SUCCESS_TEXT") + "\n" + start_node_id + " -> " + end_node_id)
 		var packet = packet_scene.instantiate()
 		add_child(packet)
 		packet.global_position = NetworkManager.nodes[start_node_id].global_position
@@ -149,10 +149,10 @@ func send_data(table_type: String) -> void:
 		print("Transaction impossible - no path between ", start_node_id, " and ", end_node_id)
 		if table_type == "decent":
 			if decent_board:
-				decent_board.set_status("Транзакция Невозможна!\n" + start_node_id + " -X-> " + end_node_id)
+				decent_board.set_status(tr("ROOM_1_MAIN_BOARD_ERROR_TEXT") + "\n" + start_node_id + " -X-> " + end_node_id)
 		else:
 			if cent_board:
-				cent_board.set_status("Транзакция Невозможна!\n" + start_node_id + " -X-> " + end_node_id)
+				cent_board.set_status(tr("ROOM_1_MAIN_BOARD_ERROR_TEXT") + "\n" + start_node_id + " -X-> " + end_node_id)
 
 		# Automatically try again after brief delay
 		await get_tree().create_timer(1.0).timeout
@@ -162,14 +162,14 @@ func _on_board_action(action: String) -> void:
 	if action == "send_decent":
 		is_decent_looping = not is_decent_looping
 		if decent_board:
-			decent_board.set_button_text("send_decent", "Остановить" if is_decent_looping else "Отправить")
+			decent_board.set_button_text("send_decent", tr("ROOM_1_MAIN_BOARD_BUTTON_STOP") if is_decent_looping else tr("ROOM_1_MAIN_BOARD_BUTTON_PLAY"))
 		if is_decent_looping:
 			send_data("decent")
 			
 	elif action == "send_cent":
 		is_cent_looping = not is_cent_looping
 		if cent_board:
-			cent_board.set_button_text("send_cent", "Остановить" if is_cent_looping else "Отправить")
+			cent_board.set_button_text("send_cent", tr("ROOM_1_MAIN_BOARD_BUTTON_STOP") if is_cent_looping else tr("ROOM_1_MAIN_BOARD_BUTTON_PLAY"))
 		if is_cent_looping:
 			send_data("cent")
 			
@@ -178,12 +178,12 @@ func _on_board_action(action: String) -> void:
 			node.reset()
 		central.reset()
 		if cent_board:
-			cent_board.set_status("Системный сброс.")
+			cent_board.set_status(tr("ROOM_1_MAIN_BOARD_RESET_TEXT"))
 	elif action == "reset_decent":
 		for node in d_nodes:
 			node.reset()
 		if decent_board:
-			decent_board.set_status("Системный сброс.")
+			decent_board.set_status(tr("ROOM_1_MAIN_BOARD_RESET_TEXT"))
 	elif action == "reset":
 		for node in NetworkManager.nodes.values():
 			node.reset()

@@ -30,7 +30,7 @@ func _ready() -> void:
 	private_key.enabled = false
 
 func _on_lid_picked_up() -> void:
-	warning_label.text = "⚠ ЛИЧНЫЙ КЛЮЧ РАСКРЫТ\nНе передавайте этот ключ\nНИКОМУ!"
+	warning_label.text = tr("ROOM_3_RIGHT_PRIVATE_KEY_WARNING_TEXT")
 	warning_label.modulate = Color(1, 0.1, 0.1)
 	private_key.visible = true
 	private_key.enabled = true

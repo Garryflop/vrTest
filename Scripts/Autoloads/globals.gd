@@ -2,96 +2,99 @@ extends Node
 
 var is_completed_game: bool = false
 
-const QUESTION_DATA = {
+func _ready() -> void:
+	TranslationServer.set_locale("RUSSIAN")
+
+var QUESTION_DATA = {
 	"room_1": {
-		"title": "Архитектура сетей",
+		"title": tr("ROOM_1_TITLE"),
 		"questions": [
 			{
-				"question": "Что произойдет, если отключить единственный центральный сервер в централизованной сети?",
-				"options": ["A) Сеть продолжит работать", "B) Система полностью остановится", "C) Выберется новый сервер"],
+				"question": tr("ROOM_1_QUESTION_1"),
+				"options": [tr("ROOM_1_QUESTION_1_OPTION_0"), tr("ROOM_1_QUESTION_1_OPTION_1"), tr("ROOM_1_QUESTION_1_OPTION_2")],
 				"correct_idx": 1,
-				"explanation": "В централизованной сети сервер является единой точкой отказа. Без него система полностью перестает функционировать."
+				"explanation": "ROOM_1_QUESTION_1_EXPLANATION"
 			},
 			{
-				"question": "За счет чего блокчейн-сеть продолжает функционировать при падении одного из узлов?",
-				"options": ["A) За счет децентрализации структуры", "B) За счет бэкапа сервера", "C) Сеть замирает до перезапуска"],
+				"question": tr("ROOM_1_QUESTION_2"),
+				"options": [tr("ROOM_1_QUESTION_2_OPTION_0"), tr("ROOM_1_QUESTION_2_OPTION_1"), tr("ROOM_1_QUESTION_2_OPTION_2")],
 				"correct_idx": 0,
-				"explanation": "Данные блокчейна дублируются на множестве независимых нод, поэтому отключение одной из них не влияет на общую работоспособность."
+				"explanation": tr("ROOM_1_QUESTION_2_EXPLANATION")
 			},
 			{
-				"question": "В чем главное преимущество децентрализованной архитектуры?",
-				"options": ["A) Данные обрабатываются быстрее", "B) Отсутствует единая точка отказа", "C) Требуется меньше сетевых соединений"],
+				"question": tr("ROOM_1_QUESTION_3"),
+				"options": [tr("ROOM_1_QUESTION_3_OPTION_0"), tr("ROOM_1_QUESTION_3_OPTION_1"), tr("ROOM_1_QUESTION_3_OPTION_2")],
 				"correct_idx": 1,
-				"explanation": "Отсутствие единого центра делает распределенную сеть устойчивой к хакерским атакам и техническим сбоям."
+				"explanation": tr("ROOM_1_QUESTION_3_EXPLANATION")
 			}
 		]
 	},
 	"room_2": {
-		"title": "Структура блока",
+		"title": tr("ROOM_2_TITLE"),
 		"questions": [
 			{
-				"question": "Какие обязательные элементы определяют внутреннюю структуру блока в блокчейне?",
-				"options": ["A) Имя, IP-адрес и баланс", "B) Транзакции, свой хеш, прошлый хеш", "C) Ключи и код контракта"],
+				"question": tr("ROOM_2_QUESTION_1"),
+				"options": [tr("ROOM_2_QUESTION_1_OPTION_0"), tr("ROOM_2_QUESTION_1_OPTION_1"), tr("ROOM_2_QUESTION_1_OPTION_2")],
 				"correct_idx": 1,
-				"explanation": "Каждый блок обязан содержать данные (транзакции), свой цифровой отпечаток (хеш) и связь с прошлым звеном цепи."
+				"explanation": tr("ROOM_2_QUESTION_1_EXPLANATION")
 			},
 			{
-				"question": "Что произойдет с цепочкой, если изменить данные транзакции внутри уже созданного блока?",
-				"options": ["A) Ничего не изменится", "B) Изменится хеш одного блока", "C) Все последующие блоки станут недействительными"],
+				"question": tr("ROOM_2_QUESTION_2"),
+				"options": [tr("ROOM_2_QUESTION_2_OPTION_0"), tr("ROOM_2_QUESTION_2_OPTION_1"), tr("ROOM_2_QUESTION_2_OPTION_2")],
 				"correct_idx": 2,
-				"explanation": "Изменение данных меняет хеш блока. Связь со следующим блоком рвется, делая всю последующую цепочку невалидной."
+				"explanation": tr("ROOM_2_QUESTION_2_EXPLANATION")
 			},
 			{
-				"question": "Для чего в текущем блоке всегда сохраняется хеш предыдущего блока?",
-				"options": ["A) Для ускорения передачи информации", "B) Для неизменяемости истории и связи цепи", "C) Для шифрования баланса"],
+				"question": tr("ROOM_2_QUESTION_3"),
+				"options": [tr("ROOM_2_QUESTION_3_OPTION_0"), tr("ROOM_2_QUESTION_3_OPTION_1"), tr("ROOM_2_QUESTION_3_OPTION_2")],
 				"correct_idx": 1,
-				"explanation": "Хранение предыдущего хеша связывает блоки в неразрывную цепь, гарантируя защиту истории от скрытых изменений."
+				"explanation": tr("ROOM_2_QUESTION_3_EXPLANATION")
 			}
 		]
 	},
 	"room_3": {
-		"title": "Криптографические ключи",
+		"title": tr("ROOM_3_TITLE"),
 		"questions": [
 			{
-				"question": "Как распределяются роли между публичным (Public) и приватным (Private) ключами?",
-				"options": ["A) Оба ключа видны всем", "B) Публичный — всем, приватный — владельцу", "C) Оба ключа полностью скрыты"],
+				"question": tr("ROOM_3_QUESTION_1"),
+				"options": [tr("ROOM_3_QUESTION_1_OPTION_0"), tr("ROOM_3_QUESTION_1_OPTION_1"), tr("ROOM_3_QUESTION_1_OPTION_2")],
 				"correct_idx": 1,
-				"explanation": "Публичный ключ — это открытый адрес для отправки средств, а приватный — секретный пароль для доступа к ним."
+				"explanation": tr("ROOM_3_QUESTION_1_EXPLANATION")
 			},
 			{
-				"question": "Что произойдет при попытке совершить транзакцию с использованием неверного приватного ключа?",
-				"options": ["A) Транзакция встанет в очередь", "B) Сеть отвергнет операцию", "C) Сгенерируется новый кошелек"],
+				"question": tr("ROOM_3_QUESTION_2"),
+				"options": [tr("ROOM_3_QUESTION_2_OPTION_0"), tr("ROOM_3_QUESTION_2_OPTION_1"), tr("ROOM_3_QUESTION_2_OPTION_2")],
 				"correct_idx": 1,
-				"explanation": "Без корректной цифровой подписи приватного ключа математические алгоритмы сети мгновенно блокируют транзакцию."
+				"explanation": tr("ROOM_3_QUESTION_2_EXPLANATION")
 			},
 			{
-				"question": "Что обеспечивает безопасность транзакции в блокчейне на базовом уровень?",
-				"options": ["A) Асимметричное шифрование ключами", "B) Мониторинг со стороны администратора", "C) Закрытый исходный код"],
+				"question": tr("ROOM_3_QUESTION_3"),
+				"options": [tr("ROOM_3_QUESTION_3_OPTION_0"), tr("ROOM_3_QUESTION_3_OPTION_1"), tr("ROOM_3_QUESTION_3_OPTION_2")],
 				"correct_idx": 0,
-				"explanation": "Безопасность строится на криптографии: проверить подпись может любой, а создать её без приватного ключа невозможно."
+				"explanation": tr("ROOM_3_QUESTION_3_EXPLANATION")
 			}
 		]
 	},
 	"room_4": {
-		"title": "Механизмы консенсуса",
+		"title": tr("ROOM_4_TITLE"),
 		"questions": [
 			{
-				"question": "Каковы ключевые особенности классического алгоритма консенсуса Proof of Work (PoW)?",
-				"options": ["A) Мгновенные транзакции без затрат", "B) Высокая вычислительная нагрузка и расходы", "C) Выбор проверяющего по балансу"],
+				"question": tr("ROOM_4_QUESTION_1"),
+				"options": [tr("ROOM_4_QUESTION_1_OPTION_0"), tr("ROOM_4_QUESTION_1_OPTION_1"), tr("ROOM_4_QUESTION_1_OPTION_2")],
 				"correct_idx": 1,
-				"explanation": "PoW требует от узлов выполнения тяжелых математических расчетов для защиты сети, из-за чего тратится много энергии."
+				"explanation": tr("ROOM_4_QUESTION_1_EXPLANATION")
 			},
 			{
-				"question": "На каком главном принципе основан выбор валидатора в алгоритме Proof of Stake (PoS)?",
-				"options": ["A) На вычислительной мощности железа", "B) На количестве заблокированных монет", "C) На скорости интернета ноды"],
+				"question": tr("ROOM_4_QUESTION_2"),
+				"options": [tr("ROOM_4_QUESTION_2_OPTION_0"), tr("ROOM_4_QUESTION_2_OPTION_1"), tr("ROOM_4_QUESTION_2_OPTION_2")],
 				"correct_idx": 1,
-				"explanation": "В PoS шанс подтвердить блок зависит не от мощности железа, а от объема удерживаемых в системе монет (стекинга)."
+				"explanation": tr("ROOM_4_QUESTION_2_EXPLANATION")
 			},
 			{
-				"question": "В чем заключается основное преимущество перехода сетей с алгоритма PoW на PoS?",
-				"options": ["A) Отказ от использования криптографии", "B) Высокая энергоэффективность и скорость", "C) Возврат к централизованному управлению"],
+				"question": tr("ROOM_4_QUESTION_3"),
+				"options": [tr("ROOM_4_QUESTION_3_OPTION_0"), tr("ROOM_4_QUESTION_3_OPTION_1"), tr("ROOM_4_QUESTION_3_OPTION_2")],
 				"correct_idx": 1,
-				"explanation": "PoS убирает необходимость в бессмысленной гонке мощностей оборудования, делая сеть экологичнее, дешевле и быстрее."
+				"explanation": tr("ROOM_4_QUESTION_3_EXPLANATION")
 			}
 		]
 	}
